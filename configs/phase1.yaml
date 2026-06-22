@@ -1,0 +1,24 @@
+model:
+  vocab_size: 30000
+  text_dim: 256
+  audio_dim: 128
+  video_dim: 128
+  fusion_dim: 256
+  num_heads: 4
+  num_layers: 2
+  dropout: 0.1
+  num_classes: 7
+  max_text_len: 128
+  max_audio_len: 256
+  max_video_len: 32
+
+train:
+  seed: 42
+  batch_size: 8
+  epochs: 10
+  lr: 3e-4
+  weight_decay: 1e-2
+  grad_clip: 1.0
+  device: auto
+  output_dir: results/phase1
+

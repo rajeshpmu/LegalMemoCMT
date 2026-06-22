@@ -1,0 +1,2 @@
+"""LegalMemoCMT source package."""
+

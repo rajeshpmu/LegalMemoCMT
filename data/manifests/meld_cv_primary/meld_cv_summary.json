@@ -1,0 +1,48 @@
+{
+  "manifest": "data/manifests/meld_raw.csv",
+  "output_dir": "data/manifests/meld_cv_primary",
+  "num_folds": 5,
+  "seed": 42,
+  "base_splits": [
+    "dev",
+    "train"
+  ],
+  "folds": [
+    {
+      "fold": 0,
+      "train_rows": 8809,
+      "val_rows": 2288,
+      "train_path": "data/manifests/meld_cv_primary/meld_fold_0_train.csv",
+      "val_path": "data/manifests/meld_cv_primary/meld_fold_0_val.csv"
+    },
+    {
+      "fold": 1,
+      "train_rows": 8869,
+      "val_rows": 2228,
+      "train_path": "data/manifests/meld_cv_primary/meld_fold_1_train.csv",
+      "val_path": "data/manifests/meld_cv_primary/meld_fold_1_val.csv"
+    },
+    {
+      "fold": 2,
+      "train_rows": 8969,
+      "val_rows": 2128,
+      "train_path": "data/manifests/meld_cv_primary/meld_fold_2_train.csv",
+      "val_path": "data/manifests/meld_cv_primary/meld_fold_2_val.csv"
+    },
+    {
+      "fold": 3,
+      "train_rows": 8909,
+      "val_rows": 2188,
+      "train_path": "data/manifests/meld_cv_primary/meld_fold_3_train.csv",
+      "val_path": "data/manifests/meld_cv_primary/meld_fold_3_val.csv"
+    },
+    {
+      "fold": 4,
+      "train_rows": 8832,
+      "val_rows": 2265,
+      "train_path": "data/manifests/meld_cv_primary/meld_fold_4_train.csv",
+      "val_path": "data/manifests/meld_cv_primary/meld_fold_4_val.csv"
+    }
+  ],
+  "assignments_path": "data/manifests/meld_cv_primary/meld_fold_assignments.csv"
+}

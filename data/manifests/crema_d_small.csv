@@ -1,0 +1,301 @@
+sample_id,split,label,video_path,audio_path,transcript
+1049_IEO_FEA_LO,test,2,data/CREMA_D_repo/VideoFlash/1049_IEO_FEA_LO.flv,data/CREMA_D_repo/AudioWAV/1049_IEO_FEA_LO.wav,It's eleven o'clock
+1069_TAI_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1069_TAI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1069_TAI_DIS_XX.wav,The airplane is almost full
+1079_TIE_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1079_TIE_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1079_TIE_SAD_XX.wav,That is exactly what happened
+1009_IWW_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1009_IWW_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1009_IWW_DIS_XX.wav,I wonder what this is about
+1079_IEO_ANG_MD,test,0,data/CREMA_D_repo/VideoFlash/1079_IEO_ANG_MD.flv,data/CREMA_D_repo/AudioWAV/1079_IEO_ANG_MD.wav,It's eleven o'clock
+1059_TAI_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1059_TAI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1059_TAI_FEA_XX.wav,The airplane is almost full
+1009_TSI_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1009_TSI_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1009_TSI_HAP_XX.wav,The surface is slick
+1019_IWW_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1019_IWW_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1019_IWW_DIS_XX.wav,I wonder what this is about
+1039_TIE_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1039_TIE_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1039_TIE_FEA_XX.wav,That is exactly what happened
+1079_DFA_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1079_DFA_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1079_DFA_HAP_XX.wav,Don't forget a jacket
+1049_IWL_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1049_IWL_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1049_IWL_NEU_XX.wav,I would like a new alarm clock
+1009_WSI_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1009_WSI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1009_WSI_SAD_XX.wav,We'll stop in a couple of minutes
+1059_WSI_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1059_WSI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1059_WSI_DIS_XX.wav,We'll stop in a couple of minutes
+1009_ITS_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1009_ITS_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1009_ITS_DIS_XX.wav,I think I've seen this before
+1079_ITS_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1079_ITS_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1079_ITS_SAD_XX.wav,I think I've seen this before
+1059_IWL_ANG_XX,test,0,data/CREMA_D_repo/VideoFlash/1059_IWL_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1059_IWL_ANG_XX.wav,I would like a new alarm clock
+1089_TIE_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1089_TIE_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1089_TIE_DIS_XX.wav,That is exactly what happened
+1059_IWW_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1059_IWW_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1059_IWW_NEU_XX.wav,I wonder what this is about
+1029_MTI_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1029_MTI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1029_MTI_NEU_XX.wav,Maybe tomorrow it will be cold
+1089_ITS_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1089_ITS_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1089_ITS_FEA_XX.wav,I think I've seen this before
+1019_IOM_ANG_XX,test,0,data/CREMA_D_repo/VideoFlash/1019_IOM_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1019_IOM_ANG_XX.wav,I'm on my way to the meeting
+1009_TAI_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1009_TAI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1009_TAI_DIS_XX.wav,The airplane is almost full
+1059_ITH_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1059_ITH_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1059_ITH_NEU_XX.wav,I think I have a doctor's appointment
+1019_IEO_SAD_MD,test,5,data/CREMA_D_repo/VideoFlash/1019_IEO_SAD_MD.flv,data/CREMA_D_repo/AudioWAV/1019_IEO_SAD_MD.wav,It's eleven o'clock
+1019_IEO_HAP_LO,test,3,data/CREMA_D_repo/VideoFlash/1019_IEO_HAP_LO.flv,data/CREMA_D_repo/AudioWAV/1019_IEO_HAP_LO.wav,It's eleven o'clock
+1059_MTI_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1059_MTI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1059_MTI_SAD_XX.wav,Maybe tomorrow it will be cold
+1089_IWL_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1089_IWL_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1089_IWL_SAD_XX.wav,I would like a new alarm clock
+1049_ITH_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1049_ITH_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1049_ITH_HAP_XX.wav,I think I have a doctor's appointment
+1039_ITS_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1039_ITS_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1039_ITS_SAD_XX.wav,I think I've seen this before
+1009_IEO_FEA_LO,test,2,data/CREMA_D_repo/VideoFlash/1009_IEO_FEA_LO.flv,data/CREMA_D_repo/AudioWAV/1009_IEO_FEA_LO.wav,It's eleven o'clock
+1009_DFA_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1009_DFA_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1009_DFA_SAD_XX.wav,Don't forget a jacket
+1019_IEO_HAP_MD,test,3,data/CREMA_D_repo/VideoFlash/1019_IEO_HAP_MD.flv,data/CREMA_D_repo/AudioWAV/1019_IEO_HAP_MD.wav,It's eleven o'clock
+1039_IEO_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1039_IEO_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1039_IEO_NEU_XX.wav,It's eleven o'clock
+1039_IEO_SAD_MD,test,5,data/CREMA_D_repo/VideoFlash/1039_IEO_SAD_MD.flv,data/CREMA_D_repo/AudioWAV/1039_IEO_SAD_MD.wav,It's eleven o'clock
+1089_WSI_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1089_WSI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1089_WSI_SAD_XX.wav,We'll stop in a couple of minutes
+1039_WSI_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1039_WSI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1039_WSI_FEA_XX.wav,We'll stop in a couple of minutes
+1079_TAI_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1079_TAI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1079_TAI_SAD_XX.wav,The airplane is almost full
+1029_IWL_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1029_IWL_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1029_IWL_NEU_XX.wav,I would like a new alarm clock
+1049_TIE_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1049_TIE_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1049_TIE_FEA_XX.wav,That is exactly what happened
+1069_IOM_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1069_IOM_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1069_IOM_HAP_XX.wav,I'm on my way to the meeting
+1049_IEO_FEA_HI,test,2,data/CREMA_D_repo/VideoFlash/1049_IEO_FEA_HI.flv,data/CREMA_D_repo/AudioWAV/1049_IEO_FEA_HI.wav,It's eleven o'clock
+1029_IEO_HAP_HI,test,3,data/CREMA_D_repo/VideoFlash/1029_IEO_HAP_HI.flv,data/CREMA_D_repo/AudioWAV/1029_IEO_HAP_HI.wav,It's eleven o'clock
+1029_IEO_DIS_LO,test,1,data/CREMA_D_repo/VideoFlash/1029_IEO_DIS_LO.flv,data/CREMA_D_repo/AudioWAV/1029_IEO_DIS_LO.wav,It's eleven o'clock
+1089_TAI_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1089_TAI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1089_TAI_NEU_XX.wav,The airplane is almost full
+1029_WSI_ANG_XX,test,0,data/CREMA_D_repo/VideoFlash/1029_WSI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1029_WSI_ANG_XX.wav,We'll stop in a couple of minutes
+1089_MTI_ANG_XX,test,0,data/CREMA_D_repo/VideoFlash/1089_MTI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1089_MTI_ANG_XX.wav,Maybe tomorrow it will be cold
+1049_TAI_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1049_TAI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1049_TAI_NEU_XX.wav,The airplane is almost full
+1079_IWL_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1079_IWL_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1079_IWL_NEU_XX.wav,I would like a new alarm clock
+1049_DFA_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1049_DFA_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1049_DFA_HAP_XX.wav,Don't forget a jacket
+1059_TSI_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1059_TSI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1059_TSI_DIS_XX.wav,The surface is slick
+1019_MTI_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1019_MTI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1019_MTI_SAD_XX.wav,Maybe tomorrow it will be cold
+1069_IWW_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1069_IWW_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1069_IWW_DIS_XX.wav,I wonder what this is about
+1029_ITH_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1029_ITH_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1029_ITH_FEA_XX.wav,I think I have a doctor's appointment
+1049_IWW_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1049_IWW_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1049_IWW_NEU_XX.wav,I wonder what this is about
+1039_IWW_ANG_XX,test,0,data/CREMA_D_repo/VideoFlash/1039_IWW_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1039_IWW_ANG_XX.wav,I wonder what this is about
+1039_IWW_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1039_IWW_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1039_IWW_FEA_XX.wav,I wonder what this is about
+1079_IOM_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1079_IOM_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1079_IOM_SAD_XX.wav,I'm on my way to the meeting
+1019_MTI_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1019_MTI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1019_MTI_FEA_XX.wav,Maybe tomorrow it will be cold
+1079_ITH_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1079_ITH_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1079_ITH_DIS_XX.wav,I think I have a doctor's appointment
+1069_ITH_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1069_ITH_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1069_ITH_NEU_XX.wav,I think I have a doctor's appointment
+1039_IEO_DIS_LO,test,1,data/CREMA_D_repo/VideoFlash/1039_IEO_DIS_LO.flv,data/CREMA_D_repo/AudioWAV/1039_IEO_DIS_LO.wav,It's eleven o'clock
+1089_IWW_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1089_IWW_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1089_IWW_NEU_XX.wav,I wonder what this is about
+1009_ITH_ANG_XX,test,0,data/CREMA_D_repo/VideoFlash/1009_ITH_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1009_ITH_ANG_XX.wav,I think I have a doctor's appointment
+1049_IEO_DIS_HI,test,1,data/CREMA_D_repo/VideoFlash/1049_IEO_DIS_HI.flv,data/CREMA_D_repo/AudioWAV/1049_IEO_DIS_HI.wav,It's eleven o'clock
+1019_TIE_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1019_TIE_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1019_TIE_DIS_XX.wav,That is exactly what happened
+1059_DFA_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1059_DFA_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1059_DFA_HAP_XX.wav,Don't forget a jacket
+1019_IEO_FEA_LO,test,2,data/CREMA_D_repo/VideoFlash/1019_IEO_FEA_LO.flv,data/CREMA_D_repo/AudioWAV/1019_IEO_FEA_LO.wav,It's eleven o'clock
+1029_TSI_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1029_TSI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1029_TSI_DIS_XX.wav,The surface is slick
+1029_IOM_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1029_IOM_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1029_IOM_NEU_XX.wav,I'm on my way to the meeting
+1009_IOM_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1009_IOM_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1009_IOM_HAP_XX.wav,I'm on my way to the meeting
+1069_TSI_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1069_TSI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1069_TSI_FEA_XX.wav,The surface is slick
+1029_MTI_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1029_MTI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1029_MTI_FEA_XX.wav,Maybe tomorrow it will be cold
+1059_IEO_ANG_LO,test,0,data/CREMA_D_repo/VideoFlash/1059_IEO_ANG_LO.flv,data/CREMA_D_repo/AudioWAV/1059_IEO_ANG_LO.wav,It's eleven o'clock
+1039_IOM_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1039_IOM_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1039_IOM_FEA_XX.wav,I'm on my way to the meeting
+1049_IEO_ANG_LO,test,0,data/CREMA_D_repo/VideoFlash/1049_IEO_ANG_LO.flv,data/CREMA_D_repo/AudioWAV/1049_IEO_ANG_LO.wav,It's eleven o'clock
+1089_IWW_ANG_XX,test,0,data/CREMA_D_repo/VideoFlash/1089_IWW_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1089_IWW_ANG_XX.wav,I wonder what this is about
+1029_ITH_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1029_ITH_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1029_ITH_DIS_XX.wav,I think I have a doctor's appointment
+1009_IWW_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1009_IWW_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1009_IWW_SAD_XX.wav,I wonder what this is about
+1079_TAI_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1079_TAI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1079_TAI_DIS_XX.wav,The airplane is almost full
+1089_IWW_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1089_IWW_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1089_IWW_HAP_XX.wav,I wonder what this is about
+1079_DFA_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1079_DFA_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1079_DFA_FEA_XX.wav,Don't forget a jacket
+1049_IEO_HAP_HI,test,3,data/CREMA_D_repo/VideoFlash/1049_IEO_HAP_HI.flv,data/CREMA_D_repo/AudioWAV/1049_IEO_HAP_HI.wav,It's eleven o'clock
+1079_MTI_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1079_MTI_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1079_MTI_HAP_XX.wav,Maybe tomorrow it will be cold
+1079_IEO_SAD_HI,test,5,data/CREMA_D_repo/VideoFlash/1079_IEO_SAD_HI.flv,data/CREMA_D_repo/AudioWAV/1079_IEO_SAD_HI.wav,It's eleven o'clock
+1089_IWW_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1089_IWW_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1089_IWW_DIS_XX.wav,I wonder what this is about
+1029_DFA_NEU_XX,test,4,data/CREMA_D_repo/VideoFlash/1029_DFA_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1029_DFA_NEU_XX.wav,Don't forget a jacket
+1059_IWW_FEA_XX,test,2,data/CREMA_D_repo/VideoFlash/1059_IWW_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1059_IWW_FEA_XX.wav,I wonder what this is about
+1049_IWW_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1049_IWW_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1049_IWW_DIS_XX.wav,I wonder what this is about
+1019_IEO_ANG_MD,test,0,data/CREMA_D_repo/VideoFlash/1019_IEO_ANG_MD.flv,data/CREMA_D_repo/AudioWAV/1019_IEO_ANG_MD.wav,It's eleven o'clock
+1019_IEO_HAP_HI,test,3,data/CREMA_D_repo/VideoFlash/1019_IEO_HAP_HI.flv,data/CREMA_D_repo/AudioWAV/1019_IEO_HAP_HI.wav,It's eleven o'clock
+1029_DFA_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1029_DFA_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1029_DFA_HAP_XX.wav,Don't forget a jacket
+1039_IWL_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1039_IWL_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1039_IWL_HAP_XX.wav,I would like a new alarm clock
+1059_IWW_SAD_XX,test,5,data/CREMA_D_repo/VideoFlash/1059_IWW_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1059_IWW_SAD_XX.wav,I wonder what this is about
+1079_IWL_HAP_XX,test,3,data/CREMA_D_repo/VideoFlash/1079_IWL_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1079_IWL_HAP_XX.wav,I would like a new alarm clock
+1009_IWW_ANG_XX,test,0,data/CREMA_D_repo/VideoFlash/1009_IWW_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1009_IWW_ANG_XX.wav,I wonder what this is about
+1029_DFA_ANG_XX,test,0,data/CREMA_D_repo/VideoFlash/1029_DFA_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1029_DFA_ANG_XX.wav,Don't forget a jacket
+1059_IOM_ANG_XX,test,0,data/CREMA_D_repo/VideoFlash/1059_IOM_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1059_IOM_ANG_XX.wav,I'm on my way to the meeting
+1059_IEO_HAP_LO,test,3,data/CREMA_D_repo/VideoFlash/1059_IEO_HAP_LO.flv,data/CREMA_D_repo/AudioWAV/1059_IEO_HAP_LO.wav,It's eleven o'clock
+1059_IEO_DIS_LO,test,1,data/CREMA_D_repo/VideoFlash/1059_IEO_DIS_LO.flv,data/CREMA_D_repo/AudioWAV/1059_IEO_DIS_LO.wav,It's eleven o'clock
+1059_TAI_DIS_XX,test,1,data/CREMA_D_repo/VideoFlash/1059_TAI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1059_TAI_DIS_XX.wav,The airplane is almost full
+1032_ITH_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1032_ITH_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1032_ITH_ANG_XX.wav,I think I have a doctor's appointment
+1062_TIE_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1062_TIE_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1062_TIE_SAD_XX.wav,That is exactly what happened
+1020_DFA_DIS_XX,train,1,data/CREMA_D_repo/VideoFlash/1020_DFA_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1020_DFA_DIS_XX.wav,Don't forget a jacket
+1084_DFA_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1084_DFA_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1084_DFA_HAP_XX.wav,Don't forget a jacket
+1015_IWW_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1015_IWW_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1015_IWW_SAD_XX.wav,I wonder what this is about
+1001_IEO_ANG_MD,train,0,data/CREMA_D_repo/VideoFlash/1001_IEO_ANG_MD.flv,data/CREMA_D_repo/AudioWAV/1001_IEO_ANG_MD.wav,It's eleven o'clock
+1053_WSI_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1053_WSI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1053_WSI_NEU_XX.wav,We'll stop in a couple of minutes
+1001_IOM_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1001_IOM_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1001_IOM_HAP_XX.wav,I'm on my way to the meeting
+1083_IEO_SAD_LO,train,5,data/CREMA_D_repo/VideoFlash/1083_IEO_SAD_LO.flv,data/CREMA_D_repo/AudioWAV/1083_IEO_SAD_LO.wav,It's eleven o'clock
+1026_ITH_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1026_ITH_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1026_ITH_SAD_XX.wav,I think I have a doctor's appointment
+1074_IEO_DIS_MD,train,1,data/CREMA_D_repo/VideoFlash/1074_IEO_DIS_MD.flv,data/CREMA_D_repo/AudioWAV/1074_IEO_DIS_MD.wav,It's eleven o'clock
+1013_IEO_DIS_MD,train,1,data/CREMA_D_repo/VideoFlash/1013_IEO_DIS_MD.flv,data/CREMA_D_repo/AudioWAV/1013_IEO_DIS_MD.wav,It's eleven o'clock
+1036_DFA_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1036_DFA_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1036_DFA_SAD_XX.wav,Don't forget a jacket
+1080_IWW_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1080_IWW_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1080_IWW_FEA_XX.wav,I wonder what this is about
+1070_ITS_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1070_ITS_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1070_ITS_FEA_XX.wav,I think I've seen this before
+1041_IOM_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1041_IOM_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1041_IOM_FEA_XX.wav,I'm on my way to the meeting
+1006_DFA_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1006_DFA_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1006_DFA_HAP_XX.wav,Don't forget a jacket
+1060_WSI_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1060_WSI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1060_WSI_SAD_XX.wav,We'll stop in a couple of minutes
+1073_TAI_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1073_TAI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1073_TAI_NEU_XX.wav,The airplane is almost full
+1054_ITH_DIS_XX,train,1,data/CREMA_D_repo/VideoFlash/1054_ITH_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1054_ITH_DIS_XX.wav,I think I have a doctor's appointment
+1072_IOM_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1072_IOM_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1072_IOM_FEA_XX.wav,I'm on my way to the meeting
+1065_ITS_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1065_ITS_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1065_ITS_NEU_XX.wav,I think I've seen this before
+1025_IEO_HAP_MD,train,3,data/CREMA_D_repo/VideoFlash/1025_IEO_HAP_MD.flv,data/CREMA_D_repo/AudioWAV/1025_IEO_HAP_MD.wav,It's eleven o'clock
+1006_TIE_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1006_TIE_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1006_TIE_HAP_XX.wav,That is exactly what happened
+1046_WSI_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1046_WSI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1046_WSI_ANG_XX.wav,We'll stop in a couple of minutes
+1025_IOM_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1025_IOM_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1025_IOM_HAP_XX.wav,I'm on my way to the meeting
+1090_IWL_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1090_IWL_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1090_IWL_ANG_XX.wav,I would like a new alarm clock
+1016_IWL_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1016_IWL_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1016_IWL_NEU_XX.wav,I would like a new alarm clock
+1020_IWW_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1020_IWW_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1020_IWW_ANG_XX.wav,I wonder what this is about
+1074_IWL_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1074_IWL_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1074_IWL_NEU_XX.wav,I would like a new alarm clock
+1045_WSI_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1045_WSI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1045_WSI_ANG_XX.wav,We'll stop in a couple of minutes
+1013_TSI_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1013_TSI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1013_TSI_ANG_XX.wav,The surface is slick
+1023_IWL_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1023_IWL_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1023_IWL_ANG_XX.wav,I would like a new alarm clock
+1082_DFA_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1082_DFA_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1082_DFA_ANG_XX.wav,Don't forget a jacket
+1081_ITS_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1081_ITS_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1081_ITS_ANG_XX.wav,I think I've seen this before
+1046_ITH_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1046_ITH_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1046_ITH_ANG_XX.wav,I think I have a doctor's appointment
+1080_IWL_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1080_IWL_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1080_IWL_SAD_XX.wav,I would like a new alarm clock
+1083_ITH_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1083_ITH_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1083_ITH_NEU_XX.wav,I think I have a doctor's appointment
+1042_DFA_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1042_DFA_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1042_DFA_SAD_XX.wav,Don't forget a jacket
+1011_IOM_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1011_IOM_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1011_IOM_FEA_XX.wav,I'm on my way to the meeting
+1050_TIE_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1050_TIE_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1050_TIE_FEA_XX.wav,That is exactly what happened
+1002_WSI_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1002_WSI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1002_WSI_NEU_XX.wav,We'll stop in a couple of minutes
+1010_IEO_DIS_MD,train,1,data/CREMA_D_repo/VideoFlash/1010_IEO_DIS_MD.flv,data/CREMA_D_repo/AudioWAV/1010_IEO_DIS_MD.wav,It's eleven o'clock
+1054_IEO_HAP_LO,train,3,data/CREMA_D_repo/VideoFlash/1054_IEO_HAP_LO.flv,data/CREMA_D_repo/AudioWAV/1054_IEO_HAP_LO.wav,It's eleven o'clock
+1035_TSI_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1035_TSI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1035_TSI_NEU_XX.wav,The surface is slick
+1016_TSI_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1016_TSI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1016_TSI_FEA_XX.wav,The surface is slick
+1003_WSI_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1003_WSI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1003_WSI_NEU_XX.wav,We'll stop in a couple of minutes
+1070_IEO_FEA_LO,train,2,data/CREMA_D_repo/VideoFlash/1070_IEO_FEA_LO.flv,data/CREMA_D_repo/AudioWAV/1070_IEO_FEA_LO.wav,It's eleven o'clock
+1010_ITS_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1010_ITS_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1010_ITS_NEU_XX.wav,I think I've seen this before
+1075_TSI_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1075_TSI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1075_TSI_ANG_XX.wav,The surface is slick
+1063_TAI_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1063_TAI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1063_TAI_NEU_XX.wav,The airplane is almost full
+1062_IEO_DIS_MD,train,1,data/CREMA_D_repo/VideoFlash/1062_IEO_DIS_MD.flv,data/CREMA_D_repo/AudioWAV/1062_IEO_DIS_MD.wav,It's eleven o'clock
+1022_IWW_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1022_IWW_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1022_IWW_ANG_XX.wav,I wonder what this is about
+1035_IWL_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1035_IWL_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1035_IWL_ANG_XX.wav,I would like a new alarm clock
+1050_IEO_HAP_MD,train,3,data/CREMA_D_repo/VideoFlash/1050_IEO_HAP_MD.flv,data/CREMA_D_repo/AudioWAV/1050_IEO_HAP_MD.wav,It's eleven o'clock
+1032_TSI_DIS_XX,train,1,data/CREMA_D_repo/VideoFlash/1032_TSI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1032_TSI_DIS_XX.wav,The surface is slick
+1001_WSI_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1001_WSI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1001_WSI_ANG_XX.wav,We'll stop in a couple of minutes
+1091_TSI_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1091_TSI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1091_TSI_NEU_XX.wav,The surface is slick
+1066_IOM_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1066_IOM_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1066_IOM_FEA_XX.wav,I'm on my way to the meeting
+1021_IEO_FEA_MD,train,2,data/CREMA_D_repo/VideoFlash/1021_IEO_FEA_MD.flv,data/CREMA_D_repo/AudioWAV/1021_IEO_FEA_MD.wav,It's eleven o'clock
+1071_IWW_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1071_IWW_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1071_IWW_ANG_XX.wav,I wonder what this is about
+1042_TSI_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1042_TSI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1042_TSI_NEU_XX.wav,The surface is slick
+1084_IEO_FEA_HI,train,2,data/CREMA_D_repo/VideoFlash/1084_IEO_FEA_HI.flv,data/CREMA_D_repo/AudioWAV/1084_IEO_FEA_HI.wav,It's eleven o'clock
+1022_IEO_SAD_HI,train,5,data/CREMA_D_repo/VideoFlash/1022_IEO_SAD_HI.flv,data/CREMA_D_repo/AudioWAV/1022_IEO_SAD_HI.wav,It's eleven o'clock
+1001_WSI_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1001_WSI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1001_WSI_FEA_XX.wav,We'll stop in a couple of minutes
+1002_IWL_DIS_XX,train,1,data/CREMA_D_repo/VideoFlash/1002_IWL_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1002_IWL_DIS_XX.wav,I would like a new alarm clock
+1006_ITH_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1006_ITH_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1006_ITH_FEA_XX.wav,I think I have a doctor's appointment
+1070_IWW_DIS_XX,train,1,data/CREMA_D_repo/VideoFlash/1070_IWW_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1070_IWW_DIS_XX.wav,I wonder what this is about
+1025_ITS_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1025_ITS_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1025_ITS_FEA_XX.wav,I think I've seen this before
+1080_IEO_HAP_HI,train,3,data/CREMA_D_repo/VideoFlash/1080_IEO_HAP_HI.flv,data/CREMA_D_repo/AudioWAV/1080_IEO_HAP_HI.wav,It's eleven o'clock
+1034_IOM_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1034_IOM_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1034_IOM_ANG_XX.wav,I'm on my way to the meeting
+1074_IOM_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1074_IOM_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1074_IOM_SAD_XX.wav,I'm on my way to the meeting
+1020_TAI_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1020_TAI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1020_TAI_SAD_XX.wav,The airplane is almost full
+1011_IEO_FEA_MD,train,2,data/CREMA_D_repo/VideoFlash/1011_IEO_FEA_MD.flv,data/CREMA_D_repo/AudioWAV/1011_IEO_FEA_MD.wav,It's eleven o'clock
+1055_WSI_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1055_WSI_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1055_WSI_HAP_XX.wav,We'll stop in a couple of minutes
+1025_IEO_FEA_HI,train,2,data/CREMA_D_repo/VideoFlash/1025_IEO_FEA_HI.flv,data/CREMA_D_repo/AudioWAV/1025_IEO_FEA_HI.wav,It's eleven o'clock
+1044_IWL_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1044_IWL_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1044_IWL_SAD_XX.wav,I would like a new alarm clock
+1085_TAI_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1085_TAI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1085_TAI_ANG_XX.wav,The airplane is almost full
+1010_IWL_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1010_IWL_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1010_IWL_HAP_XX.wav,I would like a new alarm clock
+1052_IEO_NEU_XX,train,4,data/CREMA_D_repo/VideoFlash/1052_IEO_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1052_IEO_NEU_XX.wav,It's eleven o'clock
+1064_IEO_ANG_MD,train,0,data/CREMA_D_repo/VideoFlash/1064_IEO_ANG_MD.flv,data/CREMA_D_repo/AudioWAV/1064_IEO_ANG_MD.wav,It's eleven o'clock
+1081_TSI_DIS_XX,train,1,data/CREMA_D_repo/VideoFlash/1081_TSI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1081_TSI_DIS_XX.wav,The surface is slick
+1054_IEO_DIS_HI,train,1,data/CREMA_D_repo/VideoFlash/1054_IEO_DIS_HI.flv,data/CREMA_D_repo/AudioWAV/1054_IEO_DIS_HI.wav,It's eleven o'clock
+1030_IWW_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1030_IWW_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1030_IWW_SAD_XX.wav,I wonder what this is about
+1023_IOM_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1023_IOM_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1023_IOM_HAP_XX.wav,I'm on my way to the meeting
+1015_IEO_SAD_HI,train,5,data/CREMA_D_repo/VideoFlash/1015_IEO_SAD_HI.flv,data/CREMA_D_repo/AudioWAV/1015_IEO_SAD_HI.wav,It's eleven o'clock
+1086_IOM_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1086_IOM_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1086_IOM_HAP_XX.wav,I'm on my way to the meeting
+1060_MTI_FEA_XX,train,2,data/CREMA_D_repo/VideoFlash/1060_MTI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1060_MTI_FEA_XX.wav,Maybe tomorrow it will be cold
+1013_TSI_DIS_XX,train,1,data/CREMA_D_repo/VideoFlash/1013_TSI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1013_TSI_DIS_XX.wav,The surface is slick
+1084_MTI_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1084_MTI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1084_MTI_ANG_XX.wav,Maybe tomorrow it will be cold
+1001_IWW_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1001_IWW_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1001_IWW_HAP_XX.wav,I wonder what this is about
+1055_IEO_ANG_LO,train,0,data/CREMA_D_repo/VideoFlash/1055_IEO_ANG_LO.flv,data/CREMA_D_repo/AudioWAV/1055_IEO_ANG_LO.wav,It's eleven o'clock
+1056_ITH_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1056_ITH_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1056_ITH_SAD_XX.wav,I think I have a doctor's appointment
+1063_TSI_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1063_TSI_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1063_TSI_HAP_XX.wav,The surface is slick
+1051_TSI_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1051_TSI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1051_TSI_ANG_XX.wav,The surface is slick
+1051_ITH_ANG_XX,train,0,data/CREMA_D_repo/VideoFlash/1051_ITH_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1051_ITH_ANG_XX.wav,I think I have a doctor's appointment
+1041_ITH_HAP_XX,train,3,data/CREMA_D_repo/VideoFlash/1041_ITH_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1041_ITH_HAP_XX.wav,I think I have a doctor's appointment
+1070_IEO_DIS_LO,train,1,data/CREMA_D_repo/VideoFlash/1070_IEO_DIS_LO.flv,data/CREMA_D_repo/AudioWAV/1070_IEO_DIS_LO.wav,It's eleven o'clock
+1063_WSI_SAD_XX,train,5,data/CREMA_D_repo/VideoFlash/1063_WSI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1063_WSI_SAD_XX.wav,We'll stop in a couple of minutes
+1042_WSI_DIS_XX,train,1,data/CREMA_D_repo/VideoFlash/1042_WSI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1042_WSI_DIS_XX.wav,We'll stop in a couple of minutes
+1067_DFA_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1067_DFA_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1067_DFA_DIS_XX.wav,Don't forget a jacket
+1017_IOM_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1017_IOM_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1017_IOM_FEA_XX.wav,I'm on my way to the meeting
+1077_WSI_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1077_WSI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1077_WSI_FEA_XX.wav,We'll stop in a couple of minutes
+1007_ITS_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1007_ITS_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1007_ITS_ANG_XX.wav,I think I've seen this before
+1017_DFA_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1017_DFA_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1017_DFA_FEA_XX.wav,Don't forget a jacket
+1037_IEO_ANG_MD,val,0,data/CREMA_D_repo/VideoFlash/1037_IEO_ANG_MD.flv,data/CREMA_D_repo/AudioWAV/1037_IEO_ANG_MD.wav,It's eleven o'clock
+1028_IOM_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1028_IOM_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1028_IOM_FEA_XX.wav,I'm on my way to the meeting
+1018_IEO_NEU_XX,val,4,data/CREMA_D_repo/VideoFlash/1018_IEO_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1018_IEO_NEU_XX.wav,It's eleven o'clock
+1017_DFA_SAD_XX,val,5,data/CREMA_D_repo/VideoFlash/1017_DFA_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1017_DFA_SAD_XX.wav,Don't forget a jacket
+1007_IWL_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1007_IWL_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1007_IWL_ANG_XX.wav,I would like a new alarm clock
+1047_IEO_DIS_HI,val,1,data/CREMA_D_repo/VideoFlash/1047_IEO_DIS_HI.flv,data/CREMA_D_repo/AudioWAV/1047_IEO_DIS_HI.wav,It's eleven o'clock
+1058_IWW_SAD_XX,val,5,data/CREMA_D_repo/VideoFlash/1058_IWW_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1058_IWW_SAD_XX.wav,I wonder what this is about
+1038_IWL_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1038_IWL_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1038_IWL_ANG_XX.wav,I would like a new alarm clock
+1027_TAI_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1027_TAI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1027_TAI_DIS_XX.wav,The airplane is almost full
+1088_TAI_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1088_TAI_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1088_TAI_HAP_XX.wav,The airplane is almost full
+1078_TIE_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1078_TIE_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1078_TIE_FEA_XX.wav,That is exactly what happened
+1078_IOM_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1078_IOM_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1078_IOM_FEA_XX.wav,I'm on my way to the meeting
+1048_TIE_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1048_TIE_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1048_TIE_FEA_XX.wav,That is exactly what happened
+1018_IWW_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1018_IWW_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1018_IWW_ANG_XX.wav,I wonder what this is about
+1067_WSI_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1067_WSI_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1067_WSI_HAP_XX.wav,We'll stop in a couple of minutes
+1018_TIE_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1018_TIE_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1018_TIE_ANG_XX.wav,That is exactly what happened
+1028_IOM_SAD_XX,val,5,data/CREMA_D_repo/VideoFlash/1028_IOM_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1028_IOM_SAD_XX.wav,I'm on my way to the meeting
+1067_IWL_SAD_XX,val,5,data/CREMA_D_repo/VideoFlash/1067_IWL_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1067_IWL_SAD_XX.wav,I would like a new alarm clock
+1018_TAI_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1018_TAI_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1018_TAI_ANG_XX.wav,The airplane is almost full
+1068_MTI_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1068_MTI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1068_MTI_DIS_XX.wav,Maybe tomorrow it will be cold
+1068_ITH_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1068_ITH_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1068_ITH_FEA_XX.wav,I think I have a doctor's appointment
+1047_TIE_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1047_TIE_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1047_TIE_FEA_XX.wav,That is exactly what happened
+1038_IWL_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1038_IWL_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1038_IWL_DIS_XX.wav,I would like a new alarm clock
+1067_ITS_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1067_ITS_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1067_ITS_FEA_XX.wav,I think I've seen this before
+1018_IEO_ANG_LO,val,0,data/CREMA_D_repo/VideoFlash/1018_IEO_ANG_LO.flv,data/CREMA_D_repo/AudioWAV/1018_IEO_ANG_LO.wav,It's eleven o'clock
+1078_TAI_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1078_TAI_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1078_TAI_HAP_XX.wav,The airplane is almost full
+1048_IEO_HAP_LO,val,3,data/CREMA_D_repo/VideoFlash/1048_IEO_HAP_LO.flv,data/CREMA_D_repo/AudioWAV/1048_IEO_HAP_LO.wav,It's eleven o'clock
+1038_IEO_DIS_MD,val,1,data/CREMA_D_repo/VideoFlash/1038_IEO_DIS_MD.flv,data/CREMA_D_repo/AudioWAV/1038_IEO_DIS_MD.wav,It's eleven o'clock
+1028_DFA_SAD_XX,val,5,data/CREMA_D_repo/VideoFlash/1028_DFA_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1028_DFA_SAD_XX.wav,Don't forget a jacket
+1078_IEO_FEA_HI,val,2,data/CREMA_D_repo/VideoFlash/1078_IEO_FEA_HI.flv,data/CREMA_D_repo/AudioWAV/1078_IEO_FEA_HI.wav,It's eleven o'clock
+1047_ITH_SAD_XX,val,5,data/CREMA_D_repo/VideoFlash/1047_ITH_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1047_ITH_SAD_XX.wav,I think I have a doctor's appointment
+1067_DFA_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1067_DFA_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1067_DFA_FEA_XX.wav,Don't forget a jacket
+1057_IWL_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1057_IWL_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1057_IWL_FEA_XX.wav,I would like a new alarm clock
+1007_IWL_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1007_IWL_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1007_IWL_DIS_XX.wav,I would like a new alarm clock
+1087_IEO_HAP_LO,val,3,data/CREMA_D_repo/VideoFlash/1087_IEO_HAP_LO.flv,data/CREMA_D_repo/AudioWAV/1087_IEO_HAP_LO.wav,It's eleven o'clock
+1017_IEO_FEA_LO,val,2,data/CREMA_D_repo/VideoFlash/1017_IEO_FEA_LO.flv,data/CREMA_D_repo/AudioWAV/1017_IEO_FEA_LO.wav,It's eleven o'clock
+1068_TAI_NEU_XX,val,4,data/CREMA_D_repo/VideoFlash/1068_TAI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1068_TAI_NEU_XX.wav,The airplane is almost full
+1068_ITH_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1068_ITH_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1068_ITH_HAP_XX.wav,I think I have a doctor's appointment
+1048_IWW_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1048_IWW_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1048_IWW_DIS_XX.wav,I wonder what this is about
+1027_MTI_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1027_MTI_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1027_MTI_HAP_XX.wav,Maybe tomorrow it will be cold
+1018_TIE_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1018_TIE_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1018_TIE_DIS_XX.wav,That is exactly what happened
+1058_IWL_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1058_IWL_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1058_IWL_FEA_XX.wav,I would like a new alarm clock
+1038_IOM_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1038_IOM_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1038_IOM_HAP_XX.wav,I'm on my way to the meeting
+1037_MTI_SAD_XX,val,5,data/CREMA_D_repo/VideoFlash/1037_MTI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1037_MTI_SAD_XX.wav,Maybe tomorrow it will be cold
+1057_WSI_SAD_XX,val,5,data/CREMA_D_repo/VideoFlash/1057_WSI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1057_WSI_SAD_XX.wav,We'll stop in a couple of minutes
+1028_IOM_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1028_IOM_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1028_IOM_ANG_XX.wav,I'm on my way to the meeting
+1018_ITS_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1018_ITS_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1018_ITS_DIS_XX.wav,I think I've seen this before
+1008_MTI_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1008_MTI_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1008_MTI_HAP_XX.wav,Maybe tomorrow it will be cold
+1058_ITS_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1058_ITS_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1058_ITS_FEA_XX.wav,I think I've seen this before
+1077_WSI_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1077_WSI_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1077_WSI_HAP_XX.wav,We'll stop in a couple of minutes
+1057_ITS_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1057_ITS_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1057_ITS_ANG_XX.wav,I think I've seen this before
+1017_MTI_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1017_MTI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1017_MTI_DIS_XX.wav,Maybe tomorrow it will be cold
+1088_IEO_FEA_LO,val,2,data/CREMA_D_repo/VideoFlash/1088_IEO_FEA_LO.flv,data/CREMA_D_repo/AudioWAV/1088_IEO_FEA_LO.wav,It's eleven o'clock
+1037_DFA_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1037_DFA_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1037_DFA_DIS_XX.wav,Don't forget a jacket
+1077_TIE_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1077_TIE_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1077_TIE_HAP_XX.wav,That is exactly what happened
+1078_TIE_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1078_TIE_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1078_TIE_ANG_XX.wav,That is exactly what happened
+1048_MTI_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1048_MTI_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1048_MTI_DIS_XX.wav,Maybe tomorrow it will be cold
+1067_ITH_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1067_ITH_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1067_ITH_ANG_XX.wav,I think I have a doctor's appointment
+1038_TIE_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1038_TIE_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1038_TIE_FEA_XX.wav,That is exactly what happened
+1048_IEO_FEA_HI,val,2,data/CREMA_D_repo/VideoFlash/1048_IEO_FEA_HI.flv,data/CREMA_D_repo/AudioWAV/1048_IEO_FEA_HI.wav,It's eleven o'clock
+1017_TAI_NEU_XX,val,4,data/CREMA_D_repo/VideoFlash/1017_TAI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1017_TAI_NEU_XX.wav,The airplane is almost full
+1027_TIE_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1027_TIE_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1027_TIE_HAP_XX.wav,That is exactly what happened
+1087_TAI_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1087_TAI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1087_TAI_FEA_XX.wav,The airplane is almost full
+1018_IWL_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1018_IWL_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1018_IWL_ANG_XX.wav,I would like a new alarm clock
+1068_TAI_SAD_XX,val,5,data/CREMA_D_repo/VideoFlash/1068_TAI_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1068_TAI_SAD_XX.wav,The airplane is almost full
+1087_IWL_ANG_XX,val,0,data/CREMA_D_repo/VideoFlash/1087_IWL_ANG_XX.flv,data/CREMA_D_repo/AudioWAV/1087_IWL_ANG_XX.wav,I would like a new alarm clock
+1007_IWW_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1007_IWW_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1007_IWW_HAP_XX.wav,I wonder what this is about
+1037_IEO_NEU_XX,val,4,data/CREMA_D_repo/VideoFlash/1037_IEO_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1037_IEO_NEU_XX.wav,It's eleven o'clock
+1007_WSI_NEU_XX,val,4,data/CREMA_D_repo/VideoFlash/1007_WSI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1007_WSI_NEU_XX.wav,We'll stop in a couple of minutes
+1058_IEO_ANG_LO,val,0,data/CREMA_D_repo/VideoFlash/1058_IEO_ANG_LO.flv,data/CREMA_D_repo/AudioWAV/1058_IEO_ANG_LO.wav,It's eleven o'clock
+1007_ITS_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1007_ITS_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1007_ITS_HAP_XX.wav,I think I've seen this before
+1077_IEO_SAD_LO,val,5,data/CREMA_D_repo/VideoFlash/1077_IEO_SAD_LO.flv,data/CREMA_D_repo/AudioWAV/1077_IEO_SAD_LO.wav,It's eleven o'clock
+1038_IEO_DIS_HI,val,1,data/CREMA_D_repo/VideoFlash/1038_IEO_DIS_HI.flv,data/CREMA_D_repo/AudioWAV/1038_IEO_DIS_HI.wav,It's eleven o'clock
+1057_ITS_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1057_ITS_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1057_ITS_FEA_XX.wav,I think I've seen this before
+1058_ITH_NEU_XX,val,4,data/CREMA_D_repo/VideoFlash/1058_ITH_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1058_ITH_NEU_XX.wav,I think I have a doctor's appointment
+1057_MTI_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1057_MTI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1057_MTI_FEA_XX.wav,Maybe tomorrow it will be cold
+1037_ITS_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1037_ITS_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1037_ITS_HAP_XX.wav,I think I've seen this before
+1087_ITS_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1087_ITS_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1087_ITS_FEA_XX.wav,I think I've seen this before
+1028_TSI_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1028_TSI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1028_TSI_FEA_XX.wav,The surface is slick
+1057_IOM_NEU_XX,val,4,data/CREMA_D_repo/VideoFlash/1057_IOM_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1057_IOM_NEU_XX.wav,I'm on my way to the meeting
+1067_ITS_NEU_XX,val,4,data/CREMA_D_repo/VideoFlash/1067_ITS_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1067_ITS_NEU_XX.wav,I think I've seen this before
+1077_ITH_SAD_XX,val,5,data/CREMA_D_repo/VideoFlash/1077_ITH_SAD_XX.flv,data/CREMA_D_repo/AudioWAV/1077_ITH_SAD_XX.wav,I think I have a doctor's appointment
+1037_IEO_ANG_LO,val,0,data/CREMA_D_repo/VideoFlash/1037_IEO_ANG_LO.flv,data/CREMA_D_repo/AudioWAV/1037_IEO_ANG_LO.wav,It's eleven o'clock
+1038_DFA_NEU_XX,val,4,data/CREMA_D_repo/VideoFlash/1038_DFA_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1038_DFA_NEU_XX.wav,Don't forget a jacket
+1007_MTI_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1007_MTI_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1007_MTI_FEA_XX.wav,Maybe tomorrow it will be cold
+1007_DFA_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1007_DFA_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1007_DFA_HAP_XX.wav,Don't forget a jacket
+1007_IOM_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1007_IOM_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1007_IOM_HAP_XX.wav,I'm on my way to the meeting
+1088_IEO_DIS_HI,val,1,data/CREMA_D_repo/VideoFlash/1088_IEO_DIS_HI.flv,data/CREMA_D_repo/AudioWAV/1088_IEO_DIS_HI.wav,It's eleven o'clock
+1027_DFA_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1027_DFA_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1027_DFA_HAP_XX.wav,Don't forget a jacket
+1008_IWW_DIS_XX,val,1,data/CREMA_D_repo/VideoFlash/1008_IWW_DIS_XX.flv,data/CREMA_D_repo/AudioWAV/1008_IWW_DIS_XX.wav,I wonder what this is about
+1027_TIE_FEA_XX,val,2,data/CREMA_D_repo/VideoFlash/1027_TIE_FEA_XX.flv,data/CREMA_D_repo/AudioWAV/1027_TIE_FEA_XX.wav,That is exactly what happened
+1068_IEO_HAP_HI,val,3,data/CREMA_D_repo/VideoFlash/1068_IEO_HAP_HI.flv,data/CREMA_D_repo/AudioWAV/1068_IEO_HAP_HI.wav,It's eleven o'clock
+1027_WSI_NEU_XX,val,4,data/CREMA_D_repo/VideoFlash/1027_WSI_NEU_XX.flv,data/CREMA_D_repo/AudioWAV/1027_WSI_NEU_XX.wav,We'll stop in a couple of minutes
+1068_IEO_ANG_LO,val,0,data/CREMA_D_repo/VideoFlash/1068_IEO_ANG_LO.flv,data/CREMA_D_repo/AudioWAV/1068_IEO_ANG_LO.wav,It's eleven o'clock
+1028_IWW_HAP_XX,val,3,data/CREMA_D_repo/VideoFlash/1028_IWW_HAP_XX.flv,data/CREMA_D_repo/AudioWAV/1028_IWW_HAP_XX.wav,I wonder what this is about

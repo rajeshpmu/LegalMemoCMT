@@ -1,0 +1,54 @@
+{
+  "manifest": "data/manifests/crema_d.csv",
+  "output_dir": "data/manifests/crema_d_cv",
+  "num_folds": 5,
+  "seed": 42,
+  "folds": [
+    {
+      "fold": 0,
+      "train_rows": 5891,
+      "val_rows": 1551,
+      "train_path": "data/manifests/crema_d_cv/crema_d_fold_0_train.csv",
+      "val_path": "data/manifests/crema_d_cv/crema_d_fold_0_val.csv",
+      "train_speakers": 72,
+      "val_speakers": 19
+    },
+    {
+      "fold": 1,
+      "train_rows": 5966,
+      "val_rows": 1476,
+      "train_path": "data/manifests/crema_d_cv/crema_d_fold_1_train.csv",
+      "val_path": "data/manifests/crema_d_cv/crema_d_fold_1_val.csv",
+      "train_speakers": 73,
+      "val_speakers": 18
+    },
+    {
+      "fold": 2,
+      "train_rows": 5966,
+      "val_rows": 1476,
+      "train_path": "data/manifests/crema_d_cv/crema_d_fold_2_train.csv",
+      "val_path": "data/manifests/crema_d_cv/crema_d_fold_2_val.csv",
+      "train_speakers": 73,
+      "val_speakers": 18
+    },
+    {
+      "fold": 3,
+      "train_rows": 5973,
+      "val_rows": 1469,
+      "train_path": "data/manifests/crema_d_cv/crema_d_fold_3_train.csv",
+      "val_path": "data/manifests/crema_d_cv/crema_d_fold_3_val.csv",
+      "train_speakers": 73,
+      "val_speakers": 18
+    },
+    {
+      "fold": 4,
+      "train_rows": 5972,
+      "val_rows": 1470,
+      "train_path": "data/manifests/crema_d_cv/crema_d_fold_4_train.csv",
+      "val_path": "data/manifests/crema_d_cv/crema_d_fold_4_val.csv",
+      "train_speakers": 73,
+      "val_speakers": 18
+    }
+  ],
+  "assignments_path": "data/manifests/crema_d_cv/crema_d_fold_assignments.csv"
+}

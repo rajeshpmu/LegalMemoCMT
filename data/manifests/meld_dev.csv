@@ -1,0 +1,1109 @@
+sample_id,split,label,video_path,audio_path,transcript
+dev_dia0_utt0,dev,3,data/processed/MELD/dev/video/dev_dia0_utt0.npy,data/processed/MELD/dev/audio/dev_dia0_utt0.npy,"Oh my God, he’s lost it. He’s totally lost it."
+dev_dia0_utt1,dev,2,data/processed/MELD/dev/video/dev_dia0_utt1.npy,data/processed/MELD/dev/audio/dev_dia0_utt1.npy,What?
+dev_dia1_utt0,dev,0,data/processed/MELD/dev/video/dev_dia1_utt0.npy,data/processed/MELD/dev/audio/dev_dia1_utt0.npy,"Or! Or, we could go to the bank, close our accounts and cut them off at the source."
+dev_dia1_utt1,dev,1,data/processed/MELD/dev/video/dev_dia1_utt1.npy,data/processed/MELD/dev/audio/dev_dia1_utt1.npy,You’re a genius!
+dev_dia1_utt2,dev,3,data/processed/MELD/dev/video/dev_dia1_utt2.npy,data/processed/MELD/dev/audio/dev_dia1_utt2.npy,"Aww, man, now we won’t be bank buddies!"
+dev_dia1_utt3,dev,0,data/processed/MELD/dev/video/dev_dia1_utt3.npy,data/processed/MELD/dev/audio/dev_dia1_utt3.npy,"Now, there’s two reasons."
+dev_dia1_utt4,dev,0,data/processed/MELD/dev/video/dev_dia1_utt4.npy,data/processed/MELD/dev/audio/dev_dia1_utt4.npy,Hey.
+dev_dia1_utt5,dev,1,data/processed/MELD/dev/video/dev_dia1_utt5.npy,data/processed/MELD/dev/audio/dev_dia1_utt5.npy,Hey!
+dev_dia1_utt6,dev,0,data/processed/MELD/dev/video/dev_dia1_utt6.npy,data/processed/MELD/dev/audio/dev_dia1_utt6.npy,"Ohh, you guys, remember that cute client I told you about? I bit him."
+dev_dia1_utt7,dev,2,data/processed/MELD/dev/video/dev_dia1_utt7.npy,data/processed/MELD/dev/audio/dev_dia1_utt7.npy,Where?!
+dev_dia1_utt8,dev,0,data/processed/MELD/dev/video/dev_dia1_utt8.npy,data/processed/MELD/dev/audio/dev_dia1_utt8.npy,On the touchy.
+dev_dia1_utt9,dev,0,data/processed/MELD/dev/video/dev_dia1_utt9.npy,data/processed/MELD/dev/audio/dev_dia1_utt9.npy,And
+dev_dia1_utt10,dev,2,data/processed/MELD/dev/video/dev_dia1_utt10.npy,data/processed/MELD/dev/audio/dev_dia1_utt10.npy,"No, I know!"
+dev_dia1_utt11,dev,4,data/processed/MELD/dev/video/dev_dia1_utt11.npy,data/processed/MELD/dev/audio/dev_dia1_utt11.npy,"I-I’m sorry, but the moment I touch him, I just wanna throw out my old oath and take a new, dirty one."
+dev_dia1_utt12,dev,0,data/processed/MELD/dev/video/dev_dia1_utt12.npy,data/processed/MELD/dev/audio/dev_dia1_utt12.npy,"Well, next time your massaging him, you should try and distract yourself."
+dev_dia1_utt13,dev,1,data/processed/MELD/dev/video/dev_dia1_utt13.npy,data/processed/MELD/dev/audio/dev_dia1_utt13.npy,Yeah! Yeah! Yeah! Like-like when I’m doing something exciting and I don’t wanna get
+dev_dia1_utt14,dev,0,data/processed/MELD/dev/video/dev_dia1_utt14.npy,data/processed/MELD/dev/audio/dev_dia1_utt14.npy,"Thank you, Joey."
+dev_dia1_utt15,dev,0,data/processed/MELD/dev/video/dev_dia1_utt15.npy,data/processed/MELD/dev/audio/dev_dia1_utt15.npy,"No-no, thank you."
+dev_dia2_utt0,dev,0,data/processed/MELD/dev/video/dev_dia2_utt0.npy,data/processed/MELD/dev/audio/dev_dia2_utt0.npy,"Hey Estelle, listen"
+dev_dia2_utt1,dev,2,data/processed/MELD/dev/video/dev_dia2_utt1.npy,data/processed/MELD/dev/audio/dev_dia2_utt1.npy,Well! Well! Well! Joey Tribbiani! So you came back huh? They
+dev_dia2_utt2,dev,2,data/processed/MELD/dev/video/dev_dia2_utt2.npy,data/processed/MELD/dev/audio/dev_dia2_utt2.npy,What are you talkin’ about? I never left you! You’ve always been my agent!
+dev_dia2_utt3,dev,2,data/processed/MELD/dev/video/dev_dia2_utt3.npy,data/processed/MELD/dev/audio/dev_dia2_utt3.npy,Really?!
+dev_dia2_utt4,dev,1,data/processed/MELD/dev/video/dev_dia2_utt4.npy,data/processed/MELD/dev/audio/dev_dia2_utt4.npy,Yeah!
+dev_dia2_utt5,dev,0,data/processed/MELD/dev/video/dev_dia2_utt5.npy,data/processed/MELD/dev/audio/dev_dia2_utt5.npy,"Oh well, no harm, no foul."
+dev_dia3_utt0,dev,0,data/processed/MELD/dev/video/dev_dia3_utt0.npy,data/processed/MELD/dev/audio/dev_dia3_utt0.npy,"Okay, you guys free tonight?"
+dev_dia3_utt1,dev,1,data/processed/MELD/dev/video/dev_dia3_utt1.npy,data/processed/MELD/dev/audio/dev_dia3_utt1.npy,Yeah!!
+dev_dia3_utt2,dev,2,data/processed/MELD/dev/video/dev_dia3_utt2.npy,data/processed/MELD/dev/audio/dev_dia3_utt2.npy,Tonight? You-you didn't say it was going to be at nighttime.
+dev_dia4_utt0,dev,0,data/processed/MELD/dev/video/dev_dia4_utt0.npy,data/processed/MELD/dev/audio/dev_dia4_utt0.npy,Yes? Yes?! How can I help you?
+dev_dia4_utt1,dev,0,data/processed/MELD/dev/video/dev_dia4_utt1.npy,data/processed/MELD/dev/audio/dev_dia4_utt1.npy,"Yeah, we were…we were just looking around."
+dev_dia4_utt2,dev,2,data/processed/MELD/dev/video/dev_dia4_utt2.npy,data/processed/MELD/dev/audio/dev_dia4_utt2.npy,"Oh-oh, you’re-you’re fellow scholars."
+dev_dia4_utt3,dev,0,data/processed/MELD/dev/video/dev_dia4_utt3.npy,data/processed/MELD/dev/audio/dev_dia4_utt3.npy,"What exactly were you looking for, hmm?"
+dev_dia4_utt4,dev,0,data/processed/MELD/dev/video/dev_dia4_utt4.npy,data/processed/MELD/dev/audio/dev_dia4_utt4.npy,"Perhaps, perhaps Dr. Chester Stock’s musings on the Smiledon Californicus?"
+dev_dia4_utt5,dev,0,data/processed/MELD/dev/video/dev_dia4_utt5.npy,data/processed/MELD/dev/audio/dev_dia4_utt5.npy,Uhh….
+dev_dia4_utt6,dev,4,data/processed/MELD/dev/video/dev_dia4_utt6.npy,data/processed/MELD/dev/audio/dev_dia4_utt6.npy,"Ah… Ah…Get out of here! Uh, meeting someone? Or-or are you just here to brush up on Marion’s views on evolution?"
+dev_dia4_utt7,dev,0,data/processed/MELD/dev/video/dev_dia4_utt7.npy,data/processed/MELD/dev/audio/dev_dia4_utt7.npy,"Uh, actually I find Marion’s views far too progressionist."
+dev_dia4_utt8,dev,0,data/processed/MELD/dev/video/dev_dia4_utt8.npy,data/processed/MELD/dev/audio/dev_dia4_utt8.npy,I find Marion’s views far too progressionist.
+dev_dia4_utt9,dev,2,data/processed/MELD/dev/video/dev_dia4_utt9.npy,data/processed/MELD/dev/audio/dev_dia4_utt9.npy,"I’m sorry, who are you?"
+dev_dia4_utt10,dev,0,data/processed/MELD/dev/video/dev_dia4_utt10.npy,data/processed/MELD/dev/audio/dev_dia4_utt10.npy,"I’m a professor here uh, Ross…Geller."
+dev_dia4_utt11,dev,2,data/processed/MELD/dev/video/dev_dia4_utt11.npy,data/processed/MELD/dev/audio/dev_dia4_utt11.npy,"Ross Geller, why do I know that name? It’s uh—Wait! Did you write this?"
+dev_dia4_utt12,dev,2,data/processed/MELD/dev/video/dev_dia4_utt12.npy,data/processed/MELD/dev/audio/dev_dia4_utt12.npy,Yes! You’re the person who checked out my book?!
+dev_dia4_utt13,dev,2,data/processed/MELD/dev/video/dev_dia4_utt13.npy,data/processed/MELD/dev/audio/dev_dia4_utt13.npy,"Y’know, you look nothing like I would’ve thought. You’re…you’re so young."
+dev_dia4_utt14,dev,0,data/processed/MELD/dev/video/dev_dia4_utt14.npy,data/processed/MELD/dev/audio/dev_dia4_utt14.npy,"Well I uh, I skipped forth grade."
+dev_dia5_utt0,dev,4,data/processed/MELD/dev/video/dev_dia5_utt0.npy,data/processed/MELD/dev/audio/dev_dia5_utt0.npy,You had no right to tell me you ever had feelings for me.
+dev_dia5_utt1,dev,2,data/processed/MELD/dev/video/dev_dia5_utt1.npy,data/processed/MELD/dev/audio/dev_dia5_utt1.npy,What?
+dev_dia5_utt2,dev,4,data/processed/MELD/dev/video/dev_dia5_utt2.npy,data/processed/MELD/dev/audio/dev_dia5_utt2.npy,I was doing great with Julie before I found out about you.
+dev_dia5_utt3,dev,4,data/processed/MELD/dev/video/dev_dia5_utt3.npy,data/processed/MELD/dev/audio/dev_dia5_utt3.npy,"Hey, I was doin' great before I found out about you. You think it's easy for me to see you with Julie?"
+dev_dia5_utt4,dev,4,data/processed/MELD/dev/video/dev_dia5_utt4.npy,data/processed/MELD/dev/audio/dev_dia5_utt4.npy,The point is I...
+dev_dia5_utt5,dev,4,data/processed/MELD/dev/video/dev_dia5_utt5.npy,data/processed/MELD/dev/audio/dev_dia5_utt5.npy,"I don't need this right now, OK."
+dev_dia5_utt6,dev,4,data/processed/MELD/dev/video/dev_dia5_utt6.npy,data/processed/MELD/dev/audio/dev_dia5_utt6.npy,"It, it's too late, I'm with somebody else, I'm happy."
+dev_dia5_utt7,dev,4,data/processed/MELD/dev/video/dev_dia5_utt7.npy,data/processed/MELD/dev/audio/dev_dia5_utt7.npy,This ship has sailed.
+dev_dia5_utt8,dev,4,data/processed/MELD/dev/video/dev_dia5_utt8.npy,data/processed/MELD/dev/audio/dev_dia5_utt8.npy,"Alright, fine, you go ahead and you do that, alright Ross."
+dev_dia5_utt9,dev,4,data/processed/MELD/dev/video/dev_dia5_utt9.npy,data/processed/MELD/dev/audio/dev_dia5_utt9.npy,Fine.
+dev_dia5_utt10,dev,4,data/processed/MELD/dev/video/dev_dia5_utt10.npy,data/processed/MELD/dev/audio/dev_dia5_utt10.npy,Cause I don't need your stupid ship.
+dev_dia5_utt11,dev,4,data/processed/MELD/dev/video/dev_dia5_utt11.npy,data/processed/MELD/dev/audio/dev_dia5_utt11.npy,Good.
+dev_dia5_utt12,dev,4,data/processed/MELD/dev/video/dev_dia5_utt12.npy,data/processed/MELD/dev/audio/dev_dia5_utt12.npy,Good.
+dev_dia6_utt0,dev,1,data/processed/MELD/dev/video/dev_dia6_utt0.npy,data/processed/MELD/dev/audio/dev_dia6_utt0.npy,"Oh, it's so romantic to send people off on their honeymoon."
+dev_dia6_utt1,dev,0,data/processed/MELD/dev/video/dev_dia6_utt1.npy,data/processed/MELD/dev/audio/dev_dia6_utt1.npy,"Y’know, Monica and Chandler are married. Ross and Rachel are having a baby. Maybe you and I should do something."
+dev_dia6_utt2,dev,0,data/processed/MELD/dev/video/dev_dia6_utt2.npy,data/processed/MELD/dev/audio/dev_dia6_utt2.npy,All in good time my love.
+dev_dia6_utt3,dev,0,data/processed/MELD/dev/video/dev_dia6_utt3.npy,data/processed/MELD/dev/audio/dev_dia6_utt3.npy,All in good time.
+dev_dia6_utt4,dev,2,data/processed/MELD/dev/video/dev_dia6_utt4.npy,data/processed/MELD/dev/audio/dev_dia6_utt4.npy,Oh shoot!
+dev_dia6_utt5,dev,3,data/processed/MELD/dev/video/dev_dia6_utt5.npy,data/processed/MELD/dev/audio/dev_dia6_utt5.npy,I left my guitar in their apartment.
+dev_dia6_utt6,dev,0,data/processed/MELD/dev/video/dev_dia6_utt6.npy,data/processed/MELD/dev/audio/dev_dia6_utt6.npy,Well you can let me in later.
+dev_dia6_utt7,dev,0,data/processed/MELD/dev/video/dev_dia6_utt7.npy,data/processed/MELD/dev/audio/dev_dia6_utt7.npy,"I don’t have a key, they took mine to give to you."
+dev_dia6_utt8,dev,2,data/processed/MELD/dev/video/dev_dia6_utt8.npy,data/processed/MELD/dev/audio/dev_dia6_utt8.npy,What?! They took mine to give to you!
+dev_dia6_utt9,dev,2,data/processed/MELD/dev/video/dev_dia6_utt9.npy,data/processed/MELD/dev/audio/dev_dia6_utt9.npy,Why would they take away our keys?
+dev_dia7_utt0,dev,1,data/processed/MELD/dev/video/dev_dia7_utt0.npy,data/processed/MELD/dev/audio/dev_dia7_utt0.npy,Wow! It looks like we got a lot of good stuff.
+dev_dia7_utt1,dev,1,data/processed/MELD/dev/video/dev_dia7_utt1.npy,data/processed/MELD/dev/audio/dev_dia7_utt1.npy,"Oh we did, but my mom got us the greatest gift of all."
+dev_dia7_utt2,dev,0,data/processed/MELD/dev/video/dev_dia7_utt2.npy,data/processed/MELD/dev/audio/dev_dia7_utt2.npy,A
+dev_dia7_utt3,dev,0,data/processed/MELD/dev/video/dev_dia7_utt3.npy,data/processed/MELD/dev/audio/dev_dia7_utt3.npy,No. She’s going to live with us for eight weeks.
+dev_dia7_utt4,dev,2,data/processed/MELD/dev/video/dev_dia7_utt4.npy,data/processed/MELD/dev/audio/dev_dia7_utt4.npy,"Uh, what?"
+dev_dia7_utt5,dev,1,data/processed/MELD/dev/video/dev_dia7_utt5.npy,data/processed/MELD/dev/audio/dev_dia7_utt5.npy,Yes! She’s gonna help us take care of the baby! Woo-hoo.
+dev_dia7_utt6,dev,2,data/processed/MELD/dev/video/dev_dia7_utt6.npy,data/processed/MELD/dev/audio/dev_dia7_utt6.npy,What—You’re not serious.
+dev_dia7_utt7,dev,4,data/processed/MELD/dev/video/dev_dia7_utt7.npy,data/processed/MELD/dev/audio/dev_dia7_utt7.npy,"I mean she’s a very nice woman, but there is no way we can take eight weeks of her."
+dev_dia7_utt8,dev,6,data/processed/MELD/dev/video/dev_dia7_utt8.npy,data/processed/MELD/dev/audio/dev_dia7_utt8.npy,She’ll drive us totally crazy.
+dev_dia7_utt9,dev,1,data/processed/MELD/dev/video/dev_dia7_utt9.npy,data/processed/MELD/dev/audio/dev_dia7_utt9.npy,Hi Ross!
+dev_dia7_utt10,dev,1,data/processed/MELD/dev/video/dev_dia7_utt10.npy,data/processed/MELD/dev/audio/dev_dia7_utt10.npy,Hi roomie!
+dev_dia8_utt0,dev,0,data/processed/MELD/dev/video/dev_dia8_utt0.npy,data/processed/MELD/dev/audio/dev_dia8_utt0.npy,Hey! What did you decide to do about the movie?
+dev_dia8_utt1,dev,0,data/processed/MELD/dev/video/dev_dia8_utt1.npy,data/processed/MELD/dev/audio/dev_dia8_utt1.npy,I don’t know!
+dev_dia8_utt2,dev,0,data/processed/MELD/dev/video/dev_dia8_utt2.npy,data/processed/MELD/dev/audio/dev_dia8_utt2.npy,It’s not like it’s porn!
+dev_dia8_utt3,dev,0,data/processed/MELD/dev/video/dev_dia8_utt3.npy,data/processed/MELD/dev/audio/dev_dia8_utt3.npy,"This is a serious, legitimate movie."
+dev_dia8_utt4,dev,0,data/processed/MELD/dev/video/dev_dia8_utt4.npy,data/processed/MELD/dev/audio/dev_dia8_utt4.npy,And the nudity is really important to the story.
+dev_dia8_utt5,dev,0,data/processed/MELD/dev/video/dev_dia8_utt5.npy,data/processed/MELD/dev/audio/dev_dia8_utt5.npy,That’s what you say about porn.
+dev_dia8_utt6,dev,0,data/processed/MELD/dev/video/dev_dia8_utt6.npy,data/processed/MELD/dev/audio/dev_dia8_utt6.npy,You’re right. Maybe I shouldn’t even go on the call back.
+dev_dia8_utt7,dev,1,data/processed/MELD/dev/video/dev_dia8_utt7.npy,data/processed/MELD/dev/audio/dev_dia8_utt7.npy,"No! No you should! A lot of major actors do nude scenes! I mean, the chance to star in a movie? Come on!"
+dev_dia8_utt8,dev,0,data/processed/MELD/dev/video/dev_dia8_utt8.npy,data/processed/MELD/dev/audio/dev_dia8_utt8.npy,Well that’s true.
+dev_dia8_utt9,dev,0,data/processed/MELD/dev/video/dev_dia8_utt9.npy,data/processed/MELD/dev/audio/dev_dia8_utt9.npy,And I am only naked in one scene.
+dev_dia8_utt10,dev,0,data/processed/MELD/dev/video/dev_dia8_utt10.npy,data/processed/MELD/dev/audio/dev_dia8_utt10.npy,Plus it sounds really great.
+dev_dia8_utt11,dev,0,data/processed/MELD/dev/video/dev_dia8_utt11.npy,data/processed/MELD/dev/audio/dev_dia8_utt11.npy,My character’s catholic and he falls in love with this Jewish girl.
+dev_dia8_utt12,dev,0,data/processed/MELD/dev/video/dev_dia8_utt12.npy,data/processed/MELD/dev/audio/dev_dia8_utt12.npy,Who run away together and they get caught in this big rainstorm.
+dev_dia8_utt13,dev,0,data/processed/MELD/dev/video/dev_dia8_utt13.npy,data/processed/MELD/dev/audio/dev_dia8_utt13.npy,So we go into this barn and undress each other and hold each other.
+dev_dia8_utt14,dev,1,data/processed/MELD/dev/video/dev_dia8_utt14.npy,data/processed/MELD/dev/audio/dev_dia8_utt14.npy,It’s really sweet and-and tender.
+dev_dia9_utt0,dev,0,data/processed/MELD/dev/video/dev_dia9_utt0.npy,data/processed/MELD/dev/audio/dev_dia9_utt0.npy,"Hey, what’s up?"
+dev_dia9_utt1,dev,3,data/processed/MELD/dev/video/dev_dia9_utt1.npy,data/processed/MELD/dev/audio/dev_dia9_utt1.npy,"Nothing, Monica and I had a stupid fight."
+dev_dia9_utt2,dev,0,data/processed/MELD/dev/video/dev_dia9_utt2.npy,data/processed/MELD/dev/audio/dev_dia9_utt2.npy,"But you’re still moving in together, right? Because my ad came out today."
+dev_dia9_utt3,dev,1,data/processed/MELD/dev/video/dev_dia9_utt3.npy,data/processed/MELD/dev/audio/dev_dia9_utt3.npy,"""Wanted. Female roommate, non-smoker, non-ugly."" Nice!"
+dev_dia9_utt4,dev,0,data/processed/MELD/dev/video/dev_dia9_utt4.npy,data/processed/MELD/dev/audio/dev_dia9_utt4.npy,Yeah?
+dev_dia9_utt5,dev,0,data/processed/MELD/dev/video/dev_dia9_utt5.npy,data/processed/MELD/dev/audio/dev_dia9_utt5.npy,"I just figured y’know, after living with you it’d be an interesting change of pace to have a female roommate, y’know?"
+dev_dia9_utt6,dev,0,data/processed/MELD/dev/video/dev_dia9_utt6.npy,data/processed/MELD/dev/audio/dev_dia9_utt6.npy,"Someone I can learn from, someone-someone who’s different than me."
+dev_dia9_utt7,dev,0,data/processed/MELD/dev/video/dev_dia9_utt7.npy,data/processed/MELD/dev/audio/dev_dia9_utt7.npy,And what’s more different than me. A guy who’s
+dev_dia10_utt0,dev,0,data/processed/MELD/dev/video/dev_dia10_utt0.npy,data/processed/MELD/dev/audio/dev_dia10_utt0.npy,So where are we going next?
+dev_dia10_utt1,dev,0,data/processed/MELD/dev/video/dev_dia10_utt1.npy,data/processed/MELD/dev/audio/dev_dia10_utt1.npy,This witness won't return my calls so we're gonna see if we can surprise him coming home.
+dev_dia10_utt2,dev,5,data/processed/MELD/dev/video/dev_dia10_utt2.npy,data/processed/MELD/dev/audio/dev_dia10_utt2.npy,"Sur-surprise him? We're not, we're not gonna make anybody mad are we?"
+dev_dia10_utt3,dev,1,data/processed/MELD/dev/video/dev_dia10_utt3.npy,data/processed/MELD/dev/audio/dev_dia10_utt3.npy,"Come on man! Listen so uh, are you gonna squeeze the perps shoes a little bit before he lawyers up?"
+dev_dia10_utt4,dev,4,data/processed/MELD/dev/video/dev_dia10_utt4.npy,data/processed/MELD/dev/audio/dev_dia10_utt4.npy,It's a witness not a perp. And no one talks like that!
+dev_dia10_utt5,dev,4,data/processed/MELD/dev/video/dev_dia10_utt5.npy,data/processed/MELD/dev/audio/dev_dia10_utt5.npy,"Yeah, no one talks like that!"
+dev_dia10_utt6,dev,4,data/processed/MELD/dev/video/dev_dia10_utt6.npy,data/processed/MELD/dev/audio/dev_dia10_utt6.npy,Oh what? Like your Mr. Cop!
+dev_dia10_utt7,dev,4,data/processed/MELD/dev/video/dev_dia10_utt7.npy,data/processed/MELD/dev/audio/dev_dia10_utt7.npy,"Hey, I'm more cop than you two!"
+dev_dia10_utt8,dev,0,data/processed/MELD/dev/video/dev_dia10_utt8.npy,data/processed/MELD/dev/audio/dev_dia10_utt8.npy,How do you figure that?
+dev_dia10_utt9,dev,0,data/processed/MELD/dev/video/dev_dia10_utt9.npy,data/processed/MELD/dev/audio/dev_dia10_utt9.npy,"Hello! I'm in the front seat, okay? I'm Gary's partner!"
+dev_dia11_utt0,dev,0,data/processed/MELD/dev/video/dev_dia11_utt0.npy,data/processed/MELD/dev/audio/dev_dia11_utt0.npy,I guess so.
+dev_dia11_utt1,dev,0,data/processed/MELD/dev/video/dev_dia11_utt1.npy,data/processed/MELD/dev/audio/dev_dia11_utt1.npy,Here you go. Thank you!
+dev_dia11_utt2,dev,0,data/processed/MELD/dev/video/dev_dia11_utt2.npy,data/processed/MELD/dev/audio/dev_dia11_utt2.npy,"Wait, Rach! Where's the other one?"
+dev_dia11_utt3,dev,2,data/processed/MELD/dev/video/dev_dia11_utt3.npy,data/processed/MELD/dev/audio/dev_dia11_utt3.npy,"Oh what, you-you want both of them?"
+dev_dia11_utt4,dev,4,data/processed/MELD/dev/video/dev_dia11_utt4.npy,data/processed/MELD/dev/audio/dev_dia11_utt4.npy,"Rachel Karen Green, where's the other earring?!"
+dev_dia11_utt5,dev,5,data/processed/MELD/dev/video/dev_dia11_utt5.npy,data/processed/MELD/dev/audio/dev_dia11_utt5.npy,"Okay, okay, okay, look, just don't freak out, but I kinda lost it."
+dev_dia11_utt6,dev,0,data/processed/MELD/dev/video/dev_dia11_utt6.npy,data/processed/MELD/dev/audio/dev_dia11_utt6.npy,"I know it's in the apartment, but I"
+dev_dia11_utt7,dev,5,data/processed/MELD/dev/video/dev_dia11_utt7.npy,data/processed/MELD/dev/audio/dev_dia11_utt7.npy,"Well, what am I going to tell Monica? She wants to wear them tonight!"
+dev_dia11_utt8,dev,4,data/processed/MELD/dev/video/dev_dia11_utt8.npy,data/processed/MELD/dev/audio/dev_dia11_utt8.npy,Tell her to wear her own earrings.
+dev_dia11_utt9,dev,0,data/processed/MELD/dev/video/dev_dia11_utt9.npy,data/processed/MELD/dev/audio/dev_dia11_utt9.npy,These
+dev_dia11_utt10,dev,4,data/processed/MELD/dev/video/dev_dia11_utt10.npy,data/processed/MELD/dev/audio/dev_dia11_utt10.npy,Nooo! Nooooo! You lent me Monica's earrings?! I'm not allowed to borrow her stuff!
+dev_dia11_utt11,dev,0,data/processed/MELD/dev/video/dev_dia11_utt11.npy,data/processed/MELD/dev/audio/dev_dia11_utt11.npy,Why not?
+dev_dia11_utt12,dev,4,data/processed/MELD/dev/video/dev_dia11_utt12.npy,data/processed/MELD/dev/audio/dev_dia11_utt12.npy,Because I lose her stuff!
+dev_dia12_utt0,dev,0,data/processed/MELD/dev/video/dev_dia12_utt0.npy,data/processed/MELD/dev/audio/dev_dia12_utt0.npy,"Uh Phoebe, can I see you for a second?"
+dev_dia12_utt1,dev,0,data/processed/MELD/dev/video/dev_dia12_utt1.npy,data/processed/MELD/dev/audio/dev_dia12_utt1.npy,Yeah!
+dev_dia12_utt2,dev,0,data/processed/MELD/dev/video/dev_dia12_utt2.npy,data/processed/MELD/dev/audio/dev_dia12_utt2.npy,What’s going on?
+dev_dia12_utt3,dev,2,data/processed/MELD/dev/video/dev_dia12_utt3.npy,data/processed/MELD/dev/audio/dev_dia12_utt3.npy,Chandler’s gone again!
+dev_dia12_utt4,dev,3,data/processed/MELD/dev/video/dev_dia12_utt4.npy,data/processed/MELD/dev/audio/dev_dia12_utt4.npy,Oh my God! Why would you play hide and seek with someone you know is a flight risk?!
+dev_dia13_utt0,dev,0,data/processed/MELD/dev/video/dev_dia13_utt0.npy,data/processed/MELD/dev/audio/dev_dia13_utt0.npy,Okay. You ready to push again?
+dev_dia13_utt1,dev,4,data/processed/MELD/dev/video/dev_dia13_utt1.npy,data/processed/MELD/dev/audio/dev_dia13_utt1.npy,I already had a baby. Leave me alone.
+dev_dia13_utt2,dev,1,data/processed/MELD/dev/video/dev_dia13_utt2.npy,data/processed/MELD/dev/audio/dev_dia13_utt2.npy,"Okay, okay, come on, you can do it. You can do it!"
+dev_dia13_utt3,dev,1,data/processed/MELD/dev/video/dev_dia13_utt3.npy,data/processed/MELD/dev/audio/dev_dia13_utt3.npy,Yeah!!
+dev_dia13_utt4,dev,1,data/processed/MELD/dev/video/dev_dia13_utt4.npy,data/processed/MELD/dev/audio/dev_dia13_utt4.npy,Little Leslie is here!
+dev_dia13_utt5,dev,2,data/processed/MELD/dev/video/dev_dia13_utt5.npy,data/processed/MELD/dev/audio/dev_dia13_utt5.npy,We got another one!
+dev_dia13_utt6,dev,2,data/processed/MELD/dev/video/dev_dia13_utt6.npy,data/processed/MELD/dev/audio/dev_dia13_utt6.npy,"Oh my God, I can't believe I have two-two children."
+dev_dia13_utt7,dev,2,data/processed/MELD/dev/video/dev_dia13_utt7.npy,data/processed/MELD/dev/audio/dev_dia13_utt7.npy,How scary is that?
+dev_dia13_utt8,dev,1,data/processed/MELD/dev/video/dev_dia13_utt8.npy,data/processed/MELD/dev/audio/dev_dia13_utt8.npy,"Come on little Chandler, it's time to be born. Come on little Chandler! Come on!"
+dev_dia13_utt9,dev,1,data/processed/MELD/dev/video/dev_dia13_utt9.npy,data/processed/MELD/dev/audio/dev_dia13_utt9.npy,"All right, he's coming. He's coming!"
+dev_dia13_utt10,dev,2,data/processed/MELD/dev/video/dev_dia13_utt10.npy,data/processed/MELD/dev/audio/dev_dia13_utt10.npy,"Hey, where's his thing?"
+dev_dia13_utt11,dev,2,data/processed/MELD/dev/video/dev_dia13_utt11.npy,data/processed/MELD/dev/audio/dev_dia13_utt11.npy,Chandler's a girl!
+dev_dia13_utt12,dev,2,data/processed/MELD/dev/video/dev_dia13_utt12.npy,data/processed/MELD/dev/audio/dev_dia13_utt12.npy,"Oh God, kindergarten flashback."
+dev_dia13_utt13,dev,2,data/processed/MELD/dev/video/dev_dia13_utt13.npy,data/processed/MELD/dev/audio/dev_dia13_utt13.npy,They musta read the sonogram wrong.
+dev_dia13_utt14,dev,2,data/processed/MELD/dev/video/dev_dia13_utt14.npy,data/processed/MELD/dev/audio/dev_dia13_utt14.npy,"Cause they, 'cause they thought it was a boy, but Chandler's a girl!"
+dev_dia13_utt15,dev,2,data/processed/MELD/dev/video/dev_dia13_utt15.npy,data/processed/MELD/dev/audio/dev_dia13_utt15.npy,Chandler's a girl!
+dev_dia13_utt16,dev,1,data/processed/MELD/dev/video/dev_dia13_utt16.npy,data/processed/MELD/dev/audio/dev_dia13_utt16.npy,"Okay, keep saying it!"
+dev_dia13_utt17,dev,0,data/processed/MELD/dev/video/dev_dia13_utt17.npy,data/processed/MELD/dev/audio/dev_dia13_utt17.npy,Am I too late?!
+dev_dia13_utt18,dev,1,data/processed/MELD/dev/video/dev_dia13_utt18.npy,data/processed/MELD/dev/audio/dev_dia13_utt18.npy,"No-no ah, everything's okay. Everybody's healthy there's 30 fingers and 30 toes."
+dev_dia13_utt19,dev,2,data/processed/MELD/dev/video/dev_dia13_utt19.npy,data/processed/MELD/dev/audio/dev_dia13_utt19.npy,We have our babies?
+dev_dia13_utt20,dev,1,data/processed/MELD/dev/video/dev_dia13_utt20.npy,data/processed/MELD/dev/audio/dev_dia13_utt20.npy,Yeah.
+dev_dia13_utt21,dev,1,data/processed/MELD/dev/video/dev_dia13_utt21.npy,data/processed/MELD/dev/audio/dev_dia13_utt21.npy,"Oh, we have our babies."
+dev_dia14_utt0,dev,1,data/processed/MELD/dev/video/dev_dia14_utt0.npy,data/processed/MELD/dev/audio/dev_dia14_utt0.npy,Hey Toby!
+dev_dia14_utt1,dev,0,data/processed/MELD/dev/video/dev_dia14_utt1.npy,data/processed/MELD/dev/audio/dev_dia14_utt1.npy,Hey Bobby.
+dev_dia14_utt2,dev,0,data/processed/MELD/dev/video/dev_dia14_utt2.npy,data/processed/MELD/dev/audio/dev_dia14_utt2.npy,"It’s Bob actually. Hey, you work up here, can you tell me where this Chandler"
+dev_dia14_utt3,dev,0,data/processed/MELD/dev/video/dev_dia14_utt3.npy,data/processed/MELD/dev/audio/dev_dia14_utt3.npy,"Uhh yeah. Yeah, it’s right, right down there. Right there, yeah. Can I ask you why?"
+dev_dia14_utt4,dev,4,data/processed/MELD/dev/video/dev_dia14_utt4.npy,data/processed/MELD/dev/audio/dev_dia14_utt4.npy,"I want to talk to that bastard, see what his problem is."
+dev_dia14_utt5,dev,3,data/processed/MELD/dev/video/dev_dia14_utt5.npy,data/processed/MELD/dev/audio/dev_dia14_utt5.npy,"Okay Bob listen uhh, I’m the reason you didn’t get the job up here."
+dev_dia14_utt6,dev,3,data/processed/MELD/dev/video/dev_dia14_utt6.npy,data/processed/MELD/dev/audio/dev_dia14_utt6.npy,Toby don’t.
+dev_dia14_utt7,dev,3,data/processed/MELD/dev/video/dev_dia14_utt7.npy,data/processed/MELD/dev/audio/dev_dia14_utt7.npy,Bob!
+dev_dia14_utt8,dev,4,data/processed/MELD/dev/video/dev_dia14_utt8.npy,data/processed/MELD/dev/audio/dev_dia14_utt8.npy,Toby! I’m not gonna let you cover for him. Anything you say right now will just get me more upset with Chandler!
+dev_dia15_utt0,dev,1,data/processed/MELD/dev/video/dev_dia15_utt0.npy,data/processed/MELD/dev/audio/dev_dia15_utt0.npy,Thank you. Oh Joey and look at this crib! It’s so cute!
+dev_dia15_utt1,dev,1,data/processed/MELD/dev/video/dev_dia15_utt1.npy,data/processed/MELD/dev/audio/dev_dia15_utt1.npy,I know! I found it on the street.
+dev_dia15_utt2,dev,2,data/processed/MELD/dev/video/dev_dia15_utt2.npy,data/processed/MELD/dev/audio/dev_dia15_utt2.npy,Are you serious—Really?! It’s in such good condition.
+dev_dia15_utt3,dev,0,data/processed/MELD/dev/video/dev_dia15_utt3.npy,data/processed/MELD/dev/audio/dev_dia15_utt3.npy,Yeah.
+dev_dia15_utt4,dev,2,data/processed/MELD/dev/video/dev_dia15_utt4.npy,data/processed/MELD/dev/audio/dev_dia15_utt4.npy,Wow! Whoa-whoa what’s under the covers?
+dev_dia15_utt5,dev,0,data/processed/MELD/dev/video/dev_dia15_utt5.npy,data/processed/MELD/dev/audio/dev_dia15_utt5.npy,I don’t know.
+dev_dia15_utt6,dev,5,data/processed/MELD/dev/video/dev_dia15_utt6.npy,data/processed/MELD/dev/audio/dev_dia15_utt6.npy,It’s moving.
+dev_dia15_utt7,dev,6,data/processed/MELD/dev/video/dev_dia15_utt7.npy,data/processed/MELD/dev/audio/dev_dia15_utt7.npy,Ew.
+dev_dia15_utt8,dev,5,data/processed/MELD/dev/video/dev_dia15_utt8.npy,data/processed/MELD/dev/audio/dev_dia15_utt8.npy,It’s still——It’s got a tail! Get it out of here! Get it out of here!!
+dev_dia15_utt9,dev,5,data/processed/MELD/dev/video/dev_dia15_utt9.npy,data/processed/MELD/dev/audio/dev_dia15_utt9.npy,Ooh! Ah! Okay!
+dev_dia16_utt0,dev,0,data/processed/MELD/dev/video/dev_dia16_utt0.npy,data/processed/MELD/dev/audio/dev_dia16_utt0.npy,"Well, I went over to Kyle’s last night to pick up a few things and we got to reminiscing"
+dev_dia16_utt1,dev,3,data/processed/MELD/dev/video/dev_dia16_utt1.npy,data/processed/MELD/dev/audio/dev_dia16_utt1.npy,we talked through most of the night and we realized that the reason we were so angry at each other was because there are still feelings there. So
+dev_dia16_utt2,dev,2,data/processed/MELD/dev/video/dev_dia16_utt2.npy,data/processed/MELD/dev/audio/dev_dia16_utt2.npy,Oh just say it Kyle!
+dev_dia16_utt3,dev,1,data/processed/MELD/dev/video/dev_dia16_utt3.npy,data/processed/MELD/dev/audio/dev_dia16_utt3.npy,We’re gonna give it another try.
+dev_dia16_utt4,dev,4,data/processed/MELD/dev/video/dev_dia16_utt4.npy,data/processed/MELD/dev/audio/dev_dia16_utt4.npy,What about her whining and her constant need for attention?!
+dev_dia16_utt5,dev,0,data/processed/MELD/dev/video/dev_dia16_utt5.npy,data/processed/MELD/dev/audio/dev_dia16_utt5.npy,I’m gonna work on that.
+dev_dia16_utt6,dev,4,data/processed/MELD/dev/video/dev_dia16_utt6.npy,data/processed/MELD/dev/audio/dev_dia16_utt6.npy,"Oh right, because you’re so capable of change."
+dev_dia16_utt7,dev,4,data/processed/MELD/dev/video/dev_dia16_utt7.npy,data/processed/MELD/dev/audio/dev_dia16_utt7.npy,"Y’know, he hums when he pees!"
+dev_dia16_utt8,dev,0,data/processed/MELD/dev/video/dev_dia16_utt8.npy,data/processed/MELD/dev/audio/dev_dia16_utt8.npy,I do know.
+dev_dia16_utt9,dev,6,data/processed/MELD/dev/video/dev_dia16_utt9.npy,data/processed/MELD/dev/audio/dev_dia16_utt9.npy,"It makes him miss the bowl, but whatever."
+dev_dia16_utt10,dev,3,data/processed/MELD/dev/video/dev_dia16_utt10.npy,data/processed/MELD/dev/audio/dev_dia16_utt10.npy,We’re so sorry.
+dev_dia16_utt11,dev,4,data/processed/MELD/dev/video/dev_dia16_utt11.npy,data/processed/MELD/dev/audio/dev_dia16_utt11.npy,"That’s all right, we-we don’t need you. In fact, hey I’m over it already."
+dev_dia16_utt12,dev,4,data/processed/MELD/dev/video/dev_dia16_utt12.npy,data/processed/MELD/dev/audio/dev_dia16_utt12.npy,"Yeah, and y’know what? I don’t give a tiny rat’s ass."
+dev_dia16_utt13,dev,0,data/processed/MELD/dev/video/dev_dia16_utt13.npy,data/processed/MELD/dev/audio/dev_dia16_utt13.npy,"Yeah, we’re gonna go."
+dev_dia16_utt14,dev,3,data/processed/MELD/dev/video/dev_dia16_utt14.npy,data/processed/MELD/dev/audio/dev_dia16_utt14.npy,"I’m sorry. Ugh, Pheebs, you were, you were right about her. Y’know, she"
+dev_dia16_utt15,dev,0,data/processed/MELD/dev/video/dev_dia16_utt15.npy,data/processed/MELD/dev/audio/dev_dia16_utt15.npy,"Oh. Y’know, he hums while he does other stuff to."
+dev_dia16_utt16,dev,4,data/processed/MELD/dev/video/dev_dia16_utt16.npy,data/processed/MELD/dev/audio/dev_dia16_utt16.npy,"Yeah, we're better off without them."
+dev_dia16_utt17,dev,4,data/processed/MELD/dev/video/dev_dia16_utt17.npy,data/processed/MELD/dev/audio/dev_dia16_utt17.npy,"And y’know, even if they break up again, you’d better not let him in your sad men’s club!"
+dev_dia16_utt18,dev,3,data/processed/MELD/dev/video/dev_dia16_utt18.npy,data/processed/MELD/dev/audio/dev_dia16_utt18.npy,Divorced men’s club.
+dev_dia17_utt0,dev,4,data/processed/MELD/dev/video/dev_dia17_utt0.npy,data/processed/MELD/dev/audio/dev_dia17_utt0.npy,Why isn’t that valet back with my Porsche?
+dev_dia17_utt1,dev,4,data/processed/MELD/dev/video/dev_dia17_utt1.npy,data/processed/MELD/dev/audio/dev_dia17_utt1.npy,Maybe because you’ve got the keys?
+dev_dia17_utt2,dev,4,data/processed/MELD/dev/video/dev_dia17_utt2.npy,data/processed/MELD/dev/audio/dev_dia17_utt2.npy,This is totally your fault!
+dev_dia17_utt3,dev,4,data/processed/MELD/dev/video/dev_dia17_utt3.npy,data/processed/MELD/dev/audio/dev_dia17_utt3.npy,My fault?! You threatened the judge!
+dev_dia17_utt4,dev,4,data/processed/MELD/dev/video/dev_dia17_utt4.npy,data/processed/MELD/dev/audio/dev_dia17_utt4.npy,"Well, you ripped the paper out of the court reporter’s machine!!"
+dev_dia18_utt0,dev,0,data/processed/MELD/dev/video/dev_dia18_utt0.npy,data/processed/MELD/dev/audio/dev_dia18_utt0.npy,Phoebe!
+dev_dia18_utt1,dev,0,data/processed/MELD/dev/video/dev_dia18_utt1.npy,data/processed/MELD/dev/audio/dev_dia18_utt1.npy,Yeah?
+dev_dia18_utt2,dev,0,data/processed/MELD/dev/video/dev_dia18_utt2.npy,data/processed/MELD/dev/audio/dev_dia18_utt2.npy,Have you seen Chandler?!
+dev_dia18_utt3,dev,0,data/processed/MELD/dev/video/dev_dia18_utt3.npy,data/processed/MELD/dev/audio/dev_dia18_utt3.npy,No! Why?
+dev_dia18_utt4,dev,5,data/processed/MELD/dev/video/dev_dia18_utt4.npy,data/processed/MELD/dev/audio/dev_dia18_utt4.npy,The woman from the museum called and said that there was a cancellation and that we could move up our wedding and Chandler heard!
+dev_dia18_utt5,dev,5,data/processed/MELD/dev/video/dev_dia18_utt5.npy,data/processed/MELD/dev/audio/dev_dia18_utt5.npy,I know!
+dev_dia18_utt6,dev,5,data/processed/MELD/dev/video/dev_dia18_utt6.npy,data/processed/MELD/dev/audio/dev_dia18_utt6.npy,How bad is this?
+dev_dia18_utt7,dev,5,data/processed/MELD/dev/video/dev_dia18_utt7.npy,data/processed/MELD/dev/audio/dev_dia18_utt7.npy,"Well for the regular guy, it’s bad, but Chandler, Oh dear God!"
+dev_dia18_utt8,dev,5,data/processed/MELD/dev/video/dev_dia18_utt8.npy,data/processed/MELD/dev/audio/dev_dia18_utt8.npy,I know! I know! And he totally freaked out and I can’t find him anywhere!
+dev_dia18_utt9,dev,0,data/processed/MELD/dev/video/dev_dia18_utt9.npy,data/processed/MELD/dev/audio/dev_dia18_utt9.npy,What are you gonna do?
+dev_dia18_utt10,dev,4,data/processed/MELD/dev/video/dev_dia18_utt10.npy,data/processed/MELD/dev/audio/dev_dia18_utt10.npy,"Well, I’m never gonna listen to you again, that’s for sure!"
+dev_dia18_utt11,dev,0,data/processed/MELD/dev/video/dev_dia18_utt11.npy,data/processed/MELD/dev/audio/dev_dia18_utt11.npy,"""Y’know, harm can it do if you go and put your name down?"""
+dev_dia18_utt12,dev,2,data/processed/MELD/dev/video/dev_dia18_utt12.npy,data/processed/MELD/dev/audio/dev_dia18_utt12.npy,Rachel said that!
+dev_dia18_utt13,dev,4,data/processed/MELD/dev/video/dev_dia18_utt13.npy,data/processed/MELD/dev/audio/dev_dia18_utt13.npy,Well Rachel’s not here!
+dev_dia19_utt0,dev,0,data/processed/MELD/dev/video/dev_dia19_utt0.npy,data/processed/MELD/dev/audio/dev_dia19_utt0.npy,"Come on, come on."
+dev_dia19_utt1,dev,4,data/processed/MELD/dev/video/dev_dia19_utt1.npy,data/processed/MELD/dev/audio/dev_dia19_utt1.npy,"Damnit, damnit, damnit, damnit."
+dev_dia19_utt2,dev,4,data/processed/MELD/dev/video/dev_dia19_utt2.npy,data/processed/MELD/dev/audio/dev_dia19_utt2.npy,This is all your fault.
+dev_dia19_utt3,dev,4,data/processed/MELD/dev/video/dev_dia19_utt3.npy,data/processed/MELD/dev/audio/dev_dia19_utt3.npy,"This is supposed to be, like, the greatest day of my life, y'know?"
+dev_dia19_utt4,dev,4,data/processed/MELD/dev/video/dev_dia19_utt4.npy,data/processed/MELD/dev/audio/dev_dia19_utt4.npy,"My son is being born, and I should be in there, you know, instead of stuck in a closet with you."
+dev_dia19_utt5,dev,4,data/processed/MELD/dev/video/dev_dia19_utt5.npy,data/processed/MELD/dev/audio/dev_dia19_utt5.npy,The woman I love is having a baby today. I've been waiting for this just as much as you have.
+dev_dia19_utt6,dev,4,data/processed/MELD/dev/video/dev_dia19_utt6.npy,data/processed/MELD/dev/audio/dev_dia19_utt6.npy,"No no no, believe me."
+dev_dia19_utt7,dev,4,data/processed/MELD/dev/video/dev_dia19_utt7.npy,data/processed/MELD/dev/audio/dev_dia19_utt7.npy,"No one has been waiting for this as much as I have, ok?"
+dev_dia19_utt8,dev,0,data/processed/MELD/dev/video/dev_dia19_utt8.npy,data/processed/MELD/dev/audio/dev_dia19_utt8.npy,And you know what the funny thing is?
+dev_dia19_utt9,dev,4,data/processed/MELD/dev/video/dev_dia19_utt9.npy,data/processed/MELD/dev/audio/dev_dia19_utt9.npy,"When this day is over, you get to go home with the baby, ok?"
+dev_dia19_utt10,dev,3,data/processed/MELD/dev/video/dev_dia19_utt10.npy,data/processed/MELD/dev/audio/dev_dia19_utt10.npy,Where does that leave me?
+dev_dia19_utt11,dev,0,data/processed/MELD/dev/video/dev_dia19_utt11.npy,data/processed/MELD/dev/audio/dev_dia19_utt11.npy,You get to be the baby's father.
+dev_dia19_utt12,dev,0,data/processed/MELD/dev/video/dev_dia19_utt12.npy,data/processed/MELD/dev/audio/dev_dia19_utt12.npy,Everyone knows who you are.
+dev_dia19_utt13,dev,4,data/processed/MELD/dev/video/dev_dia19_utt13.npy,data/processed/MELD/dev/audio/dev_dia19_utt13.npy,Who am I?
+dev_dia19_utt14,dev,3,data/processed/MELD/dev/video/dev_dia19_utt14.npy,data/processed/MELD/dev/audio/dev_dia19_utt14.npy,"There's Mother's Day, there's Father's Day, there's no... Lesbian Lover Day."
+dev_dia19_utt15,dev,0,data/processed/MELD/dev/video/dev_dia19_utt15.npy,data/processed/MELD/dev/audio/dev_dia19_utt15.npy,Every day is Lesbian Lover Day.
+dev_dia19_utt16,dev,1,data/processed/MELD/dev/video/dev_dia19_utt16.npy,data/processed/MELD/dev/audio/dev_dia19_utt16.npy,This is so great.
+dev_dia19_utt17,dev,0,data/processed/MELD/dev/video/dev_dia19_utt17.npy,data/processed/MELD/dev/audio/dev_dia19_utt17.npy,You wanna explain that?
+dev_dia19_utt18,dev,3,data/processed/MELD/dev/video/dev_dia19_utt18.npy,data/processed/MELD/dev/audio/dev_dia19_utt18.npy,"I mean, well, 'cause when I was growing up, you know my dad left, and my mother died, and my stepfather went to jail, so I barely had enough pieces of parents to make one whole one."
+dev_dia19_utt19,dev,1,data/processed/MELD/dev/video/dev_dia19_utt19.npy,data/processed/MELD/dev/audio/dev_dia19_utt19.npy,And here's this little baby who has like three whole parents who care about it so much that they're fighting over who gets to love it the most.
+dev_dia19_utt20,dev,3,data/processed/MELD/dev/video/dev_dia19_utt20.npy,data/processed/MELD/dev/audio/dev_dia19_utt20.npy,And it's not even born yet.
+dev_dia19_utt21,dev,1,data/processed/MELD/dev/video/dev_dia19_utt21.npy,data/processed/MELD/dev/audio/dev_dia19_utt21.npy,"It's just, it's just the luckiest baby in the whole world."
+dev_dia19_utt22,dev,3,data/processed/MELD/dev/video/dev_dia19_utt22.npy,data/processed/MELD/dev/audio/dev_dia19_utt22.npy,"I'm sorry, you were fighting."
+dev_dia20_utt0,dev,0,data/processed/MELD/dev/video/dev_dia20_utt0.npy,data/processed/MELD/dev/audio/dev_dia20_utt0.npy,"Okay, it's a typical New York City apartment. Two girls are just hanging out."
+dev_dia20_utt1,dev,0,data/processed/MELD/dev/video/dev_dia20_utt1.npy,data/processed/MELD/dev/audio/dev_dia20_utt1.npy,"Hi, how are you doing Kelly?"
+dev_dia20_utt2,dev,1,data/processed/MELD/dev/video/dev_dia20_utt2.npy,data/processed/MELD/dev/audio/dev_dia20_utt2.npy,"I'm doing just fine! God, Tiffany, you smell so great!"
+dev_dia20_utt3,dev,0,data/processed/MELD/dev/video/dev_dia20_utt3.npy,data/processed/MELD/dev/audio/dev_dia20_utt3.npy,It's my new perfume. Why don't you come closer where you can
+dev_dia20_utt4,dev,6,data/processed/MELD/dev/video/dev_dia20_utt4.npy,data/processed/MELD/dev/audio/dev_dia20_utt4.npy,"Oh, y'know Joey, you are sick!"
+dev_dia20_utt5,dev,6,data/processed/MELD/dev/video/dev_dia20_utt5.npy,data/processed/MELD/dev/audio/dev_dia20_utt5.npy,This is disgusting!
+dev_dia20_utt6,dev,6,data/processed/MELD/dev/video/dev_dia20_utt6.npy,data/processed/MELD/dev/audio/dev_dia20_utt6.npy,I'm not reading this!
+dev_dia20_utt7,dev,2,data/processed/MELD/dev/video/dev_dia20_utt7.npy,data/processed/MELD/dev/audio/dev_dia20_utt7.npy,What?! Wait-wait-wait! The handsome man was about to enter!!
+dev_dia21_utt0,dev,0,data/processed/MELD/dev/video/dev_dia21_utt0.npy,data/processed/MELD/dev/audio/dev_dia21_utt0.npy,"All right, I'll give you this, Mr. Peanut is a better dresser."
+dev_dia21_utt1,dev,0,data/processed/MELD/dev/video/dev_dia21_utt1.npy,data/processed/MELD/dev/audio/dev_dia21_utt1.npy,"I mean he's got the monocle, he's got the top hat..."
+dev_dia21_utt2,dev,0,data/processed/MELD/dev/video/dev_dia21_utt2.npy,data/processed/MELD/dev/audio/dev_dia21_utt2.npy,You know he's gay?
+dev_dia21_utt3,dev,0,data/processed/MELD/dev/video/dev_dia21_utt3.npy,data/processed/MELD/dev/audio/dev_dia21_utt3.npy,I just wanna clarify this: are you outing Mr. Peanut?
+dev_dia21_utt4,dev,0,data/processed/MELD/dev/video/dev_dia21_utt4.npy,data/processed/MELD/dev/audio/dev_dia21_utt4.npy,"Danielle! Hi! Uh- everybody, this is Danielle, Danielle, everybody."
+dev_dia21_utt5,dev,0,data/processed/MELD/dev/video/dev_dia21_utt5.npy,data/processed/MELD/dev/audio/dev_dia21_utt5.npy,Hi. Hi.
+dev_dia21_utt6,dev,2,data/processed/MELD/dev/video/dev_dia21_utt6.npy,data/processed/MELD/dev/audio/dev_dia21_utt6.npy,What are you doing here?
+dev_dia22_utt0,dev,0,data/processed/MELD/dev/video/dev_dia22_utt0.npy,data/processed/MELD/dev/audio/dev_dia22_utt0.npy,"Well, what?"
+dev_dia22_utt1,dev,0,data/processed/MELD/dev/video/dev_dia22_utt1.npy,data/processed/MELD/dev/audio/dev_dia22_utt1.npy,What?
+dev_dia22_utt2,dev,0,data/processed/MELD/dev/video/dev_dia22_utt2.npy,data/processed/MELD/dev/audio/dev_dia22_utt2.npy,What is it?
+dev_dia22_utt3,dev,2,data/processed/MELD/dev/video/dev_dia22_utt3.npy,data/processed/MELD/dev/audio/dev_dia22_utt3.npy,That she left you?
+dev_dia22_utt4,dev,0,data/processed/MELD/dev/video/dev_dia22_utt4.npy,data/processed/MELD/dev/audio/dev_dia22_utt4.npy,That she likes women?
+dev_dia22_utt5,dev,0,data/processed/MELD/dev/video/dev_dia22_utt5.npy,data/processed/MELD/dev/audio/dev_dia22_utt5.npy,That she left you for another woman that likes women?
+dev_dia22_utt6,dev,4,data/processed/MELD/dev/video/dev_dia22_utt6.npy,data/processed/MELD/dev/audio/dev_dia22_utt6.npy,"Little louder, okay, I think there's a man on the twelfth floor in a coma that didn't quite hear you..."
+dev_dia22_utt7,dev,0,data/processed/MELD/dev/video/dev_dia22_utt7.npy,data/processed/MELD/dev/audio/dev_dia22_utt7.npy,Then what?
+dev_dia22_utt8,dev,0,data/processed/MELD/dev/video/dev_dia22_utt8.npy,data/processed/MELD/dev/audio/dev_dia22_utt8.npy,My first time with Carol was...
+dev_dia22_utt9,dev,0,data/processed/MELD/dev/video/dev_dia22_utt9.npy,data/processed/MELD/dev/audio/dev_dia22_utt9.npy,What?
+dev_dia22_utt10,dev,0,data/processed/MELD/dev/video/dev_dia22_utt10.npy,data/processed/MELD/dev/audio/dev_dia22_utt10.npy,It was my
+dev_dia22_utt11,dev,2,data/processed/MELD/dev/video/dev_dia22_utt11.npy,data/processed/MELD/dev/audio/dev_dia22_utt11.npy,With Carol? Oh.
+dev_dia22_utt12,dev,2,data/processed/MELD/dev/video/dev_dia22_utt12.npy,data/processed/MELD/dev/audio/dev_dia22_utt12.npy,"So in your whole life, you've only been with one——oh."
+dev_dia22_utt13,dev,2,data/processed/MELD/dev/video/dev_dia22_utt13.npy,data/processed/MELD/dev/audio/dev_dia22_utt13.npy,"Whoah, boy, hockey was a big mistake! There was a whole bunch of stuff we could've done tonight!"
+dev_dia23_utt0,dev,0,data/processed/MELD/dev/video/dev_dia23_utt0.npy,data/processed/MELD/dev/audio/dev_dia23_utt0.npy,Hi. Where is everybody?
+dev_dia23_utt1,dev,3,data/processed/MELD/dev/video/dev_dia23_utt1.npy,data/processed/MELD/dev/audio/dev_dia23_utt1.npy,"Oh, it’s already closed, Chris gave me the keys to lock up-what is wrong?"
+dev_dia23_utt2,dev,3,data/processed/MELD/dev/video/dev_dia23_utt2.npy,data/processed/MELD/dev/audio/dev_dia23_utt2.npy,"My marriage, I think my marriage is um, is kinda over."
+dev_dia23_utt3,dev,2,data/processed/MELD/dev/video/dev_dia23_utt3.npy,data/processed/MELD/dev/audio/dev_dia23_utt3.npy,Oh no! Why?
+dev_dia23_utt4,dev,3,data/processed/MELD/dev/video/dev_dia23_utt4.npy,data/processed/MELD/dev/audio/dev_dia23_utt4.npy,"‘Cause Carol’s a lesbian. And, and I’m not one. And apparently it’s not a mix and match situation."
+dev_dia23_utt5,dev,2,data/processed/MELD/dev/video/dev_dia23_utt5.npy,data/processed/MELD/dev/audio/dev_dia23_utt5.npy,"Oh my God! I don’t believe it! Oh, you poor bunny."
+dev_dia23_utt6,dev,6,data/processed/MELD/dev/video/dev_dia23_utt6.npy,data/processed/MELD/dev/audio/dev_dia23_utt6.npy,I’m an idiot.
+dev_dia23_utt7,dev,3,data/processed/MELD/dev/video/dev_dia23_utt7.npy,data/processed/MELD/dev/audio/dev_dia23_utt7.npy,"I mean shoulda seen it, I mean Carol and I’d be out and she’d, she’d see some beautiful woman, and, and she’d be Ross y'know look at her, and I’d think, God, my wife is cool!"
+dev_dia23_utt8,dev,0,data/processed/MELD/dev/video/dev_dia23_utt8.npy,data/processed/MELD/dev/audio/dev_dia23_utt8.npy,"Aw! Hey, do you think that Susan person is her lover?"
+dev_dia23_utt9,dev,2,data/processed/MELD/dev/video/dev_dia23_utt9.npy,data/processed/MELD/dev/audio/dev_dia23_utt9.npy,"Well, now I do!!"
+dev_dia23_utt10,dev,3,data/processed/MELD/dev/video/dev_dia23_utt10.npy,data/processed/MELD/dev/audio/dev_dia23_utt10.npy,I’m sorry.
+dev_dia23_utt11,dev,3,data/processed/MELD/dev/video/dev_dia23_utt11.npy,data/processed/MELD/dev/audio/dev_dia23_utt11.npy,Seven years.
+dev_dia23_utt12,dev,3,data/processed/MELD/dev/video/dev_dia23_utt12.npy,data/processed/MELD/dev/audio/dev_dia23_utt12.npy,"I mean we’ve been together seven years, she’s the only woman who’s ever loved me, and the only woman I’ve-I’ve ever...."
+dev_dia23_utt13,dev,3,data/processed/MELD/dev/video/dev_dia23_utt13.npy,data/processed/MELD/dev/audio/dev_dia23_utt13.npy,"Aw, God Ross. Oh."
+dev_dia24_utt0,dev,0,data/processed/MELD/dev/video/dev_dia24_utt0.npy,data/processed/MELD/dev/audio/dev_dia24_utt0.npy,I’ll do it.
+dev_dia24_utt1,dev,0,data/processed/MELD/dev/video/dev_dia24_utt1.npy,data/processed/MELD/dev/audio/dev_dia24_utt1.npy,No you won’t.
+dev_dia24_utt2,dev,3,data/processed/MELD/dev/video/dev_dia24_utt2.npy,data/processed/MELD/dev/audio/dev_dia24_utt2.npy,"Look he knows he did a terrible thing and I believe him, he’s sorry."
+dev_dia24_utt3,dev,0,data/processed/MELD/dev/video/dev_dia24_utt3.npy,data/processed/MELD/dev/audio/dev_dia24_utt3.npy,"But, you’ve got one more apology to make, all right, you’ve got to apologize to Mary-Angela."
+dev_dia24_utt4,dev,1,data/processed/MELD/dev/video/dev_dia24_utt4.npy,data/processed/MELD/dev/audio/dev_dia24_utt4.npy,"Okay, absolutely!"
+dev_dia24_utt5,dev,0,data/processed/MELD/dev/video/dev_dia24_utt5.npy,data/processed/MELD/dev/audio/dev_dia24_utt5.npy,All right.
+dev_dia24_utt6,dev,0,data/processed/MELD/dev/video/dev_dia24_utt6.npy,data/processed/MELD/dev/audio/dev_dia24_utt6.npy,You’ve got it.
+dev_dia24_utt7,dev,4,data/processed/MELD/dev/video/dev_dia24_utt7.npy,data/processed/MELD/dev/audio/dev_dia24_utt7.npy,"Cookie, now you can punch him!"
+dev_dia24_utt8,dev,2,data/processed/MELD/dev/video/dev_dia24_utt8.npy,data/processed/MELD/dev/audio/dev_dia24_utt8.npy,What?!
+dev_dia25_utt0,dev,4,data/processed/MELD/dev/video/dev_dia25_utt0.npy,data/processed/MELD/dev/audio/dev_dia25_utt0.npy,"All right, that's it, I quit."
+dev_dia25_utt1,dev,2,data/processed/MELD/dev/video/dev_dia25_utt1.npy,data/processed/MELD/dev/audio/dev_dia25_utt1.npy,What? I didn't say anything.
+dev_dia25_utt2,dev,4,data/processed/MELD/dev/video/dev_dia25_utt2.npy,data/processed/MELD/dev/audio/dev_dia25_utt2.npy,"Yeah, but this isn't the face of a person who trusts a person."
+dev_dia25_utt3,dev,4,data/processed/MELD/dev/video/dev_dia25_utt3.npy,data/processed/MELD/dev/audio/dev_dia25_utt3.npy,"Ok, this is the face of a person who, you know, doesn't trust a person."
+dev_dia25_utt4,dev,3,data/processed/MELD/dev/video/dev_dia25_utt4.npy,data/processed/MELD/dev/audio/dev_dia25_utt4.npy,"I'm sorry. I'm sorry, Phoebe. It's just a little shorter than what we had discussed."
+dev_dia25_utt5,dev,4,data/processed/MELD/dev/video/dev_dia25_utt5.npy,data/processed/MELD/dev/audio/dev_dia25_utt5.npy,Would you relax? I know what I am doing. This is how he wears it.
+dev_dia26_utt0,dev,0,data/processed/MELD/dev/video/dev_dia26_utt0.npy,data/processed/MELD/dev/audio/dev_dia26_utt0.npy,Julie.
+dev_dia26_utt1,dev,2,data/processed/MELD/dev/video/dev_dia26_utt1.npy,data/processed/MELD/dev/audio/dev_dia26_utt1.npy,What?!
+dev_dia26_utt2,dev,2,data/processed/MELD/dev/video/dev_dia26_utt2.npy,data/processed/MELD/dev/audio/dev_dia26_utt2.npy,Jody!
+dev_dia26_utt3,dev,0,data/processed/MELD/dev/video/dev_dia26_utt3.npy,data/processed/MELD/dev/audio/dev_dia26_utt3.npy,You were with Julie?
+dev_dia26_utt4,dev,0,data/processed/MELD/dev/video/dev_dia26_utt4.npy,data/processed/MELD/dev/audio/dev_dia26_utt4.npy,"Look, when it started I was just trying to be nice to her because she was my brother's girlfriend."
+dev_dia26_utt5,dev,0,data/processed/MELD/dev/video/dev_dia26_utt5.npy,data/processed/MELD/dev/audio/dev_dia26_utt5.npy,"And then, one thing led to another and, before I knew it, we were...shopping."
+dev_dia26_utt6,dev,2,data/processed/MELD/dev/video/dev_dia26_utt6.npy,data/processed/MELD/dev/audio/dev_dia26_utt6.npy,Oh. Oh my God.
+dev_dia26_utt7,dev,3,data/processed/MELD/dev/video/dev_dia26_utt7.npy,data/processed/MELD/dev/audio/dev_dia26_utt7.npy,"Honey, wait. We only did it once. It didn't mean anything to me."
+dev_dia26_utt8,dev,4,data/processed/MELD/dev/video/dev_dia26_utt8.npy,data/processed/MELD/dev/audio/dev_dia26_utt8.npy,"Yeah, right. Sure!"
+dev_dia26_utt9,dev,3,data/processed/MELD/dev/video/dev_dia26_utt9.npy,data/processed/MELD/dev/audio/dev_dia26_utt9.npy,"Really, Rachel, I was thinking of you the whole time."
+dev_dia26_utt10,dev,3,data/processed/MELD/dev/video/dev_dia26_utt10.npy,data/processed/MELD/dev/audio/dev_dia26_utt10.npy,"Look, I'm sorry, all right."
+dev_dia26_utt11,dev,3,data/processed/MELD/dev/video/dev_dia26_utt11.npy,data/processed/MELD/dev/audio/dev_dia26_utt11.npy,I never meant for you to find out!
+dev_dia26_utt12,dev,4,data/processed/MELD/dev/video/dev_dia26_utt12.npy,data/processed/MELD/dev/audio/dev_dia26_utt12.npy,"Oh, please, you wanted to get caught."
+dev_dia26_utt13,dev,4,data/processed/MELD/dev/video/dev_dia26_utt13.npy,data/processed/MELD/dev/audio/dev_dia26_utt13.npy,That is not true!
+dev_dia26_utt14,dev,4,data/processed/MELD/dev/video/dev_dia26_utt14.npy,data/processed/MELD/dev/audio/dev_dia26_utt14.npy,"Oh, so you just sort of happened to leave it in here?"
+dev_dia26_utt15,dev,4,data/processed/MELD/dev/video/dev_dia26_utt15.npy,data/processed/MELD/dev/audio/dev_dia26_utt15.npy,Did it ever occur to you that I might just be that stupid?
+dev_dia26_utt16,dev,3,data/processed/MELD/dev/video/dev_dia26_utt16.npy,data/processed/MELD/dev/audio/dev_dia26_utt16.npy,"Ok, Monica. I just have to know one thing. Did you go with her to"
+dev_dia27_utt0,dev,2,data/processed/MELD/dev/video/dev_dia27_utt0.npy,data/processed/MELD/dev/audio/dev_dia27_utt0.npy,Yeah!
+dev_dia27_utt1,dev,0,data/processed/MELD/dev/video/dev_dia27_utt1.npy,data/processed/MELD/dev/audio/dev_dia27_utt1.npy,I can’t say.
+dev_dia27_utt2,dev,2,data/processed/MELD/dev/video/dev_dia27_utt2.npy,data/processed/MELD/dev/audio/dev_dia27_utt2.npy,Why?!
+dev_dia27_utt3,dev,3,data/processed/MELD/dev/video/dev_dia27_utt3.npy,data/processed/MELD/dev/audio/dev_dia27_utt3.npy,Why not?
+dev_dia27_utt4,dev,0,data/processed/MELD/dev/video/dev_dia27_utt4.npy,data/processed/MELD/dev/audio/dev_dia27_utt4.npy,I can’t say because he’s famous.
+dev_dia27_utt5,dev,2,data/processed/MELD/dev/video/dev_dia27_utt5.npy,data/processed/MELD/dev/audio/dev_dia27_utt5.npy,"Oh my God, who is it?!"
+dev_dia27_utt6,dev,4,data/processed/MELD/dev/video/dev_dia27_utt6.npy,data/processed/MELD/dev/audio/dev_dia27_utt6.npy,"Phoebe, come on, you have to tell us."
+dev_dia27_utt7,dev,0,data/processed/MELD/dev/video/dev_dia27_utt7.npy,data/processed/MELD/dev/audio/dev_dia27_utt7.npy,"Okay, okay. It’s James Brolin. James Brolin is the father of my baby."
+dev_dia27_utt8,dev,2,data/processed/MELD/dev/video/dev_dia27_utt8.npy,data/processed/MELD/dev/audio/dev_dia27_utt8.npy,As in Barbara Streisand’s husband James Brolin?
+dev_dia27_utt9,dev,2,data/processed/MELD/dev/video/dev_dia27_utt9.npy,data/processed/MELD/dev/audio/dev_dia27_utt9.npy,What?! Well he never said that to me!
+dev_dia28_utt0,dev,0,data/processed/MELD/dev/video/dev_dia28_utt0.npy,data/processed/MELD/dev/audio/dev_dia28_utt0.npy,In
+dev_dia28_utt1,dev,3,data/processed/MELD/dev/video/dev_dia28_utt1.npy,data/processed/MELD/dev/audio/dev_dia28_utt1.npy,"Oh, this life! Oh okay no, Chandler's is worse."
+dev_dia28_utt2,dev,1,data/processed/MELD/dev/video/dev_dia28_utt2.npy,data/processed/MELD/dev/audio/dev_dia28_utt2.npy,"Man, it must be so cool remembering stuff like that! I don't have any past life memories."
+dev_dia28_utt3,dev,0,data/processed/MELD/dev/video/dev_dia28_utt3.npy,data/processed/MELD/dev/audio/dev_dia28_utt3.npy,Of course you don't sweetie. You're brand new.
+dev_dia28_utt4,dev,0,data/processed/MELD/dev/video/dev_dia28_utt4.npy,data/processed/MELD/dev/audio/dev_dia28_utt4.npy,I know Monica's worst Thanksgiving.
+dev_dia28_utt5,dev,3,data/processed/MELD/dev/video/dev_dia28_utt5.npy,data/processed/MELD/dev/audio/dev_dia28_utt5.npy,"Oh, let's not tell this story."
+dev_dia28_utt6,dev,3,data/processed/MELD/dev/video/dev_dia28_utt6.npy,data/processed/MELD/dev/audio/dev_dia28_utt6.npy,"Oh, come on!"
+dev_dia28_utt7,dev,1,data/processed/MELD/dev/video/dev_dia28_utt7.npy,data/processed/MELD/dev/audio/dev_dia28_utt7.npy,"Oh no, I know! I know! It's the one where Joey got Monica's turkey stuck on his head!"
+dev_dia28_utt8,dev,2,data/processed/MELD/dev/video/dev_dia28_utt8.npy,data/processed/MELD/dev/audio/dev_dia28_utt8.npy,What?! Joey got a turkey stuck on his head?!
+dev_dia28_utt9,dev,0,data/processed/MELD/dev/video/dev_dia28_utt9.npy,data/processed/MELD/dev/audio/dev_dia28_utt9.npy,"Hey, it's not like it sounds."
+dev_dia28_utt10,dev,0,data/processed/MELD/dev/video/dev_dia28_utt10.npy,data/processed/MELD/dev/audio/dev_dia28_utt10.npy,It's
+dev_dia29_utt0,dev,4,data/processed/MELD/dev/video/dev_dia29_utt0.npy,data/processed/MELD/dev/audio/dev_dia29_utt0.npy,"Wendy, we had a deal! Yeah, you promised! Wendy! Wendy! Wendy!"
+dev_dia29_utt1,dev,0,data/processed/MELD/dev/video/dev_dia29_utt1.npy,data/processed/MELD/dev/audio/dev_dia29_utt1.npy,Who was that?
+dev_dia29_utt2,dev,3,data/processed/MELD/dev/video/dev_dia29_utt2.npy,data/processed/MELD/dev/audio/dev_dia29_utt2.npy,Wendy bailed. I have no waitress.
+dev_dia29_utt3,dev,3,data/processed/MELD/dev/video/dev_dia29_utt3.npy,data/processed/MELD/dev/audio/dev_dia29_utt3.npy,Oh... that's too bad. Bye bye.
+dev_dia29_utt4,dev,0,data/processed/MELD/dev/video/dev_dia29_utt4.npy,data/processed/MELD/dev/audio/dev_dia29_utt4.npy,Ten dollars an hour.
+dev_dia29_utt5,dev,0,data/processed/MELD/dev/video/dev_dia29_utt5.npy,data/processed/MELD/dev/audio/dev_dia29_utt5.npy,No.
+dev_dia29_utt6,dev,0,data/processed/MELD/dev/video/dev_dia29_utt6.npy,data/processed/MELD/dev/audio/dev_dia29_utt6.npy,Twelve dollars an hour.
+dev_dia29_utt7,dev,0,data/processed/MELD/dev/video/dev_dia29_utt7.npy,data/processed/MELD/dev/audio/dev_dia29_utt7.npy,"Mon. I wish I could, but I've made plans to walk around."
+dev_dia29_utt8,dev,4,data/processed/MELD/dev/video/dev_dia29_utt8.npy,data/processed/MELD/dev/audio/dev_dia29_utt8.npy,"You know, Rachel, when you ran out of your wedding, I was there for you."
+dev_dia29_utt9,dev,4,data/processed/MELD/dev/video/dev_dia29_utt9.npy,data/processed/MELD/dev/audio/dev_dia29_utt9.npy,"I put a roof over your head, and if that means nothing to you... twenty dollars an hour."
+dev_dia29_utt10,dev,1,data/processed/MELD/dev/video/dev_dia29_utt10.npy,data/processed/MELD/dev/audio/dev_dia29_utt10.npy,Done.
+dev_dia30_utt0,dev,5,data/processed/MELD/dev/video/dev_dia30_utt0.npy,data/processed/MELD/dev/audio/dev_dia30_utt0.npy,"The reactor’s gonna blow in three seconds, we’re never gonna make it!"
+dev_dia30_utt1,dev,5,data/processed/MELD/dev/video/dev_dia30_utt1.npy,data/processed/MELD/dev/audio/dev_dia30_utt1.npy,You’ve got to get out of here! Save yourself!
+dev_dia30_utt2,dev,5,data/processed/MELD/dev/video/dev_dia30_utt2.npy,data/processed/MELD/dev/audio/dev_dia30_utt2.npy,No! I won’t leave you!
+dev_dia30_utt3,dev,3,data/processed/MELD/dev/video/dev_dia30_utt3.npy,data/processed/MELD/dev/audio/dev_dia30_utt3.npy,"Don’t worry about me, I’m a robot! I’m just a machine!!"
+dev_dia30_utt4,dev,4,data/processed/MELD/dev/video/dev_dia30_utt4.npy,data/processed/MELD/dev/audio/dev_dia30_utt4.npy,No you’re not! Not to me!
+dev_dia30_utt5,dev,2,data/processed/MELD/dev/video/dev_dia30_utt5.npy,data/processed/MELD/dev/audio/dev_dia30_utt5.npy,Oh my God.
+dev_dia30_utt6,dev,0,data/processed/MELD/dev/video/dev_dia30_utt6.npy,data/processed/MELD/dev/audio/dev_dia30_utt6.npy,What?
+dev_dia30_utt7,dev,0,data/processed/MELD/dev/video/dev_dia30_utt7.npy,data/processed/MELD/dev/audio/dev_dia30_utt7.npy,I am
+dev_dia30_utt8,dev,1,data/processed/MELD/dev/video/dev_dia30_utt8.npy,data/processed/MELD/dev/audio/dev_dia30_utt8.npy,"Yeah, you’re great! Okay, let’s take it from"
+dev_dia30_utt9,dev,1,data/processed/MELD/dev/video/dev_dia30_utt9.npy,data/processed/MELD/dev/audio/dev_dia30_utt9.npy,"No, I mean I was really acting my ass off."
+dev_dia30_utt10,dev,1,data/processed/MELD/dev/video/dev_dia30_utt10.npy,data/processed/MELD/dev/audio/dev_dia30_utt10.npy,"Yeah, I thought I was pretty good too."
+dev_dia30_utt11,dev,0,data/processed/MELD/dev/video/dev_dia30_utt11.npy,data/processed/MELD/dev/audio/dev_dia30_utt11.npy,"Oh yeah, you’re solid. Yeah, you’re just no me."
+dev_dia30_utt12,dev,0,data/processed/MELD/dev/video/dev_dia30_utt12.npy,data/processed/MELD/dev/audio/dev_dia30_utt12.npy,Y’know what? I think that’s enough for now. Yeah. I don’t want to be over rehearsed.
+dev_dia30_utt13,dev,4,data/processed/MELD/dev/video/dev_dia30_utt13.npy,data/processed/MELD/dev/audio/dev_dia30_utt13.npy,Fine!
+dev_dia30_utt14,dev,4,data/processed/MELD/dev/video/dev_dia30_utt14.npy,data/processed/MELD/dev/audio/dev_dia30_utt14.npy,I’ll do it without you!
+dev_dia30_utt15,dev,4,data/processed/MELD/dev/video/dev_dia30_utt15.npy,data/processed/MELD/dev/audio/dev_dia30_utt15.npy,I don’t need you or anybody else!
+dev_dia30_utt16,dev,4,data/processed/MELD/dev/video/dev_dia30_utt16.npy,data/processed/MELD/dev/audio/dev_dia30_utt16.npy,I’m gonna make it on my own!
+dev_dia30_utt17,dev,4,data/processed/MELD/dev/video/dev_dia30_utt17.npy,data/processed/MELD/dev/audio/dev_dia30_utt17.npy,You’ll see!!
+dev_dia30_utt18,dev,0,data/processed/MELD/dev/video/dev_dia30_utt18.npy,data/processed/MELD/dev/audio/dev_dia30_utt18.npy,You’ll
+dev_dia31_utt0,dev,3,data/processed/MELD/dev/video/dev_dia31_utt0.npy,data/processed/MELD/dev/audio/dev_dia31_utt0.npy,I can't believe that Ross is gone. It is just so sad.
+dev_dia31_utt1,dev,2,data/processed/MELD/dev/video/dev_dia31_utt1.npy,data/processed/MELD/dev/audio/dev_dia31_utt1.npy,I didn't know Ross and you were so close.
+dev_dia31_utt2,dev,3,data/processed/MELD/dev/video/dev_dia31_utt2.npy,data/processed/MELD/dev/audio/dev_dia31_utt2.npy,We weren't but we had one class together. He was such a great guy and he talked so passionately about science. I always remembered him.
+dev_dia31_utt3,dev,0,data/processed/MELD/dev/video/dev_dia31_utt3.npy,data/processed/MELD/dev/audio/dev_dia31_utt3.npy,I'm sure that would mean a lot to him.
+dev_dia31_utt4,dev,0,data/processed/MELD/dev/video/dev_dia31_utt4.npy,data/processed/MELD/dev/audio/dev_dia31_utt4.npy,"And if heaven has a door, I'm sure he's pressing his ear up against it and listening intently."
+dev_dia31_utt5,dev,3,data/processed/MELD/dev/video/dev_dia31_utt5.npy,data/processed/MELD/dev/audio/dev_dia31_utt5.npy,I thought so many times about calling him and asking him out. I guess I really missed my chance.
+dev_dia31_utt6,dev,1,data/processed/MELD/dev/video/dev_dia31_utt6.npy,data/processed/MELD/dev/audio/dev_dia31_utt6.npy,But you didn't!
+dev_dia31_utt7,dev,1,data/processed/MELD/dev/video/dev_dia31_utt7.npy,data/processed/MELD/dev/audio/dev_dia31_utt7.npy,I'm still alive!!
+dev_dia31_utt8,dev,1,data/processed/MELD/dev/video/dev_dia31_utt8.npy,data/processed/MELD/dev/audio/dev_dia31_utt8.npy,"Kori, I know this is a big surprise for you."
+dev_dia31_utt9,dev,1,data/processed/MELD/dev/video/dev_dia31_utt9.npy,data/processed/MELD/dev/audio/dev_dia31_utt9.npy,It's a long story but the things you just said really made my day!
+dev_dia31_utt10,dev,1,data/processed/MELD/dev/video/dev_dia31_utt10.npy,data/processed/MELD/dev/audio/dev_dia31_utt10.npy,"I mean, the fact that you are here means more to me than if this room were filled with people!"
+dev_dia31_utt11,dev,4,data/processed/MELD/dev/video/dev_dia31_utt11.npy,data/processed/MELD/dev/audio/dev_dia31_utt11.npy,"You sick freak, who does that? I can't believe I had a crush on you!"
+dev_dia31_utt12,dev,1,data/processed/MELD/dev/video/dev_dia31_utt12.npy,data/processed/MELD/dev/audio/dev_dia31_utt12.npy,Did you hear that? Kori Weston had a crush on me!!
+dev_dia32_utt0,dev,0,data/processed/MELD/dev/video/dev_dia32_utt0.npy,data/processed/MELD/dev/audio/dev_dia32_utt0.npy,We’ll do a quick check.
+dev_dia32_utt1,dev,0,data/processed/MELD/dev/video/dev_dia32_utt1.npy,data/processed/MELD/dev/audio/dev_dia32_utt1.npy,Okay.
+dev_dia32_utt2,dev,2,data/processed/MELD/dev/video/dev_dia32_utt2.npy,data/processed/MELD/dev/audio/dev_dia32_utt2.npy,"So, eight days late huh?"
+dev_dia32_utt3,dev,0,data/processed/MELD/dev/video/dev_dia32_utt3.npy,data/processed/MELD/dev/audio/dev_dia32_utt3.npy,Yeah.
+dev_dia32_utt4,dev,0,data/processed/MELD/dev/video/dev_dia32_utt4.npy,data/processed/MELD/dev/audio/dev_dia32_utt4.npy,You must be a little uncomfortable.
+dev_dia32_utt5,dev,0,data/processed/MELD/dev/video/dev_dia32_utt5.npy,data/processed/MELD/dev/audio/dev_dia32_utt5.npy,"Eh, just a tad."
+dev_dia32_utt6,dev,0,data/processed/MELD/dev/video/dev_dia32_utt6.npy,data/processed/MELD/dev/audio/dev_dia32_utt6.npy,"You’re about 80 percent effaced, so you’re on your way."
+dev_dia32_utt7,dev,0,data/processed/MELD/dev/video/dev_dia32_utt7.npy,data/processed/MELD/dev/audio/dev_dia32_utt7.npy,It still could last a little while longer.
+dev_dia32_utt8,dev,0,data/processed/MELD/dev/video/dev_dia32_utt8.npy,data/processed/MELD/dev/audio/dev_dia32_utt8.npy,If you’re anxious there are a few ways to help things along.
+dev_dia32_utt9,dev,4,data/processed/MELD/dev/video/dev_dia32_utt9.npy,data/processed/MELD/dev/audio/dev_dia32_utt9.npy,Do them!!
+dev_dia32_utt10,dev,0,data/processed/MELD/dev/video/dev_dia32_utt10.npy,data/processed/MELD/dev/audio/dev_dia32_utt10.npy,"Actually, they’re things you can do. Just some home remedies, but in my experience I’ve found that some of them are quite effective."
+dev_dia32_utt11,dev,0,data/processed/MELD/dev/video/dev_dia32_utt11.npy,data/processed/MELD/dev/audio/dev_dia32_utt11.npy,"Well, we are ready to try anything."
+dev_dia32_utt12,dev,0,data/processed/MELD/dev/video/dev_dia32_utt12.npy,data/processed/MELD/dev/audio/dev_dia32_utt12.npy,"Okay, there’s an herbal tea you can drink."
+dev_dia32_utt13,dev,0,data/processed/MELD/dev/video/dev_dia32_utt13.npy,data/processed/MELD/dev/audio/dev_dia32_utt13.npy,Okay.
+dev_dia33_utt0,dev,3,data/processed/MELD/dev/video/dev_dia33_utt0.npy,data/processed/MELD/dev/audio/dev_dia33_utt0.npy,What is wrong with Emma?
+dev_dia33_utt1,dev,0,data/processed/MELD/dev/video/dev_dia33_utt1.npy,data/processed/MELD/dev/audio/dev_dia33_utt1.npy,"Oh she misunderstood, she thought she was moving to Tulsa."
+dev_dia34_utt0,dev,0,data/processed/MELD/dev/video/dev_dia34_utt0.npy,data/processed/MELD/dev/audio/dev_dia34_utt0.npy,Anytime you're ready.
+dev_dia34_utt1,dev,0,data/processed/MELD/dev/video/dev_dia34_utt1.npy,data/processed/MELD/dev/audio/dev_dia34_utt1.npy,"Ok, ok, here we go."
+dev_dia34_utt2,dev,0,data/processed/MELD/dev/video/dev_dia34_utt2.npy,data/processed/MELD/dev/audio/dev_dia34_utt2.npy,"Ok, where am I talking to, here?"
+dev_dia34_utt3,dev,0,data/processed/MELD/dev/video/dev_dia34_utt3.npy,data/processed/MELD/dev/audio/dev_dia34_utt3.npy,"I mean, uh, well, there is one way that seems to offer a certain acoustical advantage, but..."
+dev_dia34_utt4,dev,0,data/processed/MELD/dev/video/dev_dia34_utt4.npy,data/processed/MELD/dev/audio/dev_dia34_utt4.npy,Just aim for the bump.
+dev_dia34_utt5,dev,0,data/processed/MELD/dev/video/dev_dia34_utt5.npy,data/processed/MELD/dev/audio/dev_dia34_utt5.npy,"Ok, ok, ok, ok, here goes."
+dev_dia34_utt6,dev,5,data/processed/MELD/dev/video/dev_dia34_utt6.npy,data/processed/MELD/dev/audio/dev_dia34_utt6.npy,"You know, I, you know, can't do this."
+dev_dia34_utt7,dev,6,data/processed/MELD/dev/video/dev_dia34_utt7.npy,data/processed/MELD/dev/audio/dev_dia34_utt7.npy,"Uh, this is too weird."
+dev_dia34_utt8,dev,3,data/processed/MELD/dev/video/dev_dia34_utt8.npy,data/processed/MELD/dev/audio/dev_dia34_utt8.npy,I feel stupid.
+dev_dia34_utt9,dev,0,data/processed/MELD/dev/video/dev_dia34_utt9.npy,data/processed/MELD/dev/audio/dev_dia34_utt9.npy,"So don't do it, it's fine. You don't have to do it just because Susan does it."
+dev_dia34_utt10,dev,1,data/processed/MELD/dev/video/dev_dia34_utt10.npy,data/processed/MELD/dev/audio/dev_dia34_utt10.npy,"Hello, baby. Hello, hello."
+dev_dia35_utt0,dev,0,data/processed/MELD/dev/video/dev_dia35_utt0.npy,data/processed/MELD/dev/audio/dev_dia35_utt0.npy,"Oh, hi. It’s Mark."
+dev_dia36_utt0,dev,5,data/processed/MELD/dev/video/dev_dia36_utt0.npy,data/processed/MELD/dev/audio/dev_dia36_utt0.npy,Easy. Easy. You have to go to the hospital. Okay?
+dev_dia36_utt1,dev,0,data/processed/MELD/dev/video/dev_dia36_utt1.npy,data/processed/MELD/dev/audio/dev_dia36_utt1.npy,"Okay, I do."
+dev_dia36_utt2,dev,0,data/processed/MELD/dev/video/dev_dia36_utt2.npy,data/processed/MELD/dev/audio/dev_dia36_utt2.npy,Okay.
+dev_dia36_utt3,dev,0,data/processed/MELD/dev/video/dev_dia36_utt3.npy,data/processed/MELD/dev/audio/dev_dia36_utt3.npy,I really do.
+dev_dia36_utt4,dev,0,data/processed/MELD/dev/video/dev_dia36_utt4.npy,data/processed/MELD/dev/audio/dev_dia36_utt4.npy,"Okay, I’m gonna get your coat and then I’ll-I’ll put you in a cab."
+dev_dia36_utt5,dev,3,data/processed/MELD/dev/video/dev_dia36_utt5.npy,data/processed/MELD/dev/audio/dev_dia36_utt5.npy,"Okay. Oh wait, wait-wait, you’re not gonna come with me?"
+dev_dia36_utt6,dev,2,data/processed/MELD/dev/video/dev_dia36_utt6.npy,data/processed/MELD/dev/audio/dev_dia36_utt6.npy,Of course I am. I just have to make a call.
+dev_dia36_utt7,dev,0,data/processed/MELD/dev/video/dev_dia36_utt7.npy,data/processed/MELD/dev/audio/dev_dia36_utt7.npy,Okay.
+dev_dia36_utt8,dev,0,data/processed/MELD/dev/video/dev_dia36_utt8.npy,data/processed/MELD/dev/audio/dev_dia36_utt8.npy,Okay?
+dev_dia36_utt9,dev,2,data/processed/MELD/dev/video/dev_dia36_utt9.npy,data/processed/MELD/dev/audio/dev_dia36_utt9.npy,Thank you. Oww!!!! God!
+dev_dia36_utt10,dev,5,data/processed/MELD/dev/video/dev_dia36_utt10.npy,data/processed/MELD/dev/audio/dev_dia36_utt10.npy,"What?! I wh-, what’s wrong?"
+dev_dia36_utt11,dev,6,data/processed/MELD/dev/video/dev_dia36_utt11.npy,data/processed/MELD/dev/audio/dev_dia36_utt11.npy,"I’m sorry, I just can’t go to the hospital lookin’ like this."
+dev_dia37_utt0,dev,0,data/processed/MELD/dev/video/dev_dia37_utt0.npy,data/processed/MELD/dev/audio/dev_dia37_utt0.npy,"Pete Becker is circling the ring now. It looks like, he’s just trying to feel him out. Oh, Bruiser is just..."
+dev_dia37_utt1,dev,5,data/processed/MELD/dev/video/dev_dia37_utt1.npy,data/processed/MELD/dev/audio/dev_dia37_utt1.npy,"Run! Run you crazy, rich freak!"
+dev_dia37_utt2,dev,5,data/processed/MELD/dev/video/dev_dia37_utt2.npy,data/processed/MELD/dev/audio/dev_dia37_utt2.npy,"Oh, I can’t watch this."
+dev_dia37_utt3,dev,2,data/processed/MELD/dev/video/dev_dia37_utt3.npy,data/processed/MELD/dev/audio/dev_dia37_utt3.npy,"Check it out, he’s winning! Pete’s winning!"
+dev_dia37_utt4,dev,2,data/processed/MELD/dev/video/dev_dia37_utt4.npy,data/processed/MELD/dev/audio/dev_dia37_utt4.npy,Really?!
+dev_dia37_utt5,dev,5,data/processed/MELD/dev/video/dev_dia37_utt5.npy,data/processed/MELD/dev/audio/dev_dia37_utt5.npy,No-o-o!!
+dev_dia37_utt6,dev,5,data/processed/MELD/dev/video/dev_dia37_utt6.npy,data/processed/MELD/dev/audio/dev_dia37_utt6.npy,"Uh-oh, Bruiser has Becker on the canvas and is going for his favourite area."
+dev_dia37_utt7,dev,6,data/processed/MELD/dev/video/dev_dia37_utt7.npy,data/processed/MELD/dev/audio/dev_dia37_utt7.npy,Oh! Oh!
+dev_dia37_utt8,dev,2,data/processed/MELD/dev/video/dev_dia37_utt8.npy,data/processed/MELD/dev/audio/dev_dia37_utt8.npy,"Wait, if that’s his favourite area, why is he being so mean to it?"
+dev_dia37_utt9,dev,2,data/processed/MELD/dev/video/dev_dia37_utt9.npy,data/processed/MELD/dev/audio/dev_dia37_utt9.npy,"Well, this is ironic."
+dev_dia37_utt10,dev,0,data/processed/MELD/dev/video/dev_dia37_utt10.npy,data/processed/MELD/dev/audio/dev_dia37_utt10.npy,"Of your last two boyfriends, Richard didn’t want to have kids, and from the looks of it, now Pete can’t."
+dev_dia38_utt0,dev,4,data/processed/MELD/dev/video/dev_dia38_utt0.npy,data/processed/MELD/dev/audio/dev_dia38_utt0.npy,"Dude, you don’t have to brag! We got nothing here!!"
+dev_dia39_utt0,dev,0,data/processed/MELD/dev/video/dev_dia39_utt0.npy,data/processed/MELD/dev/audio/dev_dia39_utt0.npy,Should we tell Rachel there’s an empty private room right next door to hers?
+dev_dia39_utt1,dev,1,data/processed/MELD/dev/video/dev_dia39_utt1.npy,data/processed/MELD/dev/audio/dev_dia39_utt1.npy,"We could, or we can have sex in it."
+dev_dia39_utt2,dev,1,data/processed/MELD/dev/video/dev_dia39_utt2.npy,data/processed/MELD/dev/audio/dev_dia39_utt2.npy,"Well let me think about that, while I remove my pants!"
+dev_dia40_utt0,dev,2,data/processed/MELD/dev/video/dev_dia40_utt0.npy,data/processed/MELD/dev/audio/dev_dia40_utt0.npy,I thought I was a complete idiot.
+dev_dia40_utt1,dev,0,data/processed/MELD/dev/video/dev_dia40_utt1.npy,data/processed/MELD/dev/audio/dev_dia40_utt1.npy,"Hey, I’m with you. He even asked me if I thought you’d go out with him."
+dev_dia40_utt2,dev,6,data/processed/MELD/dev/video/dev_dia40_utt2.npy,data/processed/MELD/dev/audio/dev_dia40_utt2.npy,"Oh! Oh, I think I’m gonna throw up a little bit. What did you say?"
+dev_dia40_utt3,dev,0,data/processed/MELD/dev/video/dev_dia40_utt3.npy,data/processed/MELD/dev/audio/dev_dia40_utt3.npy,I said no.
+dev_dia40_utt4,dev,2,data/processed/MELD/dev/video/dev_dia40_utt4.npy,data/processed/MELD/dev/audio/dev_dia40_utt4.npy,What?!
+dev_dia40_utt5,dev,2,data/processed/MELD/dev/video/dev_dia40_utt5.npy,data/processed/MELD/dev/audio/dev_dia40_utt5.npy,What? I…I just figured since you’re pregnant you’re not gonna be seeing people.
+dev_dia40_utt6,dev,4,data/processed/MELD/dev/video/dev_dia40_utt6.npy,data/processed/MELD/dev/audio/dev_dia40_utt6.npy,"Okay Joey, first of all Kash Ford is not people. Second of all, what did he say when you told him I was pregnant?"
+dev_dia40_utt7,dev,0,data/processed/MELD/dev/video/dev_dia40_utt7.npy,data/processed/MELD/dev/audio/dev_dia40_utt7.npy,I didn’t tell him. I didn’t know if you were telling people. This is back when I thought Kash was still people.
+dev_dia40_utt8,dev,5,data/processed/MELD/dev/video/dev_dia40_utt8.npy,data/processed/MELD/dev/audio/dev_dia40_utt8.npy,"Good-good, don’t tell him. Don’t tell him. Just have him call me okay?"
+dev_dia40_utt9,dev,3,data/processed/MELD/dev/video/dev_dia40_utt9.npy,data/processed/MELD/dev/audio/dev_dia40_utt9.npy,"Rach look, I really don’t think that’s such a great"
+dev_dia40_utt10,dev,1,data/processed/MELD/dev/video/dev_dia40_utt10.npy,data/processed/MELD/dev/audio/dev_dia40_utt10.npy,"Okay, you go do it! I’ll come back to that set! I’ll meet more actors! I’ll meet ‘em all!"
+dev_dia41_utt0,dev,0,data/processed/MELD/dev/video/dev_dia41_utt0.npy,data/processed/MELD/dev/audio/dev_dia41_utt0.npy,"Ohh, here you are. I was looking for you before. Joshua’s gone so you and Emily are free to go."
+dev_dia41_utt1,dev,0,data/processed/MELD/dev/video/dev_dia41_utt1.npy,data/processed/MELD/dev/audio/dev_dia41_utt1.npy,That’s okay.
+dev_dia41_utt2,dev,0,data/processed/MELD/dev/video/dev_dia41_utt2.npy,data/processed/MELD/dev/audio/dev_dia41_utt2.npy,"She’s still in there enjoying her fake party and uh, it’s too late to do any of the things I had planned, so"
+dev_dia42_utt0,dev,4,data/processed/MELD/dev/video/dev_dia42_utt0.npy,data/processed/MELD/dev/audio/dev_dia42_utt0.npy,Ah! Ah! I forgot my jacket!
+dev_dia42_utt1,dev,4,data/processed/MELD/dev/video/dev_dia42_utt1.npy,data/processed/MELD/dev/audio/dev_dia42_utt1.npy,You tell them to wait!
+dev_dia42_utt2,dev,0,data/processed/MELD/dev/video/dev_dia42_utt2.npy,data/processed/MELD/dev/audio/dev_dia42_utt2.npy,Okay. Wait! Wait!
+dev_dia42_utt3,dev,0,data/processed/MELD/dev/video/dev_dia42_utt3.npy,data/processed/MELD/dev/audio/dev_dia42_utt3.npy,Emily.
+dev_dia42_utt4,dev,4,data/processed/MELD/dev/video/dev_dia42_utt4.npy,data/processed/MELD/dev/audio/dev_dia42_utt4.npy,Oh no-no-no! Oh-no! No! No! Emily!
+dev_dia43_utt0,dev,0,data/processed/MELD/dev/video/dev_dia43_utt0.npy,data/processed/MELD/dev/audio/dev_dia43_utt0.npy,Hey. Call me when you get there. Okay?
+dev_dia43_utt1,dev,0,data/processed/MELD/dev/video/dev_dia43_utt1.npy,data/processed/MELD/dev/audio/dev_dia43_utt1.npy,Okay.
+dev_dia44_utt0,dev,3,data/processed/MELD/dev/video/dev_dia44_utt0.npy,data/processed/MELD/dev/audio/dev_dia44_utt0.npy,I know. You're the guy who wouldn't chip in for the handyman.
+dev_dia44_utt1,dev,4,data/processed/MELD/dev/video/dev_dia44_utt1.npy,data/processed/MELD/dev/audio/dev_dia44_utt1.npy,Nevermind!
+dev_dia44_utt2,dev,0,data/processed/MELD/dev/video/dev_dia44_utt2.npy,data/processed/MELD/dev/audio/dev_dia44_utt2.npy,"No, I-I actually thought it was unfair the way everyone reacted. I mean you had just moved in."
+dev_dia44_utt3,dev,0,data/processed/MELD/dev/video/dev_dia44_utt3.npy,data/processed/MELD/dev/audio/dev_dia44_utt3.npy,Jen.
+dev_dia44_utt4,dev,0,data/processed/MELD/dev/video/dev_dia44_utt4.npy,data/processed/MELD/dev/audio/dev_dia44_utt4.npy,"Jen, I know this may sound a little… But uh, would you maybe wanna grab a cup of coffee sometime, or"
+dev_dia44_utt5,dev,1,data/processed/MELD/dev/video/dev_dia44_utt5.npy,data/processed/MELD/dev/audio/dev_dia44_utt5.npy,Sure! That would be nice.
+dev_dia44_utt6,dev,0,data/processed/MELD/dev/video/dev_dia44_utt6.npy,data/processed/MELD/dev/audio/dev_dia44_utt6.npy,Umm?
+dev_dia44_utt7,dev,1,data/processed/MELD/dev/video/dev_dia44_utt7.npy,data/processed/MELD/dev/audio/dev_dia44_utt7.npy,Oh! My number is on there. Give me a call.
+dev_dia44_utt8,dev,0,data/processed/MELD/dev/video/dev_dia44_utt8.npy,data/processed/MELD/dev/audio/dev_dia44_utt8.npy,I will give you a call.
+dev_dia44_utt9,dev,0,data/processed/MELD/dev/video/dev_dia44_utt9.npy,data/processed/MELD/dev/audio/dev_dia44_utt9.npy,I'll see you later.
+dev_dia44_utt10,dev,1,data/processed/MELD/dev/video/dev_dia44_utt10.npy,data/processed/MELD/dev/audio/dev_dia44_utt10.npy,Okay!
+dev_dia44_utt11,dev,0,data/processed/MELD/dev/video/dev_dia44_utt11.npy,data/processed/MELD/dev/audio/dev_dia44_utt11.npy,I forgot my paper.
+dev_dia45_utt0,dev,0,data/processed/MELD/dev/video/dev_dia45_utt0.npy,data/processed/MELD/dev/audio/dev_dia45_utt0.npy,"Here we go. Okay, brace yourselves."
+dev_dia45_utt1,dev,0,data/processed/MELD/dev/video/dev_dia45_utt1.npy,data/processed/MELD/dev/audio/dev_dia45_utt1.npy,What?
+dev_dia45_utt2,dev,0,data/processed/MELD/dev/video/dev_dia45_utt2.npy,data/processed/MELD/dev/audio/dev_dia45_utt2.npy,Okay.
+dev_dia45_utt3,dev,2,data/processed/MELD/dev/video/dev_dia45_utt3.npy,data/processed/MELD/dev/audio/dev_dia45_utt3.npy,Ow!
+dev_dia45_utt4,dev,0,data/processed/MELD/dev/video/dev_dia45_utt4.npy,data/processed/MELD/dev/audio/dev_dia45_utt4.npy,Aren’t you gonna go?
+dev_dia45_utt5,dev,0,data/processed/MELD/dev/video/dev_dia45_utt5.npy,data/processed/MELD/dev/audio/dev_dia45_utt5.npy,No. Thank you.
+dev_dia45_utt6,dev,0,data/processed/MELD/dev/video/dev_dia45_utt6.npy,data/processed/MELD/dev/audio/dev_dia45_utt6.npy,"No, Rachel never pees in public restrooms."
+dev_dia45_utt7,dev,0,data/processed/MELD/dev/video/dev_dia45_utt7.npy,data/processed/MELD/dev/audio/dev_dia45_utt7.npy,"Well, they never have any paper in there y'know. So my rule is ‘no tissue, no tuschy.’ Well, if everybody’s going."
+dev_dia45_utt8,dev,0,data/processed/MELD/dev/video/dev_dia45_utt8.npy,data/processed/MELD/dev/audio/dev_dia45_utt8.npy,"No, y'know what don’t close it ‘cause the... keys...are in there."
+dev_dia45_utt9,dev,5,data/processed/MELD/dev/video/dev_dia45_utt9.npy,data/processed/MELD/dev/audio/dev_dia45_utt9.npy,"Oh, no-no-no-no-no-no!!"
+dev_dia45_utt10,dev,0,data/processed/MELD/dev/video/dev_dia45_utt10.npy,data/processed/MELD/dev/audio/dev_dia45_utt10.npy,What’s going on?
+dev_dia45_utt11,dev,5,data/processed/MELD/dev/video/dev_dia45_utt11.npy,data/processed/MELD/dev/audio/dev_dia45_utt11.npy,My lighter’s in there!
+dev_dia46_utt0,dev,0,data/processed/MELD/dev/video/dev_dia46_utt0.npy,data/processed/MELD/dev/audio/dev_dia46_utt0.npy,I promise.
+dev_dia46_utt1,dev,0,data/processed/MELD/dev/video/dev_dia46_utt1.npy,data/processed/MELD/dev/audio/dev_dia46_utt1.npy,"Although, don’t feel like you can’t visit."
+dev_dia46_utt2,dev,0,data/processed/MELD/dev/video/dev_dia46_utt2.npy,data/processed/MELD/dev/audio/dev_dia46_utt2.npy,"Hey, is, is, is Chandler here?"
+dev_dia46_utt3,dev,0,data/processed/MELD/dev/video/dev_dia46_utt3.npy,data/processed/MELD/dev/audio/dev_dia46_utt3.npy,"No, no he’s not."
+dev_dia46_utt4,dev,2,data/processed/MELD/dev/video/dev_dia46_utt4.npy,data/processed/MELD/dev/audio/dev_dia46_utt4.npy,"You guys, Joey just saw Janice kissing her ex-husband."
+dev_dia46_utt5,dev,2,data/processed/MELD/dev/video/dev_dia46_utt5.npy,data/processed/MELD/dev/audio/dev_dia46_utt5.npy,"What? So what are you going to do? I mean how, how are you going to tell Chandler?"
+dev_dia46_utt6,dev,0,data/processed/MELD/dev/video/dev_dia46_utt6.npy,data/processed/MELD/dev/audio/dev_dia46_utt6.npy,"Well, I was thinking about that and I, I think the best way would be, to not."
+dev_dia46_utt7,dev,0,data/processed/MELD/dev/video/dev_dia46_utt7.npy,data/processed/MELD/dev/audio/dev_dia46_utt7.npy,"Joey, you can’t keep this to yourself, if you know about this, you have to tell him."
+dev_dia46_utt8,dev,5,data/processed/MELD/dev/video/dev_dia46_utt8.npy,data/processed/MELD/dev/audio/dev_dia46_utt8.npy,"It’ll kill him. I mean it’ll, it’ll just kill him."
+dev_dia46_utt9,dev,0,data/processed/MELD/dev/video/dev_dia46_utt9.npy,data/processed/MELD/dev/audio/dev_dia46_utt9.npy,"Well, you could wait ‘til I go to the dentist, maybe"
+dev_dia47_utt0,dev,0,data/processed/MELD/dev/video/dev_dia47_utt0.npy,data/processed/MELD/dev/audio/dev_dia47_utt0.npy,"Hey, what are you doing here?"
+dev_dia47_utt1,dev,0,data/processed/MELD/dev/video/dev_dia47_utt1.npy,data/processed/MELD/dev/audio/dev_dia47_utt1.npy,"Well, oh just ah, I was just wondering, when you and I split up, did you get the tape that was half the last episode of"
+dev_dia47_utt2,dev,0,data/processed/MELD/dev/video/dev_dia47_utt2.npy,data/processed/MELD/dev/audio/dev_dia47_utt2.npy,"Ah yeah, but now it’s Susan and me in Mexico and the hostages coming home."
+dev_dia47_utt3,dev,0,data/processed/MELD/dev/video/dev_dia47_utt3.npy,data/processed/MELD/dev/audio/dev_dia47_utt3.npy,Where’s Ben?
+dev_dia47_utt4,dev,0,data/processed/MELD/dev/video/dev_dia47_utt4.npy,data/processed/MELD/dev/audio/dev_dia47_utt4.npy,He’s sleeping.
+dev_dia47_utt5,dev,2,data/processed/MELD/dev/video/dev_dia47_utt5.npy,data/processed/MELD/dev/audio/dev_dia47_utt5.npy,"Ahh. Ooh, is this a ah, is this a bad time?"
+dev_dia47_utt6,dev,1,data/processed/MELD/dev/video/dev_dia47_utt6.npy,data/processed/MELD/dev/audio/dev_dia47_utt6.npy,"Umm, yeah, actually, Susan’s gonna be home any minute, it’s kinda an anniversary."
+dev_dia47_utt7,dev,2,data/processed/MELD/dev/video/dev_dia47_utt7.npy,data/processed/MELD/dev/audio/dev_dia47_utt7.npy,"Oh! I thought you guys got married in uh, January?"
+dev_dia47_utt8,dev,0,data/processed/MELD/dev/video/dev_dia47_utt8.npy,data/processed/MELD/dev/audio/dev_dia47_utt8.npy,It’s not that kind of anniversary.
+dev_dia47_utt9,dev,2,data/processed/MELD/dev/video/dev_dia47_utt9.npy,data/processed/MELD/dev/audio/dev_dia47_utt9.npy,Ah! Oh.
+dev_dia47_utt10,dev,0,data/processed/MELD/dev/video/dev_dia47_utt10.npy,data/processed/MELD/dev/audio/dev_dia47_utt10.npy,Sooo!! Anyway...
+dev_dia48_utt0,dev,0,data/processed/MELD/dev/video/dev_dia48_utt0.npy,data/processed/MELD/dev/audio/dev_dia48_utt0.npy,Where are we gonna find a tiny little hat?
+dev_dia48_utt1,dev,1,data/processed/MELD/dev/video/dev_dia48_utt1.npy,data/processed/MELD/dev/audio/dev_dia48_utt1.npy,"Oh, oh, oh, I’ll get ‘Rainy Day Bear’!!"
+dev_dia48_utt2,dev,1,data/processed/MELD/dev/video/dev_dia48_utt2.npy,data/processed/MELD/dev/audio/dev_dia48_utt2.npy,"Because he’ll know what to do? Oh my God, you’re a genius!"
+dev_dia48_utt3,dev,5,data/processed/MELD/dev/video/dev_dia48_utt3.npy,data/processed/MELD/dev/audio/dev_dia48_utt3.npy,"Oh God, oh God, it’s sowed on though."
+dev_dia48_utt4,dev,0,data/processed/MELD/dev/video/dev_dia48_utt4.npy,data/processed/MELD/dev/audio/dev_dia48_utt4.npy,Give it. Give it.
+dev_dia48_utt5,dev,0,data/processed/MELD/dev/video/dev_dia48_utt5.npy,data/processed/MELD/dev/audio/dev_dia48_utt5.npy,Okay.
+dev_dia48_utt6,dev,2,data/processed/MELD/dev/video/dev_dia48_utt6.npy,data/processed/MELD/dev/audio/dev_dia48_utt6.npy,Oh!!
+dev_dia48_utt7,dev,3,data/processed/MELD/dev/video/dev_dia48_utt7.npy,data/processed/MELD/dev/audio/dev_dia48_utt7.npy,"Oh, it’s just like a bloodbath in here today."
+dev_dia49_utt0,dev,4,data/processed/MELD/dev/video/dev_dia49_utt0.npy,data/processed/MELD/dev/audio/dev_dia49_utt0.npy,Please. This is so your fault.
+dev_dia49_utt1,dev,2,data/processed/MELD/dev/video/dev_dia49_utt1.npy,data/processed/MELD/dev/audio/dev_dia49_utt1.npy,"How, how is this my fault?"
+dev_dia49_utt2,dev,4,data/processed/MELD/dev/video/dev_dia49_utt2.npy,data/processed/MELD/dev/audio/dev_dia49_utt2.npy,"Look, Carol never threw me out of a room before you came along."
+dev_dia49_utt3,dev,4,data/processed/MELD/dev/video/dev_dia49_utt3.npy,data/processed/MELD/dev/audio/dev_dia49_utt3.npy,"Yeah? Well, there's a lot of things Carol never did before I came along."
+dev_dia49_utt6,dev,4,data/processed/MELD/dev/video/dev_dia49_utt6.npy,data/processed/MELD/dev/audio/dev_dia49_utt6.npy,"Hey, hey, ok, all right, that's it!"
+dev_dia49_utt7,dev,4,data/processed/MELD/dev/video/dev_dia49_utt7.npy,data/processed/MELD/dev/audio/dev_dia49_utt7.npy,Get in here.
+dev_dia49_utt8,dev,0,data/processed/MELD/dev/video/dev_dia49_utt8.npy,data/processed/MELD/dev/audio/dev_dia49_utt8.npy,Come on.
+dev_dia49_utt9,dev,4,data/processed/MELD/dev/video/dev_dia49_utt9.npy,data/processed/MELD/dev/audio/dev_dia49_utt9.npy,"My god, you guys, I don't believe you."
+dev_dia49_utt10,dev,4,data/processed/MELD/dev/video/dev_dia49_utt10.npy,data/processed/MELD/dev/audio/dev_dia49_utt10.npy,There are children coming into the world in this very building and your negative fighting noises are not the first thing they should be hearing.
+dev_dia49_utt11,dev,4,data/processed/MELD/dev/video/dev_dia49_utt11.npy,data/processed/MELD/dev/audio/dev_dia49_utt11.npy,"So just stop all the yelling, just stop it!"
+dev_dia49_utt12,dev,0,data/processed/MELD/dev/video/dev_dia49_utt12.npy,data/processed/MELD/dev/audio/dev_dia49_utt12.npy,"Yeah, Susan."
+dev_dia49_utt13,dev,4,data/processed/MELD/dev/video/dev_dia49_utt13.npy,data/processed/MELD/dev/audio/dev_dia49_utt13.npy,"Don't make me do this again, I don't like my voice like this."
+dev_dia49_utt14,dev,0,data/processed/MELD/dev/video/dev_dia49_utt14.npy,data/processed/MELD/dev/audio/dev_dia49_utt14.npy,"Ok, who wants to hear something ironic?"
+dev_dia50_utt0,dev,2,data/processed/MELD/dev/video/dev_dia50_utt0.npy,data/processed/MELD/dev/audio/dev_dia50_utt0.npy,"Oh! Here it is! Ooh, Joey! Why did you sign it, ""Son of a bitch?"""
+dev_dia50_utt1,dev,2,data/processed/MELD/dev/video/dev_dia50_utt1.npy,data/processed/MELD/dev/audio/dev_dia50_utt1.npy,I didn’t do that! Who would’ve done that?!
+dev_dia50_utt2,dev,4,data/processed/MELD/dev/video/dev_dia50_utt2.npy,data/processed/MELD/dev/audio/dev_dia50_utt2.npy,Son of a bitch!
+dev_dia50_utt3,dev,0,data/processed/MELD/dev/video/dev_dia50_utt3.npy,data/processed/MELD/dev/audio/dev_dia50_utt3.npy,"Okay, maybe ask this guy."
+dev_dia51_utt0,dev,0,data/processed/MELD/dev/video/dev_dia51_utt0.npy,data/processed/MELD/dev/audio/dev_dia51_utt0.npy,"Oh, did I not mention? Carl is a guy I hired to be my identical twin for a medical research project."
+dev_dia51_utt1,dev,1,data/processed/MELD/dev/video/dev_dia51_utt1.npy,data/processed/MELD/dev/audio/dev_dia51_utt1.npy,"Y’know sometimes the good ideas are just right in front of you, aren’t they?"
+dev_dia51_utt2,dev,0,data/processed/MELD/dev/video/dev_dia51_utt2.npy,data/processed/MELD/dev/audio/dev_dia51_utt2.npy,"Okay, I know it sounds crazy, but I think it might work. Y’know? The only problem is, Carl’s acting is"
+dev_dia51_utt3,dev,0,data/processed/MELD/dev/video/dev_dia51_utt3.npy,data/processed/MELD/dev/audio/dev_dia51_utt3.npy,The
+dev_dia51_utt4,dev,0,data/processed/MELD/dev/video/dev_dia51_utt4.npy,data/processed/MELD/dev/audio/dev_dia51_utt4.npy,"Yeah, he’s the reason I didn’t get that big"
+dev_dia51_utt5,dev,0,data/processed/MELD/dev/video/dev_dia51_utt5.npy,data/processed/MELD/dev/audio/dev_dia51_utt5.npy,"Hey, uh can I get a little piece of that cake?"
+dev_dia51_utt6,dev,4,data/processed/MELD/dev/video/dev_dia51_utt6.npy,data/processed/MELD/dev/audio/dev_dia51_utt6.npy,Pizza!! We like Pizza!! Get out!!!
+dev_dia52_utt0,dev,0,data/processed/MELD/dev/video/dev_dia52_utt0.npy,data/processed/MELD/dev/audio/dev_dia52_utt0.npy,"Hey Monica, there’s a customer who wants to complement the chef, should I let him in?"
+dev_dia52_utt1,dev,1,data/processed/MELD/dev/video/dev_dia52_utt1.npy,data/processed/MELD/dev/audio/dev_dia52_utt1.npy,"Sure, I love this part!"
+dev_dia52_utt2,dev,0,data/processed/MELD/dev/video/dev_dia52_utt2.npy,data/processed/MELD/dev/audio/dev_dia52_utt2.npy,Come on in.
+dev_dia53_utt0,dev,1,data/processed/MELD/dev/video/dev_dia53_utt0.npy,data/processed/MELD/dev/audio/dev_dia53_utt0.npy,"Really? In the moment, I really wanted to kiss you too. In the moment."
+dev_dia53_utt1,dev,0,data/processed/MELD/dev/video/dev_dia53_utt1.npy,data/processed/MELD/dev/audio/dev_dia53_utt1.npy,"In the moment, yeah."
+dev_dia53_utt2,dev,1,data/processed/MELD/dev/video/dev_dia53_utt2.npy,data/processed/MELD/dev/audio/dev_dia53_utt2.npy,But only in the moment. So do ya wanna kiss again?
+dev_dia53_utt3,dev,0,data/processed/MELD/dev/video/dev_dia53_utt3.npy,data/processed/MELD/dev/audio/dev_dia53_utt3.npy,"Sure, New Year’s Eve is only two weeks away. Can you wait?"
+dev_dia53_utt4,dev,0,data/processed/MELD/dev/video/dev_dia53_utt4.npy,data/processed/MELD/dev/audio/dev_dia53_utt4.npy,No.
+dev_dia53_utt5,dev,0,data/processed/MELD/dev/video/dev_dia53_utt5.npy,data/processed/MELD/dev/audio/dev_dia53_utt5.npy,Me neither.
+dev_dia53_utt6,dev,0,data/processed/MELD/dev/video/dev_dia53_utt6.npy,data/processed/MELD/dev/audio/dev_dia53_utt6.npy,"3, 2,"
+dev_dia53_utt7,dev,1,data/processed/MELD/dev/video/dev_dia53_utt7.npy,data/processed/MELD/dev/audio/dev_dia53_utt7.npy,"Joey, you don’t have to count down every time we kiss."
+dev_dia53_utt8,dev,1,data/processed/MELD/dev/video/dev_dia53_utt8.npy,data/processed/MELD/dev/audio/dev_dia53_utt8.npy,"Uh, yeah, okay. Except I sorta felt like I needed a couple of seconds to get ready."
+dev_dia54_utt0,dev,0,data/processed/MELD/dev/video/dev_dia54_utt0.npy,data/processed/MELD/dev/audio/dev_dia54_utt0.npy,Alright. Phoebe?
+dev_dia54_utt1,dev,0,data/processed/MELD/dev/video/dev_dia54_utt1.npy,data/processed/MELD/dev/audio/dev_dia54_utt1.npy,"Okay, okay."
+dev_dia54_utt2,dev,1,data/processed/MELD/dev/video/dev_dia54_utt2.npy,data/processed/MELD/dev/audio/dev_dia54_utt2.npy,"If I were omnipotent for a day, I would want, um, world peace, no more hunger, good things for the rain-forest...And bigger boobs!"
+dev_dia54_utt3,dev,0,data/processed/MELD/dev/video/dev_dia54_utt3.npy,data/processed/MELD/dev/audio/dev_dia54_utt3.npy,"Yeah, see.. you took mine. Chandler, what about you?"
+dev_dia54_utt4,dev,0,data/processed/MELD/dev/video/dev_dia54_utt4.npy,data/processed/MELD/dev/audio/dev_dia54_utt4.npy,"Uh, if I were omnipotent for a day, I'd.. make myself omnipotent forever."
+dev_dia54_utt5,dev,6,data/processed/MELD/dev/video/dev_dia54_utt5.npy,data/processed/MELD/dev/audio/dev_dia54_utt5.npy,"See, there's always one guy. ""If I had a wish, I'd wish for three more wishes."""
+dev_dia54_utt6,dev,0,data/processed/MELD/dev/video/dev_dia54_utt6.npy,data/processed/MELD/dev/audio/dev_dia54_utt6.npy,"Hey Joey. Hi. Hey, buddy."
+dev_dia54_utt7,dev,0,data/processed/MELD/dev/video/dev_dia54_utt7.npy,data/processed/MELD/dev/audio/dev_dia54_utt7.npy,"Hey, Joey, what would you do if you were omnipotent?"
+dev_dia54_utt8,dev,3,data/processed/MELD/dev/video/dev_dia54_utt8.npy,data/processed/MELD/dev/audio/dev_dia54_utt8.npy,Probably kill myself!
+dev_dia54_utt9,dev,2,data/processed/MELD/dev/video/dev_dia54_utt9.npy,data/processed/MELD/dev/audio/dev_dia54_utt9.npy,..Excuse me?
+dev_dia54_utt10,dev,3,data/processed/MELD/dev/video/dev_dia54_utt10.npy,data/processed/MELD/dev/audio/dev_dia54_utt10.npy,"Hey, if Little Joey's dead, then I got no reason to live!"
+dev_dia54_utt11,dev,2,data/processed/MELD/dev/video/dev_dia54_utt11.npy,data/processed/MELD/dev/audio/dev_dia54_utt11.npy,"Joey, uh-"
+dev_dia54_utt12,dev,0,data/processed/MELD/dev/video/dev_dia54_utt12.npy,data/processed/MELD/dev/audio/dev_dia54_utt12.npy,You
+dev_dia55_utt0,dev,3,data/processed/MELD/dev/video/dev_dia55_utt0.npy,data/processed/MELD/dev/audio/dev_dia55_utt0.npy,I’m sorry.
+dev_dia56_utt0,dev,4,data/processed/MELD/dev/video/dev_dia56_utt0.npy,data/processed/MELD/dev/audio/dev_dia56_utt0.npy,"Joey, onstage!"
+dev_dia56_utt1,dev,3,data/processed/MELD/dev/video/dev_dia56_utt1.npy,data/processed/MELD/dev/audio/dev_dia56_utt1.npy,Well can you at least stay to the end of the play?
+dev_dia56_utt2,dev,3,data/processed/MELD/dev/video/dev_dia56_utt2.npy,data/processed/MELD/dev/audio/dev_dia56_utt2.npy,"I mean, I’ll go to the airport with ya, I-I wanna say good bye."
+dev_dia56_utt3,dev,0,data/processed/MELD/dev/video/dev_dia56_utt3.npy,data/processed/MELD/dev/audio/dev_dia56_utt3.npy,Where are you Vic?
+dev_dia56_utt4,dev,3,data/processed/MELD/dev/video/dev_dia56_utt4.npy,data/processed/MELD/dev/audio/dev_dia56_utt4.npy,Flight’s in an hour. I-I gotta go.
+dev_dia56_utt5,dev,4,data/processed/MELD/dev/video/dev_dia56_utt5.npy,data/processed/MELD/dev/audio/dev_dia56_utt5.npy,Vic! Vic!
+dev_dia56_utt6,dev,4,data/processed/MELD/dev/video/dev_dia56_utt6.npy,data/processed/MELD/dev/audio/dev_dia56_utt6.npy,In a minute!!
+dev_dia56_utt7,dev,3,data/processed/MELD/dev/video/dev_dia56_utt7.npy,data/processed/MELD/dev/audio/dev_dia56_utt7.npy,So this is it? Victor?
+dev_dia56_utt8,dev,3,data/processed/MELD/dev/video/dev_dia56_utt8.npy,data/processed/MELD/dev/audio/dev_dia56_utt8.npy,"Yeah, I guess it is."
+dev_dia56_utt9,dev,3,data/processed/MELD/dev/video/dev_dia56_utt9.npy,data/processed/MELD/dev/audio/dev_dia56_utt9.npy,"Listen, I ah, I gotta say good bye, and-and I gotta say it quick ‘cause this is killing me."
+dev_dia56_utt10,dev,3,data/processed/MELD/dev/video/dev_dia56_utt10.npy,data/processed/MELD/dev/audio/dev_dia56_utt10.npy,"One thing you gotta know, is that I will never forget you."
+dev_dia56_utt11,dev,3,data/processed/MELD/dev/video/dev_dia56_utt11.npy,data/processed/MELD/dev/audio/dev_dia56_utt11.npy,"But, you’ve got things you have to do now, and so do I."
+dev_dia56_utt12,dev,3,data/processed/MELD/dev/video/dev_dia56_utt12.npy,data/processed/MELD/dev/audio/dev_dia56_utt12.npy,"And so… I’m gonna get on this spaceship, and I’m gonna go to Blargon 7 in search of alternative fuels."
+dev_dia56_utt13,dev,3,data/processed/MELD/dev/video/dev_dia56_utt13.npy,data/processed/MELD/dev/audio/dev_dia56_utt13.npy,"But when I return, 200 years from now, you’ll be long gone."
+dev_dia56_utt14,dev,0,data/processed/MELD/dev/video/dev_dia56_utt14.npy,data/processed/MELD/dev/audio/dev_dia56_utt14.npy,But I won’t have aged at all.
+dev_dia56_utt15,dev,0,data/processed/MELD/dev/video/dev_dia56_utt15.npy,data/processed/MELD/dev/audio/dev_dia56_utt15.npy,"So you tell your great-great-granddaughter to look me up, because Adrienne, baby, I’m gonna want to meet her."
+dev_dia56_utt16,dev,3,data/processed/MELD/dev/video/dev_dia56_utt16.npy,data/processed/MELD/dev/audio/dev_dia56_utt16.npy,"So long, Vic!"
+dev_dia57_utt0,dev,0,data/processed/MELD/dev/video/dev_dia57_utt0.npy,data/processed/MELD/dev/audio/dev_dia57_utt0.npy,Nooo Way! The most romantic song ever is
+dev_dia57_utt1,dev,0,data/processed/MELD/dev/video/dev_dia57_utt1.npy,data/processed/MELD/dev/audio/dev_dia57_utt1.npy,"See, I-I think that one that Elton John wrote for, um, that guy on"
+dev_dia57_utt2,dev,0,data/processed/MELD/dev/video/dev_dia57_utt2.npy,data/processed/MELD/dev/audio/dev_dia57_utt2.npy,"What song was that, Pheebs?"
+dev_dia57_utt3,dev,1,data/processed/MELD/dev/video/dev_dia57_utt3.npy,data/processed/MELD/dev/audio/dev_dia57_utt3.npy,Hi Monica!
+dev_dia57_utt4,dev,1,data/processed/MELD/dev/video/dev_dia57_utt4.npy,data/processed/MELD/dev/audio/dev_dia57_utt4.npy,Hey Mon!
+dev_dia57_utt5,dev,1,data/processed/MELD/dev/video/dev_dia57_utt5.npy,data/processed/MELD/dev/audio/dev_dia57_utt5.npy,Hey Mon!
+dev_dia57_utt6,dev,2,data/processed/MELD/dev/video/dev_dia57_utt6.npy,data/processed/MELD/dev/audio/dev_dia57_utt6.npy,"Oh my God, has she slept at all?"
+dev_dia57_utt7,dev,0,data/processed/MELD/dev/video/dev_dia57_utt7.npy,data/processed/MELD/dev/audio/dev_dia57_utt7.npy,Nope.
+dev_dia57_utt8,dev,0,data/processed/MELD/dev/video/dev_dia57_utt8.npy,data/processed/MELD/dev/audio/dev_dia57_utt8.npy,"No, it's been three nights in a row."
+dev_dia57_utt9,dev,0,data/processed/MELD/dev/video/dev_dia57_utt9.npy,data/processed/MELD/dev/audio/dev_dia57_utt9.npy,"Yeah, she finally stopped crying yesterday, but then she found one of Richard's cigar butts out on the terrace, so."
+dev_dia57_utt10,dev,0,data/processed/MELD/dev/video/dev_dia57_utt10.npy,data/processed/MELD/dev/audio/dev_dia57_utt10.npy,"Oh, okay that explains it."
+dev_dia57_utt11,dev,0,data/processed/MELD/dev/video/dev_dia57_utt11.npy,data/processed/MELD/dev/audio/dev_dia57_utt11.npy,"I got a call at two in the morning, but all I could hear was, like, this high squeaky sound, so I thought okay its like a mouse or a opossum."
+dev_dia57_utt12,dev,1,data/processed/MELD/dev/video/dev_dia57_utt12.npy,data/processed/MELD/dev/audio/dev_dia57_utt12.npy,But then I realized where would a mouse or a opossum get the money to make the phone call.
+dev_dia58_utt0,dev,0,data/processed/MELD/dev/video/dev_dia58_utt0.npy,data/processed/MELD/dev/audio/dev_dia58_utt0.npy,"So uh, man, are you gonna go to the play with me tonight?"
+dev_dia58_utt1,dev,6,data/processed/MELD/dev/video/dev_dia58_utt1.npy,data/processed/MELD/dev/audio/dev_dia58_utt1.npy,"Y’know what, I don’t know how comfortable I am going to see how hot the sex is between some guy and your girlfriend."
+dev_dia58_utt2,dev,0,data/processed/MELD/dev/video/dev_dia58_utt2.npy,data/processed/MELD/dev/audio/dev_dia58_utt2.npy,"Yeah, I know but"
+dev_dia58_utt3,dev,0,data/processed/MELD/dev/video/dev_dia58_utt3.npy,data/processed/MELD/dev/audio/dev_dia58_utt3.npy,"Oh no-no-no, I’m there."
+dev_dia58_utt4,dev,2,data/processed/MELD/dev/video/dev_dia58_utt4.npy,data/processed/MELD/dev/audio/dev_dia58_utt4.npy,Hey!
+dev_dia58_utt5,dev,1,data/processed/MELD/dev/video/dev_dia58_utt5.npy,data/processed/MELD/dev/audio/dev_dia58_utt5.npy,Hey Mon! Want some pancakes?
+dev_dia58_utt6,dev,2,data/processed/MELD/dev/video/dev_dia58_utt6.npy,data/processed/MELD/dev/audio/dev_dia58_utt6.npy,You made pancakes?
+dev_dia58_utt7,dev,1,data/processed/MELD/dev/video/dev_dia58_utt7.npy,data/processed/MELD/dev/audio/dev_dia58_utt7.npy,Yep! Grab a plate.
+dev_dia58_utt8,dev,0,data/processed/MELD/dev/video/dev_dia58_utt8.npy,data/processed/MELD/dev/audio/dev_dia58_utt8.npy,"No-no, stay right there. Gettin’ closer."
+dev_dia58_utt9,dev,0,data/processed/MELD/dev/video/dev_dia58_utt9.npy,data/processed/MELD/dev/audio/dev_dia58_utt9.npy,"Okay, okay, but don’t worry, because we also have cereals, muffins, waffles,"
+dev_dia58_utt10,dev,0,data/processed/MELD/dev/video/dev_dia58_utt10.npy,data/processed/MELD/dev/audio/dev_dia58_utt10.npy,"Listen also we’re uh, we’re watching the game here Saturday night, if people want to come over."
+dev_dia58_utt11,dev,1,data/processed/MELD/dev/video/dev_dia58_utt11.npy,data/processed/MELD/dev/audio/dev_dia58_utt11.npy,Oh yeah!
+dev_dia59_utt0,dev,0,data/processed/MELD/dev/video/dev_dia59_utt0.npy,data/processed/MELD/dev/audio/dev_dia59_utt0.npy,"Yes, if the foxhole was lined with sandwiches."
+dev_dia59_utt1,dev,0,data/processed/MELD/dev/video/dev_dia59_utt1.npy,data/processed/MELD/dev/audio/dev_dia59_utt1.npy,"Yeah, hero sandwiches."
+dev_dia59_utt2,dev,0,data/processed/MELD/dev/video/dev_dia59_utt2.npy,data/processed/MELD/dev/audio/dev_dia59_utt2.npy,Well you all know that I'm a pacifist so I'm not interested in war in any way.
+dev_dia59_utt3,dev,0,data/processed/MELD/dev/video/dev_dia59_utt3.npy,data/processed/MELD/dev/audio/dev_dia59_utt3.npy,"When the revolution comes, I will have to destroy you all."
+dev_dia59_utt4,dev,0,data/processed/MELD/dev/video/dev_dia59_utt4.npy,data/processed/MELD/dev/audio/dev_dia59_utt4.npy,Not you Joey.
+dev_dia60_utt0,dev,2,data/processed/MELD/dev/video/dev_dia60_utt0.npy,data/processed/MELD/dev/audio/dev_dia60_utt0.npy,Oh my good God.
+dev_dia60_utt1,dev,0,data/processed/MELD/dev/video/dev_dia60_utt1.npy,data/processed/MELD/dev/audio/dev_dia60_utt1.npy,"Hey! Continuing the countdown of your favorite meals. Tonight, No. 3, macaroni and cheese with cut up hot dogs."
+dev_dia60_utt2,dev,4,data/processed/MELD/dev/video/dev_dia60_utt2.npy,data/processed/MELD/dev/audio/dev_dia60_utt2.npy,"Look, you have done enough! Okay? You have to stop this now."
+dev_dia60_utt3,dev,1,data/processed/MELD/dev/video/dev_dia60_utt3.npy,data/processed/MELD/dev/audio/dev_dia60_utt3.npy,"I will! But not tonight. For dinner music, I thought we could listen to that tape you made me."
+dev_dia60_utt4,dev,0,data/processed/MELD/dev/video/dev_dia60_utt4.npy,data/processed/MELD/dev/audio/dev_dia60_utt4.npy,"Oh, the mixed tape."
+dev_dia60_utt5,dev,1,data/processed/MELD/dev/video/dev_dia60_utt5.npy,data/processed/MELD/dev/audio/dev_dia60_utt5.npy,The Way You Look Tonight
+dev_dia60_utt6,dev,1,data/processed/MELD/dev/video/dev_dia60_utt6.npy,data/processed/MELD/dev/audio/dev_dia60_utt6.npy,You are just the sweetest.
+dev_dia61_utt0,dev,1,data/processed/MELD/dev/video/dev_dia61_utt0.npy,data/processed/MELD/dev/audio/dev_dia61_utt0.npy,Hey!
+dev_dia61_utt1,dev,1,data/processed/MELD/dev/video/dev_dia61_utt1.npy,data/processed/MELD/dev/audio/dev_dia61_utt1.npy,Hey!
+dev_dia61_utt2,dev,0,data/processed/MELD/dev/video/dev_dia61_utt2.npy,data/processed/MELD/dev/audio/dev_dia61_utt2.npy,"Hey, guess what I’m doing tonight."
+dev_dia61_utt3,dev,0,data/processed/MELD/dev/video/dev_dia61_utt3.npy,data/processed/MELD/dev/audio/dev_dia61_utt3.npy,What?
+dev_dia61_utt4,dev,0,data/processed/MELD/dev/video/dev_dia61_utt4.npy,data/processed/MELD/dev/audio/dev_dia61_utt4.npy,I’m checking out the restaurant with Pete.
+dev_dia61_utt5,dev,1,data/processed/MELD/dev/video/dev_dia61_utt5.npy,data/processed/MELD/dev/audio/dev_dia61_utt5.npy,"Ohh, Monica, I am so excited for you."
+dev_dia62_utt0,dev,0,data/processed/MELD/dev/video/dev_dia62_utt0.npy,data/processed/MELD/dev/audio/dev_dia62_utt0.npy,"So honey this uh, this threesome thing umm, I mean how-how are you gonna start to find"
+dev_dia62_utt1,dev,1,data/processed/MELD/dev/video/dev_dia62_utt1.npy,data/processed/MELD/dev/audio/dev_dia62_utt1.npy,"Ooh, actually I’ve been making a list of all the women I know who might be into doing this!"
+dev_dia62_utt2,dev,2,data/processed/MELD/dev/video/dev_dia62_utt2.npy,data/processed/MELD/dev/audio/dev_dia62_utt2.npy,"Oh. Wow! Huh. Boy! Well, someone’s been doing their homework."
+dev_dia62_utt3,dev,0,data/processed/MELD/dev/video/dev_dia62_utt3.npy,data/processed/MELD/dev/audio/dev_dia62_utt3.npy,"Yeah. Ooh, and I know Gail Rosten is in there twice, but she is so"
+dev_dia62_utt4,dev,0,data/processed/MELD/dev/video/dev_dia62_utt4.npy,data/processed/MELD/dev/audio/dev_dia62_utt4.npy,"Oh, I know. Y’know, just-just talking about it is getting me kinda"
+dev_dia62_utt5,dev,0,data/processed/MELD/dev/video/dev_dia62_utt5.npy,data/processed/MELD/dev/audio/dev_dia62_utt5.npy,"Oh, me too."
+dev_dia63_utt0,dev,1,data/processed/MELD/dev/video/dev_dia63_utt0.npy,data/processed/MELD/dev/audio/dev_dia63_utt0.npy,"and then, we could’ve gone from the ceremony to the reception with you in the sidecar!"
+dev_dia63_utt1,dev,0,data/processed/MELD/dev/video/dev_dia63_utt1.npy,data/processed/MELD/dev/audio/dev_dia63_utt1.npy,"Ross, it just wouldn’t have been feasible."
+dev_dia63_utt2,dev,4,data/processed/MELD/dev/video/dev_dia63_utt2.npy,data/processed/MELD/dev/audio/dev_dia63_utt2.npy,But having a dove place the ring on your finger would’ve been no problem?
+dev_dia63_utt3,dev,1,data/processed/MELD/dev/video/dev_dia63_utt3.npy,data/processed/MELD/dev/audio/dev_dia63_utt3.npy,It was really fun being married to you tonight.
+dev_dia63_utt4,dev,1,data/processed/MELD/dev/video/dev_dia63_utt4.npy,data/processed/MELD/dev/audio/dev_dia63_utt4.npy,"Yeah! And! And, it was the easiest 400 bucks I’ve ever made."
+dev_dia63_utt5,dev,3,data/processed/MELD/dev/video/dev_dia63_utt5.npy,data/processed/MELD/dev/audio/dev_dia63_utt5.npy,"Okay Ross, can I uh, can I ask you something?"
+dev_dia63_utt6,dev,0,data/processed/MELD/dev/video/dev_dia63_utt6.npy,data/processed/MELD/dev/audio/dev_dia63_utt6.npy,Yeah.
+dev_dia63_utt7,dev,0,data/processed/MELD/dev/video/dev_dia63_utt7.npy,data/processed/MELD/dev/audio/dev_dia63_utt7.npy,"That proposal, at the planetarium"
+dev_dia63_utt8,dev,3,data/processed/MELD/dev/video/dev_dia63_utt8.npy,data/processed/MELD/dev/audio/dev_dia63_utt8.npy,"I know, I know it was stupid."
+dev_dia63_utt9,dev,2,data/processed/MELD/dev/video/dev_dia63_utt9.npy,data/processed/MELD/dev/audio/dev_dia63_utt9.npy,Are you kidding?!
+dev_dia63_utt10,dev,1,data/processed/MELD/dev/video/dev_dia63_utt10.npy,data/processed/MELD/dev/audio/dev_dia63_utt10.npy,"With the, with the lilies, and-and the song, and the stars!"
+dev_dia63_utt11,dev,1,data/processed/MELD/dev/video/dev_dia63_utt11.npy,data/processed/MELD/dev/audio/dev_dia63_utt11.npy,It was…really wonderful!
+dev_dia63_utt12,dev,2,data/processed/MELD/dev/video/dev_dia63_utt12.npy,data/processed/MELD/dev/audio/dev_dia63_utt12.npy,Did you just make that up?
+dev_dia63_utt13,dev,0,data/processed/MELD/dev/video/dev_dia63_utt13.npy,data/processed/MELD/dev/audio/dev_dia63_utt13.npy,"No, actually I thought about it when, when we were going out."
+dev_dia63_utt14,dev,0,data/processed/MELD/dev/video/dev_dia63_utt14.npy,data/processed/MELD/dev/audio/dev_dia63_utt14.npy,"It’s how I imagined I uh, I would ask you to marry me."
+dev_dia63_utt15,dev,0,data/processed/MELD/dev/video/dev_dia63_utt15.npy,data/processed/MELD/dev/audio/dev_dia63_utt15.npy,"Well, that would’ve been very hard to say no too."
+dev_dia63_utt16,dev,0,data/processed/MELD/dev/video/dev_dia63_utt16.npy,data/processed/MELD/dev/audio/dev_dia63_utt16.npy,"It’s a good thing I didn’t do it, because it sounds like it would’ve been a very expensive wedding. Okay, good night"
+dev_dia63_utt17,dev,0,data/processed/MELD/dev/video/dev_dia63_utt17.npy,data/processed/MELD/dev/audio/dev_dia63_utt17.npy,Goodnight
+dev_dia63_utt18,dev,0,data/processed/MELD/dev/video/dev_dia63_utt18.npy,data/processed/MELD/dev/audio/dev_dia63_utt18.npy,Even if the sidecar had a windscreen so your hair wouldn’t get messed up?
+dev_dia63_utt19,dev,0,data/processed/MELD/dev/video/dev_dia63_utt19.npy,data/processed/MELD/dev/audio/dev_dia63_utt19.npy,I will think about it.
+dev_dia63_utt20,dev,0,data/processed/MELD/dev/video/dev_dia63_utt20.npy,data/processed/MELD/dev/audio/dev_dia63_utt20.npy,That’s all I’m askin’
+dev_dia64_utt0,dev,2,data/processed/MELD/dev/video/dev_dia64_utt0.npy,data/processed/MELD/dev/audio/dev_dia64_utt0.npy,"You guys! It was bananas, cream, and beef! I-I just cannot believe that you ate that so that I wouldn’t feel bad!"
+dev_dia64_utt1,dev,1,data/processed/MELD/dev/video/dev_dia64_utt1.npy,data/processed/MELD/dev/audio/dev_dia64_utt1.npy,"Well actually, I-I didn’t eat mine. It’s still in the bathroom."
+dev_dia64_utt2,dev,0,data/processed/MELD/dev/video/dev_dia64_utt2.npy,data/processed/MELD/dev/audio/dev_dia64_utt2.npy,"No it isn’t, I ate that."
+dev_dia64_utt3,dev,0,data/processed/MELD/dev/video/dev_dia64_utt3.npy,data/processed/MELD/dev/audio/dev_dia64_utt3.npy,Well we left ours in Monica’s bedroom.
+dev_dia64_utt4,dev,0,data/processed/MELD/dev/video/dev_dia64_utt4.npy,data/processed/MELD/dev/audio/dev_dia64_utt4.npy,"Nope, got it and I got yours too."
+dev_dia65_utt0,dev,1,data/processed/MELD/dev/video/dev_dia65_utt0.npy,data/processed/MELD/dev/audio/dev_dia65_utt0.npy,And that’s I’m so glad… there’s no problem.
+dev_dia65_utt1,dev,0,data/processed/MELD/dev/video/dev_dia65_utt1.npy,data/processed/MELD/dev/audio/dev_dia65_utt1.npy,"That’s fine, actually I’m on the hiring committee, so there’ll be at least one friendly face."
+dev_dia65_utt2,dev,1,data/processed/MELD/dev/video/dev_dia65_utt2.npy,data/processed/MELD/dev/audio/dev_dia65_utt2.npy,Ohh! That’s great!
+dev_dia65_utt3,dev,0,data/processed/MELD/dev/video/dev_dia65_utt3.npy,data/processed/MELD/dev/audio/dev_dia65_utt3.npy,"You know, Junior Miss is where I started. Oh, I had to sleep with the"
+dev_dia65_utt4,dev,2,data/processed/MELD/dev/video/dev_dia65_utt4.npy,data/processed/MELD/dev/audio/dev_dia65_utt4.npy,Really?!
+dev_dia65_utt5,dev,1,data/processed/MELD/dev/video/dev_dia65_utt5.npy,data/processed/MELD/dev/audio/dev_dia65_utt5.npy,No-ho-ho!
+dev_dia65_utt6,dev,0,data/processed/MELD/dev/video/dev_dia65_utt6.npy,data/processed/MELD/dev/audio/dev_dia65_utt6.npy,Yeah.
+dev_dia65_utt7,dev,0,data/processed/MELD/dev/video/dev_dia65_utt7.npy,data/processed/MELD/dev/audio/dev_dia65_utt7.npy,"I mean, no-no-no-no-no, don’t you worry, I’m sure with your qualifications you won’t need to sleep with some guy to get that job."
+dev_dia65_utt8,dev,0,data/processed/MELD/dev/video/dev_dia65_utt8.npy,data/processed/MELD/dev/audio/dev_dia65_utt8.npy,"Although, I might need some convincing."
+dev_dia65_utt9,dev,5,data/processed/MELD/dev/video/dev_dia65_utt9.npy,data/processed/MELD/dev/audio/dev_dia65_utt9.npy,"Well, I, umm"
+dev_dia65_utt10,dev,1,data/processed/MELD/dev/video/dev_dia65_utt10.npy,data/processed/MELD/dev/audio/dev_dia65_utt10.npy,"Kidding! God, I feel wild today!"
+dev_dia66_utt0,dev,2,data/processed/MELD/dev/video/dev_dia66_utt0.npy,data/processed/MELD/dev/audio/dev_dia66_utt0.npy,Oh my God! Chandler just left though!
+dev_dia66_utt1,dev,0,data/processed/MELD/dev/video/dev_dia66_utt1.npy,data/processed/MELD/dev/audio/dev_dia66_utt1.npy,"Yeah but, maybe it’s not what we think. Maybe it’s tell Monica I’m sorry I…drank the last of the milk."
+dev_dia66_utt2,dev,0,data/processed/MELD/dev/video/dev_dia66_utt2.npy,data/processed/MELD/dev/audio/dev_dia66_utt2.npy,"Or maybe he-he was writing to tell her that-that he’s changed his name, y’know? Tell Monica I’m sorry."
+dev_dia66_utt3,dev,2,data/processed/MELD/dev/video/dev_dia66_utt3.npy,data/processed/MELD/dev/audio/dev_dia66_utt3.npy,I think it means he freaked out and left!
+dev_dia66_utt4,dev,4,data/processed/MELD/dev/video/dev_dia66_utt4.npy,data/processed/MELD/dev/audio/dev_dia66_utt4.npy,Don’t be so negative! Good God! Isn’t it possible that Sorry is sitting in there right now?!
+dev_dia66_utt5,dev,3,data/processed/MELD/dev/video/dev_dia66_utt5.npy,data/processed/MELD/dev/audio/dev_dia66_utt5.npy,"Okay. Phoebe, I-I think Ross is right. What are we gonna do?"
+dev_dia66_utt6,dev,0,data/processed/MELD/dev/video/dev_dia66_utt6.npy,data/processed/MELD/dev/audio/dev_dia66_utt6.npy,"Look—Okay, I’m just gonna—I’m gonna have to go find him and bring him back!"
+dev_dia66_utt7,dev,0,data/processed/MELD/dev/video/dev_dia66_utt7.npy,data/processed/MELD/dev/audio/dev_dia66_utt7.npy,Okay?
+dev_dia66_utt8,dev,0,data/processed/MELD/dev/video/dev_dia66_utt8.npy,data/processed/MELD/dev/audio/dev_dia66_utt8.npy,"You-you make sure Monica does not find out, okay?"
+dev_dia66_utt11,dev,0,data/processed/MELD/dev/video/dev_dia66_utt11.npy,data/processed/MELD/dev/audio/dev_dia66_utt11.npy,"I will, I will find him."
+dev_dia67_utt0,dev,1,data/processed/MELD/dev/video/dev_dia67_utt0.npy,data/processed/MELD/dev/audio/dev_dia67_utt0.npy,Hey!
+dev_dia67_utt1,dev,1,data/processed/MELD/dev/video/dev_dia67_utt1.npy,data/processed/MELD/dev/audio/dev_dia67_utt1.npy,Hi! Hey!
+dev_dia67_utt2,dev,0,data/processed/MELD/dev/video/dev_dia67_utt2.npy,data/processed/MELD/dev/audio/dev_dia67_utt2.npy,Do you guys know any cute guys?
+dev_dia67_utt3,dev,1,data/processed/MELD/dev/video/dev_dia67_utt3.npy,data/processed/MELD/dev/audio/dev_dia67_utt3.npy,"Well, of course I do! My good friend Joey over here."
+dev_dia67_utt4,dev,1,data/processed/MELD/dev/video/dev_dia67_utt4.npy,data/processed/MELD/dev/audio/dev_dia67_utt4.npy,"Oh, I’m sorry. Thank you Chandler."
+dev_dia67_utt5,dev,0,data/processed/MELD/dev/video/dev_dia67_utt5.npy,data/processed/MELD/dev/audio/dev_dia67_utt5.npy,"Anyway, there’s this big charity ball this weekend and Ralph Lauren bought a table, so I kinda have to go"
+dev_dia67_utt6,dev,0,data/processed/MELD/dev/video/dev_dia67_utt6.npy,data/processed/MELD/dev/audio/dev_dia67_utt6.npy,What’s the charity?
+dev_dia67_utt7,dev,0,data/processed/MELD/dev/video/dev_dia67_utt7.npy,data/processed/MELD/dev/audio/dev_dia67_utt7.npy,"I don’t know, something either trees or disease—Ralph mumbles a lot."
+dev_dia67_utt8,dev,0,data/processed/MELD/dev/video/dev_dia67_utt8.npy,data/processed/MELD/dev/audio/dev_dia67_utt8.npy,Does Ralph mumble when you’re not paying attention?
+dev_dia67_utt9,dev,2,data/processed/MELD/dev/video/dev_dia67_utt9.npy,data/processed/MELD/dev/audio/dev_dia67_utt9.npy,Yeah! It’s weird. But the thing is need to find a date.
+dev_dia67_utt10,dev,0,data/processed/MELD/dev/video/dev_dia67_utt10.npy,data/processed/MELD/dev/audio/dev_dia67_utt10.npy,"Well, what kind of guy are you looking for?"
+dev_dia68_utt0,dev,1,data/processed/MELD/dev/video/dev_dia68_utt0.npy,data/processed/MELD/dev/audio/dev_dia68_utt0.npy,Hey!
+dev_dia68_utt1,dev,0,data/processed/MELD/dev/video/dev_dia68_utt1.npy,data/processed/MELD/dev/audio/dev_dia68_utt1.npy,What are you guys doing later?
+dev_dia68_utt2,dev,0,data/processed/MELD/dev/video/dev_dia68_utt2.npy,data/processed/MELD/dev/audio/dev_dia68_utt2.npy,"Oh, Rachel and I have appointments to get our hair cut."
+dev_dia68_utt3,dev,2,data/processed/MELD/dev/video/dev_dia68_utt3.npy,data/processed/MELD/dev/audio/dev_dia68_utt3.npy,We do?
+dev_dia68_utt4,dev,0,data/processed/MELD/dev/video/dev_dia68_utt4.npy,data/processed/MELD/dev/audio/dev_dia68_utt4.npy,I want to see what he wants first.
+dev_dia68_utt5,dev,3,data/processed/MELD/dev/video/dev_dia68_utt5.npy,data/processed/MELD/dev/audio/dev_dia68_utt5.npy,I just found out that Elizabeth’s dad wants to meet me.
+dev_dia68_utt6,dev,2,data/processed/MELD/dev/video/dev_dia68_utt6.npy,data/processed/MELD/dev/audio/dev_dia68_utt6.npy,"Wait a minute, hold the phone! You’re not Elizabeth’s dad?!"
+dev_dia68_utt7,dev,5,data/processed/MELD/dev/video/dev_dia68_utt7.npy,data/processed/MELD/dev/audio/dev_dia68_utt7.npy,"Come on guys, I-I really want this guy to like me."
+dev_dia68_utt8,dev,3,data/processed/MELD/dev/video/dev_dia68_utt8.npy,data/processed/MELD/dev/audio/dev_dia68_utt8.npy,It-it would really help me out if you guys were here to make me look good.
+dev_dia68_utt9,dev,1,data/processed/MELD/dev/video/dev_dia68_utt9.npy,data/processed/MELD/dev/audio/dev_dia68_utt9.npy,Of course we’ll help! Yeah! We’ll be here!
+dev_dia68_utt10,dev,1,data/processed/MELD/dev/video/dev_dia68_utt10.npy,data/processed/MELD/dev/audio/dev_dia68_utt10.npy,Thanks!
+dev_dia68_utt11,dev,0,data/processed/MELD/dev/video/dev_dia68_utt11.npy,data/processed/MELD/dev/audio/dev_dia68_utt11.npy,We know how tough those parent/teacher conferences can be.
+dev_dia69_utt0,dev,1,data/processed/MELD/dev/video/dev_dia69_utt0.npy,data/processed/MELD/dev/audio/dev_dia69_utt0.npy,"Oh, hi! How are you doing?"
+dev_dia69_utt1,dev,3,data/processed/MELD/dev/video/dev_dia69_utt1.npy,data/processed/MELD/dev/audio/dev_dia69_utt1.npy,I'm okay. I gotta go down to the police station and look at mug shots.
+dev_dia69_utt2,dev,0,data/processed/MELD/dev/video/dev_dia69_utt2.npy,data/processed/MELD/dev/audio/dev_dia69_utt2.npy,"Thanks for having me over, you guys."
+dev_dia69_utt3,dev,0,data/processed/MELD/dev/video/dev_dia69_utt3.npy,data/processed/MELD/dev/audio/dev_dia69_utt3.npy,Tag?
+dev_dia69_utt4,dev,1,data/processed/MELD/dev/video/dev_dia69_utt4.npy,data/processed/MELD/dev/audio/dev_dia69_utt4.npy,Y-You're going?
+dev_dia69_utt5,dev,0,data/processed/MELD/dev/video/dev_dia69_utt5.npy,data/processed/MELD/dev/audio/dev_dia69_utt5.npy,"Uh we didn't, uh we didn't get the chance to talk."
+dev_dia69_utt6,dev,0,data/processed/MELD/dev/video/dev_dia69_utt6.npy,data/processed/MELD/dev/audio/dev_dia69_utt6.npy,"Uh, so, where did you say you're from again?"
+dev_dia69_utt7,dev,0,data/processed/MELD/dev/video/dev_dia69_utt7.npy,data/processed/MELD/dev/audio/dev_dia69_utt7.npy,Colorado.
+dev_dia69_utt8,dev,0,data/processed/MELD/dev/video/dev_dia69_utt8.npy,data/processed/MELD/dev/audio/dev_dia69_utt8.npy,"Ah, what good are you."
+dev_dia69_utt9,dev,0,data/processed/MELD/dev/video/dev_dia69_utt9.npy,data/processed/MELD/dev/audio/dev_dia69_utt9.npy,"Look, um, I think we should talk about what happened on the terrace."
+dev_dia69_utt10,dev,0,data/processed/MELD/dev/video/dev_dia69_utt10.npy,data/processed/MELD/dev/audio/dev_dia69_utt10.npy,Okay.
+dev_dia69_utt11,dev,3,data/processed/MELD/dev/video/dev_dia69_utt11.npy,data/processed/MELD/dev/audio/dev_dia69_utt11.npy,"Ah, I-I never should have said what I said."
+dev_dia69_utt12,dev,0,data/processed/MELD/dev/video/dev_dia69_utt12.npy,data/processed/MELD/dev/audio/dev_dia69_utt12.npy,It—y’know what?
+dev_dia69_utt13,dev,3,data/processed/MELD/dev/video/dev_dia69_utt13.npy,data/processed/MELD/dev/audio/dev_dia69_utt13.npy,It just doesn't matter how I feel.
+dev_dia69_utt14,dev,3,data/processed/MELD/dev/video/dev_dia69_utt14.npy,data/processed/MELD/dev/audio/dev_dia69_utt14.npy,"I mean we work together, so nothing could really ever happen between us, and what I would love is just to go to work on Monday, and-and never talk about this again, okay?"
+dev_dia69_utt15,dev,0,data/processed/MELD/dev/video/dev_dia69_utt15.npy,data/processed/MELD/dev/audio/dev_dia69_utt15.npy,"Um, I'm not."
+dev_dia69_utt16,dev,3,data/processed/MELD/dev/video/dev_dia69_utt16.npy,data/processed/MELD/dev/audio/dev_dia69_utt16.npy,"Oh, god, I knew it, that I freaked you out."
+dev_dia69_utt17,dev,3,data/processed/MELD/dev/video/dev_dia69_utt17.npy,data/processed/MELD/dev/audio/dev_dia69_utt17.npy,"No, you didn't. The only thing that freaked me out was you saying that nothing could ever happen between us."
+dev_dia69_utt18,dev,2,data/processed/MELD/dev/video/dev_dia69_utt18.npy,data/processed/MELD/dev/audio/dev_dia69_utt18.npy,Really?
+dev_dia69_utt19,dev,3,data/processed/MELD/dev/video/dev_dia69_utt19.npy,data/processed/MELD/dev/audio/dev_dia69_utt19.npy,"Yeah, so, please don't fire me for doing this."
+dev_dia70_utt0,dev,4,data/processed/MELD/dev/video/dev_dia70_utt0.npy,data/processed/MELD/dev/audio/dev_dia70_utt0.npy,"Get him! GET HIM! Get him! Get- YESSS! Not laughing now, are ya pal!"
+dev_dia70_utt1,dev,0,data/processed/MELD/dev/video/dev_dia70_utt1.npy,data/processed/MELD/dev/audio/dev_dia70_utt1.npy,"See buddy, that's all you need, a bunch of toothless guys hitting each other with sticks."
+dev_dia70_utt2,dev,1,data/processed/MELD/dev/video/dev_dia70_utt2.npy,data/processed/MELD/dev/audio/dev_dia70_utt2.npy,Pass it! Pass it!
+dev_dia70_utt3,dev,1,data/processed/MELD/dev/video/dev_dia70_utt3.npy,data/processed/MELD/dev/audio/dev_dia70_utt3.npy,He's open!
+dev_dia70_utt4,dev,1,data/processed/MELD/dev/video/dev_dia70_utt4.npy,data/processed/MELD/dev/audio/dev_dia70_utt4.npy,Shoot! Shoot! Shoot!
+dev_dia70_utt5,dev,2,data/processed/MELD/dev/video/dev_dia70_utt5.npy,data/processed/MELD/dev/audio/dev_dia70_utt5.npy,"Hey, look, we're on that TV thing!"
+dev_dia71_utt0,dev,1,data/processed/MELD/dev/video/dev_dia71_utt0.npy,data/processed/MELD/dev/audio/dev_dia71_utt0.npy,I am so psyched I kept this chair for myself!
+dev_dia71_utt1,dev,0,data/processed/MELD/dev/video/dev_dia71_utt1.npy,data/processed/MELD/dev/audio/dev_dia71_utt1.npy,"Yeah, me too."
+dev_dia71_utt2,dev,2,data/processed/MELD/dev/video/dev_dia71_utt2.npy,data/processed/MELD/dev/audio/dev_dia71_utt2.npy,"Yeah? Wow! Y’know, that this thing has speakers in the headrest!"
+dev_dia71_utt3,dev,2,data/processed/MELD/dev/video/dev_dia71_utt3.npy,data/processed/MELD/dev/audio/dev_dia71_utt3.npy,No. Really?
+dev_dia71_utt4,dev,1,data/processed/MELD/dev/video/dev_dia71_utt4.npy,data/processed/MELD/dev/audio/dev_dia71_utt4.npy,Yeah! You can hook it up to your TV
+dev_dia71_utt5,dev,0,data/processed/MELD/dev/video/dev_dia71_utt5.npy,data/processed/MELD/dev/audio/dev_dia71_utt5.npy,My chair heals itself.
+dev_dia72_utt0,dev,4,data/processed/MELD/dev/video/dev_dia72_utt0.npy,data/processed/MELD/dev/audio/dev_dia72_utt0.npy,"Tiger! Dragon! Iceberg!! Joseph, did you even study at all last night?"
+dev_dia72_utt1,dev,3,data/processed/MELD/dev/video/dev_dia72_utt1.npy,data/processed/MELD/dev/audio/dev_dia72_utt1.npy,"Yes! Yes, I did."
+dev_dia72_utt2,dev,4,data/processed/MELD/dev/video/dev_dia72_utt2.npy,data/processed/MELD/dev/audio/dev_dia72_utt2.npy,Then do Iceberg!
+dev_dia72_utt3,dev,0,data/processed/MELD/dev/video/dev_dia72_utt3.npy,data/processed/MELD/dev/audio/dev_dia72_utt3.npy,G-sharp.
+dev_dia72_utt4,dev,0,data/processed/MELD/dev/video/dev_dia72_utt4.npy,data/processed/MELD/dev/audio/dev_dia72_utt4.npy,G
+dev_dia72_utt5,dev,2,data/processed/MELD/dev/video/dev_dia72_utt5.npy,data/processed/MELD/dev/audio/dev_dia72_utt5.npy,What?! I didn't touch a guitar!
+dev_dia72_utt6,dev,4,data/processed/MELD/dev/video/dev_dia72_utt6.npy,data/processed/MELD/dev/audio/dev_dia72_utt6.npy,"No, but you're questioning my method!"
+dev_dia72_utt7,dev,4,data/processed/MELD/dev/video/dev_dia72_utt7.npy,data/processed/MELD/dev/audio/dev_dia72_utt7.npy,"No, I'm not questioning it, I'm saying it's stupid! What?!"
+dev_dia72_utt8,dev,0,data/processed/MELD/dev/video/dev_dia72_utt8.npy,data/processed/MELD/dev/audio/dev_dia72_utt8.npy,Thank you.
+dev_dia72_utt9,dev,4,data/processed/MELD/dev/video/dev_dia72_utt9.npy,data/processed/MELD/dev/audio/dev_dia72_utt9.npy,Y'know none of my other student thought I was stupid.
+dev_dia72_utt10,dev,4,data/processed/MELD/dev/video/dev_dia72_utt10.npy,data/processed/MELD/dev/audio/dev_dia72_utt10.npy,"Your other student, was you!"
+dev_dia72_utt11,dev,4,data/processed/MELD/dev/video/dev_dia72_utt11.npy,data/processed/MELD/dev/audio/dev_dia72_utt11.npy,"Yeah, well, y'know maybe you just need to try a little harder!"
+dev_dia72_utt12,dev,4,data/processed/MELD/dev/video/dev_dia72_utt12.npy,data/processed/MELD/dev/audio/dev_dia72_utt12.npy,"Look, maybe I need to try a real teacher!"
+dev_dia72_utt13,dev,4,data/processed/MELD/dev/video/dev_dia72_utt13.npy,data/processed/MELD/dev/audio/dev_dia72_utt13.npy,Right here!
+dev_dia72_utt14,dev,4,data/processed/MELD/dev/video/dev_dia72_utt14.npy,data/processed/MELD/dev/audio/dev_dia72_utt14.npy,Here!
+dev_dia72_utt15,dev,0,data/processed/MELD/dev/video/dev_dia72_utt15.npy,data/processed/MELD/dev/audio/dev_dia72_utt15.npy,"Andy Cooper, he teaches guitar and look ooh, there's a nice picture of him with a little kid and"
+dev_dia72_utt16,dev,4,data/processed/MELD/dev/video/dev_dia72_utt16.npy,data/processed/MELD/dev/audio/dev_dia72_utt16.npy,Fine! You go learn from your qualified instructor! But don't come crying to me when everyone's sick and tired of hearing you play
+dev_dia72_utt17,dev,0,data/processed/MELD/dev/video/dev_dia72_utt17.npy,data/processed/MELD/dev/audio/dev_dia72_utt17.npy,"""Baddest man in the whole damn town."""
+dev_dia72_utt18,dev,4,data/processed/MELD/dev/video/dev_dia72_utt18.npy,data/processed/MELD/dev/audio/dev_dia72_utt18.npy,"Oh, fine! Take his side!"
+dev_dia73_utt0,dev,4,data/processed/MELD/dev/video/dev_dia73_utt0.npy,data/processed/MELD/dev/audio/dev_dia73_utt0.npy,"And shame on you! You should know better, Joey needs to work. Now come on!"
+dev_dia73_utt1,dev,4,data/processed/MELD/dev/video/dev_dia73_utt1.npy,data/processed/MELD/dev/audio/dev_dia73_utt1.npy,Hey!
+dev_dia73_utt2,dev,4,data/processed/MELD/dev/video/dev_dia73_utt2.npy,data/processed/MELD/dev/audio/dev_dia73_utt2.npy,No! Ah-ah-ah-ah-ah! You can have this back when the five pages are done! Ahh!
+dev_dia74_utt0,dev,1,data/processed/MELD/dev/video/dev_dia74_utt0.npy,data/processed/MELD/dev/audio/dev_dia74_utt0.npy,Hi!
+dev_dia74_utt1,dev,0,data/processed/MELD/dev/video/dev_dia74_utt1.npy,data/processed/MELD/dev/audio/dev_dia74_utt1.npy,Hi.
+dev_dia74_utt2,dev,1,data/processed/MELD/dev/video/dev_dia74_utt2.npy,data/processed/MELD/dev/audio/dev_dia74_utt2.npy,"Hi. Umm, I think there’s something that we really need to talk about."
+dev_dia74_utt3,dev,3,data/processed/MELD/dev/video/dev_dia74_utt3.npy,data/processed/MELD/dev/audio/dev_dia74_utt3.npy,"I think we do. Why don’t we go inside? Look uh, I know why you’re here."
+dev_dia74_utt4,dev,2,data/processed/MELD/dev/video/dev_dia74_utt4.npy,data/processed/MELD/dev/audio/dev_dia74_utt4.npy,You do?
+dev_dia74_utt5,dev,0,data/processed/MELD/dev/video/dev_dia74_utt5.npy,data/processed/MELD/dev/audio/dev_dia74_utt5.npy,"Yeah, and to save you from any embarrassment umm, I think maybe I should talk first."
+dev_dia74_utt6,dev,0,data/processed/MELD/dev/video/dev_dia74_utt6.npy,data/processed/MELD/dev/audio/dev_dia74_utt6.npy,Okay.
+dev_dia74_utt7,dev,0,data/processed/MELD/dev/video/dev_dia74_utt7.npy,data/processed/MELD/dev/audio/dev_dia74_utt7.npy,"Okay. Uh, Ross and Rachel. Rachel and Ross. That’s been one heck of a see-saw hasn’t it?"
+dev_dia74_utt8,dev,2,data/processed/MELD/dev/video/dev_dia74_utt8.npy,data/processed/MELD/dev/audio/dev_dia74_utt8.npy,What?
+dev_dia74_utt9,dev,3,data/processed/MELD/dev/video/dev_dia74_utt9.npy,data/processed/MELD/dev/audio/dev_dia74_utt9.npy,"I mean look, that-that one night we had was fun and…and certainly passionate, but don’t you think it’s better if we just stayed friends?"
+dev_dia74_utt10,dev,2,data/processed/MELD/dev/video/dev_dia74_utt10.npy,data/processed/MELD/dev/audio/dev_dia74_utt10.npy,Seriously. What?!
+dev_dia74_utt11,dev,0,data/processed/MELD/dev/video/dev_dia74_utt11.npy,data/processed/MELD/dev/audio/dev_dia74_utt11.npy,Okay.
+dev_dia74_utt12,dev,0,data/processed/MELD/dev/video/dev_dia74_utt12.npy,data/processed/MELD/dev/audio/dev_dia74_utt12.npy,Okay.
+dev_dia74_utt13,dev,0,data/processed/MELD/dev/video/dev_dia74_utt13.npy,data/processed/MELD/dev/audio/dev_dia74_utt13.npy,Y’know what?
+dev_dia74_utt14,dev,0,data/processed/MELD/dev/video/dev_dia74_utt14.npy,data/processed/MELD/dev/audio/dev_dia74_utt14.npy,"If you want to, we can do it one more time."
+dev_dia74_utt15,dev,0,data/processed/MELD/dev/video/dev_dia74_utt15.npy,data/processed/MELD/dev/audio/dev_dia74_utt15.npy,I mean I’d-I’d be okay with that.
+dev_dia74_utt16,dev,0,data/processed/MELD/dev/video/dev_dia74_utt16.npy,data/processed/MELD/dev/audio/dev_dia74_utt16.npy,"In fact, I have some time right now."
+dev_dia74_utt17,dev,1,data/processed/MELD/dev/video/dev_dia74_utt17.npy,data/processed/MELD/dev/audio/dev_dia74_utt17.npy,"Okay, y’know what? Can I, can I talk now?"
+dev_dia74_utt18,dev,0,data/processed/MELD/dev/video/dev_dia74_utt18.npy,data/processed/MELD/dev/audio/dev_dia74_utt18.npy,Oh sure.
+dev_dia74_utt19,dev,4,data/processed/MELD/dev/video/dev_dia74_utt19.npy,data/processed/MELD/dev/audio/dev_dia74_utt19.npy,"I’m pregnant. Ross? Ross? Okay, whenever you’re ready. And you’re the father by the way—but you got that"
+dev_dia75_utt0,dev,0,data/processed/MELD/dev/video/dev_dia75_utt0.npy,data/processed/MELD/dev/audio/dev_dia75_utt0.npy,We should defiantly play football more often. Maybe there’s a like league we could join or something.
+dev_dia76_utt0,dev,1,data/processed/MELD/dev/video/dev_dia76_utt0.npy,data/processed/MELD/dev/audio/dev_dia76_utt0.npy,I know!
+dev_dia76_utt1,dev,2,data/processed/MELD/dev/video/dev_dia76_utt1.npy,data/processed/MELD/dev/audio/dev_dia76_utt1.npy,"Yes! Wow, well, that-that was easy. Okay, you-you go."
+dev_dia76_utt2,dev,0,data/processed/MELD/dev/video/dev_dia76_utt2.npy,data/processed/MELD/dev/audio/dev_dia76_utt2.npy,Okay.
+dev_dia76_utt3,dev,0,data/processed/MELD/dev/video/dev_dia76_utt3.npy,data/processed/MELD/dev/audio/dev_dia76_utt3.npy,Okay.
+dev_dia76_utt4,dev,1,data/processed/MELD/dev/video/dev_dia76_utt4.npy,data/processed/MELD/dev/audio/dev_dia76_utt4.npy,"Okay, you know, you know when your in bed, with a woman."
+dev_dia76_utt5,dev,0,data/processed/MELD/dev/video/dev_dia76_utt5.npy,data/processed/MELD/dev/audio/dev_dia76_utt5.npy,Hmph.
+dev_dia76_utt6,dev,1,data/processed/MELD/dev/video/dev_dia76_utt6.npy,data/processed/MELD/dev/audio/dev_dia76_utt6.npy,"And, ah, you know, your fooling around with her."
+dev_dia76_utt7,dev,1,data/processed/MELD/dev/video/dev_dia76_utt7.npy,data/processed/MELD/dev/audio/dev_dia76_utt7.npy,"And you get all these like, mental images in your brain, you know, like Elle MacPherson, or that girl at the Xerox place...."
+dev_dia76_utt8,dev,1,data/processed/MELD/dev/video/dev_dia76_utt8.npy,data/processed/MELD/dev/audio/dev_dia76_utt8.npy,"With the belly-button ring? Oh, muhawa!"
+dev_dia76_utt9,dev,4,data/processed/MELD/dev/video/dev_dia76_utt9.npy,data/processed/MELD/dev/audio/dev_dia76_utt9.npy,"I know, And then all of the sudden your Mom pops into your head."
+dev_dia76_utt10,dev,4,data/processed/MELD/dev/video/dev_dia76_utt10.npy,data/processed/MELD/dev/audio/dev_dia76_utt10.npy,"And your like 'Mom, get outta here!'"
+dev_dia76_utt11,dev,4,data/processed/MELD/dev/video/dev_dia76_utt11.npy,data/processed/MELD/dev/audio/dev_dia76_utt11.npy,"You know, but of course, like, after that you can't possibly think of anything else, and you can't, you know, stop what your doing."
+dev_dia76_utt12,dev,0,data/processed/MELD/dev/video/dev_dia76_utt12.npy,data/processed/MELD/dev/audio/dev_dia76_utt12.npy,"So it's kinda like, you're, you know."
+dev_dia76_utt13,dev,2,data/processed/MELD/dev/video/dev_dia76_utt13.npy,data/processed/MELD/dev/audio/dev_dia76_utt13.npy,You know.... You don't know!
+dev_dia76_utt14,dev,6,data/processed/MELD/dev/video/dev_dia76_utt14.npy,data/processed/MELD/dev/audio/dev_dia76_utt14.npy,"Your Mom, your telling me, your telling me, about your Mom, what is the matter with you?"
+dev_dia76_utt15,dev,0,data/processed/MELD/dev/video/dev_dia76_utt15.npy,data/processed/MELD/dev/audio/dev_dia76_utt15.npy,You said...
+dev_dia76_utt16,dev,0,data/processed/MELD/dev/video/dev_dia76_utt16.npy,data/processed/MELD/dev/audio/dev_dia76_utt16.npy,I said '
+dev_dia77_utt0,dev,2,data/processed/MELD/dev/video/dev_dia77_utt0.npy,data/processed/MELD/dev/audio/dev_dia77_utt0.npy,Oh!
+dev_dia77_utt1,dev,2,data/processed/MELD/dev/video/dev_dia77_utt1.npy,data/processed/MELD/dev/audio/dev_dia77_utt1.npy,Look at Emma!
+dev_dia77_utt2,dev,0,data/processed/MELD/dev/video/dev_dia77_utt2.npy,data/processed/MELD/dev/audio/dev_dia77_utt2.npy,"I just can’t decide who she looks more alike, you or Rachel?"
+dev_dia77_utt3,dev,1,data/processed/MELD/dev/video/dev_dia77_utt3.npy,data/processed/MELD/dev/audio/dev_dia77_utt3.npy,"Oh what are you kidding? She’s gorgeous, it’s all Rachel."
+dev_dia77_utt4,dev,0,data/processed/MELD/dev/video/dev_dia77_utt4.npy,data/processed/MELD/dev/audio/dev_dia77_utt4.npy,"I’m sorry, for the last time, why aren’t you two together again?"
+dev_dia77_utt5,dev,0,data/processed/MELD/dev/video/dev_dia77_utt5.npy,data/processed/MELD/dev/audio/dev_dia77_utt5.npy,"No, I know."
+dev_dia77_utt6,dev,0,data/processed/MELD/dev/video/dev_dia77_utt6.npy,data/processed/MELD/dev/audio/dev_dia77_utt6.npy,"I know, because you’re not in that place."
+dev_dia77_utt7,dev,0,data/processed/MELD/dev/video/dev_dia77_utt7.npy,data/processed/MELD/dev/audio/dev_dia77_utt7.npy,"Which would be fine, except you totally are."
+dev_dia77_utt8,dev,3,data/processed/MELD/dev/video/dev_dia77_utt8.npy,data/processed/MELD/dev/audio/dev_dia77_utt8.npy,It’s…it’s complicated okay?
+dev_dia77_utt9,dev,0,data/processed/MELD/dev/video/dev_dia77_utt9.npy,data/processed/MELD/dev/audio/dev_dia77_utt9.npy,"Yeah that’s true. Yeah, you love her. You always have. You have a child together. There is no right answer."
+dev_dia77_utt10,dev,3,data/processed/MELD/dev/video/dev_dia77_utt10.npy,data/processed/MELD/dev/audio/dev_dia77_utt10.npy,"Look, we’ve been together."
+dev_dia77_utt11,dev,0,data/processed/MELD/dev/video/dev_dia77_utt11.npy,data/processed/MELD/dev/audio/dev_dia77_utt11.npy,Okay?
+dev_dia77_utt12,dev,3,data/processed/MELD/dev/video/dev_dia77_utt12.npy,data/processed/MELD/dev/audio/dev_dia77_utt12.npy,"And then apart, and then together, and then apart, and now we have a baby."
+dev_dia77_utt13,dev,3,data/processed/MELD/dev/video/dev_dia77_utt13.npy,data/processed/MELD/dev/audio/dev_dia77_utt13.npy,It’s just if-if we got together again and it didn’t work out…I could never do that to Emma.
+dev_dia77_utt14,dev,3,data/processed/MELD/dev/video/dev_dia77_utt14.npy,data/processed/MELD/dev/audio/dev_dia77_utt14.npy,I mean she-she thinking everything— Oh that’s…now me.
+dev_dia77_utt15,dev,0,data/processed/MELD/dev/video/dev_dia77_utt15.npy,data/processed/MELD/dev/audio/dev_dia77_utt15.npy,What do they put something in the water in this place?
+dev_dia77_utt16,dev,3,data/processed/MELD/dev/video/dev_dia77_utt16.npy,data/processed/MELD/dev/audio/dev_dia77_utt16.npy,"Since Rachel and I we’re doing really, we’re doing really well right now."
+dev_dia77_utt17,dev,0,data/processed/MELD/dev/video/dev_dia77_utt17.npy,data/processed/MELD/dev/audio/dev_dia77_utt17.npy,"I know. I know. I know. I know, and if you try to make it more you might wreck it."
+dev_dia77_utt18,dev,0,data/processed/MELD/dev/video/dev_dia77_utt18.npy,data/processed/MELD/dev/audio/dev_dia77_utt18.npy,"Yeah, exactly."
+dev_dia77_utt19,dev,0,data/processed/MELD/dev/video/dev_dia77_utt19.npy,data/processed/MELD/dev/audio/dev_dia77_utt19.npy,Right. Or you might get everything you’ve wanted since you were fifteen.
+dev_dia78_utt0,dev,1,data/processed/MELD/dev/video/dev_dia78_utt0.npy,data/processed/MELD/dev/audio/dev_dia78_utt0.npy,God. I forgot how much I love driving. I have
+dev_dia78_utt1,dev,0,data/processed/MELD/dev/video/dev_dia78_utt1.npy,data/processed/MELD/dev/audio/dev_dia78_utt1.npy,You don’t have a
+dev_dia78_utt2,dev,0,data/processed/MELD/dev/video/dev_dia78_utt2.npy,data/processed/MELD/dev/audio/dev_dia78_utt2.npy,"Oh Ross you’re so tense! You just gotta relax, okay? Just need to relax all right? Just need to relax"
+dev_dia78_utt3,dev,4,data/processed/MELD/dev/video/dev_dia78_utt3.npy,data/processed/MELD/dev/audio/dev_dia78_utt3.npy,What-what are you doing?! Are you—Okay that’s not funny! Just stop horsing around!
+dev_dia78_utt4,dev,1,data/processed/MELD/dev/video/dev_dia78_utt4.npy,data/processed/MELD/dev/audio/dev_dia78_utt4.npy,"I am not horsing around, okay? I am Porsching around."
+dev_dia78_utt5,dev,5,data/processed/MELD/dev/video/dev_dia78_utt5.npy,data/processed/MELD/dev/audio/dev_dia78_utt5.npy,Uh-oh.
+dev_dia78_utt6,dev,0,data/processed/MELD/dev/video/dev_dia78_utt6.npy,data/processed/MELD/dev/audio/dev_dia78_utt6.npy,"Okay, stay calm. Nothing is going to happen to you, you are not in that much trouble."
+dev_dia78_utt7,dev,5,data/processed/MELD/dev/video/dev_dia78_utt7.npy,data/processed/MELD/dev/audio/dev_dia78_utt7.npy,Really? You think so?
+dev_dia78_utt8,dev,4,data/processed/MELD/dev/video/dev_dia78_utt8.npy,data/processed/MELD/dev/audio/dev_dia78_utt8.npy,I was talking to myself! You’re going down!
+dev_dia79_utt0,dev,1,data/processed/MELD/dev/video/dev_dia79_utt0.npy,data/processed/MELD/dev/audio/dev_dia79_utt0.npy,Hey honey! I missed you today!
+dev_dia79_utt1,dev,2,data/processed/MELD/dev/video/dev_dia79_utt1.npy,data/processed/MELD/dev/audio/dev_dia79_utt1.npy,"Oh, yeah?"
+dev_dia79_utt2,dev,0,data/processed/MELD/dev/video/dev_dia79_utt2.npy,data/processed/MELD/dev/audio/dev_dia79_utt2.npy,Yeah. What d'you wanna do tonight?
+dev_dia79_utt3,dev,0,data/processed/MELD/dev/video/dev_dia79_utt3.npy,data/processed/MELD/dev/audio/dev_dia79_utt3.npy,"Oh, well... Maybe we could..."
+dev_dia79_utt4,dev,1,data/processed/MELD/dev/video/dev_dia79_utt4.npy,data/processed/MELD/dev/audio/dev_dia79_utt4.npy,"Ok, trying to turn me on by making a mess?"
+dev_dia79_utt5,dev,1,data/processed/MELD/dev/video/dev_dia79_utt5.npy,data/processed/MELD/dev/audio/dev_dia79_utt5.npy,Know your audience!
+dev_dia79_utt6,dev,0,data/processed/MELD/dev/video/dev_dia79_utt6.npy,data/processed/MELD/dev/audio/dev_dia79_utt6.npy,"Besides, tomorrow we're doing those fertility tests and until then you need to keep your tadpoles in the tank."
+dev_dia79_utt7,dev,3,data/processed/MELD/dev/video/dev_dia79_utt7.npy,data/processed/MELD/dev/audio/dev_dia79_utt7.npy,We really need to take those tests?
+dev_dia79_utt8,dev,0,data/processed/MELD/dev/video/dev_dia79_utt8.npy,data/processed/MELD/dev/audio/dev_dia79_utt8.npy,"Honey, we've been trying to have a baby for over a year."
+dev_dia79_utt9,dev,0,data/processed/MELD/dev/video/dev_dia79_utt9.npy,data/processed/MELD/dev/audio/dev_dia79_utt9.npy,I think it's a good idea to find out if everything's ok. Just a few routine tests.
+dev_dia79_utt10,dev,3,data/processed/MELD/dev/video/dev_dia79_utt10.npy,data/processed/MELD/dev/audio/dev_dia79_utt10.npy,But I don't wanna do it in a cup!
+dev_dia80_utt0,dev,0,data/processed/MELD/dev/video/dev_dia80_utt0.npy,data/processed/MELD/dev/audio/dev_dia80_utt0.npy,"Oh, hi Max! Hey, do you know everybody?"
+dev_dia80_utt1,dev,0,data/processed/MELD/dev/video/dev_dia80_utt1.npy,data/processed/MELD/dev/audio/dev_dia80_utt1.npy,No. Have you seen David?
+dev_dia80_utt2,dev,0,data/processed/MELD/dev/video/dev_dia80_utt2.npy,data/processed/MELD/dev/audio/dev_dia80_utt2.npy,"No, no, he hasn't been around."
+dev_dia80_utt3,dev,0,data/processed/MELD/dev/video/dev_dia80_utt3.npy,data/processed/MELD/dev/audio/dev_dia80_utt3.npy,"Well, if you see him, tell him to pack his bags. We are going to Minsk."
+dev_dia80_utt4,dev,2,data/processed/MELD/dev/video/dev_dia80_utt4.npy,data/processed/MELD/dev/audio/dev_dia80_utt4.npy,Minsk?
+dev_dia80_utt5,dev,0,data/processed/MELD/dev/video/dev_dia80_utt5.npy,data/processed/MELD/dev/audio/dev_dia80_utt5.npy,Minsk. It's in Russia.
+dev_dia80_utt6,dev,0,data/processed/MELD/dev/video/dev_dia80_utt6.npy,data/processed/MELD/dev/audio/dev_dia80_utt6.npy,I know where Minsk is.
+dev_dia80_utt7,dev,1,data/processed/MELD/dev/video/dev_dia80_utt7.npy,data/processed/MELD/dev/audio/dev_dia80_utt7.npy,"We got the grant. Three years, all expenses paid."
+dev_dia80_utt8,dev,0,data/processed/MELD/dev/video/dev_dia80_utt8.npy,data/processed/MELD/dev/audio/dev_dia80_utt8.npy,"So when, when do you leave?"
+dev_dia80_utt9,dev,0,data/processed/MELD/dev/video/dev_dia80_utt9.npy,data/processed/MELD/dev/audio/dev_dia80_utt9.npy,January first
+dev_dia81_utt0,dev,1,data/processed/MELD/dev/video/dev_dia81_utt0.npy,data/processed/MELD/dev/audio/dev_dia81_utt0.npy,You wanted to see me Professor Geller?
+dev_dia81_utt1,dev,0,data/processed/MELD/dev/video/dev_dia81_utt1.npy,data/processed/MELD/dev/audio/dev_dia81_utt1.npy,"Yes. Yes! Please, come in."
+dev_dia81_utt2,dev,1,data/processed/MELD/dev/video/dev_dia81_utt2.npy,data/processed/MELD/dev/audio/dev_dia81_utt2.npy,Oo-oo!
+dev_dia82_utt0,dev,1,data/processed/MELD/dev/video/dev_dia82_utt0.npy,data/processed/MELD/dev/audio/dev_dia82_utt0.npy,Pretty great! Except I did get a little attitude from the robot.
+dev_dia82_utt1,dev,4,data/processed/MELD/dev/video/dev_dia82_utt1.npy,data/processed/MELD/dev/audio/dev_dia82_utt1.npy,"Damn those robots, they’re supposed to be our"
+dev_dia82_utt2,dev,0,data/processed/MELD/dev/video/dev_dia82_utt2.npy,data/processed/MELD/dev/audio/dev_dia82_utt2.npy,"Anyway, it wasn’t the robot, it was the guy who controls him."
+dev_dia82_utt3,dev,4,data/processed/MELD/dev/video/dev_dia82_utt3.npy,data/processed/MELD/dev/audio/dev_dia82_utt3.npy,"Yeah, he doesn’t like me."
+dev_dia82_utt4,dev,0,data/processed/MELD/dev/video/dev_dia82_utt4.npy,data/processed/MELD/dev/audio/dev_dia82_utt4.npy,He had C.H.E.E.S.E.
+dev_dia82_utt5,dev,4,data/processed/MELD/dev/video/dev_dia82_utt5.npy,data/processed/MELD/dev/audio/dev_dia82_utt5.npy,knock over the sandwich right when I was reaching for one!
+dev_dia82_utt6,dev,2,data/processed/MELD/dev/video/dev_dia82_utt6.npy,data/processed/MELD/dev/audio/dev_dia82_utt6.npy,Ohh!
+dev_dia82_utt7,dev,0,data/processed/MELD/dev/video/dev_dia82_utt7.npy,data/processed/MELD/dev/audio/dev_dia82_utt7.npy,"Well, why don’t you just get him fired?"
+dev_dia82_utt8,dev,4,data/processed/MELD/dev/video/dev_dia82_utt8.npy,data/processed/MELD/dev/audio/dev_dia82_utt8.npy,"I may have to, I hate to do it, but I’m the star!"
+dev_dia82_utt9,dev,0,data/processed/MELD/dev/video/dev_dia82_utt9.npy,data/processed/MELD/dev/audio/dev_dia82_utt9.npy,Y’know?
+dev_dia82_utt10,dev,0,data/processed/MELD/dev/video/dev_dia82_utt10.npy,data/processed/MELD/dev/audio/dev_dia82_utt10.npy,There’s a limit to how many sandwiches I can eat off the floor.
+dev_dia82_utt11,dev,0,data/processed/MELD/dev/video/dev_dia82_utt11.npy,data/processed/MELD/dev/audio/dev_dia82_utt11.npy,Excuse me.
+dev_dia82_utt12,dev,0,data/processed/MELD/dev/video/dev_dia82_utt12.npy,data/processed/MELD/dev/audio/dev_dia82_utt12.npy,Joey Tribbiani.
+dev_dia82_utt13,dev,1,data/processed/MELD/dev/video/dev_dia82_utt13.npy,data/processed/MELD/dev/audio/dev_dia82_utt13.npy,"Joe! I’m glad I found ya, I got an audition for ya!"
+dev_dia82_utt14,dev,2,data/processed/MELD/dev/video/dev_dia82_utt14.npy,data/processed/MELD/dev/audio/dev_dia82_utt14.npy,Wow!
+dev_dia82_utt15,dev,0,data/processed/MELD/dev/video/dev_dia82_utt15.npy,data/processed/MELD/dev/audio/dev_dia82_utt15.npy,The thing is it’s kinda on the Q.T.
+dev_dia82_utt16,dev,0,data/processed/MELD/dev/video/dev_dia82_utt16.npy,data/processed/MELD/dev/audio/dev_dia82_utt16.npy,The actor who has the part doesn’t know he might be fired.
+dev_dia82_utt17,dev,0,data/processed/MELD/dev/video/dev_dia82_utt17.npy,data/processed/MELD/dev/audio/dev_dia82_utt17.npy,"It’s the lead in a series, Mac and C.H.E.E.S.E."
+dev_dia82_utt18,dev,4,data/processed/MELD/dev/video/dev_dia82_utt18.npy,data/processed/MELD/dev/audio/dev_dia82_utt18.npy,I’m the lead in Mac and C.H.E.E.S.E.!!
+dev_dia83_utt0,dev,4,data/processed/MELD/dev/video/dev_dia83_utt0.npy,data/processed/MELD/dev/audio/dev_dia83_utt0.npy,Oh good God! If you want a baby so bad just go steal it!
+dev_dia83_utt1,dev,2,data/processed/MELD/dev/video/dev_dia83_utt1.npy,data/processed/MELD/dev/audio/dev_dia83_utt1.npy,What is going on with you? Since when are you so crazy about babies?
+dev_dia83_utt2,dev,1,data/processed/MELD/dev/video/dev_dia83_utt2.npy,data/processed/MELD/dev/audio/dev_dia83_utt2.npy,I’m not crazy about babies. I’m crazy about us.
+dev_dia83_utt3,dev,2,data/processed/MELD/dev/video/dev_dia83_utt3.npy,data/processed/MELD/dev/audio/dev_dia83_utt3.npy,What?
+dev_dia83_utt4,dev,0,data/processed/MELD/dev/video/dev_dia83_utt4.npy,data/processed/MELD/dev/audio/dev_dia83_utt4.npy,"Look, we’ve always talked about having babies someday."
+dev_dia83_utt5,dev,0,data/processed/MELD/dev/video/dev_dia83_utt5.npy,data/processed/MELD/dev/audio/dev_dia83_utt5.npy,"I’m not saying it has to be right now, but I’m starting to think that we can handle it."
+dev_dia83_utt6,dev,0,data/processed/MELD/dev/video/dev_dia83_utt6.npy,data/processed/MELD/dev/audio/dev_dia83_utt6.npy,We’re good.
+dev_dia83_utt7,dev,1,data/processed/MELD/dev/video/dev_dia83_utt7.npy,data/processed/MELD/dev/audio/dev_dia83_utt7.npy,We’re really good.
+dev_dia84_utt0,dev,2,data/processed/MELD/dev/video/dev_dia84_utt0.npy,data/processed/MELD/dev/audio/dev_dia84_utt0.npy,"Oh, did you catch him?!"
+dev_dia84_utt1,dev,2,data/processed/MELD/dev/video/dev_dia84_utt1.npy,data/processed/MELD/dev/audio/dev_dia84_utt1.npy,Wh-what did he say?!
+dev_dia84_utt2,dev,0,data/processed/MELD/dev/video/dev_dia84_utt2.npy,data/processed/MELD/dev/audio/dev_dia84_utt2.npy,"He said, ""Nice to meet you Glenda."" Well, obviously I couldn't give him my real name?"
+dev_dia84_utt3,dev,2,data/processed/MELD/dev/video/dev_dia84_utt3.npy,data/processed/MELD/dev/audio/dev_dia84_utt3.npy,Why?! Why not?!
+dev_dia84_utt4,dev,3,data/processed/MELD/dev/video/dev_dia84_utt4.npy,data/processed/MELD/dev/audio/dev_dia84_utt4.npy,"Come on, you saw the way he ran out of here!"
+dev_dia84_utt5,dev,3,data/processed/MELD/dev/video/dev_dia84_utt5.npy,data/processed/MELD/dev/audio/dev_dia84_utt5.npy,He's gonna stick around and talk to the daughter he abandoned!
+dev_dia84_utt6,dev,0,data/processed/MELD/dev/video/dev_dia84_utt6.npy,data/processed/MELD/dev/audio/dev_dia84_utt6.npy,What did you say to him?
+dev_dia84_utt7,dev,0,data/processed/MELD/dev/video/dev_dia84_utt7.npy,data/processed/MELD/dev/audio/dev_dia84_utt7.npy,"Well, I said, I told him y'know, that I was the executor person of Francis' will and that I needed to talk to him so I'm gonna meet him at the coffee house later."
+dev_dia85_utt0,dev,0,data/processed/MELD/dev/video/dev_dia85_utt0.npy,data/processed/MELD/dev/audio/dev_dia85_utt0.npy,"Oh yeah, sure."
+dev_dia85_utt1,dev,1,data/processed/MELD/dev/video/dev_dia85_utt1.npy,data/processed/MELD/dev/audio/dev_dia85_utt1.npy,"Okay, in about ten seconds you’re gonna see him kiss me."
+dev_dia85_utt2,dev,0,data/processed/MELD/dev/video/dev_dia85_utt2.npy,data/processed/MELD/dev/audio/dev_dia85_utt2.npy,And in about five seconds you’re gonna see why.
+dev_dia85_utt3,dev,0,data/processed/MELD/dev/video/dev_dia85_utt3.npy,data/processed/MELD/dev/audio/dev_dia85_utt3.npy,Ross did I ever tell you about the time that I went backpacking through Western Europe?
+dev_dia85_utt4,dev,1,data/processed/MELD/dev/video/dev_dia85_utt4.npy,data/processed/MELD/dev/audio/dev_dia85_utt4.npy,"Okay, get ready to see some beggin’!"
+dev_dia85_utt5,dev,2,data/processed/MELD/dev/video/dev_dia85_utt5.npy,data/processed/MELD/dev/audio/dev_dia85_utt5.npy,"Oh, you came on to Ross!"
+dev_dia85_utt6,dev,2,data/processed/MELD/dev/video/dev_dia85_utt6.npy,data/processed/MELD/dev/audio/dev_dia85_utt6.npy,What?!
+dev_dia85_utt7,dev,1,data/processed/MELD/dev/video/dev_dia85_utt7.npy,data/processed/MELD/dev/audio/dev_dia85_utt7.npy,Now I’m so happy.
+dev_dia85_utt8,dev,2,data/processed/MELD/dev/video/dev_dia85_utt8.npy,data/processed/MELD/dev/audio/dev_dia85_utt8.npy,What are you talking about?!
+dev_dia85_utt9,dev,1,data/processed/MELD/dev/video/dev_dia85_utt9.npy,data/processed/MELD/dev/audio/dev_dia85_utt9.npy,You used the Europe story!
+dev_dia85_utt10,dev,4,data/processed/MELD/dev/video/dev_dia85_utt10.npy,data/processed/MELD/dev/audio/dev_dia85_utt10.npy,That’s the magic story you use when you wanna have sex!
+dev_dia85_utt11,dev,2,data/processed/MELD/dev/video/dev_dia85_utt11.npy,data/processed/MELD/dev/audio/dev_dia85_utt11.npy,How do you know about that story?!
+dev_dia85_utt12,dev,0,data/processed/MELD/dev/video/dev_dia85_utt12.npy,data/processed/MELD/dev/audio/dev_dia85_utt12.npy,How do
+dev_dia85_utt13,dev,0,data/processed/MELD/dev/video/dev_dia85_utt13.npy,data/processed/MELD/dev/audio/dev_dia85_utt13.npy,I heard it from my friend Irene who heard it from some guy!
+dev_dia85_utt14,dev,2,data/processed/MELD/dev/video/dev_dia85_utt14.npy,data/processed/MELD/dev/audio/dev_dia85_utt14.npy,Some guy!!
+dev_dia85_utt15,dev,0,data/processed/MELD/dev/video/dev_dia85_utt15.npy,data/processed/MELD/dev/audio/dev_dia85_utt15.npy,"No. No, she told me his name was Ken Adams."
+dev_dia85_utt16,dev,2,data/processed/MELD/dev/video/dev_dia85_utt16.npy,data/processed/MELD/dev/audio/dev_dia85_utt16.npy,Ken Adams!!
+dev_dia86_utt0,dev,0,data/processed/MELD/dev/video/dev_dia86_utt0.npy,data/processed/MELD/dev/audio/dev_dia86_utt0.npy,"How we doing, you guys ready?"
+dev_dia86_utt1,dev,0,data/processed/MELD/dev/video/dev_dia86_utt1.npy,data/processed/MELD/dev/audio/dev_dia86_utt1.npy,Mom already called this morning to remind me not to wear my hair up. Did you know my ears are not my best feature?
+dev_dia86_utt2,dev,0,data/processed/MELD/dev/video/dev_dia86_utt2.npy,data/processed/MELD/dev/audio/dev_dia86_utt2.npy,Some days it's all I can think about.
+dev_dia86_utt3,dev,0,data/processed/MELD/dev/video/dev_dia86_utt3.npy,data/processed/MELD/dev/audio/dev_dia86_utt3.npy,"Hi, sorry I'm late, I couldn't find my bearings."
+dev_dia87_utt0,dev,0,data/processed/MELD/dev/video/dev_dia87_utt0.npy,data/processed/MELD/dev/audio/dev_dia87_utt0.npy,"Oh... ok, fine."
+dev_dia87_utt1,dev,0,data/processed/MELD/dev/video/dev_dia87_utt1.npy,data/processed/MELD/dev/audio/dev_dia87_utt1.npy,But... ehm...
+dev_dia87_utt2,dev,0,data/processed/MELD/dev/video/dev_dia87_utt2.npy,data/processed/MELD/dev/audio/dev_dia87_utt2.npy,"I just have one question for you, ehm..."
+dev_dia87_utt3,dev,0,data/processed/MELD/dev/video/dev_dia87_utt3.npy,data/processed/MELD/dev/audio/dev_dia87_utt3.npy,"When we exit should we walk, or run, or prance, or stroll..."
+dev_dia87_utt4,dev,1,data/processed/MELD/dev/video/dev_dia87_utt4.npy,data/processed/MELD/dev/audio/dev_dia87_utt4.npy,"Stop it, stop it! He talks slow but he might pee fast! Ok, let's go!!"
+dev_dia88_utt0,dev,2,data/processed/MELD/dev/video/dev_dia88_utt0.npy,data/processed/MELD/dev/audio/dev_dia88_utt0.npy,I can’t believe this! How long as this been going on?
+dev_dia88_utt1,dev,0,data/processed/MELD/dev/video/dev_dia88_utt1.npy,data/processed/MELD/dev/audio/dev_dia88_utt1.npy,"Well umm, Alexandra has been"
+dev_dia88_utt2,dev,2,data/processed/MELD/dev/video/dev_dia88_utt2.npy,data/processed/MELD/dev/audio/dev_dia88_utt2.npy,"Oh, it has a name?"
+dev_dia88_utt3,dev,3,data/processed/MELD/dev/video/dev_dia88_utt3.npy,data/processed/MELD/dev/audio/dev_dia88_utt3.npy,"Phoebe, don’t get upset!"
+dev_dia88_utt4,dev,4,data/processed/MELD/dev/video/dev_dia88_utt4.npy,data/processed/MELD/dev/audio/dev_dia88_utt4.npy,Okay—Oop! Too late! I’m leaving! Come on Chandler let’s go!
+dev_dia88_utt5,dev,0,data/processed/MELD/dev/video/dev_dia88_utt5.npy,data/processed/MELD/dev/audio/dev_dia88_utt5.npy,"Well, Phoebe I thought I’d——Yeah, what the hell."
+dev_dia89_utt0,dev,5,data/processed/MELD/dev/video/dev_dia89_utt0.npy,data/processed/MELD/dev/audio/dev_dia89_utt0.npy,Ben!
+dev_dia89_utt1,dev,4,data/processed/MELD/dev/video/dev_dia89_utt1.npy,data/processed/MELD/dev/audio/dev_dia89_utt1.npy,"Oh, that's good. Maybe he'll hear you and pull the cord."
+dev_dia89_utt2,dev,5,data/processed/MELD/dev/video/dev_dia89_utt2.npy,data/processed/MELD/dev/audio/dev_dia89_utt2.npy,Stop the bus! Wait! Wait! Wait!
+dev_dia89_utt3,dev,0,data/processed/MELD/dev/video/dev_dia89_utt3.npy,data/processed/MELD/dev/audio/dev_dia89_utt3.npy,Are you sure he didn't break it because it really hurts?
+dev_dia89_utt4,dev,0,data/processed/MELD/dev/video/dev_dia89_utt4.npy,data/processed/MELD/dev/audio/dev_dia89_utt4.npy,"No, it's just a good bone bruise. And, right here is the puncture wound from your ring."
+dev_dia89_utt5,dev,3,data/processed/MELD/dev/video/dev_dia89_utt5.npy,data/processed/MELD/dev/audio/dev_dia89_utt5.npy,"Oh, I'm sorry, I'm really sorry."
+dev_dia89_utt6,dev,3,data/processed/MELD/dev/video/dev_dia89_utt6.npy,data/processed/MELD/dev/audio/dev_dia89_utt6.npy,Sorry.
+dev_dia89_utt7,dev,3,data/processed/MELD/dev/video/dev_dia89_utt7.npy,data/processed/MELD/dev/audio/dev_dia89_utt7.npy,Sorry!
+dev_dia89_utt8,dev,1,data/processed/MELD/dev/video/dev_dia89_utt8.npy,data/processed/MELD/dev/audio/dev_dia89_utt8.npy,I got my s's back!
+dev_dia89_utt9,dev,0,data/processed/MELD/dev/video/dev_dia89_utt9.npy,data/processed/MELD/dev/audio/dev_dia89_utt9.npy,Which we can celebrate later.
+dev_dia89_utt10,dev,0,data/processed/MELD/dev/video/dev_dia89_utt10.npy,data/processed/MELD/dev/audio/dev_dia89_utt10.npy,Celebrate.
+dev_dia90_utt0,dev,1,data/processed/MELD/dev/video/dev_dia90_utt0.npy,data/processed/MELD/dev/audio/dev_dia90_utt0.npy,"Ok, Paulo, why don't you just go get dressed, and then you be on your way, ok, bye-bye."
+dev_dia90_utt1,dev,0,data/processed/MELD/dev/video/dev_dia90_utt1.npy,data/processed/MELD/dev/audio/dev_dia90_utt1.npy,"Rachel, how did this happen?"
+dev_dia90_utt2,dev,5,data/processed/MELD/dev/video/dev_dia90_utt2.npy,data/processed/MELD/dev/audio/dev_dia90_utt2.npy,"I don't know, I just kinda ran into him last night."
+dev_dia90_utt3,dev,0,data/processed/MELD/dev/video/dev_dia90_utt3.npy,data/processed/MELD/dev/audio/dev_dia90_utt3.npy,Where?
+dev_dia90_utt4,dev,0,data/processed/MELD/dev/video/dev_dia90_utt4.npy,data/processed/MELD/dev/audio/dev_dia90_utt4.npy,At his apartment. Is this juice?
+dev_dia90_utt5,dev,4,data/processed/MELD/dev/video/dev_dia90_utt5.npy,data/processed/MELD/dev/audio/dev_dia90_utt5.npy,"Whoa, whoa. And the fact that you dumped him because he hit on Phoebe?"
+dev_dia90_utt6,dev,3,data/processed/MELD/dev/video/dev_dia90_utt6.npy,data/processed/MELD/dev/audio/dev_dia90_utt6.npy,"Oh God, I know I'm a pathetic loser."
+dev_dia91_utt0,dev,2,data/processed/MELD/dev/video/dev_dia91_utt0.npy,data/processed/MELD/dev/audio/dev_dia91_utt0.npy,"I licked my arm, what?"
+dev_dia91_utt1,dev,0,data/processed/MELD/dev/video/dev_dia91_utt1.npy,data/processed/MELD/dev/audio/dev_dia91_utt1.npy,It's breast milk.
+dev_dia91_utt2,dev,0,data/processed/MELD/dev/video/dev_dia91_utt2.npy,data/processed/MELD/dev/audio/dev_dia91_utt2.npy,So?
+dev_dia91_utt3,dev,0,data/processed/MELD/dev/video/dev_dia91_utt3.npy,data/processed/MELD/dev/audio/dev_dia91_utt3.npy,"Phoebe, that is juice, squeezed from a person."
+dev_dia91_utt4,dev,4,data/processed/MELD/dev/video/dev_dia91_utt4.npy,data/processed/MELD/dev/audio/dev_dia91_utt4.npy,What is the big deal?
+dev_dia91_utt5,dev,2,data/processed/MELD/dev/video/dev_dia91_utt5.npy,data/processed/MELD/dev/audio/dev_dia91_utt5.npy,What did you just do?
+dev_dia91_utt6,dev,6,data/processed/MELD/dev/video/dev_dia91_utt6.npy,data/processed/MELD/dev/audio/dev_dia91_utt6.npy,"Ok, would people stop drinking the breast milk?"
+dev_dia91_utt7,dev,0,data/processed/MELD/dev/video/dev_dia91_utt7.npy,data/processed/MELD/dev/audio/dev_dia91_utt7.npy,You won't even taste it?
+dev_dia91_utt8,dev,6,data/processed/MELD/dev/video/dev_dia91_utt8.npy,data/processed/MELD/dev/audio/dev_dia91_utt8.npy,No!
+dev_dia91_utt9,dev,0,data/processed/MELD/dev/video/dev_dia91_utt9.npy,data/processed/MELD/dev/audio/dev_dia91_utt9.npy,Not even if you just pretend that it's milk?
+dev_dia91_utt10,dev,6,data/processed/MELD/dev/video/dev_dia91_utt10.npy,data/processed/MELD/dev/audio/dev_dia91_utt10.npy,Not even if Carol's breast had a picture of a missing child on it.
+dev_dia92_utt0,dev,2,data/processed/MELD/dev/video/dev_dia92_utt0.npy,data/processed/MELD/dev/audio/dev_dia92_utt0.npy,Aww!
+dev_dia92_utt1,dev,6,data/processed/MELD/dev/video/dev_dia92_utt1.npy,data/processed/MELD/dev/audio/dev_dia92_utt1.npy,"Hey Pheebs, could you please not put your feet up on my new……old sheet?"
+dev_dia92_utt2,dev,1,data/processed/MELD/dev/video/dev_dia92_utt2.npy,data/processed/MELD/dev/audio/dev_dia92_utt2.npy,Oh sure! Noo!
+dev_dia92_utt3,dev,2,data/processed/MELD/dev/video/dev_dia92_utt3.npy,data/processed/MELD/dev/audio/dev_dia92_utt3.npy,Ohh!!
+dev_dia92_utt4,dev,2,data/processed/MELD/dev/video/dev_dia92_utt4.npy,data/processed/MELD/dev/audio/dev_dia92_utt4.npy,My apothecary table!!!
+dev_dia92_utt5,dev,2,data/processed/MELD/dev/video/dev_dia92_utt5.npy,data/processed/MELD/dev/audio/dev_dia92_utt5.npy,What?!
+dev_dia92_utt6,dev,5,data/processed/MELD/dev/video/dev_dia92_utt6.npy,data/processed/MELD/dev/audio/dev_dia92_utt6.npy,Noooooo!!
+dev_dia92_utt7,dev,2,data/processed/MELD/dev/video/dev_dia92_utt7.npy,data/processed/MELD/dev/audio/dev_dia92_utt7.npy,"Ross, where did you get this?!"
+dev_dia92_utt8,dev,4,data/processed/MELD/dev/video/dev_dia92_utt8.npy,data/processed/MELD/dev/audio/dev_dia92_utt8.npy,"Oh my God, Phoebe,"
+dev_dia92_utt9,dev,4,data/processed/MELD/dev/video/dev_dia92_utt9.npy,data/processed/MELD/dev/audio/dev_dia92_utt9.npy,"Wow! Oh my God, well if they’ve ripped off our table ours must be much more than one and fifty dollars!"
+dev_dia92_utt10,dev,6,data/processed/MELD/dev/video/dev_dia92_utt10.npy,data/processed/MELD/dev/audio/dev_dia92_utt10.npy,Well this doesn’t even smell like opium.
+dev_dia92_utt11,dev,4,data/processed/MELD/dev/video/dev_dia92_utt11.npy,data/processed/MELD/dev/audio/dev_dia92_utt11.npy,"Of course not, it smells like wine, which you spilled! And thanks for wrecking my sheet by the way."
+dev_dia93_utt0,dev,3,data/processed/MELD/dev/video/dev_dia93_utt0.npy,data/processed/MELD/dev/audio/dev_dia93_utt0.npy,How is she?
+dev_dia93_utt1,dev,0,data/processed/MELD/dev/video/dev_dia93_utt1.npy,data/processed/MELD/dev/audio/dev_dia93_utt1.npy,"It's too soon to tell. She's resting, which is a good sign."
+dev_dia93_utt2,dev,0,data/processed/MELD/dev/video/dev_dia93_utt2.npy,data/processed/MELD/dev/audio/dev_dia93_utt2.npy,How's the hair?
+dev_dia93_utt3,dev,3,data/processed/MELD/dev/video/dev_dia93_utt3.npy,data/processed/MELD/dev/audio/dev_dia93_utt3.npy,"I'm not gonna lie to you, Ross, it doesn't look good."
+dev_dia93_utt4,dev,0,data/processed/MELD/dev/video/dev_dia93_utt4.npy,data/processed/MELD/dev/audio/dev_dia93_utt4.npy,"I put a clip on one side, which seems to have stopped the curling."
+dev_dia93_utt5,dev,0,data/processed/MELD/dev/video/dev_dia93_utt5.npy,data/processed/MELD/dev/audio/dev_dia93_utt5.npy,Can we see her?
+dev_dia93_utt6,dev,3,data/processed/MELD/dev/video/dev_dia93_utt6.npy,data/processed/MELD/dev/audio/dev_dia93_utt6.npy,"Your hair looks too good, I think it would upset her. Ross, why don't you come on in."
+dev_dia93_utt7,dev,3,data/processed/MELD/dev/video/dev_dia93_utt7.npy,data/processed/MELD/dev/audio/dev_dia93_utt7.npy,How're you doing?
+dev_dia94_utt0,dev,0,data/processed/MELD/dev/video/dev_dia94_utt0.npy,data/processed/MELD/dev/audio/dev_dia94_utt0.npy,Of course the packaging does appeal to grown-ups and kids alike.
+dev_dia94_utt1,dev,1,data/processed/MELD/dev/video/dev_dia94_utt1.npy,data/processed/MELD/dev/audio/dev_dia94_utt1.npy,"Ross, you're being silly. I've tried it, it's no big deal. Just taste it."
+dev_dia94_utt2,dev,6,data/processed/MELD/dev/video/dev_dia94_utt2.npy,data/processed/MELD/dev/audio/dev_dia94_utt2.npy,That would be no.
+dev_dia94_utt3,dev,0,data/processed/MELD/dev/video/dev_dia94_utt3.npy,data/processed/MELD/dev/audio/dev_dia94_utt3.npy,Come on. It doesn't taste bad.
+dev_dia94_utt4,dev,0,data/processed/MELD/dev/video/dev_dia94_utt4.npy,data/processed/MELD/dev/audio/dev_dia94_utt4.npy,"Yeah, it's kinda sweet, sorta like, uh..."
+dev_dia94_utt5,dev,1,data/processed/MELD/dev/video/dev_dia94_utt5.npy,data/processed/MELD/dev/audio/dev_dia94_utt5.npy,Cantaloupe juice.
+dev_dia94_utt6,dev,0,data/processed/MELD/dev/video/dev_dia94_utt6.npy,data/processed/MELD/dev/audio/dev_dia94_utt6.npy,Exactly.
+dev_dia94_utt7,dev,2,data/processed/MELD/dev/video/dev_dia94_utt7.npy,data/processed/MELD/dev/audio/dev_dia94_utt7.npy,You've tasted it? You've tasted it.
+dev_dia94_utt8,dev,0,data/processed/MELD/dev/video/dev_dia94_utt8.npy,data/processed/MELD/dev/audio/dev_dia94_utt8.npy,Uh huh.
+dev_dia94_utt9,dev,4,data/processed/MELD/dev/video/dev_dia94_utt9.npy,data/processed/MELD/dev/audio/dev_dia94_utt9.npy,"Oh, you've tasted it."
+dev_dia94_utt10,dev,0,data/processed/MELD/dev/video/dev_dia94_utt10.npy,data/processed/MELD/dev/audio/dev_dia94_utt10.npy,"You can keep saying it, but it won't stop being true."
+dev_dia94_utt11,dev,4,data/processed/MELD/dev/video/dev_dia94_utt11.npy,data/processed/MELD/dev/audio/dev_dia94_utt11.npy,Gimme the bottle. Gimme the towel.
+dev_dia95_utt0,dev,4,data/processed/MELD/dev/video/dev_dia95_utt0.npy,data/processed/MELD/dev/audio/dev_dia95_utt0.npy,I still don't get why Greg and Jenny would give us a fake number.
+dev_dia95_utt1,dev,0,data/processed/MELD/dev/video/dev_dia95_utt1.npy,data/processed/MELD/dev/audio/dev_dia95_utt1.npy,"Y’know, if they knew what they were doing they probably didn’t give you real names either."
+dev_dia95_utt2,dev,4,data/processed/MELD/dev/video/dev_dia95_utt2.npy,data/processed/MELD/dev/audio/dev_dia95_utt2.npy,"Okay, maybe people give out fake numbers, but they don’t give out fake names."
+dev_dia95_utt3,dev,0,data/processed/MELD/dev/video/dev_dia95_utt3.npy,data/processed/MELD/dev/audio/dev_dia95_utt3.npy,"Oh yeah? Hi, Ken Adams, nice to meet you."
+dev_dia95_utt4,dev,0,data/processed/MELD/dev/video/dev_dia95_utt4.npy,data/processed/MELD/dev/audio/dev_dia95_utt4.npy,Regina Philange.
+dev_dia95_utt5,dev,2,data/processed/MELD/dev/video/dev_dia95_utt5.npy,data/processed/MELD/dev/audio/dev_dia95_utt5.npy,"I still don’t get it, we didn’t do anything wrong."
+dev_dia95_utt6,dev,4,data/processed/MELD/dev/video/dev_dia95_utt6.npy,data/processed/MELD/dev/audio/dev_dia95_utt6.npy,"I know! Although, you did tell an awful lot of jokes."
+dev_dia95_utt7,dev,2,data/processed/MELD/dev/video/dev_dia95_utt7.npy,data/processed/MELD/dev/audio/dev_dia95_utt7.npy,I thought you said those jokes were funny. Joke! Joke! Joke!
+dev_dia95_utt8,dev,4,data/processed/MELD/dev/video/dev_dia95_utt8.npy,data/processed/MELD/dev/audio/dev_dia95_utt8.npy,Joke. Joke. Blah! Blah!
+dev_dia95_utt9,dev,0,data/processed/MELD/dev/video/dev_dia95_utt9.npy,data/processed/MELD/dev/audio/dev_dia95_utt9.npy,Well maybe it was all of your questions.
+dev_dia95_utt10,dev,0,data/processed/MELD/dev/video/dev_dia95_utt10.npy,data/processed/MELD/dev/audio/dev_dia95_utt10.npy,What about my questions?
+dev_dia96_utt0,dev,0,data/processed/MELD/dev/video/dev_dia96_utt0.npy,data/processed/MELD/dev/audio/dev_dia96_utt0.npy,"No, I’m sorry. It’s just my foot itches like crazy."
+dev_dia96_utt1,dev,0,data/processed/MELD/dev/video/dev_dia96_utt1.npy,data/processed/MELD/dev/audio/dev_dia96_utt1.npy,"Oh, I’ll get it."
+dev_dia96_utt2,dev,2,data/processed/MELD/dev/video/dev_dia96_utt2.npy,data/processed/MELD/dev/audio/dev_dia96_utt2.npy,Wow! I usually get to know a girl a little better before I let her spoon me.
+dev_dia96_utt3,dev,1,data/processed/MELD/dev/video/dev_dia96_utt3.npy,data/processed/MELD/dev/audio/dev_dia96_utt3.npy,"Relax, it’s not like we’re forking."
+dev_dia97_utt0,dev,1,data/processed/MELD/dev/video/dev_dia97_utt0.npy,data/processed/MELD/dev/audio/dev_dia97_utt0.npy,"Look at it! Ohhh! Wallpaper’s a little faded, that’s okay. Carpet’s a little loose. Hardwood floors!!"
+dev_dia97_utt1,dev,1,data/processed/MELD/dev/video/dev_dia97_utt1.npy,data/processed/MELD/dev/audio/dev_dia97_utt1.npy,Hey!
+dev_dia97_utt2,dev,0,data/processed/MELD/dev/video/dev_dia97_utt2.npy,data/processed/MELD/dev/audio/dev_dia97_utt2.npy,Hello.
+dev_dia97_utt3,dev,1,data/processed/MELD/dev/video/dev_dia97_utt3.npy,data/processed/MELD/dev/audio/dev_dia97_utt3.npy,Oh! Ooh! Oh Monica! It’s so beautiful.
+dev_dia97_utt4,dev,1,data/processed/MELD/dev/video/dev_dia97_utt4.npy,data/processed/MELD/dev/audio/dev_dia97_utt4.npy,I know!!!
+dev_dia97_utt5,dev,1,data/processed/MELD/dev/video/dev_dia97_utt5.npy,data/processed/MELD/dev/audio/dev_dia97_utt5.npy,"So, I’m here, ready to play."
+dev_dia97_utt6,dev,0,data/processed/MELD/dev/video/dev_dia97_utt6.npy,data/processed/MELD/dev/audio/dev_dia97_utt6.npy,Okay.
+dev_dia97_utt7,dev,1,data/processed/MELD/dev/video/dev_dia97_utt7.npy,data/processed/MELD/dev/audio/dev_dia97_utt7.npy,"I brought a bunch of stuff for the house, so check it out. Ha-ha."
+dev_dia97_utt8,dev,2,data/processed/MELD/dev/video/dev_dia97_utt8.npy,data/processed/MELD/dev/audio/dev_dia97_utt8.npy,What’s this?
+dev_dia97_utt9,dev,1,data/processed/MELD/dev/video/dev_dia97_utt9.npy,data/processed/MELD/dev/audio/dev_dia97_utt9.npy,"That’s a dog, every house should have a dog."
+dev_dia97_utt10,dev,2,data/processed/MELD/dev/video/dev_dia97_utt10.npy,data/processed/MELD/dev/audio/dev_dia97_utt10.npy,Not one that can pee on the roof.
+dev_dia97_utt11,dev,1,data/processed/MELD/dev/video/dev_dia97_utt11.npy,data/processed/MELD/dev/audio/dev_dia97_utt11.npy,"Well, maybe it’s so big because the house was built on radioactive waste."
+dev_dia97_utt12,dev,2,data/processed/MELD/dev/video/dev_dia97_utt12.npy,data/processed/MELD/dev/audio/dev_dia97_utt12.npy,And is this in case the house sneezes?
+dev_dia97_utt13,dev,0,data/processed/MELD/dev/video/dev_dia97_utt13.npy,data/processed/MELD/dev/audio/dev_dia97_utt13.npy,"No, no, that’s the ghost for the attic."
+dev_dia97_utt14,dev,5,data/processed/MELD/dev/video/dev_dia97_utt14.npy,data/processed/MELD/dev/audio/dev_dia97_utt14.npy,I don’t want a ghost.
+dev_dia97_utt15,dev,0,data/processed/MELD/dev/video/dev_dia97_utt15.npy,data/processed/MELD/dev/audio/dev_dia97_utt15.npy,"Well, nobody wants a ghost. But you’ve got one, because the house is sitting on an ancient Indian burial ground."
+dev_dia97_utt16,dev,2,data/processed/MELD/dev/video/dev_dia97_utt16.npy,data/processed/MELD/dev/audio/dev_dia97_utt16.npy,"Wait a minute, the house was built on radioactive waste, and an ancient Indian burial ground? That would never happen."
+dev_dia97_utt17,dev,0,data/processed/MELD/dev/video/dev_dia97_utt17.npy,data/processed/MELD/dev/audio/dev_dia97_utt17.npy,"Okay, obviously you don’t know much about the U.S. government."
+dev_dia97_utt18,dev,2,data/processed/MELD/dev/video/dev_dia97_utt18.npy,data/processed/MELD/dev/audio/dev_dia97_utt18.npy,Hey!
+dev_dia97_utt19,dev,0,data/processed/MELD/dev/video/dev_dia97_utt19.npy,data/processed/MELD/dev/audio/dev_dia97_utt19.npy,Hello.
+dev_dia97_utt20,dev,1,data/processed/MELD/dev/video/dev_dia97_utt20.npy,data/processed/MELD/dev/audio/dev_dia97_utt20.npy,I need to talk to you!
+dev_dia97_utt21,dev,0,data/processed/MELD/dev/video/dev_dia97_utt21.npy,data/processed/MELD/dev/audio/dev_dia97_utt21.npy,"Sure, what’s up?"
+dev_dia98_utt0,dev,4,data/processed/MELD/dev/video/dev_dia98_utt0.npy,data/processed/MELD/dev/audio/dev_dia98_utt0.npy,"All right, I just got changed in thirty seconds so you can be alone with him. You'd better go for it."
+dev_dia98_utt1,dev,6,data/processed/MELD/dev/video/dev_dia98_utt1.npy,data/processed/MELD/dev/audio/dev_dia98_utt1.npy,"Please, I'm not going for anything."
+dev_dia98_utt2,dev,4,data/processed/MELD/dev/video/dev_dia98_utt2.npy,data/processed/MELD/dev/audio/dev_dia98_utt2.npy,"Well, if you don't, I will."
+dev_dia98_utt3,dev,1,data/processed/MELD/dev/video/dev_dia98_utt3.npy,data/processed/MELD/dev/audio/dev_dia98_utt3.npy,Would you please go?
+dev_dia98_utt4,dev,4,data/processed/MELD/dev/video/dev_dia98_utt4.npy,data/processed/MELD/dev/audio/dev_dia98_utt4.npy,I would!
+dev_dia99_utt0,dev,1,data/processed/MELD/dev/video/dev_dia99_utt0.npy,data/processed/MELD/dev/audio/dev_dia99_utt0.npy,"Hey, guys, guys, did you see my new, china cabinet?!"
+dev_dia99_utt1,dev,0,data/processed/MELD/dev/video/dev_dia99_utt1.npy,data/processed/MELD/dev/audio/dev_dia99_utt1.npy,Uh-huh.
+dev_dia99_utt2,dev,1,data/processed/MELD/dev/video/dev_dia99_utt2.npy,data/processed/MELD/dev/audio/dev_dia99_utt2.npy,"Watch, watch."
+dev_dia99_utt3,dev,2,data/processed/MELD/dev/video/dev_dia99_utt3.npy,data/processed/MELD/dev/audio/dev_dia99_utt3.npy,Ooohhhh!!
+dev_dia99_utt4,dev,1,data/processed/MELD/dev/video/dev_dia99_utt4.npy,data/processed/MELD/dev/audio/dev_dia99_utt4.npy,"And, and!"
+dev_dia99_utt5,dev,2,data/processed/MELD/dev/video/dev_dia99_utt5.npy,data/processed/MELD/dev/audio/dev_dia99_utt5.npy,Ahhhh!!
+dev_dia99_utt6,dev,2,data/processed/MELD/dev/video/dev_dia99_utt6.npy,data/processed/MELD/dev/audio/dev_dia99_utt6.npy,"Hey, my Father’s house does that!"
+dev_dia99_utt7,dev,0,data/processed/MELD/dev/video/dev_dia99_utt7.npy,data/processed/MELD/dev/audio/dev_dia99_utt7.npy,"O-o-o-okay, how did it go? Tell me everything."
+dev_dia99_utt8,dev,0,data/processed/MELD/dev/video/dev_dia99_utt8.npy,data/processed/MELD/dev/audio/dev_dia99_utt8.npy,"Well, the movie was great, dinner was great, and there’s nothing like a cool, crisp New York evening."
+dev_dia100_utt0,dev,0,data/processed/MELD/dev/video/dev_dia100_utt0.npy,data/processed/MELD/dev/audio/dev_dia100_utt0.npy,Okay. It’s Emma.
+dev_dia101_utt0,dev,3,data/processed/MELD/dev/video/dev_dia101_utt0.npy,data/processed/MELD/dev/audio/dev_dia101_utt0.npy,Emma! See? I don’t want it.
+dev_dia102_utt0,dev,0,data/processed/MELD/dev/video/dev_dia102_utt0.npy,data/processed/MELD/dev/audio/dev_dia102_utt0.npy,Take it.
+dev_dia102_utt1,dev,0,data/processed/MELD/dev/video/dev_dia102_utt1.npy,data/processed/MELD/dev/audio/dev_dia102_utt1.npy,What?
+dev_dia103_utt0,dev,0,data/processed/MELD/dev/video/dev_dia103_utt0.npy,data/processed/MELD/dev/audio/dev_dia103_utt0.npy,It’s clearly an Emma.
+dev_dia103_utt1,dev,3,data/processed/MELD/dev/video/dev_dia103_utt1.npy,data/processed/MELD/dev/audio/dev_dia103_utt1.npy,"Oh honey, but you love that name."
+dev_dia103_utt2,dev,1,data/processed/MELD/dev/video/dev_dia103_utt2.npy,data/processed/MELD/dev/audio/dev_dia103_utt2.npy,"Yeah, but I love you more."
+dev_dia103_utt3,dev,0,data/processed/MELD/dev/video/dev_dia103_utt3.npy,data/processed/MELD/dev/audio/dev_dia103_utt3.npy,"Besides y’know, nothing goes with Bing."
+dev_dia103_utt4,dev,1,data/processed/MELD/dev/video/dev_dia103_utt4.npy,data/processed/MELD/dev/audio/dev_dia103_utt4.npy,So I’m screwed.
+dev_dia104_utt0,dev,1,data/processed/MELD/dev/video/dev_dia104_utt0.npy,data/processed/MELD/dev/audio/dev_dia104_utt0.npy,"Oh-oh, I'm a duck! I go, ""Quack, quack!"" I’m happy all the time!"
+dev_dia104_utt1,dev,3,data/processed/MELD/dev/video/dev_dia104_utt1.npy,data/processed/MELD/dev/audio/dev_dia104_utt1.npy,Nice try.
+dev_dia104_utt2,dev,1,data/processed/MELD/dev/video/dev_dia104_utt2.npy,data/processed/MELD/dev/audio/dev_dia104_utt2.npy,"Wait, wait, wait!"
+dev_dia104_utt3,dev,0,data/processed/MELD/dev/video/dev_dia104_utt3.npy,data/processed/MELD/dev/audio/dev_dia104_utt3.npy,"Look, Monica"
+dev_dia104_utt4,dev,2,data/processed/MELD/dev/video/dev_dia104_utt4.npy,data/processed/MELD/dev/audio/dev_dia104_utt4.npy,Look!
+dev_dia104_utt5,dev,4,data/processed/MELD/dev/video/dev_dia104_utt5.npy,data/processed/MELD/dev/audio/dev_dia104_utt5.npy,This is not going to work.
+dev_dia104_utt6,dev,1,data/processed/MELD/dev/video/dev_dia104_utt6.npy,data/processed/MELD/dev/audio/dev_dia104_utt6.npy,I bet this will work!
+dev_dia104_utt7,dev,1,data/processed/MELD/dev/video/dev_dia104_utt7.npy,data/processed/MELD/dev/audio/dev_dia104_utt7.npy,You are so great! I love you!
+dev_dia104_utt8,dev,2,data/processed/MELD/dev/video/dev_dia104_utt8.npy,data/processed/MELD/dev/audio/dev_dia104_utt8.npy,What?
+dev_dia104_utt9,dev,5,data/processed/MELD/dev/video/dev_dia104_utt9.npy,data/processed/MELD/dev/audio/dev_dia104_utt9.npy,"Nothing! I said, I said ""You're so great"" and then I just, I just stopped talking!"
+dev_dia104_utt10,dev,2,data/processed/MELD/dev/video/dev_dia104_utt10.npy,data/processed/MELD/dev/audio/dev_dia104_utt10.npy,You said you loved me! I can't believe this!
+dev_dia104_utt11,dev,5,data/processed/MELD/dev/video/dev_dia104_utt11.npy,data/processed/MELD/dev/audio/dev_dia104_utt11.npy,No I didn't!
+dev_dia104_utt12,dev,2,data/processed/MELD/dev/video/dev_dia104_utt12.npy,data/processed/MELD/dev/audio/dev_dia104_utt12.npy,"Yes, you did!"
+dev_dia104_utt13,dev,5,data/processed/MELD/dev/video/dev_dia104_utt13.npy,data/processed/MELD/dev/audio/dev_dia104_utt13.npy,No I didn't!
+dev_dia104_utt14,dev,1,data/processed/MELD/dev/video/dev_dia104_utt14.npy,data/processed/MELD/dev/audio/dev_dia104_utt14.npy,You love me!
+dev_dia104_utt15,dev,4,data/processed/MELD/dev/video/dev_dia104_utt15.npy,data/processed/MELD/dev/audio/dev_dia104_utt15.npy,No I don't! Stop it! Stop it! Stop it! Stop it!
+dev_dia105_utt0,dev,0,data/processed/MELD/dev/video/dev_dia105_utt0.npy,data/processed/MELD/dev/audio/dev_dia105_utt0.npy,Hello Greg?
+dev_dia105_utt1,dev,0,data/processed/MELD/dev/video/dev_dia105_utt1.npy,data/processed/MELD/dev/audio/dev_dia105_utt1.npy,"Hi, this is Monica from the plane?"
+dev_dia105_utt2,dev,4,data/processed/MELD/dev/video/dev_dia105_utt2.npy,data/processed/MELD/dev/audio/dev_dia105_utt2.npy,"Listen, the number that you gave me 853-5… That is their old number!"
+dev_dia105_utt3,dev,4,data/processed/MELD/dev/video/dev_dia105_utt3.npy,data/processed/MELD/dev/audio/dev_dia105_utt3.npy,Jenny’s been giving it out since they moved!
+dev_dia105_utt4,dev,1,data/processed/MELD/dev/video/dev_dia105_utt4.npy,data/processed/MELD/dev/audio/dev_dia105_utt4.npy,Jenny! That is so Jenny!
+dev_dia105_utt5,dev,0,data/processed/MELD/dev/video/dev_dia105_utt5.npy,data/processed/MELD/dev/audio/dev_dia105_utt5.npy,"Hey listen umm, how would you like to get together?"
+dev_dia105_utt6,dev,0,data/processed/MELD/dev/video/dev_dia105_utt6.npy,data/processed/MELD/dev/audio/dev_dia105_utt6.npy,Say next Saturday?
+dev_dia105_utt7,dev,0,data/processed/MELD/dev/video/dev_dia105_utt7.npy,data/processed/MELD/dev/audio/dev_dia105_utt7.npy,"Okay, how about Sunday?"
+dev_dia105_utt8,dev,1,data/processed/MELD/dev/video/dev_dia105_utt8.npy,data/processed/MELD/dev/audio/dev_dia105_utt8.npy,"Okay umm, the week after that?"
+dev_dia105_utt9,dev,1,data/processed/MELD/dev/video/dev_dia105_utt9.npy,data/processed/MELD/dev/audio/dev_dia105_utt9.npy,The week after that?
+dev_dia105_utt10,dev,4,data/processed/MELD/dev/video/dev_dia105_utt10.npy,data/processed/MELD/dev/audio/dev_dia105_utt10.npy,Y’know what Greg?
+dev_dia105_utt11,dev,4,data/processed/MELD/dev/video/dev_dia105_utt11.npy,data/processed/MELD/dev/audio/dev_dia105_utt11.npy,"We are good, interesting, funny people with"
+dev_dia106_utt0,dev,0,data/processed/MELD/dev/video/dev_dia106_utt0.npy,data/processed/MELD/dev/audio/dev_dia106_utt0.npy,Hey Chandler! Y’know that girl you went to college with who-who became a movie director?
+dev_dia106_utt1,dev,0,data/processed/MELD/dev/video/dev_dia106_utt1.npy,data/processed/MELD/dev/audio/dev_dia106_utt1.npy,"Oh yeah, Dana Keystone. She was in my Movement class."
+dev_dia106_utt2,dev,0,data/processed/MELD/dev/video/dev_dia106_utt2.npy,data/processed/MELD/dev/audio/dev_dia106_utt2.npy,What’s a Movement class?
+dev_dia106_utt3,dev,0,data/processed/MELD/dev/video/dev_dia106_utt3.npy,data/processed/MELD/dev/audio/dev_dia106_utt3.npy,It’s Chandler’s way of pretending he didn’t take mime.
+dev_dia106_utt4,dev,1,data/processed/MELD/dev/video/dev_dia106_utt4.npy,data/processed/MELD/dev/audio/dev_dia106_utt4.npy,"Oh well listen, anyway she’s directing the new Al Pacino movie. You gotta get me an audition!"
+dev_dia106_utt5,dev,0,data/processed/MELD/dev/video/dev_dia106_utt5.npy,data/processed/MELD/dev/audio/dev_dia106_utt5.npy,"Oh, I don’t know man. I haven’t talked to her in like ten years."
+dev_dia107_utt0,dev,0,data/processed/MELD/dev/video/dev_dia107_utt0.npy,data/processed/MELD/dev/audio/dev_dia107_utt0.npy,I am.
+dev_dia107_utt1,dev,0,data/processed/MELD/dev/video/dev_dia107_utt1.npy,data/processed/MELD/dev/audio/dev_dia107_utt1.npy,"Joey, what are you talking about? You’re a terrific actor."
+dev_dia107_utt2,dev,2,data/processed/MELD/dev/video/dev_dia107_utt2.npy,data/processed/MELD/dev/audio/dev_dia107_utt2.npy,You really think so?
+dev_dia107_utt3,dev,2,data/processed/MELD/dev/video/dev_dia107_utt3.npy,data/processed/MELD/dev/audio/dev_dia107_utt3.npy,"Ugh, how can you even ask that question?!"
+dev_dia108_utt0,dev,2,data/processed/MELD/dev/video/dev_dia108_utt0.npy,data/processed/MELD/dev/audio/dev_dia108_utt0.npy,Ross! Get a shot of this. (He's carrying an issue of the
+dev_dia108_utt1,dev,5,data/processed/MELD/dev/video/dev_dia108_utt1.npy,data/processed/MELD/dev/audio/dev_dia108_utt1.npy,"Oh, okay, I'm having another one!"
+dev_dia108_utt2,dev,2,data/processed/MELD/dev/video/dev_dia108_utt2.npy,data/processed/MELD/dev/audio/dev_dia108_utt2.npy,"This one doesn't hurt either—Ooh, yes it does!"
+dev_dia108_utt3,dev,4,data/processed/MELD/dev/video/dev_dia108_utt3.npy,data/processed/MELD/dev/audio/dev_dia108_utt3.npy,Ow!
+dev_dia108_utt4,dev,4,data/processed/MELD/dev/video/dev_dia108_utt4.npy,data/processed/MELD/dev/audio/dev_dia108_utt4.npy,Ow!
+dev_dia108_utt5,dev,4,data/processed/MELD/dev/video/dev_dia108_utt5.npy,data/processed/MELD/dev/audio/dev_dia108_utt5.npy,Ow!
+dev_dia108_utt6,dev,4,data/processed/MELD/dev/video/dev_dia108_utt6.npy,data/processed/MELD/dev/audio/dev_dia108_utt6.npy,Ow!
+dev_dia108_utt7,dev,2,data/processed/MELD/dev/video/dev_dia108_utt7.npy,data/processed/MELD/dev/audio/dev_dia108_utt7.npy,Ooh!
+dev_dia108_utt8,dev,3,data/processed/MELD/dev/video/dev_dia108_utt8.npy,data/processed/MELD/dev/audio/dev_dia108_utt8.npy,"Oh, I was kinda hoping that was it."
+dev_dia108_utt9,dev,0,data/processed/MELD/dev/video/dev_dia108_utt9.npy,data/processed/MELD/dev/audio/dev_dia108_utt9.npy,"Hey, where are Monica and Rachel anyway?"
+dev_dia108_utt10,dev,1,data/processed/MELD/dev/video/dev_dia108_utt10.npy,data/processed/MELD/dev/audio/dev_dia108_utt10.npy,"Yeah, I love you. Okay, bye! Hi!"
+dev_dia108_utt11,dev,1,data/processed/MELD/dev/video/dev_dia108_utt11.npy,data/processed/MELD/dev/audio/dev_dia108_utt11.npy,Hi!
+dev_dia108_utt12,dev,5,data/processed/MELD/dev/video/dev_dia108_utt12.npy,data/processed/MELD/dev/audio/dev_dia108_utt12.npy,"That was Alice's mom, she said she left five hours ago. She should be here by now!"
+dev_dia108_utt13,dev,0,data/processed/MELD/dev/video/dev_dia108_utt13.npy,data/processed/MELD/dev/audio/dev_dia108_utt13.npy,"Oh, honey, don’t worry. She's gonna make it on time."
+dev_dia108_utt14,dev,0,data/processed/MELD/dev/video/dev_dia108_utt14.npy,data/processed/MELD/dev/audio/dev_dia108_utt14.npy,Yeah.
+dev_dia109_utt0,dev,0,data/processed/MELD/dev/video/dev_dia109_utt0.npy,data/processed/MELD/dev/audio/dev_dia109_utt0.npy,I guess I set up the video camera to try and entice Joey.
+dev_dia109_utt1,dev,1,data/processed/MELD/dev/video/dev_dia109_utt1.npy,data/processed/MELD/dev/audio/dev_dia109_utt1.npy,But sadly I could not be enticed.
+dev_dia109_utt2,dev,6,data/processed/MELD/dev/video/dev_dia109_utt2.npy,data/processed/MELD/dev/audio/dev_dia109_utt2.npy,Unbelievable! I mean you really kept Joey's underwear?! Why? Why would you do that?!
+dev_dia109_utt3,dev,3,data/processed/MELD/dev/video/dev_dia109_utt3.npy,data/processed/MELD/dev/audio/dev_dia109_utt3.npy,I'm Monica. I'm disgusting. I stalk guys and keep their underpants.
+dev_dia109_utt4,dev,4,data/processed/MELD/dev/video/dev_dia109_utt4.npy,data/processed/MELD/dev/audio/dev_dia109_utt4.npy,"Well, I think we've all learned something about who's disgusting and who's not."
+dev_dia109_utt5,dev,0,data/processed/MELD/dev/video/dev_dia109_utt5.npy,data/processed/MELD/dev/audio/dev_dia109_utt5.npy,Eh?
+dev_dia109_utt6,dev,0,data/processed/MELD/dev/video/dev_dia109_utt6.npy,data/processed/MELD/dev/audio/dev_dia109_utt6.npy,"All right, now, I'm going to get back to my bucket."
+dev_dia109_utt7,dev,0,data/processed/MELD/dev/video/dev_dia109_utt7.npy,data/processed/MELD/dev/audio/dev_dia109_utt7.npy,"I'm only eating the skin, so the chicken's up for grabs."
+dev_dia110_utt0,dev,0,data/processed/MELD/dev/video/dev_dia110_utt0.npy,data/processed/MELD/dev/audio/dev_dia110_utt0.npy,"Ohh, okay, they gave you the old time pricing."
+dev_dia110_utt1,dev,0,data/processed/MELD/dev/video/dev_dia110_utt1.npy,data/processed/MELD/dev/audio/dev_dia110_utt1.npy,Yeah.
+dev_dia110_utt2,dev,0,data/processed/MELD/dev/video/dev_dia110_utt2.npy,data/processed/MELD/dev/audio/dev_dia110_utt2.npy,"Well, what period is it from?"
+dev_dia110_utt3,dev,0,data/processed/MELD/dev/video/dev_dia110_utt3.npy,data/processed/MELD/dev/audio/dev_dia110_utt3.npy,"Uh, it’s from yore. Like the days of yore. Y’know?"
+dev_dia110_utt4,dev,0,data/processed/MELD/dev/video/dev_dia110_utt4.npy,data/processed/MELD/dev/audio/dev_dia110_utt4.npy,"Yes, yes I do."
+dev_dia110_utt5,dev,1,data/processed/MELD/dev/video/dev_dia110_utt5.npy,data/processed/MELD/dev/audio/dev_dia110_utt5.npy,"God, oh it’s just perfect!"
+dev_dia110_utt6,dev,1,data/processed/MELD/dev/video/dev_dia110_utt6.npy,data/processed/MELD/dev/audio/dev_dia110_utt6.npy,I bet it has a great story behind it too.
+dev_dia110_utt8,dev,1,data/processed/MELD/dev/video/dev_dia110_utt8.npy,data/processed/MELD/dev/audio/dev_dia110_utt8.npy,"Yes! That I know, this is from White Plains."
+dev_dia110_utt9,dev,1,data/processed/MELD/dev/video/dev_dia110_utt9.npy,data/processed/MELD/dev/audio/dev_dia110_utt9.npy,"White Plains. Oh, it sounds like such a magical place."
+dev_dia111_utt0,dev,4,data/processed/MELD/dev/video/dev_dia111_utt0.npy,data/processed/MELD/dev/audio/dev_dia111_utt0.npy,"So, you still don’t think I’m boyfriend material?"
+dev_dia111_utt1,dev,0,data/processed/MELD/dev/video/dev_dia111_utt1.npy,data/processed/MELD/dev/audio/dev_dia111_utt1.npy,Huh?
+dev_dia111_utt2,dev,0,data/processed/MELD/dev/video/dev_dia111_utt2.npy,data/processed/MELD/dev/audio/dev_dia111_utt2.npy,I saw you checking me out during the game last night.
+dev_dia112_utt0,dev,4,data/processed/MELD/dev/video/dev_dia112_utt0.npy,data/processed/MELD/dev/audio/dev_dia112_utt0.npy,"I, umm, shut up!"
+dev_dia112_utt1,dev,3,data/processed/MELD/dev/video/dev_dia112_utt1.npy,data/processed/MELD/dev/audio/dev_dia112_utt1.npy,“Good-bye Phoebe and Ursula. I’ll miss you. P.S. Your Mom lives in Montauk.” You just wrote this!
+dev_dia112_utt2,dev,0,data/processed/MELD/dev/video/dev_dia112_utt2.npy,data/processed/MELD/dev/audio/dev_dia112_utt2.npy,"Well, it’s pretty much the gist. Well, except for the poem. You read the poem, right?"
+dev_dia112_utt3,dev,3,data/processed/MELD/dev/video/dev_dia112_utt3.npy,data/processed/MELD/dev/audio/dev_dia112_utt3.npy,Noooo!!
+dev_dia112_utt4,dev,0,data/processed/MELD/dev/video/dev_dia112_utt4.npy,data/processed/MELD/dev/audio/dev_dia112_utt4.npy,"All right, hang on!"
+dev_dia113_utt0,dev,0,data/processed/MELD/dev/video/dev_dia113_utt0.npy,data/processed/MELD/dev/audio/dev_dia113_utt0.npy,"Rachel, it’s going to happen. Chandler is gonna move in here."
+dev_dia113_utt1,dev,3,data/processed/MELD/dev/video/dev_dia113_utt1.npy,data/processed/MELD/dev/audio/dev_dia113_utt1.npy,But I
+dev_dia113_utt2,dev,0,data/processed/MELD/dev/video/dev_dia113_utt2.npy,data/processed/MELD/dev/audio/dev_dia113_utt2.npy,"No-no, wait!"
+dev_dia113_utt3,dev,3,data/processed/MELD/dev/video/dev_dia113_utt3.npy,data/processed/MELD/dev/audio/dev_dia113_utt3.npy,"Just let me finish, okay?"
+dev_dia113_utt4,dev,0,data/processed/MELD/dev/video/dev_dia113_utt4.npy,data/processed/MELD/dev/audio/dev_dia113_utt4.npy,"This isn’t something that we just, we just impulsively decided in-in Vegas, this is something we both really want."
+dev_dia113_utt5,dev,0,data/processed/MELD/dev/video/dev_dia113_utt5.npy,data/processed/MELD/dev/audio/dev_dia113_utt5.npy,And it
+dev_dia113_utt6,dev,2,data/processed/MELD/dev/video/dev_dia113_utt6.npy,data/processed/MELD/dev/audio/dev_dia113_utt6.npy,It is? Really?
+dev_dia113_utt7,dev,0,data/processed/MELD/dev/video/dev_dia113_utt7.npy,data/processed/MELD/dev/audio/dev_dia113_utt7.npy,"Yeah, sweetie."
+dev_dia113_utt8,dev,3,data/processed/MELD/dev/video/dev_dia113_utt8.npy,data/processed/MELD/dev/audio/dev_dia113_utt8.npy,"I mean we’re not, we’re not gonna live together anymore?"
+dev_dia113_utt9,dev,3,data/processed/MELD/dev/video/dev_dia113_utt9.npy,data/processed/MELD/dev/audio/dev_dia113_utt9.npy,No.
+dev_dia113_utt10,dev,3,data/processed/MELD/dev/video/dev_dia113_utt10.npy,data/processed/MELD/dev/audio/dev_dia113_utt10.npy,What? Oh my God! I’m gonna miss you so much!
+dev_dia113_utt11,dev,3,data/processed/MELD/dev/video/dev_dia113_utt11.npy,data/processed/MELD/dev/audio/dev_dia113_utt11.npy,I’m gonna miss you!
+dev_dia113_utt12,dev,3,data/processed/MELD/dev/video/dev_dia113_utt12.npy,data/processed/MELD/dev/audio/dev_dia113_utt12.npy,I mean it’s the end of an era!
+dev_dia113_utt13,dev,3,data/processed/MELD/dev/video/dev_dia113_utt13.npy,data/processed/MELD/dev/audio/dev_dia113_utt13.npy,I know!

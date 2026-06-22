@@ -1,0 +1,101 @@
+sample_id,split,label,video_path,audio_path,transcript
+train_dia167_utt8,train,3,data/processed/MELD/train/video/train_dia167_utt8.npy,data/processed/MELD/train/audio/train_dia167_utt8.npy,Say you'll stay beside me
+train_dia320_utt9,train,0,data/processed/MELD/train/video/train_dia320_utt9.npy,data/processed/MELD/train/audio/train_dia320_utt9.npy,"Look, things like last night they don’t just happen."
+train_dia865_utt4,train,3,data/processed/MELD/train/video/train_dia865_utt4.npy,data/processed/MELD/train/audio/train_dia865_utt4.npy,"Stop saying, ""Blood"" to strangers."
+train_dia570_utt3,train,0,data/processed/MELD/train/video/train_dia570_utt3.npy,data/processed/MELD/train/audio/train_dia570_utt3.npy,"Okay, y'know what uh, actually, that's great. That helps a lot. Thanks."
+train_dia3_utt1,train,2,data/processed/MELD/train/video/train_dia3_utt1.npy,data/processed/MELD/train/audio/train_dia3_utt1.npy,"What, what, what?!"
+train_dia785_utt1,train,4,data/processed/MELD/train/video/train_dia785_utt1.npy,data/processed/MELD/train/audio/train_dia785_utt1.npy,What about my children Drake?! Huh!? No!! No!! No! God!
+train_dia38_utt6,train,4,data/processed/MELD/train/video/train_dia38_utt6.npy,data/processed/MELD/train/audio/train_dia38_utt6.npy,"Yeah, they think they can charge me for some dirty movie and a bag of Mashuga nuts, they got another think coming."
+train_dia168_utt5,train,0,data/processed/MELD/train/video/train_dia168_utt5.npy,data/processed/MELD/train/audio/train_dia168_utt5.npy,"No,"
+train_dia264_utt2,train,2,data/processed/MELD/train/video/train_dia264_utt2.npy,data/processed/MELD/train/audio/train_dia264_utt2.npy,What?!
+train_dia489_utt4,train,0,data/processed/MELD/train/video/train_dia489_utt4.npy,data/processed/MELD/train/audio/train_dia489_utt4.npy,So how'd it go?
+train_dia902_utt4,train,0,data/processed/MELD/train/video/train_dia902_utt4.npy,data/processed/MELD/train/audio/train_dia902_utt4.npy,You are
+train_dia892_utt3,train,0,data/processed/MELD/train/video/train_dia892_utt3.npy,data/processed/MELD/train/audio/train_dia892_utt3.npy,And people say you don’t pay attention.
+train_dia1012_utt5,train,4,data/processed/MELD/train/video/train_dia1012_utt5.npy,data/processed/MELD/train/audio/train_dia1012_utt5.npy,Shh!
+train_dia163_utt6,train,0,data/processed/MELD/train/video/train_dia163_utt6.npy,data/processed/MELD/train/audio/train_dia163_utt6.npy,Chandler
+train_dia415_utt7,train,0,data/processed/MELD/train/video/train_dia415_utt7.npy,data/processed/MELD/train/audio/train_dia415_utt7.npy,Action.
+train_dia606_utt4,train,1,data/processed/MELD/train/video/train_dia606_utt4.npy,data/processed/MELD/train/audio/train_dia606_utt4.npy,"Listen, it was nice to see you. I gotta run backstage."
+train_dia438_utt11,train,0,data/processed/MELD/train/video/train_dia438_utt11.npy,data/processed/MELD/train/audio/train_dia438_utt11.npy,Oh shoot! Maybe next time. Thanks for a lovely evening.
+train_dia211_utt7,train,0,data/processed/MELD/train/video/train_dia211_utt7.npy,data/processed/MELD/train/audio/train_dia211_utt7.npy,What a sweet story.
+train_dia307_utt0,train,0,data/processed/MELD/train/video/train_dia307_utt0.npy,data/processed/MELD/train/audio/train_dia307_utt0.npy,And why do you care so much?
+train_dia758_utt4,train,4,data/processed/MELD/train/video/train_dia758_utt4.npy,data/processed/MELD/train/audio/train_dia758_utt4.npy,"No, she touched mine first!"
+train_dia982_utt0,train,0,data/processed/MELD/train/video/train_dia982_utt0.npy,data/processed/MELD/train/audio/train_dia982_utt0.npy,All right.
+train_dia789_utt8,train,1,data/processed/MELD/train/video/train_dia789_utt8.npy,data/processed/MELD/train/audio/train_dia789_utt8.npy,"But sometimes when you, when you playfully punch me like that it-it feels like someone's hitting me with a very tiny but very"
+train_dia512_utt0,train,1,data/processed/MELD/train/video/train_dia512_utt0.npy,data/processed/MELD/train/audio/train_dia512_utt0.npy,Hi Pheebs!
+train_dia245_utt1,train,1,data/processed/MELD/train/video/train_dia245_utt1.npy,data/processed/MELD/train/audio/train_dia245_utt1.npy,"We couldn’t keep our eyes off each other all night and then every once and a while y’know, he’d kinda lean over and stroke my hair and touch my neck."
+train_dia317_utt7,train,1,data/processed/MELD/train/video/train_dia317_utt7.npy,data/processed/MELD/train/audio/train_dia317_utt7.npy,Oh! Here’s Joseph Francis!
+train_dia792_utt16,train,3,data/processed/MELD/train/video/train_dia792_utt16.npy,data/processed/MELD/train/audio/train_dia792_utt16.npy,"Knowing I'll never hold you in my arms again, or touch your skin, or feel your lips, knowing I'll never make love to you?"
+train_dia47_utt7,train,1,data/processed/MELD/train/video/train_dia47_utt7.npy,data/processed/MELD/train/audio/train_dia47_utt7.npy,"No, no wait, for get them, we got one, hard left."
+train_dia334_utt10,train,0,data/processed/MELD/train/video/train_dia334_utt10.npy,data/processed/MELD/train/audio/train_dia334_utt10.npy,I forgot my purse.
+train_dia264_utt9,train,0,data/processed/MELD/train/video/train_dia264_utt9.npy,data/processed/MELD/train/audio/train_dia264_utt9.npy,Y’know what?
+train_dia864_utt3,train,1,data/processed/MELD/train/video/train_dia864_utt3.npy,data/processed/MELD/train/audio/train_dia864_utt3.npy,"Well, thanks a lot for hookin’ me up Rach. I want you to know that I want you to attend our wedding as my guest."
+train_dia830_utt5,train,1,data/processed/MELD/train/video/train_dia830_utt5.npy,data/processed/MELD/train/audio/train_dia830_utt5.npy,Varrrrrrrrroom.
+train_dia222_utt19,train,6,data/processed/MELD/train/video/train_dia222_utt19.npy,data/processed/MELD/train/audio/train_dia222_utt19.npy,"Oh yeah. Boy, urine cuts"
+train_dia628_utt0,train,2,data/processed/MELD/train/video/train_dia628_utt0.npy,data/processed/MELD/train/audio/train_dia628_utt0.npy,Oh!
+train_dia865_utt6,train,0,data/processed/MELD/train/video/train_dia865_utt6.npy,data/processed/MELD/train/audio/train_dia865_utt6.npy,"Okay, you’re fine."
+train_dia607_utt8,train,2,data/processed/MELD/train/video/train_dia607_utt8.npy,data/processed/MELD/train/audio/train_dia607_utt8.npy,"Oh, she told you about that, huh."
+train_dia10_utt0,train,4,data/processed/MELD/train/video/train_dia10_utt0.npy,data/processed/MELD/train/audio/train_dia10_utt0.npy,Nobody!
+train_dia3_utt5,train,0,data/processed/MELD/train/video/train_dia3_utt5.npy,data/processed/MELD/train/audio/train_dia3_utt5.npy,"Now that I've touched you, you seem emptier still.'"
+train_dia1001_utt2,train,0,data/processed/MELD/train/video/train_dia1001_utt2.npy,data/processed/MELD/train/audio/train_dia1001_utt2.npy,"All of a sudden, Leon, the manager, calls me into his office."
+train_dia982_utt3,train,1,data/processed/MELD/train/video/train_dia982_utt3.npy,data/processed/MELD/train/audio/train_dia982_utt3.npy,"Ho-ho, you win! 50 dollars!"
+train_dia832_utt7,train,0,data/processed/MELD/train/video/train_dia832_utt7.npy,data/processed/MELD/train/audio/train_dia832_utt7.npy,"Oh, which museum?"
+train_dia337_utt6,train,3,data/processed/MELD/train/video/train_dia337_utt6.npy,data/processed/MELD/train/audio/train_dia337_utt6.npy,What disposable cameras?
+train_dia602_utt3,train,1,data/processed/MELD/train/video/train_dia602_utt3.npy,data/processed/MELD/train/audio/train_dia602_utt3.npy,You know what else? He's unbelievable in bed.
+train_dia155_utt11,train,0,data/processed/MELD/train/video/train_dia155_utt11.npy,data/processed/MELD/train/audio/train_dia155_utt11.npy,"Sure! Uh, let me get it for ya."
+train_dia524_utt10,train,0,data/processed/MELD/train/video/train_dia524_utt10.npy,data/processed/MELD/train/audio/train_dia524_utt10.npy,"Oh, that’s, that’s ah, one of the old ones, he’s just taking it to the back."
+train_dia621_utt7,train,2,data/processed/MELD/train/video/train_dia621_utt7.npy,data/processed/MELD/train/audio/train_dia621_utt7.npy,"Wow! Sorry. So uh, how are the new people?"
+train_dia1038_utt17,train,1,data/processed/MELD/train/video/train_dia1038_utt17.npy,data/processed/MELD/train/audio/train_dia1038_utt17.npy,"That was a good one. For a second there, I was like, ""whoa."""
+train_dia124_utt5,train,1,data/processed/MELD/train/video/train_dia124_utt5.npy,data/processed/MELD/train/audio/train_dia124_utt5.npy,"Ohh. Hey, remember when I ran into this thing and it kinda knocked me out a little?"
+train_dia118_utt1,train,2,data/processed/MELD/train/video/train_dia118_utt1.npy,data/processed/MELD/train/audio/train_dia118_utt1.npy,And now you want that money back.
+train_dia264_utt6,train,0,data/processed/MELD/train/video/train_dia264_utt6.npy,data/processed/MELD/train/audio/train_dia264_utt6.npy,I can’t figure out what to make Monica.
+train_dia123_utt8,train,4,data/processed/MELD/train/video/train_dia123_utt8.npy,data/processed/MELD/train/audio/train_dia123_utt8.npy,You'd better hope not because I just read what you put on your page today.
+train_dia145_utt3,train,0,data/processed/MELD/train/video/train_dia145_utt3.npy,data/processed/MELD/train/audio/train_dia145_utt3.npy,What was with the dishes?
+train_dia896_utt1,train,3,data/processed/MELD/train/video/train_dia896_utt1.npy,data/processed/MELD/train/audio/train_dia896_utt1.npy,"Oh, I’m so sorry."
+train_dia552_utt3,train,0,data/processed/MELD/train/video/train_dia552_utt3.npy,data/processed/MELD/train/audio/train_dia552_utt3.npy,"Me too, we should get goin'."
+train_dia747_utt12,train,4,data/processed/MELD/train/video/train_dia747_utt12.npy,data/processed/MELD/train/audio/train_dia747_utt12.npy,Am I giving out some kind of…sexy professor vibe?
+train_dia104_utt0,train,2,data/processed/MELD/train/video/train_dia104_utt0.npy,data/processed/MELD/train/audio/train_dia104_utt0.npy,"So? Congratulations you two, I didn’t even know you got married."
+train_dia553_utt16,train,0,data/processed/MELD/train/video/train_dia553_utt16.npy,data/processed/MELD/train/audio/train_dia553_utt16.npy,"Okay, you’re dancing with that girl over there."
+train_dia600_utt0,train,0,data/processed/MELD/train/video/train_dia600_utt0.npy,data/processed/MELD/train/audio/train_dia600_utt0.npy,Hello darlings.
+train_dia770_utt11,train,4,data/processed/MELD/train/video/train_dia770_utt11.npy,data/processed/MELD/train/audio/train_dia770_utt11.npy,"Oh, who should I blame? The nice bell man who had to drag out luggage to 10 different rooms?"
+train_dia260_utt5,train,3,data/processed/MELD/train/video/train_dia260_utt5.npy,data/processed/MELD/train/audio/train_dia260_utt5.npy,"She knows, and she won’t tell me."
+train_dia845_utt1,train,1,data/processed/MELD/train/video/train_dia845_utt1.npy,data/processed/MELD/train/audio/train_dia845_utt1.npy,"It’s good to have you guys on my team, and I come to play."
+train_dia531_utt14,train,4,data/processed/MELD/train/video/train_dia531_utt14.npy,data/processed/MELD/train/audio/train_dia531_utt14.npy,Ross!! Are you crazy?! I am
+train_dia610_utt6,train,1,data/processed/MELD/train/video/train_dia610_utt6.npy,data/processed/MELD/train/audio/train_dia610_utt6.npy,I'd better not found you naked in my hotel room!
+train_dia212_utt8,train,0,data/processed/MELD/train/video/train_dia212_utt8.npy,data/processed/MELD/train/audio/train_dia212_utt8.npy,"But hey, y'know if you don’t believe me, please, by my guest."
+train_dia909_utt6,train,0,data/processed/MELD/train/video/train_dia909_utt6.npy,data/processed/MELD/train/audio/train_dia909_utt6.npy,Why else would I be here?
+train_dia572_utt10,train,4,data/processed/MELD/train/video/train_dia572_utt10.npy,data/processed/MELD/train/audio/train_dia572_utt10.npy,She’s in labor! You like that you sick son of a bitch!
+train_dia778_utt7,train,0,data/processed/MELD/train/video/train_dia778_utt7.npy,data/processed/MELD/train/audio/train_dia778_utt7.npy,"Oh, a 16-hour sit-in for Greenpeace."
+train_dia959_utt7,train,0,data/processed/MELD/train/video/train_dia959_utt7.npy,data/processed/MELD/train/audio/train_dia959_utt7.npy,"Okay. Wow, it’s-it’s 5:30 in the morning. So, I’d better get cracking on this baby."
+train_dia898_utt2,train,1,data/processed/MELD/train/video/train_dia898_utt2.npy,data/processed/MELD/train/audio/train_dia898_utt2.npy,"Man, hell of a two weeks, huh? Y'know what, though? I really feel like I learned something."
+train_dia703_utt3,train,2,data/processed/MELD/train/video/train_dia703_utt3.npy,data/processed/MELD/train/audio/train_dia703_utt3.npy,"How, how did that happen?"
+train_dia911_utt1,train,5,data/processed/MELD/train/video/train_dia911_utt1.npy,data/processed/MELD/train/audio/train_dia911_utt1.npy,"Oh, look! Acting for Beginners! Want to feel good about yourself?"
+train_dia585_utt1,train,3,data/processed/MELD/train/video/train_dia585_utt1.npy,data/processed/MELD/train/audio/train_dia585_utt1.npy,I can’t believe this!
+train_dia174_utt3,train,1,data/processed/MELD/train/video/train_dia174_utt3.npy,data/processed/MELD/train/audio/train_dia174_utt3.npy,Thank you! You haven't said anything...
+train_dia372_utt4,train,3,data/processed/MELD/train/video/train_dia372_utt4.npy,data/processed/MELD/train/audio/train_dia372_utt4.npy,It's my friends.
+train_dia592_utt4,train,0,data/processed/MELD/train/video/train_dia592_utt4.npy,data/processed/MELD/train/audio/train_dia592_utt4.npy,"All right, hold on!"
+train_dia442_utt5,train,2,data/processed/MELD/train/video/train_dia442_utt5.npy,data/processed/MELD/train/audio/train_dia442_utt5.npy,He knew we were trying to get rid of him. He knew! You think we could get a bathtub in our kitchen?
+train_dia633_utt1,train,1,data/processed/MELD/train/video/train_dia633_utt1.npy,data/processed/MELD/train/audio/train_dia633_utt1.npy,Here comes the bride.
+train_dia25_utt0,train,1,data/processed/MELD/train/video/train_dia25_utt0.npy,data/processed/MELD/train/audio/train_dia25_utt0.npy,": I know, we did it!! Hey, that was incredible, huh?!"
+train_dia481_utt13,train,3,data/processed/MELD/train/video/train_dia481_utt13.npy,data/processed/MELD/train/audio/train_dia481_utt13.npy,"All right, all right, you're right"
+train_dia657_utt4,train,1,data/processed/MELD/train/video/train_dia657_utt4.npy,data/processed/MELD/train/audio/train_dia657_utt4.npy,I’m just kidding too. I’m getting married in December.
+train_dia171_utt6,train,2,data/processed/MELD/train/video/train_dia171_utt6.npy,data/processed/MELD/train/audio/train_dia171_utt6.npy,"Oh, look at the little cat!"
+train_dia1007_utt8,train,3,data/processed/MELD/train/video/train_dia1007_utt8.npy,data/processed/MELD/train/audio/train_dia1007_utt8.npy,This is the worst Christmas ever.
+train_dia120_utt11,train,0,data/processed/MELD/train/video/train_dia120_utt11.npy,data/processed/MELD/train/audio/train_dia120_utt11.npy,Big fat goalie.
+train_dia680_utt9,train,1,data/processed/MELD/train/video/train_dia680_utt9.npy,data/processed/MELD/train/audio/train_dia680_utt9.npy,So Rach!
+train_dia81_utt8,train,1,data/processed/MELD/train/video/train_dia81_utt8.npy,data/processed/MELD/train/audio/train_dia81_utt8.npy,Oh stop it. Joey already told me.
+train_dia265_utt2,train,4,data/processed/MELD/train/video/train_dia265_utt2.npy,data/processed/MELD/train/audio/train_dia265_utt2.npy,"Oh, what are you, stupid? It’s been three hours."
+train_dia546_utt12,train,4,data/processed/MELD/train/video/train_dia546_utt12.npy,data/processed/MELD/train/audio/train_dia546_utt12.npy,"Okay, I'm not getting this!"
+train_dia223_utt3,train,0,data/processed/MELD/train/video/train_dia223_utt3.npy,data/processed/MELD/train/audio/train_dia223_utt3.npy,Hey!
+train_dia361_utt1,train,0,data/processed/MELD/train/video/train_dia361_utt1.npy,data/processed/MELD/train/audio/train_dia361_utt1.npy,"Three of your five, what?"
+train_dia474_utt10,train,3,data/processed/MELD/train/video/train_dia474_utt10.npy,data/processed/MELD/train/audio/train_dia474_utt10.npy,"Well no, wait a minute, that’s not true!"
+train_dia87_utt4,train,1,data/processed/MELD/train/video/train_dia87_utt4.npy,data/processed/MELD/train/audio/train_dia87_utt4.npy,What a neat idea. All your clothes match. I'm gonna do this.
+train_dia542_utt5,train,0,data/processed/MELD/train/video/train_dia542_utt5.npy,data/processed/MELD/train/audio/train_dia542_utt5.npy,"Rachel, I made you a cocoa."
+train_dia649_utt0,train,2,data/processed/MELD/train/video/train_dia649_utt0.npy,data/processed/MELD/train/audio/train_dia649_utt0.npy,Joey? Could you get that? What are you doing here? I thought you were in your room?
+train_dia351_utt6,train,5,data/processed/MELD/train/video/train_dia351_utt6.npy,data/processed/MELD/train/audio/train_dia351_utt6.npy,"No! No sir umm, she means a lot to me. I mean, I care—I-I love Rachel."
+train_dia892_utt2,train,0,data/processed/MELD/train/video/train_dia892_utt2.npy,data/processed/MELD/train/audio/train_dia892_utt2.npy,I thought you already have a job.
+train_dia54_utt3,train,5,data/processed/MELD/train/video/train_dia54_utt3.npy,data/processed/MELD/train/audio/train_dia54_utt3.npy,"Joey, I am scared to death about this."
+train_dia1007_utt2,train,3,data/processed/MELD/train/video/train_dia1007_utt2.npy,data/processed/MELD/train/audio/train_dia1007_utt2.npy,"Some little girl loaned her uniform to her nineteen year old sister, who went down to the U.S.S."
+train_dia926_utt8,train,0,data/processed/MELD/train/video/train_dia926_utt8.npy,data/processed/MELD/train/audio/train_dia926_utt8.npy,"Y’know, the next time we see them we’re just gonna tell them."
+train_dia767_utt3,train,3,data/processed/MELD/train/video/train_dia767_utt3.npy,data/processed/MELD/train/audio/train_dia767_utt3.npy,"I'm sorry, that's all the time we have."
+train_dia159_utt0,train,1,data/processed/MELD/train/video/train_dia159_utt0.npy,data/processed/MELD/train/audio/train_dia159_utt0.npy,Chandler is fantastic!!
+train_dia64_utt4,train,0,data/processed/MELD/train/video/train_dia64_utt4.npy,data/processed/MELD/train/audio/train_dia64_utt4.npy,"Well, we’re trying to find someone to perform our wedding and they’re all either boring or annoying or y’know, can’t stop staring at the ladies."

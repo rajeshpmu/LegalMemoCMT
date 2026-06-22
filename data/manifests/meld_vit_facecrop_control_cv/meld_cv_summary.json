@@ -1,0 +1,64 @@
+{
+  "facecrop_manifest": "data/manifests/meld_vit_facecrop.csv",
+  "paper_fold_dir": "data/manifests/meld_cv",
+  "output_dir": "data/manifests/meld_vit_facecrop_control_cv",
+  "num_folds": 5,
+  "folds": [
+    {
+      "fold": 0,
+      "paper_train_rows": 8809,
+      "paper_val_rows": 2288,
+      "facecrop_train_rows": 8809,
+      "facecrop_val_rows": 2287,
+      "train_missing": [],
+      "val_missing": [
+        "train_dia125_utt3"
+      ]
+    },
+    {
+      "fold": 1,
+      "paper_train_rows": 8869,
+      "paper_val_rows": 2228,
+      "facecrop_train_rows": 8868,
+      "facecrop_val_rows": 2228,
+      "train_missing": [
+        "train_dia125_utt3"
+      ],
+      "val_missing": []
+    },
+    {
+      "fold": 2,
+      "paper_train_rows": 8969,
+      "paper_val_rows": 2128,
+      "facecrop_train_rows": 8968,
+      "facecrop_val_rows": 2128,
+      "train_missing": [
+        "train_dia125_utt3"
+      ],
+      "val_missing": []
+    },
+    {
+      "fold": 3,
+      "paper_train_rows": 8909,
+      "paper_val_rows": 2188,
+      "facecrop_train_rows": 8908,
+      "facecrop_val_rows": 2188,
+      "train_missing": [
+        "train_dia125_utt3"
+      ],
+      "val_missing": []
+    },
+    {
+      "fold": 4,
+      "paper_train_rows": 8832,
+      "paper_val_rows": 2265,
+      "facecrop_train_rows": 8831,
+      "facecrop_val_rows": 2265,
+      "train_missing": [
+        "train_dia125_utt3"
+      ],
+      "val_missing": []
+    }
+  ],
+  "assignments_path": "data/manifests/meld_vit_facecrop_control_cv/meld_fold_assignments.csv"
+}
