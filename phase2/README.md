@@ -29,14 +29,17 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
    - or `bash scripts/check_phase2_ready.sh`
 5. Build a split-bearing training manifest:
    - `bash phase2/run_phase2_split_manifest.sh`
-6. Check whether the Phase 2 fine-tuning inputs are ready:
+6. Sanitize the split manifest for training:
+   - `bash phase2/run_phase2_sanitize_manifest.sh`
+   - this removes HTML-only rows and can optionally extract audio from video when audio paths are missing
+7. Check whether the Phase 2 fine-tuning inputs are ready:
    - `bash scripts/check_phase2_finetune_ready.sh`
-   - this confirms the legal dataset manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
-7. Fine-tune from the best MELD checkpoint:
+   - this confirms the clean legal dataset manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
+8. Fine-tune from the best MELD checkpoint:
    - `bash phase2/run_phase2_finetune.sh`
-8. Evaluate the saved checkpoint:
+9. Evaluate the saved checkpoint:
    - `bash phase2/evaluate_phase2_checkpoint.sh <manifest.csv> <checkpoint.pt> <output.json>`
-9. If you want a single chained run, use:
+10. If you want a single chained run, use:
    - `bash phase2/run_phase2_full.sh`
 
 ## Device policy
@@ -55,13 +58,15 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 6. `phase2/dataset_builder.py weak-labels`
 7. `phase2/dataset_builder.py dashboard`
 8. `phase2/run_phase2_split_manifest.sh`
-9. `phase2/run_phase2_finetune.sh`
-10. `phase2/evaluate_phase2_checkpoint.sh`
+9. `phase2/run_phase2_sanitize_manifest.sh`
+10. `phase2/run_phase2_finetune.sh`
+11. `phase2/evaluate_phase2_checkpoint.sh`
 
 ## Wrapper summary
 
 - `phase2/run_phase2_dataset_pipeline.sh` runs the data-preparation stages.
 - `phase2/run_phase2_split_manifest.sh` adds the train/dev/test split column needed by the trainer.
+- `phase2/run_phase2_sanitize_manifest.sh` cleans transcript rows and can extract audio from video when needed.
 - `phase2/run_phase2_finetune.sh` starts Phase 2 fine-tuning from the warm-start checkpoint.
 - `phase2/evaluate_phase2_checkpoint.sh` evaluates the saved Phase 2 checkpoint.
 - `phase2/run_phase2_full.sh` chains dataset prep, fine-tuning, and evaluation in one command.
