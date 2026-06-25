@@ -24,6 +24,15 @@ PHASE2_EMOTION_LABEL_MAP = {
 }
 
 
+def _clean_text(value: object) -> str:
+    text = str(value or "").strip()
+    if text.lower() in {"nan", "none", "null"}:
+        return ""
+    if text.lower().startswith("<!doctype html>") or text.lower().startswith("<html") or text.lower().startswith("<head") or text.lower().startswith("<body"):
+        return ""
+    return text
+
+
 @dataclass
 class MultimodalSample:
     sample_id: str
@@ -69,14 +78,14 @@ def load_manifest(path: str | Path) -> list[MultimodalSample]:
                     raise ValueError(f"Unsupported label value for {sample_id}: {label_text}")
                 label = mapped
 
-        transcript = str(row.get("transcript") or row.get("utterance_text") or row.get("text") or "").strip()
+        transcript = _clean_text(row.get("transcript") or row.get("utterance_text") or row.get("text") or "")
         samples.append(
             MultimodalSample(
                 sample_id=sample_id,
                 split=str(row["split"]),
                 label=label,
-                video_path=str(row.get("video_path", "")),
-                audio_path=str(row.get("audio_path", "")),
+                video_path=_clean_text(row.get("video_path", "")),
+                audio_path=_clean_text(row.get("audio_path", "")),
                 transcript=transcript,
             )
         )
