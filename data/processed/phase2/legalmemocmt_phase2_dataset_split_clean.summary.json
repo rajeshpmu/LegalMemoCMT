@@ -1,0 +1,10 @@
+{
+  "input_rows": 3946,
+  "output_rows": 0,
+  "dropped_html_rows": 95,
+  "dropped_short_text_rows": 0,
+  "dropped_missing_audio_rows": 3851,
+  "dropped_missing_video_rows": 0,
+  "extracted_audio_rows": 0,
+  "output_csv": "/workspace/LegalMemoCMT/data/processed/phase2/legalmemocmt_phase2_dataset_split_clean.csv"
+}
