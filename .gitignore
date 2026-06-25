@@ -24,6 +24,8 @@ scripts/backups_*/
 # Local clutter.
 .DS_Store
 *.zip
+*.tar.gz
+*.tgz
 
 # Python cache / bytecode.
 __pycache__/
