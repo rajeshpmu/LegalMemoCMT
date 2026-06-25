@@ -1,0 +1,7 @@
+Predictions file: results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/predictions_test.csv
+Dataset mapping: meld
+Rows: 2610
+Summary table: results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/analysis_test/predicted_vs_actual_first20.csv
+Summary markdown: results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/analysis_test/predicted_vs_actual_first20.md
+Confusion matrix CSV: results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/analysis_test/confusion_matrix.csv
+Top confusions CSV: results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/analysis_test/top_confusions.csv
