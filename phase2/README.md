@@ -29,7 +29,7 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
    - `bash phase2/run_phase2_split_manifest.sh`
 5. Check whether the Phase 2 fine-tuning inputs are ready:
    - `bash scripts/check_phase2_finetune_ready.sh`
-   - this confirms the legal dataset manifest and the warm-start MELD checkpoint
+   - this confirms the legal dataset manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
 6. Fine-tune from the best MELD checkpoint:
    - `bash phase2/run_phase2_finetune.sh`
 7. Evaluate the saved checkpoint:
@@ -59,7 +59,8 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 ## Wrapper summary
 
 - `phase2/run_phase2_dataset_pipeline.sh` runs the data-preparation stages.
-- `phase2/run_phase2_finetune.sh` starts Phase 2 fine-tuning from the MELD checkpoint.
+- `phase2/run_phase2_split_manifest.sh` adds the train/dev/test split column needed by the trainer.
+- `phase2/run_phase2_finetune.sh` starts Phase 2 fine-tuning from the warm-start checkpoint.
 - `phase2/evaluate_phase2_checkpoint.sh` evaluates the saved Phase 2 checkpoint.
 - `phase2/run_phase2_full.sh` chains dataset prep, fine-tuning, and evaluation in one command.
 
@@ -100,3 +101,11 @@ It also writes the requested intermediate and final artifacts:
 Supreme Court transcripts are useful for text adaptation and legal language structure. They are typically text-only, so they are not the main multimodal training set unless audio/video is also available.
 
 The multimodal courtroom fine-tuning set should come from records that actually contain audio or video, while the text-only corpus can still be used for language adaptation and weak supervision design.
+
+## Default warm-start checkpoint
+
+The current default Phase 2 initialization checkpoint is:
+
+- `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
+
+If you want to override it, set `INIT_CKPT` before running the Phase 2 shell wrappers.

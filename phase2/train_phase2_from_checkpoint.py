@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from dataclasses import asdict
 from pathlib import Path
 
@@ -14,6 +15,9 @@ try:
     from transformers import AutoTokenizer
 except Exception:  # pragma: no cover
     AutoTokenizer = None  # type: ignore[assignment]
+
+if __package__ in {None, ""}:
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from src.data import ManifestDataset, collate_samples, load_manifest
 from src.metrics import accuracy_score, macro_f1_score, weighted_f1_score
