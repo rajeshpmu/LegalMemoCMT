@@ -9,6 +9,7 @@ WITNESS_MANIFEST="${WITNESS_MANIFEST:-$ROOT_DIR/data/phase2/source_manifests/wit
 RESOLVED_MANIFEST="${RESOLVED_MANIFEST:-$ROOT_DIR/data/resolved_manifest.csv}"
 MATERIALIZED_MANIFEST="${MATERIALIZED_MANIFEST:-$ROOT_DIR/data/resolved_manifest_materialized.csv}"
 DATASET_CSV="${DATASET_CSV:-$ROOT_DIR/data/processed/phase2/legalmemocmt_phase2_dataset.csv}"
+SPLIT_DATASET_CSV="${SPLIT_DATASET_CSV:-$ROOT_DIR/data/processed/phase2/legalmemocmt_phase2_dataset_split.csv}"
 WEAK_LABELS_DIR="${WEAK_LABELS_DIR:-$ROOT_DIR/data/processed/phase2/weak_labels}"
 REPORT_HTML="${REPORT_HTML:-$ROOT_DIR/reports/dataset_status.html}"
 
@@ -16,7 +17,7 @@ echo "Phase 2 dataset readiness check"
 echo "Repository root: $ROOT_DIR"
 echo
 
-"$PYTHON_BIN" - <<'PY' "$TRIBUNAL_SOURCES" "$WITNESS_MANIFEST" "$RESOLVED_MANIFEST" "$MATERIALIZED_MANIFEST" "$DATASET_CSV" "$WEAK_LABELS_DIR" "$REPORT_HTML"
+"$PYTHON_BIN" - <<'PY' "$TRIBUNAL_SOURCES" "$WITNESS_MANIFEST" "$RESOLVED_MANIFEST" "$MATERIALIZED_MANIFEST" "$DATASET_CSV" "$SPLIT_DATASET_CSV" "$WEAK_LABELS_DIR" "$REPORT_HTML"
 from __future__ import annotations
 
 import sys
@@ -29,8 +30,9 @@ witness_manifest = Path(sys.argv[2])
 resolved_manifest = Path(sys.argv[3])
 materialized_manifest = Path(sys.argv[4])
 dataset_csv = Path(sys.argv[5])
-weak_labels_dir = Path(sys.argv[6])
-report_html = Path(sys.argv[7])
+split_dataset_csv = Path(sys.argv[6])
+weak_labels_dir = Path(sys.argv[7])
+report_html = Path(sys.argv[8])
 
 required_files = {
     "tribunal_sources": tribunal_sources,
@@ -67,9 +69,21 @@ if materialized_manifest.exists():
     print(f"materialized_manifest columns: {list(materialized_df.columns)}")
 
 dataset_ready = dataset_csv.exists()
+split_manifest_ready = split_dataset_csv.exists()
 print(f"dataset_ready: {dataset_ready}")
+print(f"split_manifest_ready: {split_manifest_ready}")
 print("raw_meld_needed: False for Phase 2 dataset readiness")
 print("raw_meld_needed: only the Phase 2 source manifests and derived artifacts are checked here")
+if dataset_ready:
+    print("dataset ready")
+else:
+    print("dataset missing")
+
+if split_manifest_ready:
+    print("split manifest ready")
+else:
+    print("split manifest missing")
+    print("fine-tuning blocked until split manifest is created")
 
 if dataset_ready:
     dataset_df = pd.read_csv(dataset_csv)
@@ -96,6 +110,13 @@ if dataset_ready:
     print(f"dataset_rows: {len(dataset_df)}")
     print(f"dataset_splits: {dataset_df['split'].value_counts(dropna=False).to_dict() if 'split' in dataset_df.columns else 'split column not present'}")
     print(f"dataset_columns: {list(dataset_df.columns)}")
+
+if split_manifest_ready:
+    split_df = pd.read_csv(split_dataset_csv)
+    if "split" not in split_df.columns:
+        raise SystemExit(f"Split manifest is missing the split column: {split_dataset_csv}")
+    print(f"split_manifest_rows: {len(split_df)}")
+    print(f"split_manifest_splits: {split_df['split'].value_counts(dropna=False).to_dict()}")
 
 if not report_html.exists():
     print("dataset dashboard: MISSING")

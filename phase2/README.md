@@ -25,14 +25,16 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 3. Check whether the Phase 2 dataset artifacts are ready:
    - `bash scripts/check_phase2_dataset_ready.sh`
    - or `bash scripts/check_phase2_ready.sh`
-4. Check whether the Phase 2 fine-tuning inputs are ready:
+4. Build a split-bearing training manifest:
+   - `bash phase2/run_phase2_split_manifest.sh`
+5. Check whether the Phase 2 fine-tuning inputs are ready:
    - `bash scripts/check_phase2_finetune_ready.sh`
    - this confirms the legal dataset manifest and the warm-start MELD checkpoint
-5. Fine-tune from the best MELD checkpoint:
+6. Fine-tune from the best MELD checkpoint:
    - `bash phase2/run_phase2_finetune.sh`
-6. Evaluate the saved checkpoint:
+7. Evaluate the saved checkpoint:
    - `bash phase2/evaluate_phase2_checkpoint.sh <manifest.csv> <checkpoint.pt> <output.json>`
-7. If you want a single chained run, use:
+8. If you want a single chained run, use:
    - `bash phase2/run_phase2_full.sh`
 
 ## Device policy
@@ -50,8 +52,9 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 5. `phase2/dataset_builder.py build-dataset`
 6. `phase2/dataset_builder.py weak-labels`
 7. `phase2/dataset_builder.py dashboard`
-8. `phase2/run_phase2_finetune.sh`
-9. `phase2/evaluate_phase2_checkpoint.sh`
+8. `phase2/run_phase2_split_manifest.sh`
+9. `phase2/run_phase2_finetune.sh`
+10. `phase2/evaluate_phase2_checkpoint.sh`
 
 ## Wrapper summary
 
@@ -66,6 +69,7 @@ The main manifest-driven implementation lives in:
 
 - `phase2/dataset_builder.py`
 - `phase2/run_phase2_dataset_pipeline.sh`
+- `phase2/run_phase2_split_manifest.sh`
 - `phase2/run_phase2_prepare.sh`
 
 It provides the requested staged functions:
