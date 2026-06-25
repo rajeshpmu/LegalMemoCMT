@@ -27,19 +27,23 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 4. Check whether the Phase 2 dataset artifacts are ready:
    - `bash scripts/check_phase2_dataset_ready.sh`
    - or `bash scripts/check_phase2_ready.sh`
+   - this now also prints the Phase 2 language profile for the manifest
 5. Build a split-bearing training manifest:
    - `bash phase2/run_phase2_split_manifest.sh`
 6. Sanitize the split manifest for training:
    - `bash phase2/run_phase2_sanitize_manifest.sh`
-   - this removes HTML-only rows and can optionally extract audio from video when audio paths are missing
-7. Check whether the Phase 2 fine-tuning inputs are ready:
+   - this removes HTML-only rows and keeps the transcript-only cleaning separate from audio extraction
+7. Extract audio from video into a tri-modal training manifest:
+   - `bash phase2/run_phase2_extract_audio.sh`
+   - this fills `audio_path` from the available video files and writes the tri-modal manifest
+8. Check whether the Phase 2 fine-tuning inputs are ready:
    - `bash scripts/check_phase2_finetune_ready.sh`
-   - this confirms the clean legal dataset manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
-8. Fine-tune from the best MELD checkpoint:
+   - this confirms the tri-modal manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
+9. Fine-tune from the best MELD checkpoint:
    - `bash phase2/run_phase2_finetune.sh`
-9. Evaluate the saved checkpoint:
+10. Evaluate the saved checkpoint:
    - `bash phase2/evaluate_phase2_checkpoint.sh <manifest.csv> <checkpoint.pt> <output.json>`
-10. If you want a single chained run, use:
+11. If you want a single chained run, use:
    - `bash phase2/run_phase2_full.sh`
 
 ## Device policy
@@ -67,11 +71,13 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 - `phase2/run_phase2_dataset_pipeline.sh` runs the data-preparation stages.
 - `phase2/run_phase2_split_manifest.sh` adds the train/dev/test split column needed by the trainer.
 - `phase2/run_phase2_sanitize_manifest.sh` cleans transcript rows and can extract audio from video when needed.
+- `phase2/run_phase2_extract_audio.sh` fills missing audio paths by extracting audio from the available video files.
 - `phase2/run_phase2_finetune.sh` starts Phase 2 fine-tuning from the warm-start checkpoint.
 - `phase2/evaluate_phase2_checkpoint.sh` evaluates the saved Phase 2 checkpoint.
 - `phase2/run_phase2_full.sh` chains dataset prep, fine-tuning, and evaluation in one command.
 - `scripts/check_phase2_sources_ready.sh` checks the source corpora directories.
 - `scripts/check_phase2_runpod_sources.sh` checks source corpora, split manifest, and warm-start readiness in one command.
+- `scripts/check_phase2_language_distribution.sh` reports English, Devanagari, other-script, and mixed-language shares for a Phase 2 manifest.
 
 ## Dataset builder entrypoint
 
@@ -104,6 +110,21 @@ It also writes the requested intermediate and final artifacts:
 - `data/processed/phase2/legalmemocmt_phase2_dataset.csv`
 - `data/processed/phase2/weak_labels/`
 - `reports/dataset_status.html`
+
+The dataset readiness check also prints a language profile for the current Phase 2 manifest:
+
+- English share
+- Devanagari share
+- other-script share
+- mixed-language warning when unexpected script mixing is detected
+
+The Phase 2 finetuning path is explicitly tri-modal:
+
+- `text`
+- `audio`
+- `video`
+
+The audio branch is populated by extracting audio from the courtroom video files before warm-start training.
 
 ## Important scope note
 

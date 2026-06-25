@@ -25,6 +25,6 @@ SPLIT="${4:-test}"
   --split "$SPLIT" \
   --output-json "$OUTPUT_JSON" \
   --encoder-mode paper \
-  --modalities text,audio \
+  --modalities text,audio,video \
   --fusion-pooling mean \
   --device "$DEVICE"

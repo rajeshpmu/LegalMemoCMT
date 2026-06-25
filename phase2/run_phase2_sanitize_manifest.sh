@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PYTHON_BIN="${PYTHON_BIN:-$(command -v python3)}"
 INPUT_CSV="${INPUT_CSV:-$ROOT_DIR/data/processed/phase2/legalmemocmt_phase2_dataset_split.csv}"
 OUTPUT_CSV="${OUTPUT_CSV:-$ROOT_DIR/data/processed/phase2/legalmemocmt_phase2_dataset_split_clean.csv}"
-EXTRACT_AUDIO_FROM_VIDEO="${EXTRACT_AUDIO_FROM_VIDEO:-1}"
+EXTRACT_AUDIO_FROM_VIDEO="${EXTRACT_AUDIO_FROM_VIDEO:-0}"
 REQUIRE_AUDIO="${REQUIRE_AUDIO:-0}"
 REQUIRE_VIDEO="${REQUIRE_VIDEO:-0}"
 

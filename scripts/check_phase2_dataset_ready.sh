@@ -118,11 +118,27 @@ if split_manifest_ready:
     print(f"split_manifest_rows: {len(split_df)}")
     print(f"split_manifest_splits: {split_df['split'].value_counts(dropna=False).to_dict()}")
 
+    text_column = None
+    for candidate in ("utterance_text", "transcript", "text"):
+        if candidate in split_df.columns:
+            text_column = candidate
+            break
+
+    if text_column is not None:
+        print("language_distribution_check: running")
+    else:
+        print("language_distribution_check: skipped (no usable text column found)")
+
 if not report_html.exists():
     print("dataset dashboard: MISSING")
 if not weak_labels_dir.exists():
     print("weak labels directory: MISSING")
 PY
+
+if [ -f "$SPLIT_DATASET_CSV" ]; then
+  echo
+  bash "$ROOT_DIR/scripts/check_phase2_language_distribution.sh" "$SPLIT_DATASET_CSV"
+fi
 
 echo
 echo "Phase 2 dataset readiness check complete."

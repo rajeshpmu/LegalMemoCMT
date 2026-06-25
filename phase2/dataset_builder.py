@@ -533,6 +533,15 @@ def build_final_dataset(
                 transcript_path = transcripts_dir / f"{manifest_id}{Path(urlparse(resolved_url).path).suffix or '.txt'}"
         transcript_path = Path(str(transcript_path)) if str(transcript_path).strip() else None
         transcript_text = extract_transcript_text(transcript_path) if transcript_path and transcript_path.exists() else str(row.get("transcript_text", "") or "")
+        video_path = row.get("local_video_path") or row.get("video_local_path") or row.get("video_path") or ""
+        audio_path = row.get("local_audio_path") or row.get("audio_local_path") or row.get("audio_path") or ""
+        video_path = str(video_path).strip()
+        audio_path = str(audio_path).strip()
+        if not audio_path and video_path:
+            try:
+                audio_path = str(extract_audio(video_path, output_dir=audio_dir))
+            except Exception:
+                audio_path = ""
         for utt in segment_transcript(
             transcript_text,
             manifest_id=manifest_id,
@@ -552,8 +561,8 @@ def build_final_dataset(
                     "utterance_text": text,
                     "start_time": utt.get("start_time", ""),
                     "end_time": utt.get("end_time", ""),
-                    "video_path": str(row.get("local_video_path") or row.get("video_local_path") or ""),
-                    "audio_path": str(row.get("local_audio_path") or row.get("audio_local_path") or ""),
+                    "video_path": video_path,
+                    "audio_path": audio_path,
                     "emotion_label": _infer_emotion_label(text),
                     "credibility_label": _infer_credibility(text),
                     "question_type": _infer_question_type(text, speaker_role),
