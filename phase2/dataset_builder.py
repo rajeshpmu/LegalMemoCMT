@@ -386,7 +386,12 @@ def download_video(url: str, manifest_id: str, *, output_dir: str | Path = DEFAU
     return _download(url, dest)
 
 
-def extract_audio(video_path: str | Path, *, output_dir: str | Path = DEFAULT_RAW_DIR / "audio") -> Path:
+def extract_audio(
+    video_path: str | Path,
+    *,
+    output_dir: str | Path = DEFAULT_RAW_DIR / "audio",
+    use_cuda: bool = False,
+) -> Path:
     src = Path(video_path)
     out_dir = Path(output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -395,21 +400,56 @@ def extract_audio(video_path: str | Path, *, output_dir: str | Path = DEFAULT_RA
         if src.resolve() != dest.resolve():
             dest.write_bytes(src.read_bytes())
         return dest
-    cmd = [
+    base_cmd = [
         "ffmpeg",
         "-y",
-        "-i",
-        str(src),
-        "-vn",
-        "-acodec",
-        "pcm_s16le",
-        "-ar",
-        "16000",
-        "-ac",
-        "1",
-        str(dest),
     ]
-    subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if use_cuda:
+        base_cmd.extend(["-hwaccel", "cuda", "-hwaccel_output_format", "cuda"])
+    base_cmd.extend(
+        [
+            "-i",
+            str(src),
+            "-vn",
+            "-acodec",
+            "pcm_s16le",
+            "-ar",
+            "16000",
+            "-ac",
+            "1",
+            str(dest),
+        ]
+    )
+    try:
+        subprocess.run(base_cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+    except subprocess.CalledProcessError as exc:
+        if use_cuda:
+            fallback_cmd = [
+                "ffmpeg",
+                "-y",
+                "-i",
+                str(src),
+                "-vn",
+                "-acodec",
+                "pcm_s16le",
+                "-ar",
+                "16000",
+                "-ac",
+                "1",
+                str(dest),
+            ]
+            try:
+                subprocess.run(fallback_cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+            except subprocess.CalledProcessError as fallback_exc:
+                stderr_text = ""
+                if fallback_exc.stderr:
+                    stderr_text = fallback_exc.stderr.decode("utf-8", errors="ignore").strip()
+                raise RuntimeError(f"ffmpeg audio extraction failed for {src}: {stderr_text}") from fallback_exc
+        else:
+            stderr_text = ""
+            if exc.stderr:
+                stderr_text = exc.stderr.decode("utf-8", errors="ignore").strip()
+            raise RuntimeError(f"ffmpeg audio extraction failed for {src}: {stderr_text}") from exc
     return dest
 
 

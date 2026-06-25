@@ -36,6 +36,7 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 7. Extract audio from video into a tri-modal training manifest:
    - `bash phase2/run_phase2_extract_audio.sh`
    - this fills `audio_path` from the available video files and writes the tri-modal manifest
+   - on GPU-enabled RunPod systems, set `USE_CUDA=1` to try CUDA-assisted ffmpeg decoding with CPU fallback
 8. Check whether the Phase 2 fine-tuning inputs are ready:
    - `bash scripts/check_phase2_finetune_ready.sh`
    - this confirms the tri-modal manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
@@ -125,6 +126,7 @@ The Phase 2 finetuning path is explicitly tri-modal:
 - `video`
 
 The audio branch is populated by extracting audio from the courtroom video files before warm-start training.
+On RunPod, `phase2/run_phase2_extract_audio.sh` can try CUDA-assisted decoding when `USE_CUDA=1`, but it will fall back to CPU ffmpeg if the container build does not support GPU decode.
 
 ## Important scope note
 

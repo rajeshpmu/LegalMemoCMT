@@ -65,6 +65,11 @@ def main() -> None:
         help="Where to store audio extracted from video when audio is missing",
     )
     parser.add_argument(
+        "--use-cuda",
+        action="store_true",
+        help="Try CUDA-assisted ffmpeg decoding before falling back to CPU",
+    )
+    parser.add_argument(
         "--extract-audio-from-video",
         action="store_true",
         help="Extract audio from video files when audio_path is missing or invalid",
@@ -92,6 +97,7 @@ def main() -> None:
     dropped_audio = 0
     dropped_video = 0
     extracted_audio = 0
+    failed_extractions: list[dict[str, str]] = []
 
     for _, row in df.iterrows():
         utterance_id = clean_text(row.get("utterance_id") or row.get("sample_id") or row.get("manifest_id"))
@@ -132,11 +138,19 @@ def main() -> None:
 
         if not audio_ok and args.extract_audio_from_video and video_ok:
             try:
-                audio_path = str(extract_audio(video_path, output_dir=audio_out_dir))
+                audio_path = str(extract_audio(video_path, output_dir=audio_out_dir, use_cuda=args.use_cuda))
                 audio_ok = True
                 extracted_audio += 1
-            except Exception:
+            except Exception as exc:
                 audio_ok = False
+                if len(failed_extractions) < 5:
+                    failed_extractions.append(
+                        {
+                            "manifest_id": manifest_id,
+                            "video_path": video_path,
+                            "error": str(exc),
+                        }
+                    )
 
         if not audio_ok and args.require_audio:
             dropped_audio += 1
@@ -182,6 +196,10 @@ def main() -> None:
     summary_path = output_csv.with_suffix(".summary.json")
     summary_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print(json.dumps(summary, indent=2))
+    if failed_extractions:
+        print("Sample audio extraction failures:")
+        for item in failed_extractions:
+            print(json.dumps(item, ensure_ascii=False))
 
 
 if __name__ == "__main__":
