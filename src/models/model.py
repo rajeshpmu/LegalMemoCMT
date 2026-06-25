@@ -134,6 +134,29 @@ class CrossModalFusion(nn.Module):
         return self.output_norm(pooled)
 
 
+class GatedModalFusion(nn.Module):
+    """Learn a data-dependent gate over modality-level embeddings."""
+
+    def __init__(self, hidden_dim: int, dropout: float) -> None:
+        super().__init__()
+        self.gate = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_dim, 1),
+        )
+        self.output_norm = nn.LayerNorm(hidden_dim)
+
+    def forward(self, *modalities: torch.Tensor) -> torch.Tensor:
+        if not modalities:
+            raise ValueError("GatedModalFusion requires at least one modality tensor")
+        stacked = torch.stack([torch.nan_to_num(m, nan=0.0, posinf=0.0, neginf=0.0) for m in modalities], dim=1)
+        gate_logits = self.gate(stacked).squeeze(-1)
+        weights = torch.softmax(gate_logits, dim=1).unsqueeze(-1)
+        fused = (stacked * weights).sum(dim=1)
+        return self.output_norm(fused)
+
+
 class BidirectionalCrossAttentionCMT(nn.Module):
     """Bidirectional cross-attention fusion for text and audio sequences."""
 
@@ -277,6 +300,7 @@ class LegalMemoCMTPhase1(nn.Module):
         super().__init__()
         self.config = config
         self.encoder_mode = config.encoder_mode.lower().strip()
+        self.fusion_mode = getattr(config, "fusion_mode", "legacy").lower().strip()
         if self.encoder_mode in {"pretrained", "paper"}:
             self.text_encoder = PretrainedBackboneEncoder(
                 model_name=config.text_model_name,
@@ -326,6 +350,14 @@ class LegalMemoCMTPhase1(nn.Module):
             dropout=config.dropout,
             pooling=getattr(config, "fusion_pooling", "mean"),
         )
+        self.gated_fusion = GatedModalFusion(hidden_dim=config.fusion_dim, dropout=config.dropout)
+        self.video_aux_classifier = nn.Sequential(
+            nn.LayerNorm(config.fusion_dim),
+            nn.Linear(config.fusion_dim, config.fusion_dim),
+            nn.GELU(),
+            nn.Dropout(config.dropout),
+            nn.Linear(config.fusion_dim, config.num_classes),
+        )
         self.classifier = nn.Sequential(
             nn.LayerNorm(config.fusion_dim),
             nn.Linear(config.fusion_dim, config.fusion_dim),
@@ -345,6 +377,7 @@ class LegalMemoCMTPhase1(nn.Module):
         text_attention_mask: torch.Tensor | None = None,
         audio_waveform: torch.Tensor | None = None,
         audio_attention_mask: torch.Tensor | None = None,
+        return_video_aux: bool = False,
     ) -> torch.Tensor:
         text_present = (text_input_ids is not None and text_attention_mask is not None) or (
             text_tokens is not None and self.encoder_mode not in {"pretrained", "paper"}
@@ -357,7 +390,12 @@ class LegalMemoCMTPhase1(nn.Module):
         if video_present and not text_present and not audio_present:
             video_repr = self.video_encoder(video_features, mask=video_mask)
             logits = self.classifier(torch.nan_to_num(video_repr, nan=0.0, posinf=0.0, neginf=0.0))
-            return torch.nan_to_num(logits, nan=0.0, posinf=0.0, neginf=0.0)
+            video_aux_logits = self.video_aux_classifier(torch.nan_to_num(video_repr, nan=0.0, posinf=0.0, neginf=0.0))
+            logits = torch.nan_to_num(logits, nan=0.0, posinf=0.0, neginf=0.0)
+            video_aux_logits = torch.nan_to_num(video_aux_logits, nan=0.0, posinf=0.0, neginf=0.0)
+            if return_video_aux:
+                return logits, video_aux_logits
+            return logits
 
         if self.encoder_mode in {"pretrained", "paper"}:
             if text_input_ids is None:
@@ -389,6 +427,19 @@ class LegalMemoCMTPhase1(nn.Module):
         if video_features is None:
             raise ValueError("video_features must be provided")
         video_repr = self.video_encoder(video_features, mask=video_mask)
+        video_aux_logits = self.video_aux_classifier(torch.nan_to_num(video_repr, nan=0.0, posinf=0.0, neginf=0.0))
+        if self.fusion_mode == "gated":
+            fused = self.gated_fusion(text_repr, audio_repr, video_repr)
+            logits = self.classifier(torch.nan_to_num(fused, nan=0.0, posinf=0.0, neginf=0.0))
+            logits = torch.nan_to_num(logits, nan=0.0, posinf=0.0, neginf=0.0)
+            video_aux_logits = torch.nan_to_num(video_aux_logits, nan=0.0, posinf=0.0, neginf=0.0)
+            if return_video_aux:
+                return logits, video_aux_logits
+            return logits
         fused = self.legacy_fusion(text_repr, audio_repr, video_repr)
         logits = self.classifier(torch.nan_to_num(fused, nan=0.0, posinf=0.0, neginf=0.0))
-        return torch.nan_to_num(logits, nan=0.0, posinf=0.0, neginf=0.0)
+        logits = torch.nan_to_num(logits, nan=0.0, posinf=0.0, neginf=0.0)
+        video_aux_logits = torch.nan_to_num(video_aux_logits, nan=0.0, posinf=0.0, neginf=0.0)
+        if return_video_aux:
+            return logits, video_aux_logits
+        return logits

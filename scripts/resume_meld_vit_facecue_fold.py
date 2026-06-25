@@ -24,6 +24,7 @@ from src.train.train import (
     build_dataset,
     compute_class_weights,
     get_device,
+    parse_fusion_mode,
     parse_encoder_mode,
     parse_modalities,
     parse_pooling,
@@ -88,6 +89,95 @@ def train_one_epoch(model, loader, optimizer, device, num_classes: int, loss_fn,
     return run_epoch(model, loader, optimizer, device, num_classes, loss_fn, modalities)
 
 
+def run_epoch_with_video_aux(
+    model,
+    loader,
+    optimizer,
+    device,
+    num_classes: int,
+    main_loss_fn,
+    aux_loss_fn,
+    modalities: set[str],
+    aux_weight: float,
+):
+    is_train = optimizer is not None
+    model.train(is_train)
+    all_true = []
+    all_pred = []
+    total_loss = 0.0
+    seen = 0
+    skipped = 0
+
+    for batch in loader:
+        labels = torch.as_tensor(batch["label"], device=device)
+        batch_tensors = {
+            "text_tokens": torch.as_tensor(batch["text_tokens"], device=device) if "text_tokens" in batch else None,
+            "text_input_ids": torch.as_tensor(batch["text_input_ids"], device=device) if "text_input_ids" in batch else None,
+            "text_attention_mask": torch.as_tensor(batch["text_attention_mask"], device=device) if "text_attention_mask" in batch else None,
+            "audio_features": torch.as_tensor(batch["audio_features"], device=device) if "audio_features" in batch else None,
+            "audio_waveform": torch.as_tensor(batch["audio_waveform"], device=device) if "audio_waveform" in batch else None,
+            "audio_mask": torch.as_tensor(batch["audio_mask"], device=device) if "audio_mask" in batch else None,
+            "audio_attention_mask": torch.as_tensor(batch["audio_attention_mask"], device=device) if "audio_attention_mask" in batch else None,
+            "video_features": torch.as_tensor(batch["video_features"], device=device),
+            "video_mask": torch.as_tensor(batch["video_mask"], device=device),
+        }
+        outputs = apply_modality_mask(batch_tensors, modalities, model.config.encoder_mode)
+
+        if parse_encoder_mode(model.config.encoder_mode) in {"pretrained", "paper"}:
+            text_input_ids, text_attention_mask, audio_waveform, audio_attention_mask, video_features, video_mask = outputs
+            logits, video_aux_logits = model(
+                text_input_ids=text_input_ids,
+                text_attention_mask=text_attention_mask,
+                audio_waveform=audio_waveform,
+                audio_attention_mask=audio_attention_mask,
+                video_features=video_features,
+                video_mask=video_mask,
+                return_video_aux=True,
+            )
+        else:
+            text_tokens, audio_features, audio_mask, video_features, video_mask = outputs
+            logits, video_aux_logits = model(
+                text_tokens=text_tokens,
+                audio_features=audio_features,
+                audio_mask=audio_mask,
+                video_features=video_features,
+                video_mask=video_mask,
+                return_video_aux=True,
+            )
+
+        logits = torch.nan_to_num(logits, nan=0.0, posinf=0.0, neginf=0.0)
+        video_aux_logits = torch.nan_to_num(video_aux_logits, nan=0.0, posinf=0.0, neginf=0.0)
+        main_loss = main_loss_fn(logits, labels)
+        aux_loss = aux_loss_fn(video_aux_logits, labels)
+        loss = main_loss + (aux_weight * aux_loss)
+
+        if torch.isnan(loss) or torch.isinf(loss):
+            skipped += 1
+            continue
+
+        if is_train:
+            optimizer.zero_grad(set_to_none=True)
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            optimizer.step()
+
+        total_loss += float(loss.item()) * len(labels)
+        seen += len(labels)
+        pred = torch.argmax(logits, dim=-1).detach().cpu().numpy()
+        all_pred.append(pred)
+        all_true.append(labels.detach().cpu().numpy())
+
+    y_true = np.concatenate(all_true) if all_true else np.array([], dtype=np.int64)
+    y_pred = np.concatenate(all_pred) if all_pred else np.array([], dtype=np.int64)
+    return {
+        "loss": total_loss / max(seen, 1),
+        "accuracy": accuracy_score(y_true, y_pred),
+        "macro_f1": macro_f1_score(y_true, y_pred, num_classes),
+        "weighted_f1": weighted_f1_score(y_true, y_pred, num_classes),
+        "skipped_batches": skipped,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Warm-start MELD facial-cue training from the weighted-CE baseline")
     parser.add_argument("--fold", type=int, default=2, choices=[2, 4], help="MELD CV fold to fine-tune")
@@ -122,7 +212,22 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--modalities", type=str, default="text,audio,video")
     parser.add_argument("--fusion-pooling", type=str, default="min", choices=["cls", "mean", "max", "min"])
+    parser.add_argument("--fusion-mode", type=str, default="legacy", choices=["legacy", "gated"])
     parser.add_argument("--encoder-mode", type=str, default="paper", choices=["legacy", "pretrained", "paper"])
+    parser.add_argument("--video-aux-weight", type=float, default=0.0, help="Weight for the auxiliary video classification loss")
+    parser.add_argument(
+        "--video-aux-loss-type",
+        type=str,
+        default="weighted-ce",
+        choices=["ce", "weighted-ce"],
+        help="Loss used for the auxiliary video head",
+    )
+    parser.add_argument(
+        "--early-stop-patience",
+        type=int,
+        default=0,
+        help="Stop after this many epochs without improvement in the selection metric; 0 disables early stopping",
+    )
     parser.add_argument(
         "--selection-metric",
         type=str,
@@ -156,6 +261,7 @@ def main() -> None:
     video_dim = args.video_dim or infer_video_dim(train_manifest)
     model_cfg = ModelConfig(
         encoder_mode=parse_encoder_mode(args.encoder_mode),
+        fusion_mode=parse_fusion_mode(args.fusion_mode),
         fusion_pooling=parse_pooling(args.fusion_pooling),
         video_dim=int(video_dim),
     )
@@ -180,8 +286,13 @@ def main() -> None:
     optimizer = torch.optim.AdamW(model.parameters(), lr=train_cfg.lr, weight_decay=train_cfg.weight_decay)
     class_weights = compute_class_weights(train_ds, model_cfg.num_classes).to(device)
     loss_fn = nn.CrossEntropyLoss(weight=class_weights)
+    if args.video_aux_loss_type == "ce":
+        video_aux_loss_fn = nn.CrossEntropyLoss()
+    else:
+        video_aux_loss_fn = nn.CrossEntropyLoss(weight=class_weights)
 
     best_val = -1.0
+    epochs_without_improvement = 0
     best_path = output_dir / "best_model.pt"
 
     for epoch in range(1, train_cfg.epochs + 1):
@@ -196,9 +307,35 @@ def main() -> None:
         set_requires_grad(model.paper_fusion, True)
         set_requires_grad(model.classifier, True)
 
-        train_metrics = train_one_epoch(model, train_loader, optimizer, device, model_cfg.num_classes, loss_fn, modalities)
+        if args.video_aux_weight > 0:
+            train_metrics = run_epoch_with_video_aux(
+                model,
+                train_loader,
+                optimizer,
+                device,
+                model_cfg.num_classes,
+                loss_fn,
+                video_aux_loss_fn,
+                modalities,
+                args.video_aux_weight,
+            )
+        else:
+            train_metrics = train_one_epoch(model, train_loader, optimizer, device, model_cfg.num_classes, loss_fn, modalities)
         with torch.no_grad():
-            val_metrics = run_epoch(model, val_loader, None, device, model_cfg.num_classes, loss_fn, modalities)
+            if args.video_aux_weight > 0:
+                val_metrics = run_epoch_with_video_aux(
+                    model,
+                    val_loader,
+                    None,
+                    device,
+                    model_cfg.num_classes,
+                    loss_fn,
+                    video_aux_loss_fn,
+                    modalities,
+                    args.video_aux_weight,
+                )
+            else:
+                val_metrics = run_epoch(model, val_loader, None, device, model_cfg.num_classes, loss_fn, modalities)
 
         print(
             " | ".join(
@@ -215,6 +352,7 @@ def main() -> None:
         current_score = selection_score(val_metrics, args.selection_metric)
         if current_score > best_val:
             best_val = current_score
+            epochs_without_improvement = 0
             torch.save(
                 {
                     "model_state": model.state_dict(),
@@ -225,6 +363,14 @@ def main() -> None:
                 },
                 best_path,
             )
+        else:
+            epochs_without_improvement += 1
+
+        if args.early_stop_patience > 0 and epochs_without_improvement >= args.early_stop_patience:
+            print(
+                f"Early stopping triggered after {epoch} epochs without improvement in val_{args.selection_metric}."
+            )
+            break
 
     from src.train.evaluate import main as evaluate_main
 
@@ -252,6 +398,8 @@ def main() -> None:
             args.modalities,
             "--fusion-pooling",
             args.fusion_pooling,
+            "--fusion-mode",
+            args.fusion_mode,
             "--batch-size",
             str(args.batch_size),
         ]

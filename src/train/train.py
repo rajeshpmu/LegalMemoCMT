@@ -34,6 +34,11 @@ def parse_pooling(value: str) -> str:
     return value if value in {"cls", "mean", "max", "min"} else "mean"
 
 
+def parse_fusion_mode(value: str) -> str:
+    value = value.strip().lower()
+    return value if value in {"legacy", "gated"} else "legacy"
+
+
 def parse_encoder_mode(value: str) -> str:
     value = value.strip().lower()
     return value if value in {"legacy", "pretrained", "paper"} else "legacy"
@@ -211,6 +216,7 @@ def main():
     parser.add_argument("--focal-gamma", type=float, default=2.0)
     parser.add_argument("--modalities", type=str, default="text,audio,video", help="Comma-separated subset of text,audio,video")
     parser.add_argument("--fusion-pooling", type=str, default="mean", choices=["cls", "mean", "max", "min"])
+    parser.add_argument("--fusion-mode", type=str, default="legacy", choices=["legacy", "gated"])
     parser.add_argument("--encoder-mode", type=str, default="legacy", choices=["legacy", "pretrained", "paper"])
     parser.add_argument("--fine-tune-backbones", action="store_true", help="Update pretrained text/audio backbones instead of freezing them")
     parser.add_argument("--device", type=str, default="cpu", help="Training device: cpu, cuda, mps, or auto")
@@ -221,7 +227,11 @@ def main():
 
     train_cfg = TrainConfig(seed=args.seed, batch_size=args.batch_size, epochs=args.epochs, lr=args.lr, output_dir=args.output_dir)
     train_cfg.device = args.device
-    model_cfg = ModelConfig(fusion_pooling=parse_pooling(args.fusion_pooling), encoder_mode=parse_encoder_mode(args.encoder_mode))
+    model_cfg = ModelConfig(
+        fusion_pooling=parse_pooling(args.fusion_pooling),
+        fusion_mode=parse_fusion_mode(args.fusion_mode),
+        encoder_mode=parse_encoder_mode(args.encoder_mode),
+    )
     if args.fine_tune_backbones:
         model_cfg.freeze_text_backbone = False
         model_cfg.freeze_audio_backbone = False

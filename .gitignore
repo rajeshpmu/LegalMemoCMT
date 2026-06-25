@@ -1,0 +1,32 @@
+# Keep source and manifest files only.
+
+# Data: ignore everything except manifests.
+data/*
+!data/manifests/
+!data/manifests/**
+
+# Generated docs and reports.
+implementation_docments/
+results/
+artifacts/
+backups/
+submission_first/
+scripts/backups_*/
+
+# Generated figures and diagram exports.
+*.png
+*.mmd
+*.svg
+
+# Word documents.
+*.docx
+
+# Local clutter.
+.DS_Store
+*.zip
+
+# Python cache / bytecode.
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

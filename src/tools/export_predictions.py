@@ -10,7 +10,7 @@ import torch
 from ..data import collate_samples, load_manifest
 from ..metrics import accuracy_score, macro_f1_score, weighted_f1_score
 from ..models import LegalMemoCMTPhase1, ModelConfig
-from ..train.train import apply_modality_mask, build_dataset, parse_encoder_mode, parse_modalities, parse_pooling
+from ..train.train import apply_modality_mask, build_dataset, parse_encoder_mode, parse_fusion_mode, parse_modalities, parse_pooling
 
 
 def parse_modalities(value: str) -> set[str]:
@@ -72,6 +72,7 @@ def main() -> None:
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--modalities", type=str, default="text,audio,video", help="Comma-separated subset of text,audio,video")
     parser.add_argument("--fusion-pooling", type=str, default="", help="Optional override: cls, mean, max, min")
+    parser.add_argument("--fusion-mode", type=str, default="", help="Optional override: legacy, gated")
     parser.add_argument("--encoder-mode", type=str, default="", help="Optional override: legacy, pretrained, paper")
     parser.add_argument("--device", type=str, default="cpu", help="Evaluation device: cpu, cuda, mps, or auto")
     parser.add_argument("--split", type=str, default="", help="Optional manifest split filter (e.g. train, dev, test)")
@@ -81,8 +82,10 @@ def main() -> None:
     checkpoint = torch.load(args.checkpoint, map_location="cpu")
     loaded_cfg = checkpoint.get("model_cfg", {})
     fusion_pooling = args.fusion_pooling.strip().lower() if args.fusion_pooling.strip() else str(loaded_cfg.get("fusion_pooling", "mean"))
+    fusion_mode = args.fusion_mode.strip().lower() if args.fusion_mode.strip() else str(loaded_cfg.get("fusion_mode", "legacy"))
     encoder_mode = args.encoder_mode.strip().lower() if args.encoder_mode.strip() else str(loaded_cfg.get("encoder_mode", "legacy"))
     loaded_cfg["fusion_pooling"] = parse_pooling(fusion_pooling)
+    loaded_cfg["fusion_mode"] = parse_fusion_mode(fusion_mode)
     loaded_cfg["encoder_mode"] = parse_encoder_mode(encoder_mode)
     model_cfg = ModelConfig(**loaded_cfg)
 
@@ -102,7 +105,11 @@ def main() -> None:
     else:
         device = torch.device(args.device)
     model = LegalMemoCMTPhase1(model_cfg).to(device)
-    model.load_state_dict(checkpoint["model_state"])
+    missing, unexpected = model.load_state_dict(checkpoint["model_state"], strict=False)
+    if missing:
+        print(f"Missing keys during export load: {sorted(missing)}")
+    if unexpected:
+        print(f"Unexpected keys during export load: {sorted(unexpected)}")
     model.eval()
 
     rows: list[dict[str, object]] = []

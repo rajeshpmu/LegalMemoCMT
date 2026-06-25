@@ -4,6 +4,7 @@ from dataclasses import dataclass
 @dataclass
 class ModelConfig:
     encoder_mode: str = "legacy"
+    fusion_mode: str = "legacy"
     vocab_size: int = 30000
     text_dim: int = 256
     audio_dim: int = 128

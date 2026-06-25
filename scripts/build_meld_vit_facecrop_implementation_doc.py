@@ -288,6 +288,152 @@ np.save(video_feat_path, vit_embeddings)""",
         "If video-only has signal but the full tri-modal model does not improve much, the next technical step should be to make the fusion more selective. In that case, a gated fusion block or a small auxiliary video loss would be more informative than just adding more epochs.",
     )
 
+    doc.add_heading("6.2 Gated Fusion Follow-Up", level=2)
+    add_para(
+        doc,
+        "The gated-fusion run is the next refinement after the weak video-only control. The idea is simple: do not force the model to trust the video branch all the time. Instead, let the model learn a gate that decides how much each modality should contribute to the final fused representation. This is useful when video has some signal, but not enough signal to dominate by itself.",
+    )
+    add_bullets(
+        doc,
+        [
+            "The text and audio branches still provide the stable conversational backbone.",
+            "The video branch contributes a separate face-crop representation from ViT embeddings.",
+            "The gate learns a weight for each modality so the model can trust video only when it is actually helpful.",
+            "This is safer than an auxiliary loss at this stage because the visual branch is still weaker than the text/audio path.",
+            "The goal is not to force video to dominate. The goal is to make the model selective about when to use it.",
+        ],
+    )
+    add_para(
+        doc,
+        "Student explanation: think of the gate as a learned switchboard. If the utterance has strong facial evidence, the gate can raise the video contribution. If the face crop is noisy or unhelpful, the gate can down-weight it and let text/audio carry more of the decision. That is why gated fusion is a better next step than an auxiliary loss right now.",
+    )
+    add_code(
+        doc,
+        """text_repr, audio_repr, video_repr -> gated fusion block
+gate scores -> softmax weights
+weighted modality mix -> fused vector
+fused vector -> classifier -> emotion label""",
+    )
+    add_para(
+        doc,
+        "The important scientific point is that gated fusion tests whether the visual branch can contribute conditionally rather than unconditionally. In other words, the model should learn when to trust the face crop, not just whether the face crop exists.",
+    )
+    add_para(
+        doc,
+        "Error-pattern summary for the gated Fold 2 run: the confusion matrix still shows a strong pull toward neutral, but it is less collapsed than the video-only control. The strongest correct cells are neutral, surprise, fear, and joy, while sadness, anger, fear, and disgust still leak into neutral or nearby emotions. In practical terms, the gate is helping the model keep the useful facial signal, but it is not yet strong enough to eliminate neutral bias.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Neutral remains the dominant prediction, which means the class-imbalance problem is still present.",
+            "Surprise, fear, and joy are learned better than in the video-only control, which suggests the gate is adding useful selectivity.",
+            "Sadness, anger, and disgust still suffer from confusion with neutral and with each other, so the decision boundary is not yet sharp.",
+            "The matrix is consistent with a model that has useful facial signal but still needs better calibration or fusion control.",
+        ],
+    )
+    add_para(
+        doc,
+        "Student interpretation: the gate does not magically solve the imbalance problem. What it does is prevent the video branch from being ignored completely. That is why the matrix improves compared with video-only, but still shows a strong neutral bias. The model is learning better than before, but it still needs careful tuning or a stronger video-aware fusion design to separate the lower-frequency emotions cleanly.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Use gated fusion first because the video-only control showed usable but weak signal.",
+            "Do not jump to auxiliary losses until you know the gate itself is useful.",
+            "Keep the paper-aligned warm-start checkpoint so the comparison stays controlled.",
+            "Keep the same MELD control folds so the only major change is the fusion mechanism.",
+        ],
+    )
+    add_para(
+        doc,
+        "Recommended gated-fusion execution order: run the gated Fold 2 training script, analyze Fold 2, run the gated Fold 4 training script, analyze Fold 4, and only then compare the gated result to the video-only and tri-modal legacy face-crop runs. If you want a single wrapper, use the gated suite script after you have verified that the control folds and face-crop features already exist.",
+    )
+    add_table(
+        doc,
+        ["Script", "Purpose", "Why it is in the order"],
+        [
+            ["scripts/run_meld_vit_facecrop_gated_fold2.sh", "Train gated fusion on Fold 2", "First gated test of whether the face-crop branch can help selectively."],
+            ["scripts/analyze_meld_vit_facecrop_gated_fold2.sh", "Export Fold 2 predictions and confusion matrix", "Shows whether the gate improves neutral bias and class balance."],
+            ["scripts/run_meld_vit_facecrop_gated_fold4.sh", "Train gated fusion on Fold 4", "Checks whether the same gate behavior generalizes across folds."],
+            ["scripts/analyze_meld_vit_facecrop_gated_fold4.sh", "Export Fold 4 predictions and confusion matrix", "Lets you compare Fold 4 against Fold 2 and the baseline."],
+            ["scripts/run_meld_vit_facecrop_gated_suite.sh", "Run both folds in sequence", "Convenience wrapper only after the single-fold behavior is understood."],
+        ],
+    )
+
+    doc.add_heading("6.3 Next Experiment: Gated Fusion + Video Auxiliary Loss", level=2)
+    add_para(
+        doc,
+        "The next planned experiment keeps the same face-crop ViT pipeline and the same warm-start backbone, but adds a small auxiliary loss on the video branch. This is a stricter test than gated fusion alone because it does two things at once: it lets the model gate the modalities, and it also asks the video branch to solve the emotion task on its own with a small amount of extra training pressure.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Face-crop ViT stays as the visual feature source, so the visual representation is still face-centered.",
+            "Gated fusion stays in place so the model can decide how much to trust video per utterance.",
+            "The video auxiliary head adds a second prediction path from the video representation itself.",
+            "The auxiliary loss weight is small, lambda = 0.1, so the video branch is helped without overpowering the main multimodal classifier.",
+            "The learning rate is lowered to 2e-5 because the current gated run already shows useful signal and should now be refined more gently.",
+            "Training now uses up to 8 epochs with early stopping patience = 2 so the experiment can stop as soon as validation weighted F1 stops improving.",
+            "The best checkpoint is selected by validation weighted F1 because MELD is still imbalanced and weighted F1 is the safer checkpoint criterion than accuracy alone.",
+        ],
+    )
+    add_para(
+        doc,
+        "Student explanation: think of the model as having two jobs at once. The main job is still to predict emotion from text, audio, and video after gated fusion. The extra job is to make the video branch itself produce a useful emotion prediction. The video auxiliary loss does not replace the main classifier; it nudges the visual branch to stay emotionally informative instead of becoming a passive passenger behind the text/audio backbone.",
+    )
+    add_para(
+        doc,
+        "Why this is worth trying now: the video-only control was weak, but the gated run showed that the face-crop signal is not useless. That means the visual branch has some signal, but it still needs stronger structure. The auxiliary loss gives the branch a direct training signal while the gate prevents the multimodal classifier from trusting video too much when it is not reliable.",
+    )
+    add_code(
+        doc,
+        """main logits from gated multimodal fusion
+video logits from auxiliary video head
+main loss = weighted CE on fused prediction
+aux loss = weighted CE on video prediction
+total loss = main loss + 0.1 * aux loss""",
+    )
+    add_para(
+        doc,
+        "The important optimization idea is that the auxiliary loss should stay small. If lambda is too large, the model may overfocus on video and hurt the text/audio backbone. If lambda is too small, the auxiliary branch will not matter. A value like 0.1 is a cautious middle ground for the first test. The 8-epoch cap with patience 2 keeps the run from wasting time after validation weighted F1 has already stopped improving.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Warm-start stays enabled, so the training begins from the paper-aligned MELD checkpoint rather than from random weights.",
+            "Checkpoint selection is based on validation weighted F1, not validation accuracy.",
+            "Early stopping watches validation weighted F1 and stops after 2 epochs without improvement.",
+        ],
+    )
+    add_bullets(
+        doc,
+        [
+            "The model still starts from the paper-aligned weighted-CE checkpoint, so the experiment remains warm-started.",
+            "The new visual branch is not trained from scratch; it is refined on top of the existing baseline.",
+            "The fold splits stay the same, so any result change should come from the new training objective rather than a new data partition.",
+            "If the confusion matrix improves, that will suggest the visual branch is now contributing more directly and more consistently.",
+        ],
+    )
+    add_para(
+        doc,
+        "Recommended execution order for the new Phase 1 experiment: first make sure the face-crop control folds already exist, then run the Fold 2 gated + video-aux script, analyze the Fold 2 predictions, then run the Fold 4 gated + video-aux script, and analyze the Fold 4 predictions. Only after that should you compare the confusion matrices against the earlier gated-only and video-only runs.",
+    )
+    add_table(
+        doc,
+        ["Script", "Role in the experiment", "Expected interpretation"],
+        [
+            ["scripts/run_meld_vit_facecrop_gated_video_aux_fold2.sh", "Train Fold 2 with gated fusion and a video auxiliary loss", "Checks whether a small extra video loss improves the weak facial cue branch."],
+            ["scripts/analyze_meld_vit_facecrop_gated_video_aux_fold2.sh", "Export Fold 2 confusion matrix and predictions", "Shows whether the auxiliary loss reduces neutral bias or improves minority classes."],
+            ["scripts/run_meld_vit_facecrop_gated_video_aux_fold4.sh", "Train Fold 4 with the same gated + auxiliary setup", "Checks whether the improvement generalizes on a more balanced fold."],
+            ["scripts/analyze_meld_vit_facecrop_gated_video_aux_fold4.sh", "Export Fold 4 confusion matrix and predictions", "Lets you compare Fold 4 against Fold 2 and decide whether the method is stable."],
+            ["scripts/run_meld_vit_facecrop_gated_video_aux_suite.sh", "Run both folds in sequence", "Convenience wrapper once the single-fold behavior is understood."],
+        ],
+    )
+    add_para(
+        doc,
+        "What to expect if the experiment works: the model should keep the useful early gated behavior, but the video branch should become less passive. In practical terms, the confusion matrix should ideally move a little away from neutral-only fallback and show better separation for surprise, fear, joy, and possibly sadness or anger. If it does not, then the auxiliary loss is probably too weak or the visual representation still needs better design.",
+    )
+
     doc.add_heading("7. Where This Fits in the Thesis Story", level=1)
     add_para(
         doc,

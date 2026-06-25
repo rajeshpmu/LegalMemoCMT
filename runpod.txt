@@ -1,0 +1,1 @@
+ ssh x17gqfhf87z578-64412367@ssh.runpod.io -i ~/.ssh/id_ed25519
