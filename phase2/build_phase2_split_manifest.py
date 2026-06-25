@@ -1,11 +1,16 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import pandas as pd
 
-from .common import ensure_dir, group_case_splits
+if __package__ in {None, ""}:
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+    from phase2.common import ensure_dir, group_case_splits
+else:
+    from .common import ensure_dir, group_case_splits
 
 
 def main() -> None:
