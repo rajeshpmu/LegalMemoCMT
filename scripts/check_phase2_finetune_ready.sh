@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PYTHON_BIN="${PYTHON_BIN:-$(command -v python3)}"
 
 PHASE2_MANIFEST="${PHASE2_MANIFEST:-$ROOT_DIR/data/processed/phase2/legalmemocmt_phase2_dataset_split.csv}"
-INIT_CKPT="${INIT_CKPT:-$ROOT_DIR/results/phase1/meld_full/best_model.pt}"
+INIT_CKPT="${INIT_CKPT:-$ROOT_DIR/results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt}"
 
 echo "Phase 2 fine-tuning readiness check"
 echo "Repository root: $ROOT_DIR"
@@ -56,7 +56,7 @@ print(f"Rows: {len(df)}")
 print(f"Splits: {split_counts}")
 print(f"Checkpoint: {ckpt}")
 print("raw_meld_needed: False if this checkpoint already exists")
-print("raw_meld_needed: only needed again if you want to rebuild the Phase 1 checkpoint from scratch")
+print("raw_meld_needed: only needed again if you want to rebuild the warm-start checkpoint from scratch")
 PY
 
 echo

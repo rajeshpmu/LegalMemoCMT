@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PHASE2_MANIFEST="${PHASE2_MANIFEST:-$ROOT_DIR/data/processed/phase2/legalmemocmt_phase2_dataset.csv}"
 PHASE2_SPLIT_MANIFEST="${PHASE2_SPLIT_MANIFEST:-$ROOT_DIR/data/processed/phase2/legalmemocmt_phase2_dataset_split.csv}"
-INIT_CKPT="${INIT_CKPT:-$ROOT_DIR/results/phase1/meld_full/best_model.pt}"
+INIT_CKPT="${INIT_CKPT:-$ROOT_DIR/results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt}"
 OUT_DIR="${OUT_DIR:-$ROOT_DIR/results/phase2/legalmemocmt_phase2}"
 EVAL_JSON="${EVAL_JSON:-$OUT_DIR/metrics.json}"
 DEVICE="${DEVICE:-auto}"

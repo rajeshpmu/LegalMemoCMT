@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PYTHON_BIN="${PYTHON_BIN:-$(command -v python3)}"
 MANIFEST="${1:-$ROOT_DIR/data/processed/phase2/legalmemocmt_phase2_dataset_split.csv}"
-INIT_CKPT="${INIT_CKPT:-$ROOT_DIR/results/phase1/meld_full/best_model.pt}"
+INIT_CKPT="${INIT_CKPT:-$ROOT_DIR/results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt}"
 OUT_DIR="${OUT_DIR:-$ROOT_DIR/results/phase2/legalmemocmt_phase2}"
 DEVICE="${DEVICE:-auto}"
 
@@ -13,7 +13,7 @@ if [ "$DEVICE" = "auto" ] && command -v nvidia-smi >/dev/null 2>&1; then
 fi
 
 if [ ! -f "$INIT_CKPT" ]; then
-  echo "Missing MELD checkpoint: $INIT_CKPT" >&2
+  echo "Missing warm-start checkpoint: $INIT_CKPT" >&2
   exit 1
 fi
 
