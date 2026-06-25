@@ -118,6 +118,11 @@ OPERATIONAL_DOCS: list[tuple[str, str, str]] = [
         "Use this when you want to run the project in the correct order.",
     ),
     (
+        "LegalMemoCMT_RunPod_SOP.docx",
+        "Student-level RunPod setup and MELD execution guide covering pod setup, dataset download, manifest creation, 5-fold CV, and checkpoint evaluation.",
+        "Use this when you are running LegalMemoCMT on a RunPod instance and need a step-by-step execution order.",
+    ),
+    (
         "LegalMemoCMT_Cloud_SOP.docx",
         "Cloud migration and workflow SOP covering how to move the project to shared or remote execution.",
         "Useful if you want to run the project on Google Drive, Colab, or a cloud VM.",
