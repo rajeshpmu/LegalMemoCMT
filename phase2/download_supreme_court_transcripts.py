@@ -1,13 +1,18 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
 
-from .common import download_file, ensure_dir, extract_text_from_file, safe_filename, sha1_short, slugify, write_csv
+if __package__ in {None, ""}:
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+    from phase2.common import download_file, ensure_dir, extract_text_from_file, safe_filename, sha1_short, slugify, write_csv
+else:
+    from .common import download_file, ensure_dir, extract_text_from_file, safe_filename, sha1_short, slugify, write_csv
 
 
 DEFAULT_PAGE_URL = "https://www.supremecourt.gov/oral_arguments/availabilityoforalargumenttranscripts.aspx"
@@ -119,4 +124,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

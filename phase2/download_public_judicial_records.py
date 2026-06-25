@@ -1,10 +1,15 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
-from .common import download_file, ensure_dir, extract_text_from_file, read_csv_rows, safe_filename, sha1_short, slugify, write_csv
+if __package__ in {None, ""}:
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+    from phase2.common import download_file, ensure_dir, extract_text_from_file, read_csv_rows, safe_filename, sha1_short, slugify, write_csv
+else:
+    from .common import download_file, ensure_dir, extract_text_from_file, read_csv_rows, safe_filename, sha1_short, slugify, write_csv
 
 
 TEMPLATE_COLUMNS = [
