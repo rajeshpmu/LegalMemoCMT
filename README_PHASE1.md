@@ -66,6 +66,7 @@ Before running any scripts, make sure the following are available:
 - `tqdm`
 
 The facial-cue / ViT path uses `transformers` and `timm`, and `torchvision` plus `pillow` are needed for image loading and preprocessing.
+`python-docx` is required for the Word-document generators, and FFmpeg must be installed separately at the system level for media handling.
 
 ### Pretrained models
 
@@ -81,6 +82,7 @@ The scripts will download these backbones automatically on first use if they are
 - CREMA-D data if you run the speech-emotion benchmark
 - A working video decoding backend through OpenCV
 - Enough local disk space for extracted features, checkpoints, and results
+- FFmpeg installed through the operating system package manager
 
 ## Dataset Pipeline
 

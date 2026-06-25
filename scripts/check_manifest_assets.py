@@ -13,7 +13,10 @@ def _path_exists(value: object) -> bool:
     text = str(value or "").strip()
     if not text:
         return False
-    return Path(text).expanduser().exists()
+    try:
+        return Path(text).expanduser().exists()
+    except OSError:
+        return False
 
 
 def _looks_like_reference(value: object) -> bool:
@@ -83,8 +86,8 @@ def main() -> None:
                 missing_transcript.append(sample_id)
         else:
             # If transcript looks like a path and exists, or if it is inline text,
-            # count it as available.
-            if _path_exists(transcript) or (str(transcript).strip() and not _looks_like_reference(transcript)):
+            # count it as available. Inline transcripts are the normal MELD case.
+            if (str(transcript).strip() and not _looks_like_reference(transcript)) or _path_exists(transcript):
                 transcript_ok += 1
             else:
                 missing_transcript.append(sample_id)
@@ -128,4 +131,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

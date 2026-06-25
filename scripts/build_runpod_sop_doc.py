@@ -132,14 +132,53 @@ def build_doc() -> Document:
         doc,
         [
             "Clone or verify the LegalMemoCMT repository on the pod.",
+            "Change into the repository directory with `cd /workspace/LegalMemoCMT`.",
+            "Update the package index and install the Python virtual-environment tools.",
+            "Create and activate a project-local Python virtual environment.",
+            "Upgrade pip and install the project requirements from requirements-phase1.txt.",
             "Create or activate the Python environment used for the project.",
-            "Install the required packages from the project requirements or environment file.",
+            "Install the required packages from the project requirements file.",
+            "Install FFmpeg if the pod does not already include it.",
             "Confirm that Python can import the project modules and that the smoke test passes.",
         ],
     )
     add_para(
         doc,
         "At this stage the important idea is not the exact shell syntax but the validation chain. You want to confirm that the pod can run the repository code before you spend time downloading MELD. A failed environment is much easier to fix before the data download begins.",
+    )
+    add_para(
+        doc,
+        "A practical command sequence for the pod is: cd /workspace/LegalMemoCMT, sudo apt update, sudo apt install -y python3-venv python3-full, python3 -m venv .venv, source .venv/bin/activate, python -m pip install --upgrade pip, and pip install -r requirements-phase1.txt. Those steps prepare a local environment that belongs to the project rather than to the base system image.",
+    )
+
+    doc.add_heading("4.1 Required Python Packages and System Tools", level=2)
+    add_para(
+        doc,
+        "The repository ships with a Phase 1 requirements file named requirements-phase1.txt. On a fresh RunPod machine, the student should install the dependencies from that file rather than guessing package names manually. This keeps the environment consistent with the code that was developed in the workspace.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Use `pip install -r requirements-phase1.txt` from the repository root.",
+            "Make sure `torch`, `numpy`, `pandas`, `scikit-learn`, `python-docx`, and `transformers` are available.",
+            "Install FFmpeg because the MELD and Phase 2 media utilities may need it for audio extraction or video handling.",
+            "If the pod image is minimal, the system package manager may be needed for FFmpeg before the Python step runs.",
+        ],
+    )
+
+    doc.add_heading("4.2 Model Downloads and First-Run Behavior", level=2)
+    add_para(
+        doc,
+        "The paper-aligned path uses pretrained language and speech backbones. In practice, that means the first time the code runs, Hugging Face models such as bert-base-uncased and facebook/hubert-base-ls960 may be downloaded automatically if they are not already cached on the pod. That is normal and does not mean the repository is missing files.",
+    )
+    add_bullets(
+        doc,
+        [
+            "The text backbone is fetched through the Transformers library if not already cached.",
+            "The speech backbone is also fetched through the Transformers library on first use.",
+            "If the pod is offline, you must pre-cache the models or work with a connected environment.",
+            "Once downloaded, the models are stored in the local Hugging Face cache and reused in later runs.",
+        ],
     )
 
     doc.add_heading("5. Step 1: Verify the Repository and Environment", level=1)

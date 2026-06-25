@@ -9,3 +9,6 @@ librosa>=0.10
 scikit-learn>=1.4
 pandas>=2.2
 tqdm>=4.66
+python-docx>=1.1.2
+
+# System dependency, not a pip package: install FFmpeg with your OS package manager.

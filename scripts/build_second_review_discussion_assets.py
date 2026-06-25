@@ -375,11 +375,13 @@ def append_pptx() -> None:
     add_text_diagram_slide(
         prs,
         "29. MELD Fold 4 Confusion Matrix",
-        "Fold 4 is the best balanced-class anchor from the MELD 5-fold report.",
+        "Fold 4 is the best balanced-class anchor from the MELD 5-fold report, but the matrix still shows soft minority-class separation.",
         [
             "Fold 4 has the strongest unweighted accuracy and macro F1 among the MELD folds.",
-            "That makes it a useful complement to Fold 2, which is the strongest weighted-aggregate anchor.",
-            "The matrix still shows confusion, but it is the clearest place to see the model's more balanced behavior.",
+            "Neutral recall is still the highest, but it is only about 71%, so several neutral samples are still leaking into joy, sadness, and surprise.",
+            "Joy and surprise are the next strongest classes, while sadness, fear, and disgust remain much weaker.",
+            "The main confusion channels are neutral→joy/sadness/surprise, joy→neutral/anger, and surprise→joy/anger.",
+            "This means the model has signal, but the minority-class boundary is still too soft to claim full balance.",
         ],
         MELD_FOLD4_CM_PNG,
         "Figure: MELD Fold 4 confusion matrix.",
@@ -608,6 +610,22 @@ def append_docx() -> None:
         doc,
         f"Fold 2 is the strongest overall held-out MELD fold in the CV summary, with accuracy {meld_fold2['accuracy']:.4f} and weighted F1 {meld_fold2['weighted_f1']:.4f}. The confusion pattern still shows a neutral-heavy bias, so the result is good but not fully solved.",
         italic=True,
+    )
+    doc.add_heading("20.4.1 MELD Fold 4 Error Pattern", level=3)
+    add_para(
+        doc,
+        "The Fold 4 confusion matrix is the best place to explain class balance because it gives the strongest unweighted and macro-F1 behavior among the MELD folds. The matrix still shows a neutral-heavy decision pattern, but it also shows that the model is not completely blind to the smaller classes.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Neutral recall is about 71.0%, so neutral is still the easiest class for the model.",
+            "Joy recall is about 65.4% and surprise recall is about 59.1%, which means those two emotions still carry usable signal.",
+            "Anger recall is about 45.2%, sadness is about 33.2%, fear is about 18.0%, and disgust is about 5.9%, so the minority classes remain the hardest.",
+            "The biggest confusion channels are neutral→joy/sadness/surprise and joy→neutral/anger.",
+            "The surprise class is especially confused with joy and anger, which suggests the model sees related emotional intensity but not enough fine-grained separation.",
+            "This is why Fold 4 is useful as a balanced-class anchor but still not a solved final model.",
+        ],
     )
 
     doc.add_heading("20.5 CREMA-D Confusion Matrix", level=2)

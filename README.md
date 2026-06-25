@@ -6,6 +6,8 @@ LegalMemoCMT is a multimodal emotion recognition project for courtroom testimony
 
 Install the Python environment from `requirements-phase1.txt` and make sure the required pretrained model backbones can be downloaded or are already cached locally.
 
+Also install FFmpeg at the system level if it is not already available. It is used by the media-processing scripts and is not installed through `pip`.
+
 ### Python packages
 
 Required packages include:
@@ -21,6 +23,7 @@ Required packages include:
 - `pandas`
 - `numpy`
 - `tqdm`
+- `python-docx`
 
 Install them with:
 
@@ -47,6 +50,7 @@ For offline work, download them once while you have network access and keep the 
 - CREMA-D manifest/data if you run the speech-emotion benchmark
 - Enough disk space for extracted features, checkpoints, and result folders
 - A working video decoding backend such as OpenCV
+- FFmpeg installed through your system package manager
 
 ## Where to Start
 

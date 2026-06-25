@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pandas as pd
 from docx import Document
 from docx.enum.text import WD_BREAK
 from docx.shared import Inches, Pt
@@ -13,6 +14,7 @@ BASE_DOC_PATH = ROOT / "implementation_docments" / "First_Review_LegalMemoCMT.do
 DOC_PATH = ROOT / "implementation_docments" / "Second_Review_LegalMemoCMT.docx"
 MELD_SUMMARY = ROOT / "results" / "paper_aligned_meld_cv" / "cmt_min" / "summary.json"
 MELD_FOLD2 = ROOT / "results" / "paper_aligned_meld_cv" / "cmt_min" / "fold_2" / "metrics.json"
+MELD_FOLD4_CM = ROOT / "results" / "facial_cues" / "meld_vit_facecrop_gated" / "fold_4" / "analysis_test" / "confusion_matrix.csv"
 CREMA_METRICS = ROOT / "results" / "paper_aligned_crema_d" / "cmt_min" / "metrics.json"
 FOLD2_FOCAL = ROOT / "results" / "improvement" / "class_balanced_focal" / "meld_selected" / "cmt_min" / "fold_2" / "metrics.json"
 
@@ -64,6 +66,14 @@ def add_table(doc: Document, headers: list[str], rows: list[list[str]]) -> None:
 
 def read_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def read_confusion_matrix(path: Path) -> pd.DataFrame:
+    df = pd.read_csv(path, index_col=0)
+    clean = lambda s: str(s).split(":", 1)[1] if ":" in str(s) else str(s)
+    df.index = [clean(v) for v in df.index]
+    df.columns = [clean(v) for v in df.columns]
+    return df
 
 
 def add_section_title(doc: Document, title: str, level: int = 1) -> None:
@@ -214,6 +224,37 @@ def build_doc() -> Document:
     add_para(
         doc,
         "Fold 4 is a useful companion to Fold 2 because it shows whether the model is handling minority classes more fairly. In the current outputs, the weighted-CE baseline still beats the warm-start focal run. That tells us the alternative loss did not improve the balanced-class behavior enough to replace the baseline.",
+    )
+    fold4_cm = read_confusion_matrix(MELD_FOLD4_CM)
+    add_para(
+        doc,
+        "The confusion matrix for Fold 4 makes the same conclusion visible class by class. The model still learns the larger emotions reasonably well, but the low-frequency emotions are not separated cleanly enough to close the gap with the weighted-CE baseline.",
+    )
+    add_table(
+        doc,
+        ["Actual class", "Correct", "Total", "Row recall", "Student interpretation"],
+        [
+            ["neutral", "892", "1256", "0.7102", "Largest class; still mostly neutral, but with strong leakage into joy, sadness, and surprise."],
+            ["joy", "263", "402", "0.6542", "The model catches many joy examples, but a large share still becomes neutral or anger."],
+            ["surprise", "166", "281", "0.5907", "Better than sadness and fear, but still confused with joy and anger."],
+            ["sadness", "69", "208", "0.3317", "Weak recall; most sadness examples fall back to neutral."],
+            ["anger", "156", "345", "0.4522", "Moderate recall, but anger is still often predicted as joy, neutral, or surprise."],
+            ["fear", "9", "50", "0.1800", "Very small class; the model rarely keeps it separate from neutral or nearby emotions."],
+            ["disgust", "4", "68", "0.0588", "Most difficult class; almost always absorbed into neutral or anger."],
+        ],
+    )
+    add_para(
+        doc,
+        "The strongest confusion channels are easy to summarize in one sentence: neutral is often predicted as joy, sadness, or surprise; joy is often predicted as neutral or anger; surprise is often predicted as joy or anger; sadness mostly drops into neutral; anger spreads across joy, neutral, and surprise; fear and disgust are nearly absorbed by neutral. That is the error pattern the matrix is telling us.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Neutral recall is the strongest, but it still absorbs several other emotions.",
+            "Joy and surprise are learned reasonably well, which means the model does retain some emotion structure.",
+            "Sadness, fear, and disgust remain the weakest classes and are not yet separated sharply enough.",
+            "The matrix supports a conservative claim: the model is useful, but the class boundary is still too soft for final thesis-level confidence.",
+        ],
     )
 
     add_section_title(doc, "15.3 Fold 2 Focal-Loss Comparison", level=2)
