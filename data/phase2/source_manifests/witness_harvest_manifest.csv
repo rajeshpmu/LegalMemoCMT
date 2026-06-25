@@ -1,0 +1,7 @@
+tribunal,case_name,hearing_date,witness_name,witness_type,transcript_url,video_url,duration_minutes,speaker_role,download_status,annotation_status,utterance_count,emotion_label_status,credibility_label_status,notes
+ICTY,Karadzic,,,,https://ucr.irmct.org/,https://ucr.irmct.org/,,Witness,Pending,Not Started,,Pending,Pending,Populate from UCR search
+ICTY,Mladic,,,,https://ucr.irmct.org/,https://ucr.irmct.org/,,Witness,Pending,Not Started,,Pending,Pending,Populate from UCR search
+ICTY,Popovic et al.,,,,https://ucr.irmct.org/,https://ucr.irmct.org/,,Witness,Pending,Not Started,,Pending,Pending,Populate from UCR search
+ICTR,Bagosora et al.,,,,https://ucr.irmct.org/,https://ucr.irmct.org/,,Witness,Pending,Not Started,,Pending,Pending,Populate from UCR search
+ICTR,Akayesu,,,,https://ucr.irmct.org/,https://ucr.irmct.org/,,Witness,Pending,Not Started,,Pending,Pending,Populate from UCR search
+IRMCT,Appeals Hearings,,,,https://ucr.irmct.org/,https://ucr.irmct.org/,,Witness,Pending,Not Started,,Pending,Pending,Populate from UCR search

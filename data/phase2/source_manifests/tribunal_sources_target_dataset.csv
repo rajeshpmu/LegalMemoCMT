@@ -1,0 +1,12 @@
+subset_id,tribunal,case_family,content_type,source_url,target_video_hours,target_witnesses,notes
+ICTY_KARADZIC_01,ICTY,Karadzic Trial,Witness testimony,https://ucr.irmct.org/,10,5,High-value witness examinations
+ICTY_KARADZIC_02,ICTY,Karadzic Trial,Cross-examination,https://ucr.irmct.org/,10,5,Cross-examination segments
+ICTY_MLADIC_01,ICTY,Mladic Trial,Witness testimony,https://ucr.irmct.org/,10,5,Witness testimony segments
+ICTY_MLADIC_02,ICTY,Mladic Trial,Cross-examination,https://ucr.irmct.org/,10,5,Cross-examination segments
+ICTY_POPOVIC_01,ICTY,Popovic et al.,Witness testimony,https://ucr.irmct.org/,10,4,Witness testimony segments
+ICTR_BAGOSORA_01,ICTR,Bagosora et al.,Witness testimony,https://ucr.irmct.org/,10,5,Genocide tribunal testimony
+ICTR_BAGOSORA_02,ICTR,Bagosora et al.,Cross-examination,https://ucr.irmct.org/,10,5,Cross-examination segments
+ICTR_AKAYESU_01,ICTR,Akayesu,Witness testimony,https://ucr.irmct.org/,10,4,Historic witness testimony
+ICTR_NTAHOBALI_01,ICTR,Ntakirutimana/Ntahobali related,Witness testimony,https://ucr.irmct.org/,10,4,Witness testimony segments
+IRMCT_APPEALS_01,IRMCT,IRMCT Hearings,Witness/appeal hearing,https://ucr.irmct.org/,10,4,Recent mechanism hearings
+IRMCT_APPEALS_02,IRMCT,IRMCT Hearings,Witness/appeal hearing,https://ucr.irmct.org/,10,4,Recent mechanism hearings
