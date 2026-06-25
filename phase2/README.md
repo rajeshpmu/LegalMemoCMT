@@ -19,13 +19,43 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 
 ## Recommended run order
 
-1. Download the Supreme Court transcript corpus.
-2. Prepare a tribunal source CSV from public archives or exported archive search results.
-3. Download the tribunal records.
-4. Build weak supervision labels.
-5. Build the labeled Phase 2 manifest.
-6. Fine-tune from the best MELD checkpoint.
-7. Evaluate and inspect the predictions.
+1. Verify the source manifests are present in `data/phase2/source_manifests/`.
+2. Run the phase 2 dataset pipeline wrapper:
+   - `bash phase2/run_phase2_dataset_pipeline.sh`
+3. Check whether the manifest is complete and whether raw MELD data is still needed:
+   - `bash scripts/check_phase1_meld_ready.sh`
+   - or `bash scripts/check_meld_ready.sh <manifest.csv>`
+4. Fine-tune from the best MELD checkpoint:
+   - `bash phase2/run_phase2_finetune.sh`
+5. Evaluate the saved checkpoint:
+   - `bash phase2/evaluate_phase2_checkpoint.sh <manifest.csv> <checkpoint.pt> <output.json>`
+6. If you want a single chained run, use:
+   - `bash phase2/run_phase2_full.sh`
+
+## Device policy
+
+- Data preparation and manifest-building steps are CPU-bound.
+- Training and evaluation wrappers now prefer `cuda` automatically when `nvidia-smi` is available.
+- If needed, you can still override the device with `DEVICE=cpu`, `DEVICE=mps`, or `DEVICE=cuda` before running the shell wrapper.
+
+## Individual scripts in execution order
+
+1. `phase2/dataset_builder.py validate-tri`
+2. `phase2/dataset_builder.py validate-witness`
+3. `phase2/dataset_builder.py resolve`
+4. `phase2/dataset_builder.py materialize`
+5. `phase2/dataset_builder.py build-dataset`
+6. `phase2/dataset_builder.py weak-labels`
+7. `phase2/dataset_builder.py dashboard`
+8. `phase2/run_phase2_finetune.sh`
+9. `phase2/evaluate_phase2_checkpoint.sh`
+
+## Wrapper summary
+
+- `phase2/run_phase2_dataset_pipeline.sh` runs the data-preparation stages.
+- `phase2/run_phase2_finetune.sh` starts Phase 2 fine-tuning from the MELD checkpoint.
+- `phase2/evaluate_phase2_checkpoint.sh` evaluates the saved Phase 2 checkpoint.
+- `phase2/run_phase2_full.sh` chains dataset prep, fine-tuning, and evaluation in one command.
 
 ## Dataset builder entrypoint
 

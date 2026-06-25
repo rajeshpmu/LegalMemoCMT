@@ -1434,6 +1434,47 @@ librosa.core.audio.__audioread_load: Deprecated as of librosa version 0.10.0""",
         "Student takeaway: the later stages do not restart the whole project. They keep the same backbone idea and change the visual or optimization settings so you can isolate the effect of the new component. That is why the baseline checkpoint, learning rate, epoch budget, and checkpoint-selection rule matter so much.",
     )
 
+    doc.add_heading("17. Model Comparison Across Phase 1 Stages", level=1)
+    add_para(
+        doc,
+        "This section condenses the comparison story into one place. The main lesson is that the original weighted-CE backbone is still the strongest stable anchor, even though the visual branches and the gated aux-loss branch give you a better architecture story for the thesis.",
+    )
+    add_table(
+        doc,
+        ["Stage", "Metric reading", "Interpretation"],
+        [
+            ["Weighted-CE baseline", "Strongest stable anchor", "Best reference point for Phase 1"],
+            ["Full-frame ViT", "Lower than baseline", "Shows visual signal, but still neutral-biased"],
+            ["Face-crop ViT", "Cleaner than full-frame", "Better courtroom-testimony visual design"],
+            ["Gated fusion", "0.5992 acc / 0.6056 wF1 / 0.4330 macro F1", "Completed refinement, not new best baseline"],
+            ["Aux-loss branch", "Completed comparison run", "Incremental improvement, but still below baseline"],
+        ],
+    )
+    add_para(
+        doc,
+        "Student explanation: the comparison is not just about the score. It is about what each stage proves. Full-frame ViT proves that facial signal exists. Face-crop proves that focusing on the speaker face is a better legal-domain choice. Gated fusion proves that the model can learn when to trust video. The aux-loss branch proves that extra supervision can help a bit, but not enough to replace the strongest weighted-CE checkpoint.",
+    )
+
+    doc.add_heading("18. Confusion Matrix Reading Guide", level=1)
+    add_para(
+        doc,
+        "The confusion matrix is the clearest way to explain the remaining weaknesses. It tells you which labels the model mixes when it is not confident. In this run, the model is still very neutral-heavy, which means neutral often acts like a fallback label.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Neutral is the main error hub: many emotions collapse into neutral when the model is uncertain.",
+            "Joy and anger are often swapped, which is common when the model sees strong but ambiguous emotional cues.",
+            "Surprise and fear are also mixed frequently, showing that the model still struggles with subtle high-arousal differences.",
+            "Sadness often turns into neutral, which is a sign that the model has not fully separated low-arousal classes.",
+            "The matrix shows learning, but it is still a class-imbalance problem rather than a solved recognition problem.",
+        ],
+    )
+    add_para(
+        doc,
+        "A student-friendly summary is: the matrix is not random. It has structure. The model knows some emotions, but when it is unsure it falls back to the more common or more generic classes. That is why macro F1 is still lower than weighted F1.",
+    )
+
     return doc
 
 

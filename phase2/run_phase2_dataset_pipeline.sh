@@ -13,6 +13,10 @@ RAW_AUDIO="${RAW_AUDIO:-$ROOT_DIR/data/raw/audio}"
 DATASET_CSV="${DATASET_CSV:-$ROOT_DIR/data/processed/phase2/legalmemocmt_phase2_dataset.csv}"
 REPORT_HTML="${REPORT_HTML:-$ROOT_DIR/reports/dataset_status.html}"
 
+if [ -x /usr/bin/nvidia-smi ] || command -v nvidia-smi >/dev/null 2>&1; then
+  echo "GPU detected, but dataset preparation remains CPU-bound. Training/evaluation wrappers will use CUDA."
+fi
+
 "$PYTHON_BIN" "$ROOT_DIR/phase2/dataset_builder.py" validate-tri
 "$PYTHON_BIN" "$ROOT_DIR/phase2/dataset_builder.py" validate-witness
 "$PYTHON_BIN" "$ROOT_DIR/phase2/dataset_builder.py" resolve --witness-manifest "$WITNESS_MANIFEST" --output "$RESOLVED_MANIFEST"

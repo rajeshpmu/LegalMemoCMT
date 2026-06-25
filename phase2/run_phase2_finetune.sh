@@ -6,6 +6,11 @@ PYTHON_BIN="${PYTHON_BIN:-$(command -v python3)}"
 MANIFEST="${1:-$ROOT_DIR/data/processed/phase2/legalmemocmt_phase2_dataset.csv}"
 INIT_CKPT="${INIT_CKPT:-$ROOT_DIR/results/phase1/meld_full/best_model.pt}"
 OUT_DIR="${OUT_DIR:-$ROOT_DIR/results/phase2/legalmemocmt_phase2}"
+DEVICE="${DEVICE:-auto}"
+
+if [ "$DEVICE" = "auto" ] && command -v nvidia-smi >/dev/null 2>&1; then
+  DEVICE="cuda"
+fi
 
 if [ ! -f "$INIT_CKPT" ]; then
   echo "Missing MELD checkpoint: $INIT_CKPT" >&2
@@ -27,5 +32,5 @@ mkdir -p "$OUT_DIR"
   --lr 5e-5 \
   --train-split train \
   --val-split dev \
-  --device auto \
+  --device "$DEVICE" \
   "$@"

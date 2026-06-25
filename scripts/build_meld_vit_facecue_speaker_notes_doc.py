@@ -977,6 +977,46 @@ Best checkpoint = epoch with the strongest validation result""",
         "The simplest student explanation is: earlier stages establish the backbone, visual stages test whether facial cues help, gated fusion tests whether the model can trust video selectively, and the auxiliary-loss stage is a final refinement whose Fold 4 result can now be discussed as part of the completed model comparison.",
     )
 
+    doc.add_heading("19. Slide 19 - Model Comparison Across Phase 1 Stages", level=1)
+    add_para(
+        doc,
+        "This slide should make the comparison story very explicit. The audience needs to see that the model family is improving in design quality, but the strongest overall anchor is still the original weighted-CE baseline.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Weighted-CE baseline: strongest and most stable reference point.",
+            "Full-frame ViT: proves the visual branch has signal, but the confusion pattern is still neutral-heavy.",
+            "Face-crop ViT: better aligned with courtroom testimony because it focuses on the speaker face.",
+            "Gated fusion: completed refinement with accuracy 0.5992, weighted F1 0.6056, and macro F1 0.4330.",
+            "Aux-loss branch: completed comparison run, useful for discussion but still below the baseline.",
+        ],
+    )
+    add_para(
+        doc,
+        "A clean student phrase is: 'The architecture gets better before the headline score does.' That lets you explain why a weaker score can still represent a more principled research direction.",
+    )
+
+    doc.add_heading("20. Slide 20 - Confusion Matrix: What the Errors Mean", level=1)
+    add_para(
+        doc,
+        "This slide should translate the matrix into a story. The most important observation is that the model is still neutral-heavy, which means neutral is used as a fallback when the prediction is uncertain.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Neutral is the main error hub in the matrix.",
+            "Joy and anger are often confused with each other.",
+            "Surprise and fear also overlap a lot.",
+            "Sadness often collapses into neutral.",
+            "The structure shows learning, but the model has not solved class imbalance yet.",
+        ],
+    )
+    add_para(
+        doc,
+        "The reviewer-friendly conclusion is: the model is learning useful patterns, but the remaining mistakes are systematic, not random. That is why macro F1 stays lower than weighted F1 and why the baseline still matters.",
+    )
+
     return doc
 
 

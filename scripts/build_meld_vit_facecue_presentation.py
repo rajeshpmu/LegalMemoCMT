@@ -900,6 +900,66 @@ def build_pptx() -> None:
         font_size=10,
     )
 
+    # Slide 18
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(slide, "Model Comparison Across Phase 1 Stages", "Fold 4 gated + video-aux is useful, but the weighted-CE baseline remains strongest.")
+    add_table(
+        slide,
+        ["Stage", "Accuracy", "Weighted F1", "Macro F1", "Reading"],
+        [
+            ["Weighted-CE baseline", "Best anchor", "Best anchor", "Best anchor", "Strongest stable Phase 1 reference"],
+            ["Full-frame ViT", "Lower", "Lower", "Lower", "Proof that visual signal exists, but still neutral-heavy"],
+            ["Face-crop ViT", "Better focus", "Better focus", "Better focus", "Cleaner courtroom-style visual path"],
+            ["Gated fusion", "0.5992", "0.6056", "0.4330", "Completed refinement; useful but not new best"],
+            ["Aux-loss branch", "Completed", "Completed", "Completed", "Incremental improvement, not a replacement"],
+        ],
+        left=0.45,
+        top=1.5,
+        width=12.35,
+        height=4.75,
+        col_widths=[2.15, 1.7, 1.8, 1.7, 5.0],
+        font_size=10,
+    )
+    add_code_box(
+        slide,
+        "Main takeaway:\nThe model family improves in design quality as you move toward face-crop and gated fusion, but the original weighted-CE backbone is still the safest overall baseline.\nThat is the right thesis framing.",
+        0.8,
+        6.15,
+        11.8,
+        0.7,
+        font_size=10,
+    )
+
+    # Slide 19
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(slide, "Confusion Matrix: What the Errors Mean", "The main problem is still neutral-heavy confusion, not random failure.")
+    add_body(
+        slide,
+        [
+            "The model predicts neutral too often when it is uncertain, which is why neutral appears as the biggest hub in the confusion matrix.",
+            "Joy, anger, surprise, and sadness are still the classes most often mixed with each other.",
+            "The biggest confusion pairs are neutral->joy, neutral->fear, neutral->anger, neutral->surprise, and sadness->neutral.",
+            "That pattern shows the model has learned signal, but it still has difficulty separating emotionally close classes under imbalance.",
+        ],
+        x=0.75,
+        y=1.4,
+        w=6.3,
+        h=5.2,
+        font_size=14.5,
+    )
+    add_picture(slide, COMPARE_PNG, 6.8, 1.55, 5.95)
+    add_code_box(
+        slide,
+        "How to explain the matrix:\n1) look for the diagonal = correct predictions\n2) look for the largest off-diagonal cells = common confusions\n3) here, the model often collapses into neutral / anger / joy when uncertain\n4) that is a sign of partial learning, not a solved class-imbalance problem",
+        0.85,
+        6.15,
+        11.9,
+        0.75,
+        font_size=9.5,
+    )
+
     prs.save(PPTX_PATH)
 
 
