@@ -17,6 +17,28 @@ if [ -x /usr/bin/nvidia-smi ] || command -v nvidia-smi >/dev/null 2>&1; then
   echo "GPU detected, but dataset preparation remains CPU-bound. Training/evaluation wrappers will use CUDA."
 fi
 
+if [ ! -f "$TRIBUNAL_SOURCES" ]; then
+  echo "Missing Phase 2 source manifest: $TRIBUNAL_SOURCES" >&2
+  exit 1
+fi
+
+if [ ! -f "$WITNESS_MANIFEST" ]; then
+  echo "Missing Phase 2 witness manifest: $WITNESS_MANIFEST" >&2
+  exit 1
+fi
+
+echo "Phase 2 dataset pipeline"
+echo "Source manifests:"
+echo "  tribunal sources: $TRIBUNAL_SOURCES"
+echo "  witness manifest: $WITNESS_MANIFEST"
+echo "Derived outputs:"
+echo "  resolved manifest: $RESOLVED_MANIFEST"
+echo "  materialized manifest: $MATERIALIZED_MANIFEST"
+echo "  dataset csv: $DATASET_CSV"
+echo "  weak labels: $ROOT_DIR/data/processed/phase2/weak_labels"
+echo "  report html: $REPORT_HTML"
+echo
+
 "$PYTHON_BIN" "$ROOT_DIR/phase2/dataset_builder.py" validate-tri
 "$PYTHON_BIN" "$ROOT_DIR/phase2/dataset_builder.py" validate-witness
 "$PYTHON_BIN" "$ROOT_DIR/phase2/dataset_builder.py" resolve --witness-manifest "$WITNESS_MANIFEST" --output "$RESOLVED_MANIFEST"

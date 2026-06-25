@@ -20,21 +20,23 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 ## Recommended run order
 
 1. Verify the source manifests are present in `data/phase2/source_manifests/`.
-2. Run the phase 2 dataset pipeline wrapper:
+2. If you are on RunPod and want a single readiness report, run:
+   - `bash scripts/check_phase2_runpod_sources.sh`
+3. Run the phase 2 dataset pipeline wrapper:
    - `bash phase2/run_phase2_dataset_pipeline.sh`
-3. Check whether the Phase 2 dataset artifacts are ready:
+4. Check whether the Phase 2 dataset artifacts are ready:
    - `bash scripts/check_phase2_dataset_ready.sh`
    - or `bash scripts/check_phase2_ready.sh`
-4. Build a split-bearing training manifest:
+5. Build a split-bearing training manifest:
    - `bash phase2/run_phase2_split_manifest.sh`
-5. Check whether the Phase 2 fine-tuning inputs are ready:
+6. Check whether the Phase 2 fine-tuning inputs are ready:
    - `bash scripts/check_phase2_finetune_ready.sh`
    - this confirms the legal dataset manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
-6. Fine-tune from the best MELD checkpoint:
+7. Fine-tune from the best MELD checkpoint:
    - `bash phase2/run_phase2_finetune.sh`
-7. Evaluate the saved checkpoint:
+8. Evaluate the saved checkpoint:
    - `bash phase2/evaluate_phase2_checkpoint.sh <manifest.csv> <checkpoint.pt> <output.json>`
-8. If you want a single chained run, use:
+9. If you want a single chained run, use:
    - `bash phase2/run_phase2_full.sh`
 
 ## Device policy
@@ -63,6 +65,8 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 - `phase2/run_phase2_finetune.sh` starts Phase 2 fine-tuning from the warm-start checkpoint.
 - `phase2/evaluate_phase2_checkpoint.sh` evaluates the saved Phase 2 checkpoint.
 - `phase2/run_phase2_full.sh` chains dataset prep, fine-tuning, and evaluation in one command.
+- `scripts/check_phase2_sources_ready.sh` checks the source corpora directories.
+- `scripts/check_phase2_runpod_sources.sh` checks source corpora, split manifest, and warm-start readiness in one command.
 
 ## Dataset builder entrypoint
 

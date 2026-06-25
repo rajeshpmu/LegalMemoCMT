@@ -14,6 +14,16 @@ except Exception as exc:  # pragma: no cover
 from .preprocessing import PreprocessConfig, extract_video_features, load_audio_features, load_audio_waveform, normalize_text
 
 
+PHASE2_EMOTION_LABEL_MAP = {
+    "neutral": 0,
+    "fear": 1,
+    "anger": 2,
+    "sadness": 3,
+    "stress": 4,
+    "confidence": 5,
+}
+
+
 @dataclass
 class MultimodalSample:
     sample_id: str
@@ -31,21 +41,43 @@ def load_manifest(path: str | Path) -> list[MultimodalSample]:
     if pd is None:
         raise ImportError("pandas is required to load a CSV manifest")
     df = pd.read_csv(path)
-    required = {"sample_id", "split", "label", "video_path", "audio_path", "transcript"}
+    required = {"split", "video_path", "audio_path"}
     missing = required - set(df.columns)
     if missing:
         raise ValueError(f"Manifest is missing required columns: {sorted(missing)}")
 
     samples: list[MultimodalSample] = []
     for _, row in df.iterrows():
+        sample_id = str(row.get("sample_id") or row.get("utterance_id") or row.get("manifest_id") or "").strip()
+        if not sample_id:
+            raise ValueError("Manifest row is missing a sample_id/utterance_id/manifest_id value")
+
+        label_value = row.get("label", None)
+        if label_value is None or (isinstance(label_value, float) and pd.isna(label_value)):
+            label_value = row.get("emotion_label", None)
+        if label_value is None or (isinstance(label_value, str) and not label_value.strip()):
+            raise ValueError(f"Manifest row for {sample_id} is missing a label or emotion_label value")
+        label_text = str(label_value).strip()
+        if label_text.isdigit():
+            label = int(label_text)
+        else:
+            try:
+                label = int(float(label_text))
+            except Exception:
+                mapped = PHASE2_EMOTION_LABEL_MAP.get(label_text.lower())
+                if mapped is None:
+                    raise ValueError(f"Unsupported label value for {sample_id}: {label_text}")
+                label = mapped
+
+        transcript = str(row.get("transcript") or row.get("utterance_text") or row.get("text") or "").strip()
         samples.append(
             MultimodalSample(
-                sample_id=str(row["sample_id"]),
+                sample_id=sample_id,
                 split=str(row["split"]),
-                label=int(row["label"]),
+                label=label,
                 video_path=str(row.get("video_path", "")),
                 audio_path=str(row.get("audio_path", "")),
-                transcript=str(row.get("transcript", "")),
+                transcript=transcript,
             )
         )
     return samples
