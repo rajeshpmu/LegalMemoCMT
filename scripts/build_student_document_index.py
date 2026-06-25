@@ -147,6 +147,11 @@ OPERATIONAL_DOCS: list[tuple[str, str, str]] = [
 
 ADAPTATION_AND_POLICY_DOCS: list[tuple[str, str, str]] = [
     (
+        "LegalMemoCMT_Phase2_Dataset_Preparation_Deep_Dive.docx",
+        "Exclusive deep-dive document explaining how the Phase 2 dataset is prepared, why the sources were chosen, and how each Phase 2 script works.",
+        "Use this as the primary Phase 2 dataset-preparation read if you want the most detailed student-level explanation.",
+    ),
+    (
         "LegalMemoCMT_Phase2_Dataset_Preparation_and_Finetuning_Blueprint.docx",
         "Long-form student blueprint for building the Phase 2 courtroom-testimony dataset, weak labels, split strategy, and MELD warm-start fine-tuning path.",
         "Use this when you want the new Phase 2 plan explained in depth from public legal sources through to adaptation checkpoints.",

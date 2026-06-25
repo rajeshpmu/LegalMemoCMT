@@ -4,6 +4,7 @@ import subprocess
 from pathlib import Path
 
 from docx import Document
+from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Inches, Pt
 
 
@@ -15,6 +16,10 @@ SAMPLED_FRAMES_PNG = FIG_DIR / "sampled_rgb_frames.png"
 SAMPLED_FRAMES_SVG = FIG_DIR / "sampled_rgb_frames.svg"
 OUTPUTS_PNG = FIG_DIR / "pipeline_outputs.png"
 OUTPUTS_SVG = FIG_DIR / "pipeline_outputs.svg"
+PHASE2_PIPELINE_PNG = ROOT / "phase2" / "assets" / "phase2_pipeline.png"
+PHASE2_PIPELINE_SVG = ROOT / "phase2" / "assets" / "phase2_pipeline.svg"
+PHASE2_FINETUNE_PNG = ROOT / "phase2" / "assets" / "phase2_finetune_path.png"
+PHASE2_FINETUNE_SVG = ROOT / "phase2" / "assets" / "phase2_finetune_path.svg"
 
 
 def configure(doc: Document) -> None:
@@ -52,6 +57,20 @@ def add_code(doc: Document, code: str) -> None:
         r = p.add_run(line)
         r.font.name = "Courier New"
         r.font.size = Pt(9.2)
+
+
+def add_figure(doc: Document, image_path: Path, caption: str) -> None:
+    if image_path.exists():
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        r = p.add_run()
+        r.add_picture(str(image_path), width=Inches(6.9))
+        cap = doc.add_paragraph()
+        cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        run = cap.add_run(caption)
+        run.italic = True
+        run.font.name = "Times New Roman"
+        run.font.size = Pt(10)
 
 
 def render_mermaid(code: str, svg_path: Path, png_path: Path) -> None:
@@ -128,7 +147,7 @@ def build_doc() -> Document:
 
     subtitle = doc.add_paragraph()
     run = subtitle.add_run(
-        "Detailed slide-by-slide speaker notes for the 14-slide presentation, including the guidance-call continuation slides and the facial-cue implementation section."
+        "Detailed slide-by-slide speaker notes for the 16-slide presentation, including the guidance-call continuation slides, the Phase 2 dataset bridge, and the facial-cue implementation section."
     )
     run.italic = True
     run.font.size = Pt(13)
@@ -293,6 +312,89 @@ total loss = main loss + 0.1 * video loss""",
             "Fold 4 checks whether the same improvement generalizes in a more balanced setting.",
             "The analysis steps matter because the confusion matrix is what tells you whether the auxiliary loss actually improves the visual branch.",
         ],
+    )
+
+    doc.add_heading("3.3 Slide 3.3 - Phase 2 Dataset Preparation for LegalMemoCMT", level=1)
+    add_para(
+        doc,
+        "This new slide connects the MELD facial-cue work to the larger Phase 2 plan. The point is to show that the project is not only about model tuning. It is also about building a clean and traceable dataset pipeline for legal testimony analysis.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Explain that the source layer starts with tribunal_sources_target_dataset.csv and witness_harvest_manifest.csv.",
+            "Say that the witness manifest is the main driver because it carries the practical acquisition targets.",
+            "Mention that phase2/dataset_builder.py validates the manifests before any data is downloaded or segmented.",
+            "State that the pipeline resolves transcript links, resolves video links, materializes the record list, and then builds the final dataset.",
+            "Be careful to frame the dataset work as a methodological contribution unless the final curated corpus is large and validated enough to justify a stronger claim.",
+        ],
+    )
+    add_para(
+        doc,
+        "The figure on the slide is the Phase 2 pipeline map. It lets the audience see the sequence in one line: CSV manifests, validation, record discovery, acquisition, segmentation, weak labels, and dashboard output. That is the simplest way to show that this part of the thesis is reproducible and incremental.",
+    )
+    add_para(
+        doc,
+        "The legal domain matters because testimony data has different language, turn-taking patterns, and speaking styles from open-domain emotion datasets. That is why the pipeline is designed around public tribunal records and witness-level traceability rather than around a generic unlabeled video folder.",
+    )
+    add_bullets(
+        doc,
+        [
+            "The pipeline preserves source URLs and witness identifiers exactly as provided.",
+            "The output remains traceable back to the manifest row that produced it.",
+            "Weak labels are stored separately so they can be reviewed later.",
+            "The dashboard gives a quick summary of witnesses, hours, utterances, and coverage.",
+        ],
+    )
+    add_figure(
+        doc,
+        PHASE2_PIPELINE_PNG,
+        "Figure 2. Phase 2 dataset-preparation flow: source manifests -> discovery -> acquisition -> segmentation -> weak labels -> dataset dashboard.",
+    )
+    add_code(
+        doc,
+        """phase2/dataset_builder.py validate-tri
+phase2/dataset_builder.py validate-witness
+phase2/dataset_builder.py resolve
+phase2/dataset_builder.py materialize
+phase2/dataset_builder.py build-dataset
+phase2/dataset_builder.py weak-labels
+phase2/dataset_builder.py dashboard""",
+    )
+
+    doc.add_heading("3.4 Slide 3.4 - Phase 2 Handoff to Fine-Tuning", level=1)
+    add_para(
+        doc,
+        "This slide explains what happens after the legal dataset is prepared. The main message is that the dataset becomes the input to the Phase 2 warm-start fine-tuning path, not the end of the project by itself.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Show that the prepared dataset feeds the warm-start fine-tuning scripts directly.",
+            "State that run_phase2_finetune.sh is the training step and evaluate_phase2_checkpoint.sh is the measurement step.",
+            "Mention that the best MELD checkpoint is used as the warm start so the adaptation is incremental rather than from scratch.",
+            "Explain that the output should remain focused on observable emotion cues and not on guilt or deception claims.",
+            "If the dataset becomes sufficiently complete, it can support a proper Phase 2 benchmark story and a stronger methodological claim about the dataset-building process.",
+        ],
+    )
+    add_para(
+        doc,
+        "This slide is important for the thesis narrative because it shows that the Phase 2 dataset is not isolated from the model work. It is the bridge between the source records and the LegalMemoCMT adaptation stage.",
+    )
+    add_para(
+        doc,
+        "Student explanation: the output of the dataset pipeline is the training-ready legal corpus. The warm-start checkpoint brings in the MELD knowledge, and the legal corpus teaches the model how courtroom testimony looks and sounds. That is how the project moves from general emotion recognition to a more specialized legal-domain setting.",
+    )
+    add_figure(
+        doc,
+        PHASE2_FINETUNE_PNG,
+        "Figure 3. Phase 2 handoff flow: prepared legal dataset -> warm-start checkpoint -> fine-tuning -> evaluation -> exported predictions.",
+    )
+    add_code(
+        doc,
+        """bash phase2/run_phase2_dataset_pipeline.sh
+bash phase2/run_phase2_finetune.sh
+bash phase2/evaluate_phase2_checkpoint.sh""",
     )
 
     doc.add_heading("4. Slide 4 - LegalMemoCMT MELD Facial Cues ViT Implementation Plan", level=1)

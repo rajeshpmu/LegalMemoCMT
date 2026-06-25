@@ -37,6 +37,10 @@ FCEC_PNG = FIG_DIR / "face_crop_next_step.png"
 FCEC_SVG = FIG_DIR / "face_crop_next_step.svg"
 ARCH_PNG = FIG_DIR / "phase1_overall_architecture.png"
 ARCH_SVG = FIG_DIR / "phase1_overall_architecture.svg"
+PHASE2_PIPELINE_PNG = ROOT / "phase2" / "assets" / "phase2_pipeline.png"
+PHASE2_PIPELINE_SVG = ROOT / "phase2" / "assets" / "phase2_pipeline.svg"
+PHASE2_FINETUNE_PNG = ROOT / "phase2" / "assets" / "phase2_finetune_path.png"
+PHASE2_FINETUNE_SVG = ROOT / "phase2" / "assets" / "phase2_finetune_path.svg"
 
 
 def render_mermaid(code: str, svg_path: Path, png_path: Path) -> None:
@@ -437,6 +441,92 @@ def build_pptx() -> None:
         5.7,
         0.75,
         font_size=10,
+    )
+
+    # Slide 3.3
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(
+        slide,
+        "3.3 Phase 2 Dataset Preparation for LegalMemoCMT",
+        "The novelty here is the reproducible legal-data pipeline, not a claim that the source records themselves are new.",
+    )
+    add_body(
+        slide,
+        [
+            "Phase 2 starts from public judicial material such as ICTY, ICTR, and IRMCT witness records, plus legal transcript sources where they are useful for text-domain adaptation.",
+            "The main driver is witness_harvest_manifest.csv: it holds the witness-level targets, expected durations, and acquisition status for each record.",
+            "tribunal_sources_target_dataset.csv provides the higher-level source plan, so the project can explain where each source family fits in the acquisition strategy.",
+            "phase2/dataset_builder.py validates the manifests, resolves transcript and video links, materializes the record list, and builds the final dataset artifacts.",
+            "The important student takeaway is that the dataset is not just 'downloaded'; it is traced, validated, segmented, weakly labeled, and documented step by step.",
+        ],
+        x=0.72,
+        y=1.4,
+        w=5.95,
+        h=5.55,
+        font_size=14,
+    )
+    add_picture(slide, PHASE2_PIPELINE_PNG, 6.75, 1.55, 5.95)
+    add_code_box(
+        slide,
+        "validate-tri -> validate-witness -> resolve -> materialize -> build-dataset -> weak-labels -> dashboard",
+        6.8,
+        5.92,
+        5.85,
+        0.55,
+        font_size=10,
+    )
+    add_code_box(
+        slide,
+        "Key scripts:\nphase2/dataset_builder.py\nphase2/run_phase2_dataset_pipeline.sh\nphase2/run_phase2_full.sh",
+        6.8,
+        6.52,
+        5.85,
+        0.55,
+        font_size=9.5,
+    )
+
+    # Slide 3.4
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(
+        slide,
+        "3.4 Dataset Handoff Into Phase 2 Fine-Tuning",
+        "Once the legal-testimony dataset is prepared, the same pipeline can warm-start from the best MELD checkpoint and adapt to the legal domain.",
+    )
+    add_body(
+        slide,
+        [
+            "The final dataset becomes the handoff point for the Phase 2 model training scripts.",
+            "run_phase2_finetune.sh and evaluate_phase2_checkpoint.sh are the main execution scripts once the dataset is ready.",
+            "The fine-tuning stage keeps traceability by preserving manifest IDs, source URLs, and split assignments in the output artifacts.",
+            "The results are meant to support courtroom-testimony emotion analysis, not guilt, innocence, or deception prediction.",
+            "If the curated legal corpus is large enough, the dataset pipeline itself becomes a methodological contribution because it shows how public records can be turned into a reproducible multimodal benchmark.",
+        ],
+        x=0.72,
+        y=1.42,
+        w=5.95,
+        h=5.5,
+        font_size=14,
+    )
+    add_picture(slide, PHASE2_FINETUNE_PNG, 6.75, 1.55, 5.95)
+    add_code_box(
+        slide,
+        "bash phase2/run_phase2_dataset_pipeline.sh\nbash phase2/run_phase2_finetune.sh\nbash phase2/evaluate_phase2_checkpoint.sh",
+        6.78,
+        5.92,
+        5.88,
+        0.92,
+        font_size=9.4,
+    )
+    add_code_box(
+        slide,
+        "Fine-tuning rule:\nuse the best MELD checkpoint as the warm start, then adapt on the legal-testimony dataset.",
+        6.78,
+        6.88,
+        5.88,
+        0.4,
+        font_size=9.0,
     )
 
     # Slide 4

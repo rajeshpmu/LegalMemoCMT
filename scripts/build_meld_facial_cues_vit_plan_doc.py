@@ -17,6 +17,10 @@ FIG_DIR = ROOT / "implementation_docments" / "figures" / "meld_vit_facecue"
 MMD_PATH = FIG_DIR / "meld_vit_facecue_pipeline.mmd"
 SVG_PATH = FIG_DIR / "meld_vit_facecue_pipeline.svg"
 PNG_PATH = FIG_DIR / "meld_vit_facecue_pipeline.png"
+PHASE2_PIPELINE_PNG = ROOT / "phase2" / "assets" / "phase2_pipeline.png"
+PHASE2_PIPELINE_SVG = ROOT / "phase2" / "assets" / "phase2_pipeline.svg"
+PHASE2_FINETUNE_PNG = ROOT / "phase2" / "assets" / "phase2_finetune_path.png"
+PHASE2_FINETUNE_SVG = ROOT / "phase2" / "assets" / "phase2_finetune_path.svg"
 
 
 def read_json(path: Path) -> dict:
@@ -216,6 +220,76 @@ def build_doc() -> Document:
     add_para(
         doc,
         "From a student point of view, the key idea is that ViT is not being added just because it is modern. It is being added because it can encode visual expressions in a way that is compatible with the existing multimodal design. The visual branch should therefore be understood as support for the text and audio backbone, not as a completely separate project.",
+    )
+
+    doc.add_heading("3.1 Phase 2 Dataset Preparation for LegalMemoCMT", level=1)
+    add_para(
+        doc,
+        "The Phase 2 dataset work is a separate but connected contribution. It prepares the legal-testimony data that will later support courtroom emotion analysis, while keeping the data path reproducible and transparent. The safest way to describe this work is as a methodological contribution: the pipeline itself is important, but any novelty claim should stay tied to the actual quality and scale of the curated corpus.",
+    )
+    add_bullets(
+        doc,
+        [
+            "The source layer is defined by tribunal_sources_target_dataset.csv and witness_harvest_manifest.csv.",
+            "The witness manifest is the operational driver because it contains witness-level targets, source evidence URLs, and acquisition status fields.",
+            "phase2/dataset_builder.py validates the inputs, resolves transcripts and video links, materializes the records, and creates the final dataset outputs.",
+            "The pipeline then generates weak labels and a dashboard so the corpus can be reviewed and extended later.",
+            "This is how the project moves from a simple file collection to a traceable legal-testimony dataset.",
+        ],
+    )
+    add_para(
+        doc,
+        "The reason to use public tribunal records is practical and scientific. They provide structured testimony with speakers, questioning patterns, and courtroom context. That makes them a better fit for legal emotion analysis than generic open-domain emotion data, especially if the later goal is to study observed emotional cues rather than to infer guilt or deception.",
+    )
+    add_figure(
+        doc,
+        PHASE2_PIPELINE_PNG,
+        "Figure 1. Phase 2 dataset-preparation flow: manifest validation, discovery, acquisition, segmentation, weak labels, and reporting.",
+    )
+    add_code_block(
+        doc,
+        """phase2/dataset_builder.py validate-tri
+phase2/dataset_builder.py validate-witness
+phase2/dataset_builder.py resolve
+phase2/dataset_builder.py materialize
+phase2/dataset_builder.py build-dataset
+phase2/dataset_builder.py weak-labels
+phase2/dataset_builder.py dashboard""",
+    )
+    add_para(
+        doc,
+        "The student lesson is that dataset preparation is not a single download command. It is a chain of checks that turns source URLs into usable training rows. Each stage reduces risk: validation catches bad manifests, discovery finds the actual records, acquisition stores the artifacts, segmentation turns transcripts into utterances, and weak labels make the data usable for Phase 2 experiments.",
+    )
+
+    doc.add_heading("3.2 Phase 2 Handoff to Fine-Tuning", level=1)
+    add_para(
+        doc,
+        "After the dataset is prepared, the project can warm-start from the best MELD checkpoint and adapt to the legal domain. This is the point where the Phase 1 work becomes useful for Phase 2, because the model already knows how to handle emotion classes and multimodal fusion before it sees courtroom testimony.",
+    )
+    add_bullets(
+        doc,
+        [
+            "run_phase2_finetune.sh is the training step once the dataset exists.",
+            "evaluate_phase2_checkpoint.sh is the held-out measurement step after training.",
+            "The best MELD checkpoint should be used as the warm start, not a random initialization.",
+            "The outputs should remain limited to observable emotional cues and not legal judgments about guilt or innocence.",
+            "If the dataset becomes large and balanced enough, the preparation pipeline can be discussed as a real methodological novelty because it creates a reproducible path from public records to multimodal training data.",
+        ],
+    )
+    add_para(
+        doc,
+        "This handoff slide should make the learning story explicit: the dataset gives the legal-domain examples, the checkpoint provides the pretrained emotion boundary, and the fine-tuning step adapts that boundary to courtroom testimony. That is the main bridge from Phase 1 to Phase 2.",
+    )
+    add_figure(
+        doc,
+        PHASE2_FINETUNE_PNG,
+        "Figure 2. Phase 2 training handoff: prepared legal dataset -> warm-start checkpoint -> fine-tuning -> evaluation.",
+    )
+    add_code_block(
+        doc,
+        """bash phase2/run_phase2_dataset_pipeline.sh
+bash phase2/run_phase2_finetune.sh
+bash phase2/evaluate_phase2_checkpoint.sh""",
     )
 
     doc.add_heading("4. Recommended Implementation Order", level=1)

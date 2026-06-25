@@ -22,14 +22,17 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 1. Verify the source manifests are present in `data/phase2/source_manifests/`.
 2. Run the phase 2 dataset pipeline wrapper:
    - `bash phase2/run_phase2_dataset_pipeline.sh`
-3. Check whether the manifest is complete and whether raw MELD data is still needed:
-   - `bash scripts/check_phase1_meld_ready.sh`
-   - or `bash scripts/check_meld_ready.sh <manifest.csv>`
-4. Fine-tune from the best MELD checkpoint:
+3. Check whether the Phase 2 dataset artifacts are ready:
+   - `bash scripts/check_phase2_dataset_ready.sh`
+   - or `bash scripts/check_phase2_ready.sh`
+4. Check whether the Phase 2 fine-tuning inputs are ready:
+   - `bash scripts/check_phase2_finetune_ready.sh`
+   - this confirms the legal dataset manifest and the warm-start MELD checkpoint
+5. Fine-tune from the best MELD checkpoint:
    - `bash phase2/run_phase2_finetune.sh`
-5. Evaluate the saved checkpoint:
+6. Evaluate the saved checkpoint:
    - `bash phase2/evaluate_phase2_checkpoint.sh <manifest.csv> <checkpoint.pt> <output.json>`
-6. If you want a single chained run, use:
+7. If you want a single chained run, use:
    - `bash phase2/run_phase2_full.sh`
 
 ## Device policy
