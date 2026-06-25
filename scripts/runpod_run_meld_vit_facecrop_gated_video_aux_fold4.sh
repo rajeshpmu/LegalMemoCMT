@@ -28,6 +28,9 @@ fi
   --fusion-mode gated \
   --encoder-mode "${FACECROP_ENCODER_MODE:-paper}" \
   --device "${FACECROP_DEVICE:-cuda}" \
+  --num-workers "${FACECROP_NUM_WORKERS:-4}" \
+  --pin-memory \
+  --persistent-workers \
   --lr "${FACECROP_LR:-2e-5}" \
   --epochs "${FACECROP_EPOCHS:-8}" \
   --early-stop-patience "${FACECROP_EARLY_STOP_PATIENCE:-2}" \

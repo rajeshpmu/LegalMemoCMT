@@ -236,6 +236,13 @@ def main() -> None:
         help="Validation metric used to decide which checkpoint is best",
     )
     parser.add_argument("--device", type=str, default="cpu")
+    parser.add_argument("--num-workers", type=int, default=0, help="DataLoader worker count")
+    parser.add_argument("--pin-memory", action="store_true", help="Enable DataLoader pinned memory")
+    parser.add_argument(
+        "--persistent-workers",
+        action="store_true",
+        help="Keep DataLoader workers alive between epochs when num_workers > 0",
+    )
     parser.add_argument("--video-dim", type=int, default=0, help="Override ViT embedding dim; 0 means infer from the manifest")
     args = parser.parse_args()
 
@@ -277,8 +284,26 @@ def main() -> None:
     modalities = parse_modalities(args.modalities)
     train_ds = build_dataset(train_samples, model_cfg, modalities)
     val_ds = build_dataset(val_samples, model_cfg, modalities)
-    train_loader = DataLoader(train_ds, batch_size=train_cfg.batch_size, shuffle=True, collate_fn=collate_samples)
-    val_loader = DataLoader(val_ds, batch_size=train_cfg.batch_size, shuffle=False, collate_fn=collate_samples)
+    loader_kwargs = {
+        "num_workers": max(0, int(args.num_workers)),
+        "pin_memory": bool(args.pin_memory),
+    }
+    if loader_kwargs["num_workers"] > 0:
+        loader_kwargs["persistent_workers"] = bool(args.persistent_workers)
+    train_loader = DataLoader(
+        train_ds,
+        batch_size=train_cfg.batch_size,
+        shuffle=True,
+        collate_fn=collate_samples,
+        **loader_kwargs,
+    )
+    val_loader = DataLoader(
+        val_ds,
+        batch_size=train_cfg.batch_size,
+        shuffle=False,
+        collate_fn=collate_samples,
+        **loader_kwargs,
+    )
 
     model = LegalMemoCMTPhase1(model_cfg).to(device)
     checkpoint = load_checkpoint_with_video_shape(base_ckpt, model)
