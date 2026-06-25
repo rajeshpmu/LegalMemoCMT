@@ -18,6 +18,7 @@ echo
 from __future__ import annotations
 
 import sys
+import math
 from pathlib import Path
 
 import pandas as pd
@@ -31,7 +32,17 @@ if "audio_path" not in df.columns:
     raise SystemExit("Manifest does not contain an audio_path column")
 
 audio = df["audio_path"].astype(str)
-exists = audio.map(lambda x: Path(x).exists() if x and x.lower() != "nan" else False)
+def _path_exists(value: object) -> bool:
+    if value is None:
+        return False
+    if isinstance(value, float) and math.isnan(value):
+        return False
+    text = str(value).strip()
+    if not text or text.lower() == "nan":
+        return False
+    return Path(text).exists()
+
+exists = df["audio_path"].map(_path_exists)
 
 print(f"Rows: {len(df)}")
 print(f"Audio files present: {int(exists.sum())}")
