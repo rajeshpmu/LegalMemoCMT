@@ -10,6 +10,15 @@ if [ ! -x "$PYTHON_BIN" ]; then
 fi
 
 if [ -z "${HF_TOKEN:-}" ]; then
+  for token_file in "${HOME}/.huggingface/token" "${HOME}/.cache/huggingface/token"; do
+    if [ -f "$token_file" ]; then
+      export HF_TOKEN="$(tr -d '\n\r' < "$token_file")"
+      break
+    fi
+  done
+fi
+
+if [ -z "${HF_TOKEN:-}" ]; then
   echo "Warning: HF_TOKEN is not set. Hugging Face downloads may be rate-limited on RunPod."
 fi
 

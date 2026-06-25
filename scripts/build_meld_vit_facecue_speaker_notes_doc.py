@@ -861,6 +861,122 @@ Best checkpoint = epoch with the strongest validation result""",
         """clip -> face detector -> crop speaker face -> resize 224x224 -> pretrained ViT -> .npy face embedding -> compare against full-frame baseline""",
     )
 
+    doc.add_heading("15. Slide 15 - Third Guidance Call: Combined Phase 1 Design", level=1)
+    add_para(
+        doc,
+        "This slide is the bridge into the third guidance call. It should explain that the project has now accumulated several Phase 1 enhancements on top of the original weighted-CE conversational baseline: full-frame ViT facial cues, face-crop ViT, gated fusion, and a video auxiliary-loss branch whose Fold 4 result is now complete and ready for comparison.",
+    )
+    add_bullets(
+        doc,
+        [
+            "The backbone is still the paper-aligned MELD Phase 1 checkpoint.",
+            "The visual branch has moved from full frames to face crops because the speaker face is the most relevant signal for testimony-style modeling.",
+            "Gated fusion is used so the model can learn when to trust the visual branch instead of forcing a fixed contribution.",
+            "The aux-loss branch now has a completed Fold 4 result, so it should be presented as a completed comparison point rather than a WIP item.",
+        ],
+    )
+    add_para(
+        doc,
+        "Student explanation: this is not one new model. It is a controlled Phase 1 design that layers the strongest baseline, the facial-cue branch, and the gating mechanism in a way that keeps the comparison fair and interpretable.",
+    )
+
+    doc.add_heading("16. Slide 16 - Experimental Results, Confusion Matrix, and Error Analysis", level=1)
+    add_para(
+        doc,
+        "This slide should present the combined Phase 1 evidence in a careful way. The baseline metrics, the facial-cue runs, the gated-fusion run, and the auxiliary-loss Fold 4 result can all be discussed as completed evidence, but the aux-loss row should still be interpreted as an incremental refinement rather than a new strongest baseline.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Show accuracy, weighted F1, and macro F1 together because each metric highlights a different aspect of performance.",
+            "Use the confusion matrix to show where the model is still mixing similar emotions.",
+            "In the error analysis, explain whether the main mistakes are due to class imbalance, neutral-class dominance, or visual branch under-weighting.",
+            "Mark the aux-loss numbers as completed comparison evidence, but not as the final strongest claim.",
+        ],
+    )
+    add_para(
+        doc,
+        "The important technical point is that error analysis should not only report the final scores. It should explain which emotions the model confuses and whether the new visual branch is changing the error pattern in a useful way.",
+    )
+
+    doc.add_heading("17. Slide 17 - Performance Evaluation and Model Comparison", level=1)
+    add_para(
+        doc,
+        "This slide should compare the major Phase 1 variants in one place. The purpose is to show how the model evolved rather than to claim that every new branch beat the baseline.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Compare the paper-aligned weighted-CE baseline with the focal-loss-only attempt.",
+            "Compare the warm-start focal run against the from-scratch focal run to show why warm-starting is the more stable training path.",
+            "Compare the full-frame ViT, face-crop ViT, and gated-fusion variants to show how each architectural choice affects the visual contribution.",
+            "Keep the auxiliary-loss row in the table and describe it as a completed refinement with modest gains relative to earlier facial-cue runs.",
+        ],
+    )
+    add_para(
+        doc,
+        "Student-level takeaway: the goal of the table is not simply to sort models by accuracy. It is to explain which design choice changed the behavior, why it changed, and whether the change is worth carrying into the next research stage.",
+    )
+
+    doc.add_heading("18. Slide 18 - Journal Paper Draft", level=1)
+    add_para(
+        doc,
+        "This slide should turn the Phase 1 work into a paper narrative. The key is to frame the contribution as an adaptation pipeline for legal-domain testimony modeling, not as a small benchmark improvement on MELD.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Abstract: pretrained multimodal baseline plus facial-cue extensions for courtroom-style testimony modeling.",
+            "Introduction: explain why legal-domain testimony needs stronger speaker-aware cues than generic emotion recognition.",
+            "Method: describe the weighted-CE backbone, facial-cue extraction, warm-starting, gated fusion, and the auxiliary-loss branch.",
+            "Experiments: report the completed results, including the aux-loss Fold 4 comparison.",
+            "Discussion: explain that the Phase 1 work builds the bridge to the next-stage novelty implementation.",
+        ],
+    )
+    add_para(
+        doc,
+        "If you speak to the reviewer as a student researcher, the paper message is: 'We reproduced a strong multimodal backbone, added facial-cue experiments to understand visual contribution, and prepared the model for the legal-domain research stage.'",
+    )
+
+    doc.add_heading("Appendix - Overall Phase 1 Architecture Slide", level=1)
+    add_para(
+        doc,
+        "This speaker-note section supports the added architecture slide in the deck. The point of the slide is to let the reviewer see the entire Phase 1 pipeline in one picture: raw utterance in, modality preprocessing in the middle, fusion and classification at the end, and the auxiliary-loss head included as part of the completed comparison set.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Tell the audience that the architecture is a complete multimodal pipeline, not a single isolated model.",
+            "Explain that the video branch can be full-frame or face-crop depending on the experiment being discussed.",
+            "Point out that the aux-loss head is included for design completeness and now has a completed Fold 4 result for reporting.",
+            "Use the slide to connect the implementation details with the later metrics and confusion-matrix discussion.",
+        ],
+    )
+    add_para(
+        doc,
+        "A student-friendly way to say it: the whole system takes the raw case utterance, encodes each modality with its own pretrained encoder, and then combines the results so the classifier can make one final emotion decision. That is the core of the Phase 1 architecture.",
+    )
+
+    doc.add_heading("Appendix - Training Parameters by Stage", level=1)
+    add_para(
+        doc,
+        "This note block explains the hyperparameter choices across the Phase 1 experiments. The main teaching point is that each stage is a controlled variant of the same backbone, so the audience can see what changed and why.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Baseline stage: weighted cross entropy, best validation accuracy selection, and the original paper-aligned checkpoint.",
+            "Full-frame ViT stage: 5 epochs, learning rate 5e-5, one warm-up freeze epoch, batch size 4.",
+            "Face-crop stage: warm-start from the baseline, keep the same fold logic, and use a small learning rate to protect the original backbone.",
+            "Gated-fusion stage: warm-start again, but allow the model to decide how much to trust the video branch.",
+            "Aux-loss stage: warm-start, learning rate 2e-5, max 8 epochs, early stopping patience 2, and best checkpoint by validation weighted F1.",
+        ],
+    )
+    add_para(
+        doc,
+        "The simplest student explanation is: earlier stages establish the backbone, visual stages test whether facial cues help, gated fusion tests whether the model can trust video selectively, and the auxiliary-loss stage is a final refinement whose Fold 4 result can now be discussed as part of the completed model comparison.",
+    )
+
     return doc
 
 

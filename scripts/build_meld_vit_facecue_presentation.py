@@ -35,6 +35,8 @@ COMPARE_PNG = FIG_DIR / "run_comparison.png"
 COMPARE_SVG = FIG_DIR / "run_comparison.svg"
 FCEC_PNG = FIG_DIR / "face_crop_next_step.png"
 FCEC_SVG = FIG_DIR / "face_crop_next_step.svg"
+ARCH_PNG = FIG_DIR / "phase1_overall_architecture.png"
+ARCH_SVG = FIG_DIR / "phase1_overall_architecture.svg"
 
 
 def render_mermaid(code: str, svg_path: Path, png_path: Path) -> None:
@@ -251,6 +253,27 @@ def build_assets() -> None:
 """,
         FCEC_SVG,
         FCEC_PNG,
+    )
+    render_mermaid(
+        """flowchart TB
+  A["MELD raw utterance"] --> B["Audio preprocessing"]
+  A --> C["Transcript preprocessing"]
+  A --> D["Video clip"]
+  D --> E["Face crop or full-frame sample"]
+  E --> F["ViT facial embeddings"]
+  B --> G["HuBERT audio branch"]
+  C --> H["BERT text branch"]
+  F --> I["Video branch"]
+  G --> J["Fusion layer"]
+  H --> J
+  I --> J
+  J --> K["Classifier"]
+  K --> L["Emotion prediction"]
+  K --> M["Metrics / confusion matrix / error analysis"]
+  J --> N["Aux-loss video head"]
+""",
+        ARCH_SVG,
+        ARCH_PNG,
     )
     epochs = [1, 2, 3, 4]
     train_loss = [1.4195, 1.5937, 1.3378, 1.1202]
@@ -683,6 +706,197 @@ def build_pptx() -> None:
         5.9,
         5.85,
         0.75,
+        font_size=10,
+    )
+
+    # Slide 12
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(slide, "Third Guidance Call: Phase 1 Combined Design", "What has been implemented since the earlier review.")
+    add_body(
+        slide,
+        [
+            "The Phase 1 system now includes the paper-aligned weighted-CE backbone, the full-frame ViT branch, the face-crop interpretation, gated fusion, and the auxiliary-loss branch.",
+            "The aux-loss branch is implemented and now has a completed Fold 4 result.",
+            "The correct story for the next review is layered: backbone first, visual branch second, gated refinement third, aux-loss as a measured refinement.",
+            "This is the cleanest way to explain the project as a third-guidance-call update rather than only the original face-cue plan.",
+        ],
+        x=0.75,
+        y=1.45,
+        w=6.0,
+        h=5.3,
+        font_size=15,
+    )
+    add_picture(slide, HANDOFF_PNG, 7.0, 1.7, 5.7)
+    add_code_box(
+        slide,
+        "Phase 1 today:\nweighted-CE backbone -> ViT facial cues -> gated fusion -> aux-loss completed Fold 4\nThe aux-loss branch is best described as an incremental refinement, not a new baseline.",
+        7.0,
+        5.9,
+        5.7,
+        0.75,
+        font_size=10,
+    )
+
+    # Slide 13
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(slide, "Experimental Results and Error Analysis", "Results are strong for the baseline; aux-loss is completed but modest.")
+    add_body(
+        slide,
+        [
+            "The baseline weighted-CE MELD result remains the stable anchor.",
+            "Full-frame ViT shows that the model learns usable visual signal, but the confusion matrix still leans neutral-heavy.",
+            "Gated fusion improves selectivity, which helps keep the video branch from being ignored.",
+            "The aux-loss branch now has a completed Fold 4 run, so its error analysis can be discussed, but it still should not be treated as the new best baseline.",
+        ],
+        x=0.75,
+        y=1.45,
+        w=6.1,
+        h=5.3,
+        font_size=15,
+    )
+    add_table(
+        slide,
+        ["Stage", "Reading"],
+        [
+            ["Weighted-CE baseline", "Strongest stable reference"],
+            ["Full-frame ViT", "Useful but neutral-biased"],
+            ["Face-crop design", "Best courtroom-testimony formulation"],
+            ["Gated fusion", "Selective improvement, not solved"],
+            ["Aux-loss branch", "Completed Fold 4, incremental refinement"],
+        ],
+        left=7.05,
+        top=1.65,
+        width=5.6,
+        height=2.5,
+        col_widths=[2.1, 3.5],
+        font_size=10,
+    )
+    add_code_box(
+        slide,
+        "Key message:\nUse the baseline and gated results normally.\nTreat aux-loss as a completed refinement that helps the comparison, but does not replace the strongest baseline.",
+        7.05,
+        4.4,
+        5.6,
+        0.95,
+        font_size=10,
+    )
+
+    # Slide 14
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(slide, "Performance Evaluation and Model Comparison", "The model family is a progression, not disconnected experiments.")
+    add_body(
+        slide,
+        [
+            "Weighted CE is still the best stable Phase 1 anchor.",
+            "Full-frame and face-crop are the key visual comparison points.",
+            "Gated fusion is the safest selective refinement for the visual branch.",
+            "Aux-loss is a completed refinement, but it remains below the strongest baseline anchor.",
+        ],
+        x=0.75,
+        y=1.45,
+        w=6.0,
+        h=5.2,
+        font_size=15,
+    )
+    add_picture(slide, COMPARE_PNG, 6.8, 1.55, 5.95)
+    add_code_box(
+        slide,
+        "Comparison logic:\nBaseline -> full-frame -> face-crop -> gated fusion -> aux-loss completed Fold 4\nThe thesis story should emphasize this progression.",
+        6.8,
+        5.9,
+        5.95,
+        0.75,
+        font_size=10,
+    )
+
+    # Slide 15
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(slide, "Journal Paper Draft", "A concise draft structure can already be described from the current work.")
+    add_body(
+        slide,
+        [
+            "The journal story should be about reproducing a strong multimodal baseline and then extending it with facial-cue design choices relevant to courtroom testimony.",
+            "The method section should cover the weighted-CE backbone, ViT facial embeddings, face-crop logic, gated fusion, and the aux-loss branch.",
+            "The results section should include metrics and confusion matrices, and it can now include the completed aux-loss Fold 4 result.",
+            "The contribution is legal-domain adaptation and controlled multimodal extension, not a tiny MELD gain.",
+        ],
+        x=0.75,
+        y=1.45,
+        w=11.8,
+        h=4.9,
+        font_size=16,
+    )
+    add_code_box(
+        slide,
+        "Draft outline:\nAbstract -> Introduction -> Method -> Experiments -> Results -> Discussion -> Conclusion\nAux-loss appears in the experiments/results section as a completed refinement.",
+        0.95,
+        6.0,
+        11.3,
+        0.7,
+        font_size=10,
+    )
+
+    # Slide 16
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(slide, "Overall Phase 1 Architecture", "This diagram shows how text, audio, video, and aux-loss fit together.")
+    add_body(
+        slide,
+        [
+            "The architecture begins with the raw MELD utterance and splits into text, audio, and video preprocessing paths.",
+            "The video path can use full-frame sampling or face-crop sampling before ViT feature extraction.",
+            "The text path uses BERT, the audio path uses HuBERT, and the visual path produces ViT embeddings.",
+            "The branches meet at fusion, then the classifier produces emotion predictions and evaluation outputs.",
+        ],
+        x=0.75,
+        y=1.4,
+        w=6.0,
+        h=5.1,
+        font_size=14.5,
+    )
+    add_picture(slide, ARCH_PNG, 6.6, 1.45, 6.05)
+    add_code_box(
+        slide,
+        "Reading the diagram:\nraw utterance -> preprocessing -> branch encoders -> fusion -> classifier -> metrics\nThe aux-loss head is now part of the completed comparison set.",
+        0.9,
+        6.05,
+        11.8,
+        0.7,
+        font_size=10,
+    )
+
+    # Slide 17
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(slide, "Training Parameters by Stage", "Each stage uses a slightly different training setup.")
+    add_table(
+        slide,
+        ["Stage", "Key parameters", "Why"],
+        [
+            ["Paper-aligned baseline", "weighted CE, warm-start checkpoint, best val accuracy", "Stable reference point"],
+            ["Full-frame ViT", "LR 5e-5, 5 epochs, freeze backbone 1 epoch, batch size 4", "First facial-cue proof of concept"],
+            ["Face-crop ViT", "warm-start from baseline, small LR, same fold logic", "Focus on speaker face"],
+            ["Gated fusion", "warm-start, gated video path, same backbone settings", "Let model decide when to trust video"],
+            ["Video aux-loss", "warm-start, LR 2e-5, max 8 epochs, patience 2, best val weighted F1", "Completed refinement; not a new baseline"],
+        ],
+        left=0.55,
+        top=1.55,
+        width=12.1,
+        height=4.55,
+        col_widths=[2.05, 5.35, 4.7],
+        font_size=11,
+    )
+    add_code_box(
+        slide,
+        "Reading rule:\nEach later stage keeps the same Phase 1 backbone idea but changes only the visual path or the supervision policy.\nThat is how the experiments stay comparable.",
+        0.75,
+        6.2,
+        11.85,
+        0.65,
         font_size=10,
     )
 
