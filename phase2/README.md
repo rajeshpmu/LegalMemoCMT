@@ -32,32 +32,38 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
 1. Verify the source manifests are present in `data/phase2/source_manifests/`.
 2. If you are on RunPod and want a single readiness report, run:
    - `bash scripts/check_phase2_runpod_sources.sh`
-3. Run the phase 2 dataset pipeline wrapper:
+3. Inspect and download UCR recordings with fallback resolution:
+   - `bash phase2/run_ucr_case_videos_with_fallback.sh`
+   - this checks `ByCaseDocsByLang`, then `ByMainCase`, and can optionally allow non-`TAP` recordings
+   - for Phase 2 tri-modal training, prefer the stricter video-only variant:
+     - `bash phase2/run_ucr_case_videos_strict.sh`
+     - this keeps only real video files and skips transcript-only fallbacks
+4. Run the phase 2 dataset pipeline wrapper:
    - `bash phase2/run_phase2_dataset_pipeline.sh`
-4. Check whether the Phase 2 dataset artifacts are ready:
+5. Check whether the Phase 2 dataset artifacts are ready:
    - `bash scripts/check_phase2_dataset_ready.sh`
    - or `bash scripts/check_phase2_ready.sh`
    - this now also prints the Phase 2 language profile for the manifest
-5. Build a split-bearing training manifest:
+6. Build a split-bearing training manifest:
    - `bash phase2/run_phase2_split_manifest.sh`
-6. Sanitize the split manifest for training:
+7. Sanitize the split manifest for training:
    - `bash phase2/run_phase2_sanitize_manifest.sh`
    - this removes HTML-only rows and keeps the transcript-only cleaning separate from audio extraction
-7. Verify that the downloaded video files are real media files:
+8. Verify that the downloaded video files are real media files:
    - `bash scripts/check_phase2_video_integrity.sh`
    - this catches HTML pages or broken downloads before extraction
-8. Extract audio from video into a tri-modal training manifest:
+9. Extract audio from video into a tri-modal training manifest:
    - `bash phase2/run_phase2_extract_audio.sh`
    - this fills `audio_path` from the available video files and writes the tri-modal manifest
    - on GPU-enabled RunPod systems, set `USE_CUDA=1` to try CUDA-assisted ffmpeg decoding with CPU fallback
-9. Check whether the Phase 2 fine-tuning inputs are ready:
+10. Check whether the Phase 2 fine-tuning inputs are ready:
    - `bash scripts/check_phase2_finetune_ready.sh`
    - this confirms the tri-modal manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
-10. Fine-tune from the best MELD checkpoint:
+11. Fine-tune from the best MELD checkpoint:
    - `bash phase2/run_phase2_finetune.sh`
-11. Evaluate the saved checkpoint:
+12. Evaluate the saved checkpoint:
    - `bash phase2/evaluate_phase2_checkpoint.sh <manifest.csv> <checkpoint.pt> <output.json>`
-12. If you want a single chained run, use:
+13. If you want a single chained run, use:
    - `bash phase2/run_phase2_full.sh`
 
 ## Device policy
@@ -83,6 +89,8 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
 ## Wrapper summary
 
 - `phase2/run_phase2_dataset_pipeline.sh` runs the data-preparation stages.
+- `phase2/run_ucr_case_videos_with_fallback.sh` downloads UCR recordings using `ByCaseDocsByLang`, `ByMainCase`, and optional non-`TAP` fallback.
+- `phase2/run_ucr_case_videos_strict.sh` downloads only real video files for tri-modal Phase 2.
 - `phase2/run_phase2_split_manifest.sh` adds the train/dev/test split column needed by the trainer.
 - `phase2/run_phase2_sanitize_manifest.sh` cleans transcript rows and can extract audio from video when needed.
 - `phase2/run_phase2_extract_audio.sh` fills missing audio paths by extracting audio from the available video files.
