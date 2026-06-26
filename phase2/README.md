@@ -25,6 +25,7 @@ Important distinction:
 Corpus expansion path:
 
 - start from the case candidate ledger
+- enrich the ledger by checking official UCR case pages
 - build tribunal and witness manifests from the ledger
 - expand planning manifests into a larger candidate inventory
 - resolve each case to all available UCR documents
@@ -54,10 +55,12 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
 1. Verify the source manifests are present in `data/phase2/source_manifests/`.
 2. If you are on RunPod and want a single readiness report, run:
    - `bash scripts/check_phase2_runpod_sources.sh`
-3. Build corpus manifests from the case ledger:
+3. Enrich the ledger from the official UCR case pages:
+   - `bash phase2/run_enrich_case_ledger_from_ucr_site.sh`
+4. Build corpus manifests from the case ledger:
    - `bash phase2/run_build_tribunal_manifest_from_ledger.sh`
    - `bash phase2/run_build_witness_manifest_from_ledger.sh`
-4. Inspect and download UCR recordings with fallback resolution:
+5. Inspect and download UCR recordings with fallback resolution:
    - `bash phase2/run_ucr_case_videos_with_fallback.sh`
    - this checks `ByCaseDocsByLang`, then `ByMainCase`, and can optionally allow non-`TAP` recordings
    - for Phase 2 tri-modal training, prefer the stricter video-only variant:
@@ -65,9 +68,9 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
      - this keeps only real video files and skips transcript-only fallbacks
    - for broad corpus expansion across all tapes in a case, use:
      - `bash phase2/run_ucr_case_videos_all_tapes.sh`
-5. Split the UCR inventory by media type:
+6. Split the UCR inventory by media type:
    - `bash phase2/run_split_ucr_inventory_by_media_type.sh`
-6. Run the phase 2 dataset pipeline wrapper:
+7. Run the phase 2 dataset pipeline wrapper:
    - `bash phase2/run_phase2_dataset_pipeline.sh`
 7. Check whether the Phase 2 dataset artifacts are ready:
    - `bash scripts/check_phase2_dataset_ready.sh`
@@ -120,6 +123,7 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
 - `phase2/run_phase2_dataset_pipeline.sh` runs the data-preparation stages.
 - `phase2/run_build_tribunal_manifest_from_ledger.sh` builds the tribunal candidate manifest from the case ledger.
 - `phase2/run_build_witness_manifest_from_ledger.sh` builds the witness candidate manifest from the case ledger.
+- `phase2/run_enrich_case_ledger_from_ucr_site.sh` checks the official UCR case pages and annotates the ledger with page-level evidence.
 - `phase2/run_build_ucr_case_inventory.sh` enumerates all UCR documents for planning-manifest cases.
 - `phase2/run_expand_phase2_planning_manifests.sh` expands the planning manifests into a larger candidate inventory.
 - `phase2/run_split_ucr_inventory_by_media_type.sh` splits the inventory into video-bearing and transcript-only manifests.
