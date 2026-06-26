@@ -28,6 +28,7 @@ Corpus expansion path:
 - build tribunal and witness manifests from the ledger
 - expand planning manifests into a larger candidate inventory
 - resolve each case to all available UCR documents
+- split the inventory into video-bearing and transcript-only manifests
 - download every eligible TAP recording for tri-modal work
 - keep transcript-only rows in a separate text corpus
 - build the final dataset only after segmentation and audio extraction
@@ -64,32 +65,34 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
      - this keeps only real video files and skips transcript-only fallbacks
    - for broad corpus expansion across all tapes in a case, use:
      - `bash phase2/run_ucr_case_videos_all_tapes.sh`
-5. Run the phase 2 dataset pipeline wrapper:
+5. Split the UCR inventory by media type:
+   - `bash phase2/run_split_ucr_inventory_by_media_type.sh`
+6. Run the phase 2 dataset pipeline wrapper:
    - `bash phase2/run_phase2_dataset_pipeline.sh`
-6. Check whether the Phase 2 dataset artifacts are ready:
+7. Check whether the Phase 2 dataset artifacts are ready:
    - `bash scripts/check_phase2_dataset_ready.sh`
    - or `bash scripts/check_phase2_ready.sh`
    - this now also prints the Phase 2 language profile for the manifest
-7. Build a split-bearing training manifest:
+8. Build a split-bearing training manifest:
    - `bash phase2/run_phase2_split_manifest.sh`
-8. Sanitize the split manifest for training:
+9. Sanitize the split manifest for training:
    - `bash phase2/run_phase2_sanitize_manifest.sh`
    - this removes HTML-only rows and keeps the transcript-only cleaning separate from audio extraction
-9. Verify that the downloaded video files are real media files:
+10. Verify that the downloaded video files are real media files:
    - `bash scripts/check_phase2_video_integrity.sh`
    - this catches HTML pages or broken downloads before extraction
-10. Extract audio from video into a tri-modal training manifest:
+11. Extract audio from video into a tri-modal training manifest:
    - `bash phase2/run_phase2_extract_audio.sh`
    - this fills `audio_path` from the available video files and writes the tri-modal manifest
    - on GPU-enabled RunPod systems, set `USE_CUDA=1` to try CUDA-assisted ffmpeg decoding with CPU fallback
-11. Check whether the Phase 2 fine-tuning inputs are ready:
+12. Check whether the Phase 2 fine-tuning inputs are ready:
    - `bash scripts/check_phase2_finetune_ready.sh`
    - this confirms the tri-modal manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
-12. Fine-tune from the best MELD checkpoint:
+13. Fine-tune from the best MELD checkpoint:
    - `bash phase2/run_phase2_finetune.sh`
-13. Evaluate the saved checkpoint:
+14. Evaluate the saved checkpoint:
    - `bash phase2/evaluate_phase2_checkpoint.sh <manifest.csv> <checkpoint.pt> <output.json>`
-14. If you want a single chained run, use:
+15. If you want a single chained run, use:
    - `bash phase2/run_phase2_full.sh`
 
 ## Device policy
@@ -119,6 +122,7 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
 - `phase2/run_build_witness_manifest_from_ledger.sh` builds the witness candidate manifest from the case ledger.
 - `phase2/run_build_ucr_case_inventory.sh` enumerates all UCR documents for planning-manifest cases.
 - `phase2/run_expand_phase2_planning_manifests.sh` expands the planning manifests into a larger candidate inventory.
+- `phase2/run_split_ucr_inventory_by_media_type.sh` splits the inventory into video-bearing and transcript-only manifests.
 - `phase2/run_ucr_case_videos_with_fallback.sh` downloads UCR recordings using `ByCaseDocsByLang`, `ByMainCase`, and optional non-`TAP` fallback.
 - `phase2/run_ucr_case_videos_strict.sh` downloads only real video files for tri-modal Phase 2.
 - `phase2/run_ucr_case_videos_all_tapes.sh` downloads every eligible TAP recording for a case.
