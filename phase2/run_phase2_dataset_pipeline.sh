@@ -28,6 +28,7 @@ if [ ! -f "$WITNESS_MANIFEST" ]; then
 fi
 
 echo "Phase 2 dataset pipeline"
+echo "Status note: the source CSVs are planning manifests only; the final dataset is produced later after record resolution, materialization, segmentation, and audio/video extraction."
 echo "Source manifests:"
 echo "  tribunal sources: $TRIBUNAL_SOURCES"
 echo "  witness manifest: $WITNESS_MANIFEST"
