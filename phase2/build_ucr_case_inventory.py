@@ -134,7 +134,7 @@ def main() -> None:
                     "doc_signature_date": str(doc.get("DocSignatureDate") or ""),
                     "doc_source_desc": str(doc.get("DocSourceDesc") or ""),
                     "document_path": doc_path,
-                    "is_video": str(doc_path and _looks_like_video(doc_path)).lower(),
+                    "is_video": "yes" if doc_path and _looks_like_video(doc_path) else "no",
                     "source_status": status,
                     "skip_reason": skip_reason,
                 }

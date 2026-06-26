@@ -1,9 +1,14 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
-from .common import ensure_dir, read_csv_rows, write_csv
+if __package__ in {None, ""}:
+    sys.path.append(str(Path(__file__).resolve().parents[1]))
+    from phase2.common import ensure_dir, read_csv_rows, write_csv
+else:
+    from .common import ensure_dir, read_csv_rows, write_csv
 
 
 def main() -> None:
