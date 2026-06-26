@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import subprocess
 from dataclasses import dataclass
@@ -18,6 +19,11 @@ try:
 except Exception:  # pragma: no cover
     PdfReader = None  # type: ignore[assignment]
 
+try:
+    from .common import create_ucr_session
+except Exception:  # pragma: no cover
+    from phase2.common import create_ucr_session  # type: ignore[assignment]
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TRIBUNAL_SOURCES = ROOT / "data" / "phase2" / "source_manifests" / "tribunal_sources_target_dataset.csv"
@@ -26,6 +32,10 @@ DEFAULT_RESOLVED_MANIFEST = ROOT / "data" / "resolved_manifest.csv"
 DEFAULT_RAW_DIR = ROOT / "data" / "raw"
 DEFAULT_PROCESSED_DIR = ROOT / "data" / "processed" / "phase2"
 DEFAULT_REPORT_DIR = ROOT / "reports"
+UCR_USERNAME_ENV = "UCR_USERNAME"
+UCR_PASSWORD_ENV = "UCR_PASSWORD"
+
+_UCR_SESSION: requests.Session | None = None
 
 
 TRIBUNAL_REQUIRED_COLUMNS = {
@@ -196,8 +206,24 @@ def load_manifest(path: str | Path = DEFAULT_WITNESS_MANIFEST) -> pd.DataFrame:
     return df
 
 
+def _get_ucr_session() -> requests.Session | None:
+    global _UCR_SESSION
+    if _UCR_SESSION is not None:
+        return _UCR_SESSION
+    username = os.getenv(UCR_USERNAME_ENV, "").strip()
+    password = os.getenv(UCR_PASSWORD_ENV, "").strip()
+    if username and password:
+        _UCR_SESSION = create_ucr_session(username, password)
+        return _UCR_SESSION
+    return None
+
+
 def _fetch_page(url: str, timeout: int = 60) -> str:
-    resp = requests.get(url, timeout=timeout, headers={"User-Agent": "LegalMemoCMT-Phase2/1.0"})
+    session = _get_ucr_session()
+    if session is not None:
+        resp = session.get(url, timeout=timeout, headers={"User-Agent": "LegalMemoCMT-Phase2/1.0"}, verify=True)
+    else:
+        resp = requests.get(url, timeout=timeout, headers={"User-Agent": "LegalMemoCMT-Phase2/1.0"})
     resp.raise_for_status()
     return resp.text
 
@@ -338,14 +364,33 @@ def materialize_records(
     return df
 
 
-def _download(url: str, dest: Path, *, timeout: int = 120) -> Path:
+def _looks_like_html(data: bytes) -> bool:
+    head = data.lstrip().lower()
+    return head.startswith(b"<!doctype html") or head.startswith(b"<html") or b"<body" in head[:200] or b"<head" in head[:200]
+
+
+def _download(url: str, dest: Path, *, timeout: int = 120, expected_kind: str = "binary") -> Path:
     dest.parent.mkdir(parents=True, exist_ok=True)
-    with requests.get(url, timeout=timeout, stream=True, headers={"User-Agent": "LegalMemoCMT-Phase2/1.0"}) as resp:
+    session = _get_ucr_session()
+    if session is not None:
+        response_ctx = session.get(url, timeout=timeout, stream=True, headers={"User-Agent": "LegalMemoCMT-Phase2/1.0"}, verify=True)
+    else:
+        response_ctx = requests.get(url, timeout=timeout, stream=True, headers={"User-Agent": "LegalMemoCMT-Phase2/1.0"})
+    with response_ctx as resp:
         resp.raise_for_status()
+        content_type = (resp.headers.get("content-type") or "").lower()
+        if "text/html" in content_type or "application/xhtml+xml" in content_type:
+            raise ValueError(f"Refusing to download HTML content as {expected_kind}: {url}")
         with dest.open("wb") as out:
+            first_chunk = True
             for chunk in resp.iter_content(chunk_size=1024 * 128):
-                if chunk:
-                    out.write(chunk)
+                if not chunk:
+                    continue
+                if first_chunk:
+                    first_chunk = False
+                    if _looks_like_html(chunk):
+                        raise ValueError(f"Refusing to download HTML payload as {expected_kind}: {url}")
+                out.write(chunk)
     return dest
 
 
@@ -354,7 +399,7 @@ def download_transcript(url: str, manifest_id: str, *, output_dir: str | Path = 
     out_dir.mkdir(parents=True, exist_ok=True)
     suffix = Path(urlparse(url).path).suffix or ".txt"
     dest = out_dir / f"{manifest_id}{suffix}"
-    return _download(url, dest)
+    return _download(url, dest, expected_kind="transcript")
 
 
 def extract_transcript_text(path: str | Path) -> str:
@@ -383,7 +428,7 @@ def download_video(url: str, manifest_id: str, *, output_dir: str | Path = DEFAU
     if suffix not in {".mp4", ".webm", ".mp3", ".wav"}:
         suffix = ".mp4"
     dest = out_dir / f"{manifest_id}{suffix}"
-    return _download(url, dest)
+    return _download(url, dest, expected_kind="video")
 
 
 def extract_audio(

@@ -1,15 +1,16 @@
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
 if __package__ in {None, ""}:
     sys.path.append(str(Path(__file__).resolve().parents[1]))
-    from phase2.common import download_file, ensure_dir, extract_text_from_file, read_csv_rows, safe_filename, sha1_short, slugify, write_csv
+    from phase2.common import create_ucr_session, download_file, ensure_dir, extract_text_from_file, read_csv_rows, safe_filename, sha1_short, slugify, write_csv
 else:
-    from .common import download_file, ensure_dir, extract_text_from_file, read_csv_rows, safe_filename, sha1_short, slugify, write_csv
+    from .common import create_ucr_session, download_file, ensure_dir, extract_text_from_file, read_csv_rows, safe_filename, sha1_short, slugify, write_csv
 
 
 TEMPLATE_COLUMNS = [
@@ -52,6 +53,9 @@ def main() -> None:
     parser.add_argument("--index-csv", type=str, default="", help="Optional path for the output index CSV")
     parser.add_argument("--write-template", action="store_true", help="Write a template source CSV and exit")
     parser.add_argument("--template-path", type=str, default="data/phase2/tribunal_sources_template.csv", help="Template CSV path")
+    parser.add_argument("--username-env", type=str, default="UCR_USERNAME", help="Environment variable containing the UCR login email")
+    parser.add_argument("--password-env", type=str, default="UCR_PASSWORD", help="Environment variable containing the UCR password")
+    parser.add_argument("--require-login", action="store_true", help="Fail if a UCR login cannot be established")
     args = parser.parse_args()
 
     if args.write_template:
@@ -63,6 +67,15 @@ def main() -> None:
         raise SystemExit("--source-csv is required unless --write-template is used")
 
     source_rows = read_csv_rows(Path(args.source_csv))
+    session = None
+    username = os.getenv(args.username_env, "").strip()
+    password = os.getenv(args.password_env, "").strip()
+    if username and password:
+        session = create_ucr_session(username, password)
+        print("UCR login: OK")
+    elif args.require_login:
+        raise SystemExit(f"Missing UCR credentials in environment variables {args.username_env} / {args.password_env}")
+
     out = Path(args.output_root)
     raw_dir = ensure_dir(out / "raw")
     text_dir = ensure_dir(out / "text")
@@ -95,7 +108,7 @@ def main() -> None:
             raw_path_obj = record_dir / fallback
             try:
                 if not raw_path_obj.exists():
-                    download_file(url, raw_path_obj)
+                    download_file(url, raw_path_obj, session=session)
                 raw_path = str(raw_path_obj)
                 if not transcript:
                     transcript = extract_text_from_file(raw_path_obj)
@@ -107,7 +120,7 @@ def main() -> None:
             audio_path_obj = ensure_dir(raw_dir / slugify(court) / record_id / "audio") / audio_name
             try:
                 if not audio_path_obj.exists():
-                    download_file(audio_url, audio_path_obj)
+                    download_file(audio_url, audio_path_obj, session=session)
                 audio_path = str(audio_path_obj)
             except Exception as exc:
                 print(f"Skipped audio URL for {record_id}: {exc}")
@@ -117,7 +130,7 @@ def main() -> None:
             video_path_obj = ensure_dir(raw_dir / slugify(court) / record_id / "video") / video_name
             try:
                 if not video_path_obj.exists():
-                    download_file(video_url, video_path_obj)
+                    download_file(video_url, video_path_obj, session=session)
                 video_path = str(video_path_obj)
             except Exception as exc:
                 print(f"Skipped video URL for {record_id}: {exc}")

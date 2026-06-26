@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import hashlib
 import re
 import ssl
@@ -24,6 +25,7 @@ except Exception:  # pragma: no cover
 
 
 USER_AGENT = "LegalMemoCMT-Phase2/1.0 (+local research pipeline)"
+UCR_BASE_URL = "https://ucr.irmct.org"
 
 
 def slugify(text: str, *, max_length: int = 80) -> str:
@@ -46,16 +48,48 @@ def ensure_dir(path: Path) -> Path:
     return path
 
 
-def download_file(url: str, dest: Path, *, timeout: int = 60) -> Path:
+def download_file(url: str, dest: Path, *, timeout: int = 60, session: requests.Session | None = None) -> Path:
     ensure_dir(dest.parent)
     headers = {"User-Agent": USER_AGENT}
-    with requests.get(url, headers=headers, timeout=timeout, stream=True, verify=True) as response:
+    client = session or requests
+    request_fn = client.get if session is not None else requests.get
+    with request_fn(url, headers=headers, timeout=timeout, stream=True, verify=True) as response:
         response.raise_for_status()
         with dest.open("wb") as out:
             for chunk in response.iter_content(chunk_size=1024 * 64):
                 if chunk:
                     out.write(chunk)
     return dest
+
+
+def create_ucr_session(username: str, password: str, *, base_url: str = UCR_BASE_URL) -> requests.Session:
+    session = requests.Session()
+    session.headers.update({"User-Agent": USER_AGENT})
+    # Prime cookies / session state.
+    session.get(base_url, timeout=60, verify=True)
+    response = session.post(
+        f"{base_url.rstrip('/')}/Account/JsonLogin",
+        data={"EmailAddress": username, "Password": password},
+        headers={
+            "X-Requested-With": "XMLHttpRequest",
+            "Referer": base_url,
+            "Origin": base_url,
+        },
+        timeout=60,
+        verify=True,
+    )
+    response.raise_for_status()
+    ok = False
+    payload: dict[str, object] = {}
+    try:
+        payload = response.json()
+        ok = bool(payload.get("success") or payload.get("Success") or payload.get("loggedin") or payload.get("LoggedIn"))
+    except Exception:
+        text = response.text.lower()
+        ok = "success" in text or "logged" in text or "welcome" in text
+    if not ok:
+        raise RuntimeError(f"UCR login failed: {json.dumps(payload) if payload else response.text[:500]}")
+    return session
 
 
 def read_text_file(path: Path) -> str:
@@ -144,4 +178,3 @@ def group_case_splits(case_ids: Sequence[str], *, train_ratio: float, dev_ratio:
 
 def sha1_short(text: str, length: int = 12) -> str:
     return hashlib.sha1(text.encode("utf-8", errors="ignore")).hexdigest()[:length]
-

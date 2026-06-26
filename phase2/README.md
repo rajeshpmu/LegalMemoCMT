@@ -11,10 +11,20 @@ The current implementation is now driven by two local source CSVs stored under:
 
 Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-record settings. The goal is still observable emotion analysis, not legal judgment. The planned outputs are emotion scores, stress-oriented timelines, and emotional transitions inside testimony.
 
+## Progressive Adaptation
+
+The intended transfer path for Phase 2 is progressive:
+
+1. Start from general conversational emotion learning on `MELD`.
+2. Adapt to international criminal tribunal proceedings from `IRMCT / ICTY / ICTR` to learn authentic courtroom interaction patterns.
+3. Add a smaller Indian appellate-court adaptation stage using Indian Supreme Court and High Court proceedings so the model learns Indian legal discourse and courtroom conventions.
+
+This keeps the strongest witness-testimony source as the main multimodal signal while still moving the project toward the Indian legal setting.
+
 ## Data sources
 
-1. Supreme Court oral argument transcripts
-2. IRMCT / ICTR / ICTY public judicial records
+1. IRMCT / ICTR / ICTY public judicial records as the primary courtroom testimony source
+2. Indian Supreme Court and High Court proceedings as a smaller final adaptation corpus for Indian legal language and courtroom conventions
 3. The eyewitness incongruence paper as a structuring reference, not as the main training dataset
 
 ## Recommended run order
@@ -33,18 +43,21 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 6. Sanitize the split manifest for training:
    - `bash phase2/run_phase2_sanitize_manifest.sh`
    - this removes HTML-only rows and keeps the transcript-only cleaning separate from audio extraction
-7. Extract audio from video into a tri-modal training manifest:
+7. Verify that the downloaded video files are real media files:
+   - `bash scripts/check_phase2_video_integrity.sh`
+   - this catches HTML pages or broken downloads before extraction
+8. Extract audio from video into a tri-modal training manifest:
    - `bash phase2/run_phase2_extract_audio.sh`
    - this fills `audio_path` from the available video files and writes the tri-modal manifest
    - on GPU-enabled RunPod systems, set `USE_CUDA=1` to try CUDA-assisted ffmpeg decoding with CPU fallback
-8. Check whether the Phase 2 fine-tuning inputs are ready:
+9. Check whether the Phase 2 fine-tuning inputs are ready:
    - `bash scripts/check_phase2_finetune_ready.sh`
    - this confirms the tri-modal manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
-9. Fine-tune from the best MELD checkpoint:
+10. Fine-tune from the best MELD checkpoint:
    - `bash phase2/run_phase2_finetune.sh`
-10. Evaluate the saved checkpoint:
+11. Evaluate the saved checkpoint:
    - `bash phase2/evaluate_phase2_checkpoint.sh <manifest.csv> <checkpoint.pt> <output.json>`
-11. If you want a single chained run, use:
+12. If you want a single chained run, use:
    - `bash phase2/run_phase2_full.sh`
 
 ## Device policy
@@ -79,6 +92,30 @@ Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-r
 - `scripts/check_phase2_sources_ready.sh` checks the source corpora directories.
 - `scripts/check_phase2_runpod_sources.sh` checks source corpora, split manifest, and warm-start readiness in one command.
 - `scripts/check_phase2_language_distribution.sh` reports English, Devanagari, other-script, and mixed-language shares for a Phase 2 manifest.
+- `scripts/check_phase2_video_integrity.sh` verifies that the stored video files are actual media files and not HTML error pages.
+- `phase2/download_ucr_video.py` downloads one direct UCR/IRMCT video URL for manual verification.
+- `phase2/download_ucr_case_video.py` logs into UCR, finds a case recording via the API, downloads one MP4, and can verify it with `file` and `ffprobe`.
+
+## UCR login support
+
+If the UCR portal requires sign-in for a record, set credentials through environment variables only:
+
+- `UCR_USERNAME`
+- `UCR_PASSWORD`
+
+The batch downloader, manual one-video downloader, and dataset builder will reuse that authenticated session when the variables are present. The repo does not store or print the password.
+
+For a direct case-based download, use:
+
+```bash
+python3 phase2/download_ucr_case_video.py --case-number IT-95-5/18 --verify
+```
+
+You can narrow the choice by date or title substring if a case has more than one recording:
+
+```bash
+python3 phase2/download_ucr_case_video.py --case-number IT-95-5/18 --date 24/03/2016 --index 1 --verify
+```
 
 ## Dataset builder entrypoint
 
@@ -130,9 +167,11 @@ On RunPod, `phase2/run_phase2_extract_audio.sh` can try CUDA-assisted decoding w
 
 ## Important scope note
 
-Supreme Court transcripts are useful for text adaptation and legal language structure. They are typically text-only, so they are not the main multimodal training set unless audio/video is also available.
+IRMCT / ICTY / ICTR records are the main multimodal courtroom source in the current Phase 2 setup because they provide the most direct witness-testimony style material.
 
-The multimodal courtroom fine-tuning set should come from records that actually contain audio or video, while the text-only corpus can still be used for language adaptation and weak supervision design.
+Indian Supreme Court and High Court proceedings are still useful, but in this plan they are a smaller adaptation stage for Indian legal language, phrasing, and courtroom conventions. They are typically text-heavy, so they support the Indian-domain adaptation layer more than the multimodal testimony layer.
+
+The multimodal courtroom fine-tuning set should continue to come from records that actually contain audio or video, while the Indian court text corpus can be used for language adaptation and weak supervision design.
 
 ## Default warm-start checkpoint
 
