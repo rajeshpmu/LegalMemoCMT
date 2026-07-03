@@ -966,7 +966,7 @@ Best checkpoint = epoch with the strongest validation result""",
     doc.add_heading("15. Slide 15 - Third Guidance Call: Combined Phase 1 Design", level=1)
     add_para(
         doc,
-        "This slide is the bridge into the third guidance call. It should explain that the project has now accumulated several Phase 1 enhancements on top of the original weighted-CE conversational baseline: full-frame ViT facial cues, face-crop ViT, gated fusion, and a video auxiliary-loss branch whose Fold 4 result is now complete and ready for comparison.",
+        "This slide is the bridge into the third guidance call. It should explain that the project has now accumulated several Phase 1 enhancements on top of the original weighted-CE conversational baseline: full-frame ViT facial cues, face-crop ViT, gated fusion, and a video auxiliary-loss branch whose Fold 4 result is now complete and ready for comparison. The completed Fold 4 aux-loss metrics are accuracy 0.5992, weighted F1 0.6056, macro F1 0.4330, weighted accuracy 0.5992, unweighted accuracy 0.4638, and 2610 test samples.",
     )
     add_bullets(
         doc,
@@ -985,7 +985,7 @@ Best checkpoint = epoch with the strongest validation result""",
     doc.add_heading("16. Slide 16 - Experimental Results, Confusion Matrix, and Error Analysis", level=1)
     add_para(
         doc,
-        "This slide should present the combined Phase 1 evidence in a careful way. The baseline metrics, the facial-cue runs, the gated-fusion run, and the auxiliary-loss Fold 4 result can all be discussed as completed evidence, but the aux-loss row should still be interpreted as an incremental refinement rather than a new strongest baseline.",
+        "This slide should present the combined Phase 1 evidence in a careful way. The baseline metrics, the facial-cue runs, the gated-fusion run, and the auxiliary-loss Fold 4 result can all be discussed as completed evidence, but the aux-loss row should still be interpreted as an incremental refinement rather than a new strongest baseline. The main confusions are neutral->joy (102), neutral->fear (62), neutral->anger (61), neutral->surprise (58), and sadness->neutral (61).",
     )
     add_bullets(
         doc,
@@ -1004,7 +1004,7 @@ Best checkpoint = epoch with the strongest validation result""",
     doc.add_heading("17. Slide 17 - Performance Evaluation and Model Comparison", level=1)
     add_para(
         doc,
-        "This slide should compare the major Phase 1 variants in one place. The purpose is to show how the model evolved rather than to claim that every new branch beat the baseline.",
+        "This slide should compare the major Phase 1 variants in one place. The purpose is to show how the model evolved rather than to claim that every new branch beat the baseline. The important student message is that the aux-loss result is real and measurable, but it is still a refinement on top of the baseline, not a replacement for it.",
     )
     add_bullets(
         doc,
@@ -1076,33 +1076,33 @@ Best checkpoint = epoch with the strongest validation result""",
     )
     add_para(
         doc,
-        "The simplest student explanation is: earlier stages establish the backbone, visual stages test whether facial cues help, gated fusion tests whether the model can trust video selectively, and the auxiliary-loss stage is a final refinement whose Fold 4 result can now be discussed as part of the completed model comparison.",
+        "The simplest student explanation is: earlier stages establish the backbone, visual stages test whether facial cues help, gated fusion tests whether the model can trust video selectively, and the auxiliary-loss stage is a final refinement whose Fold 4 result can now be discussed as part of the completed model comparison. The key aux-loss numbers are accuracy 0.5992, weighted F1 0.6056, macro F1 0.4330, and unweighted accuracy 0.4638.",
     )
 
     doc.add_heading("19. Slide 19 - Model Comparison Across Phase 1 Stages", level=1)
     add_para(
         doc,
-        "This slide should make the comparison story very explicit. The audience needs to see that the model family is improving in design quality, but the strongest overall anchor is still the original weighted-CE baseline.",
+        "This slide should make the comparison story very explicit. The audience needs to see that the model family is improving in design quality, but the strongest overall anchor is still the original weighted-CE baseline. Slide 20 is the Fold 2 chart, so it is the cleanest control because it shows the same split under multiple training strategies. The aux-loss Fold 4 result is still useful, but it belongs to the later comparison story rather than the Fold 2 chart.",
     )
     add_bullets(
         doc,
         [
-            "Weighted-CE baseline: strongest and most stable reference point.",
-            "Full-frame ViT: proves the visual branch has signal, but the confusion pattern is still neutral-heavy.",
-            "Face-crop ViT: better aligned with courtroom testimony because it focuses on the speaker face.",
-            "Gated fusion: completed refinement with accuracy 0.5992, weighted F1 0.6056, and macro F1 0.4330.",
-            "Aux-loss branch: completed comparison run, useful for discussion but still below the baseline.",
+            "Weighted-CE baseline: 0.6375 accuracy, 0.6254 weighted F1, 0.4430 macro F1.",
+            "Full-frame ViT: 0.6153 accuracy, 0.5727 weighted F1, 0.3760 macro F1.",
+            "Face-crop ViT: 0.3452 accuracy, 0.3104 weighted F1, 0.1352 macro F1.",
+            "Gated fusion: 0.6222 accuracy, 0.6109 weighted F1, 0.4191 macro F1.",
+            "Aux-loss branch: Fold 4 later result at 0.6054 accuracy, 0.6022 weighted F1, 0.4351 macro F1.",
         ],
     )
     add_para(
         doc,
-        "A clean student phrase is: 'The architecture gets better before the headline score does.' That lets you explain why a weaker score can still represent a more principled research direction.",
+        "A clean student phrase is: 'The architecture gets better before the headline score does.' That lets you explain why a weaker score can still represent a more principled research direction. On Fold 2, the baseline is still best, full-frame ViT keeps useful signal but weakens the class balance, face-crop-only underperforms badly, and gated fusion is the safest visual refinement. That is the talking point for Slide 20.",
     )
 
     doc.add_heading("20. Slide 20 - Confusion Matrix: What the Errors Mean", level=1)
     add_para(
         doc,
-        "This slide should translate the matrix into a story. The most important observation is that the model is still neutral-heavy, which means neutral is used as a fallback when the prediction is uncertain.",
+        "This slide should translate the matrix into a story. The most important observation is that the model is still neutral-heavy, which means neutral is used as a fallback when the prediction is uncertain. This is the Fold 2 aux-loss explanation slide, so the exact top confusions you should emphasize are neutral->joy, neutral->fear, neutral->anger, neutral->surprise, and sadness->neutral. That makes the matrix a structured imbalance story rather than a random-error story.",
     )
     add_bullets(
         doc,
@@ -1116,7 +1116,99 @@ Best checkpoint = epoch with the strongest validation result""",
     )
     add_para(
         doc,
-        "The reviewer-friendly conclusion is: the model is learning useful patterns, but the remaining mistakes are systematic, not random. That is why macro F1 stays lower than weighted F1 and why the baseline still matters.",
+        "The reviewer-friendly conclusion is: the model is learning useful patterns, but the remaining mistakes are systematic, not random. That is why macro F1 stays lower than weighted F1 and why the baseline still matters. In student terms, the aux-loss branch gives you a better experiment, but the confusion matrix shows that class imbalance is still the main thing holding the model back. For the call, Slide 21 should be presented as the Fold 2 aux-loss result narrative, not as the general Fold 4 story.",
+    )
+    add_para(
+        doc,
+        "To compare this slide against the weighted-CE Fold 2 baseline, explain that the baseline is still stronger on the main headline metrics: weighted-CE Fold 2 reaches accuracy 0.6375, weighted F1 0.6254, and macro F1 0.4430, while the Fold 2 aux-loss branch reaches accuracy 0.6054, weighted F1 0.6022, and macro F1 0.4351. So the aux-loss branch does not beat the baseline overall, even though it is still a meaningful refined experiment.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Baseline Fold 2 is the stronger anchor: it is higher on accuracy, weighted F1, and macro F1.",
+            "Aux-loss Fold 2 is still useful because it shows the model can learn with an additional video-focused objective, but the gain is not enough to replace the baseline.",
+            "The baseline confusion matrix already shows the same imbalance pattern, with neutral->joy, sadness->neutral, joy->neutral, anger->neutral, and neutral->surprise as the biggest confusions.",
+            "The important student message is that aux-loss changes the learning path, but it does not remove the neutral fallback behavior by itself.",
+            "Because the confusions remain systematic, the next research step should focus on how the video branch is represented and fused, not only on changing the loss.",
+        ],
+    )
+    add_para(
+        doc,
+        "When speaking to reviewers, keep the distinction very clear: the weighted-CE result is still the best Fold 2 baseline, and the aux-loss branch is a diagnostic refinement that confirms the model can absorb additional guidance without collapsing, but it does not yet overturn the baseline result.",
+    )
+
+    doc.add_heading("21. Slide 22 - Fold 4 Aux-loss: Metrics and Prediction View", level=1)
+    add_para(
+        doc,
+        "This new slide should be introduced as the Fold 4 counterpart to the Fold 2 comparison story. The audience should understand that this is the completed refinement stage: the aux-loss branch is being read on a different MELD split, and the metrics are strong enough to discuss as real evidence, even though they still do not beat the strongest weighted-CE baseline.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Accuracy: 0.5992.",
+            "Weighted accuracy: 0.5992.",
+            "Unweighted accuracy: 0.4638.",
+            "Macro F1: 0.4330.",
+            "Weighted F1: 0.6056.",
+            "Test samples: 2610.",
+        ],
+    )
+    add_para(
+        doc,
+        "Explain the prediction behavior in simple technical language: the model still leans neutral when it is uncertain, and the strongest confusions are neutral->joy, neutral->fear, neutral->anger, neutral->surprise, and sadness->neutral. That means the branch is learning something useful, but the class-imbalance problem is still present.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Fold 4 gives a different view of aux-loss than Fold 2, so it is the best place to discuss the mature result.",
+            "The result is meaningful but modest: it improves the video signal, not the whole baseline ranking.",
+            "Use this slide to explain that extra video supervision helps the visual branch, but it does not fully solve the MELD imbalance.",
+        ],
+    )
+
+
+    doc.add_heading("23. Slide 24 - Why Tribunal Proceedings First?", level=1)
+    add_para(
+        doc,
+        "This new slide explains the Phase 2 source strategy in student-level terms. The important message is that IRMCT, ICTY, and ICTR proceedings are used first because they are public, courtroom-like, and full of real testimony. That makes them a good intermediate source before moving into the Indian legal setting.",
+    )
+    add_bullets(
+        doc,
+        [
+            "IRMCT / ICTY / ICTR are international tribunal proceedings with witness testimony, lawyer questioning, interruptions, and emotionally rich exchanges.",
+            "They help the model learn courtroom structure: turn-taking, stress, hesitation, hostility, and formal questioning.",
+            "They are a better bridge from MELD to Indian courts than a direct jump because the adaptation is staged rather than abrupt.",
+            "Indian court data still matters, but it becomes the final domain layer after the model has learned testimony structure from tribunals.",
+            "The slide should not be framed as legal judgment; it is a domain-adaptation and emotion-analysis strategy.",
+        ],
+    )
+    add_para(
+        doc,
+        "Student explanation: this is curriculum learning for courtroom emotion analysis. MELD gives the generic emotion boundary, the tribunal proceedings teach courtroom interaction patterns, and the Indian legal corpus refines the language and procedure layer. That is why the source hierarchy is staged.",
+    )
+    add_para(
+        doc,
+        "For Indian courtroom testimony, the tribunal data helps because witness behavior in adversarial questioning shares structural properties across legal systems. The exact vocabulary differs, but the emotional dynamics of testimony are similar enough that the model can transfer the learned structure and then adapt it to Indian courts.",
+    )
+
+    doc.add_heading("22. Slide 23 - Phase 1 Conclusion: Freeze the Backbone and Move to Phase 2", level=1)
+    add_para(
+        doc,
+        "This is the final Phase 1 conclusion slide. The message should be very direct: Phase 1 has reached the point where the backbone is strong, the facial-cue branches have been tested, and the remaining problem is mostly imbalance and neutral bias. That means the project should stop spending effort on more fine-tuning and move to the legal-domain novelty of Phase 2.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Weighted-CE remains the strongest stable reference across the Phase 1 experiments.",
+            "Fold 2 and Fold 4 both show that facial cues are useful, but not enough to replace the backbone.",
+            "Aux-loss is a completed refinement, not a new base model.",
+            "The remaining mistakes are mostly neutral-heavy class confusions.",
+            "Phase 2 is the right next focus because that is where the courtroom-testimony novelty lives.",
+        ],
+    )
+    add_para(
+        doc,
+        "A student-friendly way to close is: 'Phase 1 gave us a solid, reproducible multimodal backbone and a measured set of facial-cue refinements. Now the interesting work is domain adaptation to legal testimony, not squeezing another fraction of a point from MELD.'",
     )
 
     return doc

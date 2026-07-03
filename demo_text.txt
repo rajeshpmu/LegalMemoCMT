@@ -1,0 +1,16 @@
+What to prepare before the review
+A clean folder with 3 to 5 demo videos
+A saved prediction CSV
+A confusion matrix image or table
+A metrics JSON or summary table
+One slide with a mini case-study of 2 or 3 examples
+A backup screenshot in case live playback fails
+8. Best slide order for the demo section
+Phase 1 status summary
+Model pipeline overview
+Example 1 prediction
+Example 2 prediction
+Example 3 prediction
+Metrics summary
+Confusion matrix and error analysis
+Conclusion and next-step handoff to Phase 2

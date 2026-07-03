@@ -1360,7 +1360,7 @@ librosa.core.audio.__audioread_load: Deprecated as of librosa version 0.10.0""",
     doc.add_heading("11. Phase 1 Combined Design Up to the Third Guidance Call", level=1)
     add_para(
         doc,
-        "The current Phase 1 design is broader than the original face-cue plan. It now includes the paper-aligned MELD weighted-CE backbone, the full-frame ViT facial-cue branch, the face-crop interpretation for courtroom testimony, gated fusion for selective modality weighting, and the auxiliary-loss branch whose Fold 4 evaluation is now completed and ready to discuss as part of the Phase 1 comparison.",
+        "The current Phase 1 design is broader than the original face-cue plan. It now includes the paper-aligned MELD weighted-CE backbone, the full-frame ViT facial-cue branch, the face-crop interpretation for courtroom testimony, gated fusion for selective modality weighting, and the auxiliary-loss branch whose Fold 4 evaluation is now completed and ready to discuss as part of the Phase 1 comparison. The completed Fold 4 aux-loss result is accuracy 0.5992, weighted F1 0.6056, macro F1 0.4330, and unweighted accuracy 0.4638 on 2610 MELD test samples.",
     )
     add_bullets(
         doc,
@@ -1380,7 +1380,7 @@ librosa.core.audio.__audioread_load: Deprecated as of librosa version 0.10.0""",
     doc.add_heading("12. Experimental Results, Confusion Matrices, and Error Analysis", level=1)
     add_para(
         doc,
-        "The experimental story should be presented in three levels. First, the weighted-CE baseline remains the stable anchor. Second, the full-frame and face-crop branches tell us whether facial cues carry useful signal. Third, the gated and aux-loss refinements tell us how far the visual branch can be pushed before the model becomes too soft or too biased. For the aux-loss branch, Fold 4 is now finished and can be interpreted as a modest improvement over weaker facial-cue stages, but not as a replacement for the strongest weighted-CE baseline.",
+        "The experimental story should be presented in three levels. First, the weighted-CE baseline remains the stable anchor. Second, the full-frame and face-crop branches tell us whether facial cues carry useful signal. Third, the gated and aux-loss refinements tell us how far the visual branch can be pushed before the model becomes too soft or too biased. For the aux-loss branch, Fold 4 is now finished and can be interpreted as a modest improvement over weaker facial-cue stages, but not as a replacement for the strongest weighted-CE baseline. The aux-loss Fold 4 result is still dominated by neutral-heavy confusions, especially neutral->joy (102), neutral->fear (62), neutral->anger (61), neutral->surprise (58), and sadness->neutral (61).",
     )
     add_table(
         doc,
@@ -1395,7 +1395,7 @@ librosa.core.audio.__audioread_load: Deprecated as of librosa version 0.10.0""",
     )
     add_para(
         doc,
-        "The confusion matrices should therefore be described carefully. The baseline matrix shows the main neutral-heavy structure. The full-frame and gated matrices show that facial cues are not random noise. The aux-loss Fold 4 matrix is now available and can be discussed as a small refinement that still leaves the neutral-heavy structure in place.",
+        "The confusion matrices should therefore be described carefully. The baseline matrix shows the main neutral-heavy structure. The full-frame and gated matrices show that facial cues are not random noise. The aux-loss Fold 4 matrix is now available and can be discussed as a small refinement that still leaves the neutral-heavy structure in place. In practical terms, the model still confuses joy with anger, surprise with fear, and sadness with neutral when the signal is unclear.",
     )
     add_bullets(
         doc,
@@ -1411,7 +1411,7 @@ librosa.core.audio.__audioread_load: Deprecated as of librosa version 0.10.0""",
     doc.add_heading("13. Performance Evaluation and Model Comparison", level=1)
     add_para(
         doc,
-        "Performance evaluation now needs to compare the model family as a sequence of decisions, not as unrelated runs. The baseline tells us where Phase 1 starts. The visual branches tell us whether the model is learning facial evidence. The gated branch tells us whether the model can decide when to trust the video. The auxiliary-loss branch is now part of the completed comparison, and its Fold 4 result should be read as an incremental refinement rather than a final replacement.",
+        "Performance evaluation now needs to compare the model family as a sequence of decisions, not as unrelated runs. The baseline tells us where Phase 1 starts. The visual branches tell us whether the model is learning facial evidence. The gated branch tells us whether the model can decide when to trust the video. The auxiliary-loss branch is now part of the completed comparison, and its Fold 4 result should be read as an incremental refinement rather than a final replacement. Numerically, the gated + aux model reaches 0.5992 accuracy and 0.6056 weighted F1, but the macro F1 of 0.4330 shows that minority-class behavior is still the weak point.",
     )
     add_table(
         doc,
@@ -1426,7 +1426,7 @@ librosa.core.audio.__audioread_load: Deprecated as of librosa version 0.10.0""",
     )
     add_para(
         doc,
-        "A student should read the comparison this way: the project is moving from a stable text-audio baseline toward more selective visual learning. The visual methods are not all equal. The full-frame path is the first proof of concept, the face-crop path is the better legal-domain formulation, the gated path is the selective refinement, and the auxiliary-loss path is the current training experiment that still needs final validation before it can become a thesis conclusion.",
+        "A student should read the comparison this way: the project is moving from a stable text-audio baseline toward more selective visual learning. The visual methods are not all equal. The full-frame path is the first proof of concept, the face-crop path is the better legal-domain formulation, the gated path is the selective refinement, and the auxiliary-loss path is the current training experiment that still needs final validation before it can become a thesis conclusion. The key lesson is that a stronger architecture does not automatically mean a stronger macro F1 if the class imbalance remains unresolved.",
     )
     add_bullets(
         doc,
@@ -1457,13 +1457,13 @@ librosa.core.audio.__audioread_load: Deprecated as of librosa version 0.10.0""",
     )
     add_para(
         doc,
-        "For a student-level paper draft, the clean thesis is: the model is already strong enough to be a reproducible baseline, and the visual branch work shows a principled path toward courtroom-testimony adaptation. The aux-loss branch should be described honestly as a completed refinement that improves some facial-cue behavior but still does not surpass the strongest baseline.",
+        "For a student-level paper draft, the clean thesis is: the model is already strong enough to be a reproducible baseline, and the visual branch work shows a principled path toward courtroom-testimony adaptation. The aux-loss branch should be described honestly as a completed refinement that improves some facial-cue behavior but still does not surpass the strongest baseline. In the Fold 4 aux-loss comparison, the model learns more than the weaker visual stages, but its confusion matrix still reveals the same neutral-heavy structure that limits macro F1.",
     )
 
     doc.add_heading("15. Overall Phase 1 Architecture for the Third Guidance Call", level=1)
     add_para(
         doc,
-        "This added section summarizes the complete Phase 1 system as it stands now. The architecture starts from a MELD utterance, branches into text, audio, and video processing, and then joins those branches at the fusion layer before the classifier produces the final emotion prediction. The video branch can be instantiated either as full-frame ViT or as the newer face-crop ViT path. The auxiliary-loss branch is drawn as part of the design, and its completed Fold 4 result is now part of the Phase 1 comparison set.",
+        "This added section summarizes the complete Phase 1 system as it stands now. The architecture starts from a MELD utterance, branches into text, audio, and video processing, and then joins those branches at the fusion layer before the classifier produces the final emotion prediction. The video branch can be instantiated either as full-frame ViT or as the newer face-crop ViT path. The auxiliary-loss branch is drawn as part of the design, and its completed Fold 4 result is now part of the Phase 1 comparison set. The student should read the aux-loss branch as an extra training signal for video rather than as a separate model family.",
     )
     add_bullets(
         doc,
@@ -1505,28 +1505,28 @@ librosa.core.audio.__audioread_load: Deprecated as of librosa version 0.10.0""",
     )
     add_para(
         doc,
-        "Student takeaway: the later stages do not restart the whole project. They keep the same backbone idea and change the visual or optimization settings so you can isolate the effect of the new component. That is why the baseline checkpoint, learning rate, epoch budget, and checkpoint-selection rule matter so much.",
+        "Student takeaway: the later stages do not restart the whole project. They keep the same backbone idea and change the visual or optimization settings so you can isolate the effect of the new component. That is why the baseline checkpoint, learning rate, epoch budget, and checkpoint-selection rule matter so much. For the aux-loss stage specifically, the important interpretation is that the final Fold 4 result is real and measurable, but it should be discussed as a refinement to the visual branch rather than as a replacement for the original weighted-CE baseline.",
     )
 
     doc.add_heading("17. Model Comparison Across Phase 1 Stages", level=1)
     add_para(
         doc,
-        "This section condenses the comparison story into one place. The main lesson is that the original weighted-CE backbone is still the strongest stable anchor, even though the visual branches and the gated aux-loss branch give you a better architecture story for the thesis.",
+        "This section condenses the comparison story into one place. The main lesson is that the original weighted-CE backbone is still the strongest stable anchor, even though the visual branches and the gated aux-loss branch give you a better architecture story for the thesis. Slide 20 is the Fold 2 comparison chart, so it gives the cleanest controlled view of how each stage behaves on the same split. Slide 21 is the Fold 2 aux-loss explanation, so it should be read as the completed refinement that follows the chart.",
     )
     add_table(
         doc,
-        ["Stage", "Metric reading", "Interpretation"],
+        ["Stage", "Accuracy / wF1 / Macro F1", "Interpretation"],
         [
-            ["Weighted-CE baseline", "Strongest stable anchor", "Best reference point for Phase 1"],
-            ["Full-frame ViT", "Lower than baseline", "Shows visual signal, but still neutral-biased"],
-            ["Face-crop ViT", "Cleaner than full-frame", "Better courtroom-testimony visual design"],
-            ["Gated fusion", "0.5992 acc / 0.6056 wF1 / 0.4330 macro F1", "Completed refinement, not new best baseline"],
-            ["Aux-loss branch", "Completed comparison run", "Incremental improvement, but still below baseline"],
+            ["Weighted-CE baseline", "0.6375 / 0.6254 / 0.4430", "Strongest stable Fold 2 reference point"],
+            ["Full-frame ViT", "0.6153 / 0.5727 / 0.3760", "Visual proof-of-concept; signal exists but is still neutral-heavy"],
+            ["Face-crop ViT", "0.3452 / 0.3104 / 0.1352", "Face-only control is weak here; face input alone is not enough"],
+            ["Gated fusion", "0.6222 / 0.6109 / 0.4191", "Useful selective refinement, but still below the baseline"],
+            ["Aux-loss branch", "0.6054 / 0.6022 / 0.4351", "Completed refinement, strongest facial-cue result, but still below the baseline"],
         ],
     )
     add_para(
         doc,
-        "Student explanation: the comparison is not just about the score. It is about what each stage proves. Full-frame ViT proves that facial signal exists. Face-crop proves that focusing on the speaker face is a better legal-domain choice. Gated fusion proves that the model can learn when to trust video. The aux-loss branch proves that extra supervision can help a bit, but not enough to replace the strongest weighted-CE checkpoint.",
+        "Student explanation: the comparison is not just about the score. It is about what each stage proves. Full-frame ViT proves that facial signal exists. Face-crop proves that focusing on the speaker face is a better legal-domain choice, but also shows that face-only video is not enough by itself. Gated fusion proves that the model can learn when to trust video. The aux-loss branch proves that extra supervision can help a bit, but not enough to replace the strongest weighted-CE checkpoint. In the review, keep Slide 20 for the Fold 2 architecture comparison and Slide 21 for the Fold 2 aux-loss result interpretation.",
     )
 
     doc.add_heading("18. Confusion Matrix Reading Guide", level=1)
@@ -1547,6 +1547,82 @@ librosa.core.audio.__audioread_load: Deprecated as of librosa version 0.10.0""",
     add_para(
         doc,
         "A student-friendly summary is: the matrix is not random. It has structure. The model knows some emotions, but when it is unsure it falls back to the more common or more generic classes. That is why macro F1 is still lower than weighted F1.",
+    )
+
+    doc.add_heading("19. Fold 4 Aux-loss Metrics and Prediction View", level=1)
+    add_para(
+        doc,
+        "This new section is the Fold 4 counterpart to the Fold 2 comparison story. It should be explained as a completed refinement stage: the model is now measured on a different MELD split, and the aux-loss branch has enough signal to be meaningful, even though it still does not overtake the strongest weighted-CE baseline.",
+    )
+    add_table(
+        doc,
+        ["Metric", "Value"],
+        [
+            ["Accuracy", "0.5992"],
+            ["Weighted accuracy", "0.5992"],
+            ["Unweighted accuracy", "0.4638"],
+            ["Macro F1", "0.4330"],
+            ["Weighted F1", "0.6056"],
+            ["Test samples", "2610"],
+        ],
+    )
+    add_bullets(
+        doc,
+        [
+            "Fold 4 shows the same overall pattern as the other facial-cue runs: useful signal, but still a strong neutral bias.",
+            "The strongest confusion pairs are neutral -> joy, neutral -> fear, neutral -> anger, neutral -> surprise, and sadness -> neutral.",
+            "The aux-loss branch improves the video learning signal, but not enough to replace the weighted-CE baseline anchor.",
+            "This is the correct student-level reading for the completed Fold 4 result.",
+        ],
+    )
+    add_para(
+        doc,
+        "The explanation to give in the review is that Fold 4 provides a cleaner look at the aux-loss behavior than Fold 2 because it checks the model on a different split. The result remains modest, but it is real and measurable, so it should be discussed as a completed refinement rather than as a provisional experiment.",
+    )
+
+
+    doc.add_heading("21. Why Tribunal Proceedings First for Phase 2", level=1)
+    add_para(
+        doc,
+        "This section explains why the Phase 2 source strategy starts with IRMCT, ICTY, and ICTR proceedings instead of jumping directly to Indian court data. The key student-level idea is that tribunal testimony is a better intermediate source because it gives the model real courtroom interaction while still being public, structured, and easier to use for controlled adaptation.",
+    )
+    add_bullets(
+        doc,
+        [
+            "IRMCT, ICTY, and ICTR are international criminal tribunal proceedings that include witness testimony, lawyer questioning, interruptions, and emotionally rich exchanges.",
+            "They are good for model training because they expose courtroom language, turn-taking, stress, hesitation, and adversarial interaction in a public format.",
+            "This helps the model learn courtroom structure first, before it is asked to adapt to the Indian legal setting.",
+            "Indian courts still matter as the final target domain, but tribunal proceedings give a cleaner bridge from general emotion recognition to legal testimony.",
+            "The goal is not legal judgment; the goal is emotion analysis and domain adaptation in a courtroom context.",
+        ],
+    )
+    add_para(
+        doc,
+        "Student explanation: think of this as staged curriculum learning. MELD teaches generic emotion boundaries, tribunal proceedings teach courtroom interaction, and Indian court material teaches local legal language and conventions. That is why the project uses IRMCT / ICTY / ICTR first: they reduce the difficulty of the transfer problem and make the Phase 2 adaptation more stable.",
+    )
+    add_para(
+        doc,
+        "For Indian courtroom testimony, the benefit is indirect but important. The model does not need the tribunal data to match India exactly. It needs the tribunal data to teach the model what testimony sounds like when people question, answer, hesitate, or react under pressure. Once that structure is learned, Indian court data can adapt the language and procedural style on top of it.",
+    )
+
+    doc.add_heading("20. Phase 1 Conclusion: Freeze the Backbone and Move to Phase 2", level=1)
+    add_para(
+        doc,
+        "This is the explicit closing statement for the Phase 1 story. The result set from Fold 2 and Fold 4 shows that the weighted-CE backbone is still the strongest stable anchor, and the extra visual branches are useful only as refinements. The proper student-level conclusion is that Phase 1 has done its job: it produced a reproducible baseline, proved that facial cues carry signal, and identified the remaining neutral-heavy error pattern. At this point, further fine-tuning is low-yield compared with the thesis value of moving to Phase 2.",
+    )
+    add_bullets(
+        doc,
+        [
+            "Phase 1 backbone is strong enough to freeze.",
+            "Fold 2 and Fold 4 both show that the baseline remains the safest reference point.",
+            "Aux-loss improves the visual branch, but it does not replace the backbone.",
+            "The remaining errors are mostly class-imbalance and neutral-bias issues, not architectural failure.",
+            "Phase 2 is now the correct place for novelty: courtroom-testimony adaptation and legal-domain modeling.",
+        ],
+    )
+    add_para(
+        doc,
+        "Student takeaway: stop asking Phase 1 to solve the whole thesis. It has already answered the reproducibility question. The next question is whether the model can be transferred into the legal domain in a controlled and well-justified way.",
     )
 
     return doc

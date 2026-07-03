@@ -1050,6 +1050,69 @@ def build_pptx() -> None:
         font_size=9.5,
     )
 
+    # Slide 22
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    add_bg(slide, prs)
+    add_title(slide, "Fold 4 Aux-loss: Metrics and Prediction View", "This slide is the completed Fold 4 counterpart to the Fold 2 comparison story.")
+    add_body(
+        slide,
+        [
+            "Fold 4 is the best place to read the aux-loss branch as a mature comparison point, because it checks the model on a different MELD split.",
+            "The result is modestly weaker than the strongest weighted-CE baseline, but it still shows that the video branch is learning something useful.",
+            "The prediction pattern is still neutral-heavy, so the class-imbalance problem has not disappeared.",
+            "Student framing: aux-loss improves the visual branch, but it does not overturn the baseline ranking.",
+        ],
+        x=0.75,
+        y=1.35,
+        w=6.15,
+        h=5.15,
+        font_size=14.2,
+    )
+    add_table(
+        slide,
+        ["Metric", "Value"],
+        [
+            ["Accuracy", "0.5992"],
+            ["Weighted accuracy", "0.5992"],
+            ["Unweighted accuracy", "0.4638"],
+            ["Macro F1", "0.4330"],
+            ["Weighted F1", "0.6056"],
+            ["Test samples", "2610"],
+        ],
+        left=7.0,
+        top=1.55,
+        width=5.75,
+        height=2.65,
+        col_widths=[2.6, 3.15],
+        font_size=11,
+    )
+    add_table(
+        slide,
+        ["Top confusion", "Count"],
+        [
+            ["neutral -> joy", "102"],
+            ["neutral -> fear", "62"],
+            ["neutral -> anger", "61"],
+            ["neutral -> surprise", "58"],
+            ["sadness -> neutral", "61"],
+        ],
+        left=7.0,
+        top=4.35,
+        width=5.75,
+        height=1.9,
+        col_widths=[3.95, 1.8],
+        font_size=10,
+    )
+    add_code_box(
+        slide,
+        "Fold 4 reading:\nThe aux-loss branch is a completed refinement. It improves the video signal enough to be meaningful, but the strongest stable Phase 1 baseline is still weighted CE.\nThe remaining errors are still concentrated around neutral, joy, anger, and surprise.",
+        0.8,
+        6.0,
+        11.85,
+        0.78,
+        font_size=10,
+    )
+
     prs.save(PPTX_PATH)
 
 
