@@ -1,4 +1,8 @@
 # Keep source and manifest files only.
+# Safety note:
+# - `data/` is ignored except for `data/manifests/`.
+# - Use the exact-add helper in `scripts/git_add_public_exact.sh`.
+# - Do not run `git add data/` or `git add .` when preparing a public push.
 
 # Data: ignore everything except manifests.
 data/*

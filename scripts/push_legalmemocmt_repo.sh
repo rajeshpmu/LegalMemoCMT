@@ -32,20 +32,8 @@ if ! git remote get-url "$REMOTE_NAME" >/dev/null 2>&1; then
   fi
 fi
 
-git add \
-  README.md \
-  README_NEW_BENCHMARK_APPROACH.md \
-  README_PAPER_EXACT.md \
-  README_PHASE1.md \
-  README_PRIMARY_BENCHMARKS_CV.md \
-  FIRST_SUBMISSION_CHECKLIST.md \
-  requirements-phase1.txt \
-  configs \
-  legalmemocmt_phase1 \
-  notebooks \
-  scripts \
-  src \
-  data/manifests
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+"$SCRIPT_DIR/git_add_public_exact.sh"
 
 echo "Staged files:"
 git status --short

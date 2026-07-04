@@ -139,7 +139,10 @@ def main() -> None:
         [sample],
         tokenizer=tokenizer,
         encoder_mode=model_cfg.encoder_mode,
-        load_video=False,
+        # Keep the freshly extracted ViT embeddings instead of falling back to
+        # an empty placeholder tensor. The demo already materializes the
+        # correct .npy cache above.
+        load_video=True,
         preprocess_cfg=preprocess_cfg,
     )
     batch = collate_samples([dataset_obj[0]])
