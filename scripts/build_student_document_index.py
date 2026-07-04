@@ -88,6 +88,16 @@ OPERATIONAL_DOCS: list[tuple[str, str, str]] = [
         "Use this when you want to understand why face crops may be better than full frames for courtroom-style facial-cue modeling and how the new scripts should run.",
     ),
     (
+        "Phase1_Raw_MP4_Demo_Differences_Student_Guide.docx",
+        "Student-level comparison guide that shows the same raw clip under the paper-aligned baseline and the gated + auxiliary-loss checkpoint, with exact outputs and technical interpretation.",
+        "Use this when you want a direct baseline-versus-improved-model explanation for the live demo and reviewer discussion.",
+    ),
+    (
+        "Phase1_Final_Demo_List_Student_Guide.docx",
+        "Safe final demo list for the reviewer presentation, with verified correct, near-miss, confident-wrong, and hard-neutral-failure clips plus the exact baseline and gated + aux commands.",
+        "Use this when you want a compact final-demo checklist that is safe to execute live without guessing the model behavior.",
+    ),
+    (
         "Guidance_Call_Advanced_AI_ML_Recommendations.docx",
         "Guidance-call technical report that explains the advanced next-step AI/ML recommendations, supported by MELD Fold 2, MELD Fold 4, and CREMA-D confusion matrices and metrics.",
         "Use this when you want a student-level deep dive into the recommended loss, contrastive, context, calibration, and stabilization upgrades for the next mentor discussion.",

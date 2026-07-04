@@ -174,6 +174,96 @@ def build_doc() -> Document:
         "A good viva answer is: 'This is a near-miss rather than a collapse. The model still ranked surprise in the top-3, but the sampled frames and the learned fusion weights leaned slightly toward anger. That tells me the model is learning meaningful emotion structure, but it still confuses similar high-arousal expressions under MELD imbalance.'",
     )
 
+    doc.add_heading("5.1 Labeled Example: Confidently Wrong Prediction", level=2)
+    add_para(
+        doc,
+        "The clip `test_dia278_utt5` is also useful as a second kind of error example, because the model is not only wrong, it is very confident: the ground truth is surprise, but the prediction is joy with confidence 0.9435. This is more severe than a small near-miss, because the model is not hovering near the decision boundary; it has strongly committed to the wrong class.",
+    )
+    add_table(
+        doc,
+        ["Field", "Value", "What it means"],
+        [
+            ["Ground truth", "surprise", "The MELD annotation says the clip should be surprise."],
+            ["Prediction", "joy", "The fused model representation strongly favored joy."],
+            ["Confidence", "0.9435", "The model was very certain, but certainty does not guarantee correctness."],
+            ["Top-2 class", "surprise 0.0284", "Surprise was far behind the winning class."],
+            ["Top-3 class", "anger 0.0092", "A third class still appeared, but with very low probability."],
+        ],
+    )
+    add_bullets(
+        doc,
+        [
+            "The transcript itself can bias the text branch toward joy: `That’s not true, there are great pictures of us!` sounds positive or playful.",
+            "The model may therefore learn a happy or approving tone even if the label is surprise.",
+            "The face-crop frames may also show smiling or friendly facial cues instead of the brief surprise peak.",
+            "Because the fusion block combines modalities, one strong modality can dominate the final decision.",
+            "High confidence here means the model’s internal score gap was large; it does not mean the answer is correct.",
+        ],
+    )
+    add_para(
+        doc,
+        "Student explanation: this is a confident misclassification, not a random error. The text and possibly the sampled facial frames may both look more like joy than surprise, so the fused classifier locked onto joy. The important lesson is that softmax confidence measures certainty, not truth. If the transcript, facial expression, and sampling all lean in one direction, the model can become very sure and still be wrong.",
+    )
+    add_para(
+        doc,
+        "If the reviewer asks where to inspect this in the code, explain the same stack in order: `src/data/preprocessing.py` for frame sampling, the face-crop or full-frame extraction branch in the ViT scripts, `src/models/model.py` for fusion, and `src/train/train.py` for how the model was trained and selected. A confident wrong prediction often means the model learned the wrong association too strongly, not that the code crashed.",
+    )
+
+    doc.add_heading("5.2 How to Diagnose Modal Bias, Label Ambiguity, and Frame Sampling", level=2)
+    add_para(
+        doc,
+        "To decide why this example failed, do not jump to one explanation. Check three things in order: modal bias, label ambiguity, and frame sampling. That gives you a defensible student-style diagnosis instead of a guess.",
+    )
+    add_numbered(
+        doc,
+        [
+            "First, test whether the prediction changes when you reduce the active modalities.",
+            "Second, inspect the transcript and ask whether the label could be context-dependent or ambiguous.",
+            "Third, inspect the cached video embedding and ask whether the sampled frames likely missed the peak expression.",
+        ],
+    )
+    add_table(
+        doc,
+        ["Diagnostic question", "How to test it", "What would support it"],
+        [
+            ["Is the model text/audio biased?", "Run the same clip with `MODALITIES=text,audio` and compare it with `MODALITIES=text,audio,video`.", "If the prediction stays close to joy or changes strongly when video is removed, the fusion may be leaning on text/audio."],
+            ["Is the label ambiguous?", "Read the transcript and compare it to the MELD label in the manifest.", "If the text sounds playful or positive while the label is surprise, the example may be context-dependent and hard to separate."],
+            ["Did frame sampling miss the peak?", "Inspect the cached `.npy` shape and remember that the script samples a fixed number of frames.", "If the expression is brief, the model may see smiling or neutral-looking frames instead of the true surprise moment."],
+        ],
+    )
+    add_code(
+        doc,
+        r"""# 1) Compare the full multimodal prediction with a text+audio-only run
+DEVICE=cuda \
+MODALITIES=text,audio \
+bash scripts/run_demo_paper_aligned_raw_mp4.sh \
+  test_dia278_utt5 \
+  data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia278_utt5.mp4
+
+# 2) Compare with video-only
+DEVICE=cuda \
+MODALITIES=video \
+bash scripts/run_phase1_raw_mp4_demo.sh \
+  test_dia278_utt5 \
+  data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia278_utt5.mp4
+
+# 3) Inspect the cached visual embedding shape
+python3 scripts/read_meld_vit_facecue_npy.py \
+  --file results/phase1_review_demo/raw_mp4_cache/test_dia278_utt5_facecrop.npy""",
+    )
+    add_para(
+        doc,
+        "What to look for in the `.npy` inspection: the shape should match the ViT-based cache, the values should be finite, and the embedding should not be empty. This does not prove the prediction is correct, but it does prove the feature-extraction step produced a usable visual tensor.",
+    )
+    add_para(
+        doc,
+        "Student explanation: if the text+audio-only run also prefers joy, then the transcript and audio are likely biasing the model. If the video-only run behaves differently, that means the visual branch contains a different signal but it is being overruled in the fused model. If the `.npy` embedding exists with the expected ViT size and finite values, the feature extraction step is not broken; the problem is then more likely the content of the sampled frames or the fusion decision itself.",
+    )
+    add_para(
+        doc,
+        "A very strong viva answer is: 'I diagnose this as a combination of modal bias and label ambiguity. The transcript is positive-sounding, so the text branch can lean toward joy. Surprise is a context-sensitive label in MELD, so the example is inherently ambiguous. The raw video is sampled into a fixed number of frames, so if the peak surprise moment is short, the ViT branch may not capture it strongly enough. The final classifier then becomes confidently wrong because multiple weak or misleading signals point to joy.'",
+    )
+
     doc.add_heading("5. Recommended Run Order", level=1)
     add_para(
         doc,
@@ -221,7 +311,7 @@ bash scripts/run_demo_paper_aligned_raw_mp4.sh \
     )
     add_para(
         doc,
-        "If you prefer a repeatable list of clips, create a CSV with sample_id and video_path columns, then run scripts/run_phase1_raw_mp4_demo_batch.sh on that CSV.",
+        "If you prefer a repeatable list of clips, use the sample CSV at `implementation_docments/phase1_raw_mp4_demo_pairs_sample.csv` or create your own CSV with `sample_id` and `video_path` columns, then run `scripts/run_phase1_raw_mp4_demo_batch.sh` on that file.",
     )
 
     doc.add_heading("6. The Exact Live Demo Command Pattern", level=1)
@@ -389,10 +479,41 @@ bash scripts/run_demo_meld_vit_facecrop_gated_video_aux_raw_mp4.sh \
         "A strong student answer is: 'The clip is correct as input, the pipeline extracted the visual features properly, but the final fusion layer still favored another class because the model is biased by the training distribution and the nearby emotions are hard to separate.'",
     )
 
-    doc.add_heading("13. How to Test a New Video That Is Not in the Dataset", level=1)
+    doc.add_heading("13. Common Demo Debugging Issue: Video Feature Shape Mismatch", level=1)
+    add_para(
+        doc,
+        "If the raw demo crashes with a message like 'mat1 and mat2 shapes cannot be multiplied (32x128 and 768x256)', that means the demo built the wrong video tensor shape for the model. In this project, the ViT-based raw mp4 pipeline produces 768-dimensional visual embeddings, so the model expects 768-dimensional video features, not a 128-dimensional placeholder tensor.",
+    )
+    add_table(
+        doc,
+        ["What happened", "Why it happened", "How to explain it"],
+        [
+            ["ViT extracted (32, 768) embeddings", "That is the correct shape for the face-crop ViT branch.", "This is the real video signal the model should see."],
+            ["Dataset returned a (32, 128) placeholder", "The raw demo accidentally told ManifestDataset not to load the extracted video.", "The model received the wrong feature dimension."],
+            ["Linear layer multiplication failed", "The model’s video encoder expected 768 input features but got 128.", "This is a code-path bug, not a dataset-label bug."],
+        ],
+    )
+    add_bullets(
+        doc,
+        [
+            "The fix is to ensure the raw demo keeps the extracted ViT embeddings.",
+            "In code, the key issue was the dataset wrapper being created with `load_video=False`.",
+            "After changing it to `load_video=True`, the `.npy` cache is passed into the model instead of being replaced by zeros.",
+        ],
+    )
+    add_para(
+        doc,
+        "If the reviewer asks what this means, say: 'The ViT branch was extracting the correct 768-dimensional features, but the demo wrapper accidentally replaced them with a 128-dimensional placeholder tensor. That created a shape mismatch at the video encoder. The fix is to keep the extracted .npy features inside the dataset object so the model sees the correct visual embedding dimension.'",
+    )
+
+    doc.add_heading("14. How to Test a New Video That Is Not in the Dataset", level=1)
     add_para(
         doc,
         "Sometimes a reviewer will show you a new mp4 clip that is not already part of MELD. In that case, the standard raw demo script cannot be used completely unchanged, because it expects a manifest row with a sample_id, split, label, transcript, and file paths. The cleanest way to handle this is a temporary demo flow.",
+    )
+    add_para(
+        doc,
+        "Worked example: use the MELD test clip `test_dia244_utt14` as the new-video example. In the document folder, a temporary manifest example is provided at `implementation_docments/phase1_unseen_video_temp_manifest_example.csv`. That file shows the exact fields the script needs.",
     )
     add_bullets(
         doc,
@@ -414,6 +535,18 @@ bash scripts/run_demo_meld_vit_facecrop_gated_video_aux_raw_mp4.sh \
             ["New clip without transcript", "Leave the text blank and explain that the run is limited to the available modalities.", "This is the honest way to present the evidence."],
         ],
     )
+    add_table(
+        doc,
+        ["Temporary field", "Example value", "Why it is needed"],
+        [
+            ["sample_id", "reviewer_video_001", "This is the temporary id the script uses to find the row."],
+            ["split", "test", "The demo should treat the clip like a test-time example."],
+            ["label", "0", "Use the true label only if you want to check correctness; otherwise explain it as optional."],
+            ["transcript", "Ross , foot on the floor or come over no more!", "This lets the text branch still contribute."],
+            ["audio_path", "data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia244_utt14.mp4", "The demo loader uses this to recover the audio stream."],
+            ["video_path", "data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia244_utt14.mp4", "The same clip is used for visual feature extraction."],
+        ],
+    )
     add_para(
         doc,
         "Student-level technical detail: the current scripts/predict_phase1_raw_mp4_demo.py starts by loading a manifest row using sample_id. That is why an unseen video needs either a temporary manifest entry or a new wrapper. After that, the same pipeline still applies: extract audio from the mp4, sample frames, build ViT features, load the checkpoint, and produce softmax probabilities.",
@@ -424,18 +557,18 @@ bash scripts/run_demo_meld_vit_facecrop_gated_video_aux_raw_mp4.sh \
     )
     add_code(
         doc,
-        r"""# Option A: create a temporary one-row manifest that points to the new clip
-# Fields should include: sample_id, split, label (if known), transcript (if known), audio_path, video_path
+        r"""# 1) Create a temporary manifest row using the example file
+# implementation_docments/phase1_unseen_video_temp_manifest_example.csv
 
-# Then reuse the normal raw demo script
+# 2) Then run the normal raw demo script on the raw mp4
 DEVICE=cuda \
 CHECKPOINT=results/paper_aligned_meld_cv/cmt_min/fold_2/best_model.pt \
 bash scripts/run_phase1_raw_mp4_demo.sh \
   reviewer_video_001 \
-  /path/to/reviewer_new_clip.mp4
+  data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia244_utt14.mp4
 
-# If the reviewer clip should be treated as prediction-only, do not present accuracy;
-# show the predicted label, confidence, and top-3 classes instead.""",
+# 3) If the reviewer clip is prediction-only, present the output as a live prediction,
+# not as an official dataset score.""",
     )
     add_bullets(
         doc,
@@ -451,7 +584,7 @@ bash scripts/run_phase1_raw_mp4_demo.sh \
         "If you want to explain the limitation clearly in the viva, say: 'For a new external video, I can still use the same feature-extraction and inference path, but I must either create a temporary manifest row or use a prediction-only wrapper. The prediction is valid, but it is not a dataset score unless I also know the ground-truth label.'",
     )
 
-    doc.add_heading("14. Suggested Talking Order During the Demo", level=1)
+    doc.add_heading("15. Suggested Talking Order During the Demo", level=1)
     add_numbered(
         doc,
         [
@@ -465,7 +598,7 @@ bash scripts/run_phase1_raw_mp4_demo.sh \
         ],
     )
 
-    doc.add_heading("15. Practical Troubleshooting", level=1)
+    doc.add_heading("16. Practical Troubleshooting", level=1)
     add_table(
         doc,
         ["Symptom", "Likely fix", "Where to look"],
@@ -482,7 +615,7 @@ bash scripts/run_phase1_raw_mp4_demo.sh \
         "One important note: a prediction being wrong does not necessarily mean the raw clip or the code is broken. It may simply mean the model is seeing a hard example, a class imbalance effect, or a frame-sampling limitation. Your job is to explain which of those is most likely for the given clip.",
     )
 
-    doc.add_heading("16. Short Closing Statement", level=1)
+    doc.add_heading("17. Short Closing Statement", level=1)
     add_para(
         doc,
         "If you need a short closing statement for the review, say: 'This SOP shows the complete Phase 1 demo path from raw mp4 to emotion prediction, plus the metrics and error analysis needed to defend the result. I can explain the wrappers, the inference script, the ViT feature extraction, the checkpoint loading, the softmax probabilities, and the likely causes of wrong predictions. That means I can demonstrate the model clearly and also defend its behavior technically.'",

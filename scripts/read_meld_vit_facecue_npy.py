@@ -8,7 +8,8 @@ import numpy as np
 
 
 #DEFAULT_DIR = Path("data/processed/MELD_VIT_FACECUE/train/video")
-DEFAULT_DIR = Path("data/processed/MELD_VIT_FACECROP/train/video")
+#DEFAULT_DIR = Path("data/processed/MELD_VIT_FACECROP/train/video")
+DEFAULT_DIR = Path("data/processed/MELD/test/video")
 
 
 def pick_file(directory: Path, file_path: str | None, index: int) -> Path:

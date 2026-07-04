@@ -115,6 +115,7 @@ bash scripts/run_demo_paper_aligned_raw_mp4.sh \
     )
 
     doc.add_heading("3. Bundle / Batch", level=1)
+    add_para(doc, "Sample CSV: implementation_docments/phase1_raw_mp4_demo_pairs_sample.csv")
     add_code(
         doc,
         r"""bash scripts/run_phase1_review_demo_bundle.sh
@@ -123,6 +124,7 @@ bash scripts/run_phase1_raw_mp4_demo_batch.sh demo_pairs.csv""",
 
     doc.add_heading("4. Unseen Reviewer Video", level=1)
     add_para(doc, "Use this only if the reviewer brings a clip not already in MELD.")
+    add_para(doc, "Temporary manifest example: implementation_docments/phase1_unseen_video_temp_manifest_example.csv")
     add_code(
         doc,
         r"""# Option A: temporary one-row manifest, then reuse the normal demo script
@@ -130,7 +132,7 @@ DEVICE=cuda \
 CHECKPOINT=results/paper_aligned_meld_cv/cmt_min/fold_2/best_model.pt \
 bash scripts/run_phase1_raw_mp4_demo.sh \
   reviewer_video_001 \
-  /path/to/reviewer_new_clip.mp4
+  data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia244_utt14.mp4
 
 # Option B: prediction-only use
 # Do not claim dataset accuracy unless ground truth is known.""",
@@ -142,6 +144,28 @@ bash scripts/run_phase1_raw_mp4_demo.sh \
     add_para(doc, "3. Run gated + aux on the same clip.")
     add_para(doc, "4. Show confidence and top-3.")
     add_para(doc, "5. Show metrics and confusion matrix.")
+
+    doc.add_heading("6. Per-Clip Execution Order", level=1)
+    add_table(
+        doc,
+        ["Order", "sample_id", "Raw MP4 file", "Use in demo"],
+        [
+            ["1", "test_dia279_utt9", "data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia279_utt9.mp4", "Correct neutral example."],
+            ["2", "test_dia278_utt5", "data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia278_utt5.mp4", "Confident wrong example."],
+            ["3", "test_dia143_utt2", "data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia143_utt2.mp4", "Another correct neutral example."],
+            ["4", "test_dia244_utt14", "data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia244_utt14.mp4", "Simple correct neutral example."],
+            ["5", "test_dia153_utt5", "data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia153_utt5.mp4", "Correct neutral example with lower confidence."],
+        ],
+    )
+    add_code(
+        doc,
+        r"""# Run each clip one at a time, in this order
+DEVICE=cuda bash scripts/run_demo_paper_aligned_raw_mp4.sh test_dia279_utt9 data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia279_utt9.mp4
+DEVICE=cuda bash scripts/run_demo_paper_aligned_raw_mp4.sh test_dia278_utt5 data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia278_utt5.mp4
+DEVICE=cuda bash scripts/run_demo_paper_aligned_raw_mp4.sh test_dia143_utt2 data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia143_utt2.mp4
+DEVICE=cuda bash scripts/run_demo_paper_aligned_raw_mp4.sh test_dia244_utt14 data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia244_utt14.mp4
+DEVICE=cuda bash scripts/run_demo_paper_aligned_raw_mp4.sh test_dia153_utt5 data/MELD/raw/MELD.Raw/test/output_repeated_splits_test/dia153_utt5.mp4""",
+    )
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     doc.save(OUTPUT)
