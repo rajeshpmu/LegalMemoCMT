@@ -98,6 +98,21 @@ OPERATIONAL_DOCS: list[tuple[str, str, str]] = [
         "Use this when you want a compact final-demo checklist that is safe to execute live without guessing the model behavior.",
     ),
     (
+        "Phase1_ESA_Three_Video_Demo_Guide.docx",
+        "Compact ESA review guide for the three-video live demo, including exact commands, current outputs, and student-level interpretation.",
+        "Use this when you want a short review-day sheet that you can follow clip by clip during the ESA presentation.",
+    ),
+    (
+        "LegalMemoCMT_Phase1_ESA_Prep_Guide.docx",
+        "Single combined ESA preparation guide that merges the best live demo SOP, the code explanation, the benchmark workflow, and the ESA slide speaking notes.",
+        "Use this as the main study document before the ESA review because it gives both the slide-by-slide story and the demo/code defense story in one place.",
+    ),
+    (
+        "LegalMemoCMT_Phase1_IEEE_Style_Project_Report.docx",
+        "IEEE-style Phase 1 project report focusing on paper-aligned MELD replication with a supporting ViT facial-cue extension.",
+        "Use this when you want a report-format summary with methods, results, discussion, figures, and references.",
+    ),
+    (
         "Guidance_Call_Advanced_AI_ML_Recommendations.docx",
         "Guidance-call technical report that explains the advanced next-step AI/ML recommendations, supported by MELD Fold 2, MELD Fold 4, and CREMA-D confusion matrices and metrics.",
         "Use this when you want a student-level deep dive into the recommended loss, contrastive, context, calibration, and stabilization upgrades for the next mentor discussion.",
