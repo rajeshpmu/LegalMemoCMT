@@ -128,10 +128,21 @@ def _read_urls(path: Path) -> list[str]:
     return urls
 
 
-def _probe_title(url: str, *, ytdlp_bin: str, cookies_from_browser: str | None) -> tuple[str, str]:
+def _probe_title(
+    url: str,
+    *,
+    ytdlp_bin: str,
+    cookies_from_browser: str | None,
+    cookies_file: str | None,
+    js_runtimes: str | None,
+) -> tuple[str, str]:
     cmd = [ytdlp_bin, "--no-playlist", "--get-id", "--get-title"]
-    if cookies_from_browser:
+    if cookies_file:
+        cmd += ["--cookies", cookies_file]
+    elif cookies_from_browser:
         cmd += ["--cookies-from-browser", cookies_from_browser]
+    if js_runtimes:
+        cmd += ["--js-runtimes", js_runtimes]
     cmd.append(url)
     proc = subprocess.run(cmd, check=True, text=True, capture_output=True)
     lines = [line.strip() for line in proc.stdout.splitlines() if line.strip()]
@@ -147,6 +158,8 @@ def main() -> None:
     parser.add_argument("--summary-json", default=str(DEFAULT_SUMMARY_JSON))
     parser.add_argument("--ytdlp-bin", default="yt-dlp")
     parser.add_argument("--cookies-from-browser", default="chrome")
+    parser.add_argument("--cookies-file", default="")
+    parser.add_argument("--js-runtimes", default="")
     parser.add_argument("--skip-probe", action="store_true", help="Use the built-in title mapping only")
     args = parser.parse_args()
 
@@ -161,6 +174,10 @@ def main() -> None:
     ensure_dir(summary_json.parent)
 
     cookies_from_browser = args.cookies_from_browser.strip() or None
+    cookies_file = args.cookies_file.strip() or None
+    if cookies_file and not Path(cookies_file).is_file():
+        raise SystemExit(f"Cookies file not found: {cookies_file}")
+    js_runtimes = args.js_runtimes.strip() or None
     rows: list[dict[str, Any]] = []
     category_counts: dict[str, int] = {}
     requested_counts: dict[str, int] = {}
@@ -171,7 +188,13 @@ def main() -> None:
         title = known.get("title", "")
         if not args.skip_probe:
             try:
-                probed_id, probed_title = _probe_title(url, ytdlp_bin=args.ytdlp_bin, cookies_from_browser=cookies_from_browser)
+                probed_id, probed_title = _probe_title(
+                    url,
+                    ytdlp_bin=args.ytdlp_bin,
+                    cookies_from_browser=cookies_from_browser,
+                    cookies_file=cookies_file,
+                    js_runtimes=js_runtimes,
+                )
                 youtube_id = probed_id or youtube_id
                 title = probed_title or title
             except Exception:

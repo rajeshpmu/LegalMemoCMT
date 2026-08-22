@@ -42,10 +42,27 @@ def _run(cmd: list[str], *, capture: bool = False) -> subprocess.CompletedProces
     return subprocess.run(cmd, **kwargs)
 
 
-def _probe_metadata(url: str, *, ytdlp_bin: str, cookies_from_browser: str | None) -> dict[str, Any]:
+def _yt_dlp_auth_args(cookies_from_browser: str | None, cookies_file: str | None, js_runtimes: str | None) -> list[str]:
+    args: list[str] = []
+    if cookies_file:
+        args += ["--cookies", cookies_file]
+    elif cookies_from_browser:
+        args += ["--cookies-from-browser", cookies_from_browser]
+    if js_runtimes:
+        args += ["--js-runtimes", js_runtimes]
+    return args
+
+
+def _probe_metadata(
+    url: str,
+    *,
+    ytdlp_bin: str,
+    cookies_from_browser: str | None,
+    cookies_file: str | None,
+    js_runtimes: str | None,
+) -> dict[str, Any]:
     cmd = [ytdlp_bin, "--dump-single-json", "--no-playlist"]
-    if cookies_from_browser:
-        cmd += ["--cookies-from-browser", cookies_from_browser]
+    cmd += _yt_dlp_auth_args(cookies_from_browser, cookies_file, js_runtimes)
     cmd.append(url)
     proc = _run(cmd, capture=True)
     try:
@@ -61,13 +78,14 @@ def _download_video(
     output_template: str,
     format_string: str,
     cookies_from_browser: str | None,
+    cookies_file: str | None,
+    js_runtimes: str | None,
     skip_existing: bool,
 ) -> None:
     cmd = [ytdlp_bin, "--no-playlist", "-f", format_string, "--merge-output-format", "mp4", "-o", output_template]
     if skip_existing:
         cmd.append("--no-overwrites")
-    if cookies_from_browser:
-        cmd += ["--cookies-from-browser", cookies_from_browser]
+    cmd += _yt_dlp_auth_args(cookies_from_browser, cookies_file, js_runtimes)
     cmd.append(url)
     _run(cmd)
 
@@ -78,6 +96,8 @@ def _download_subtitles(
     ytdlp_bin: str,
     output_template: str,
     cookies_from_browser: str | None,
+    cookies_file: str | None,
+    js_runtimes: str | None,
     skip_existing: bool,
     subtitle_langs: str,
 ) -> None:
@@ -95,8 +115,7 @@ def _download_subtitles(
     ]
     if skip_existing:
         cmd.append("--no-overwrites")
-    if cookies_from_browser:
-        cmd += ["--cookies-from-browser", cookies_from_browser]
+    cmd += _yt_dlp_auth_args(cookies_from_browser, cookies_file, js_runtimes)
     cmd.append(url)
     _run(cmd)
 
@@ -150,6 +169,8 @@ def main() -> None:
     parser.add_argument("--ytdlp-bin", default="yt-dlp", help="yt-dlp executable")
     parser.add_argument("--ffmpeg-bin", default="ffmpeg", help="ffmpeg executable")
     parser.add_argument("--cookies-from-browser", default="chrome", help="Browser profile for yt-dlp cookies; use empty string to disable")
+    parser.add_argument("--cookies-file", default="", help="Netscape-format cookies file; keep outside the repository")
+    parser.add_argument("--js-runtimes", default="", help="yt-dlp JavaScript runtimes, for example deno:/usr/local/bin/deno")
     parser.add_argument("--format-string", default=DEFAULT_FORMAT, help="yt-dlp format selector")
     parser.add_argument("--subtitle-langs", default="en", help="Subtitle language list for yt-dlp")
     parser.add_argument("--skip-existing", action="store_true", help="Reuse already downloaded files")
@@ -197,6 +218,10 @@ def main() -> None:
     }
 
     cookies_from_browser = args.cookies_from_browser.strip() or None
+    cookies_file = args.cookies_file.strip() or None
+    if cookies_file and not Path(cookies_file).is_file():
+        raise SystemExit(f"Cookies file not found: {cookies_file}")
+    js_runtimes = args.js_runtimes.strip() or None
     for row_num, url in enumerate(urls, start=1):
         meta: dict[str, Any] = {}
         title = ""
@@ -214,7 +239,13 @@ def main() -> None:
         notes: list[str] = []
 
         try:
-            meta = _probe_metadata(url, ytdlp_bin=args.ytdlp_bin, cookies_from_browser=cookies_from_browser)
+            meta = _probe_metadata(
+                url,
+                ytdlp_bin=args.ytdlp_bin,
+                cookies_from_browser=cookies_from_browser,
+                cookies_file=cookies_file,
+                js_runtimes=js_runtimes,
+            )
             video_id = str(meta.get("id") or meta.get("display_id") or sha1_short(url))
             title = str(meta.get("title") or "")
             duration_seconds = int(meta.get("duration") or 0)
@@ -242,6 +273,8 @@ def main() -> None:
                     output_template=str(base_stem.with_suffix(".%(ext)s")),
                     format_string=args.format_string,
                     cookies_from_browser=cookies_from_browser,
+                    cookies_file=cookies_file,
+                    js_runtimes=js_runtimes,
                     skip_existing=args.skip_existing,
                 )
                 video_status = "downloaded"
@@ -283,6 +316,8 @@ def main() -> None:
                         ytdlp_bin=args.ytdlp_bin,
                         output_template=str(base_stem.with_suffix(".%(ext)s")),
                         cookies_from_browser=cookies_from_browser,
+                        cookies_file=cookies_file,
+                        js_runtimes=js_runtimes,
                         skip_existing=args.skip_existing,
                         subtitle_langs=args.subtitle_langs,
                     )
@@ -296,6 +331,8 @@ def main() -> None:
                     ytdlp_bin=args.ytdlp_bin,
                     output_template=str(base_stem.with_suffix(".%(ext)s")),
                     cookies_from_browser=cookies_from_browser,
+                    cookies_file=cookies_file,
+                    js_runtimes=js_runtimes,
                     skip_existing=args.skip_existing,
                     subtitle_langs=args.subtitle_langs,
                 )
