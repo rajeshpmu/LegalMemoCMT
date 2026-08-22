@@ -1,0 +1,21 @@
+label_family: courtroom_affect
+labels:
+  - CALM_COMPOSED
+  - HESITANT_UNCERTAIN
+  - GUARDED
+  - DEFENSIVE
+  - ASSERTIVE
+  - TENSE
+  - DISTRESSED
+  - AGITATED
+  - UNCLEAR
+intensity_scale:
+  0: absent_or_minimal
+  1: mild
+  2: moderate
+  3: strong
+status_field: courtroom_affect_annotation_status
+human_statuses:
+  - HUMAN_SINGLE
+  - HUMAN_MULTI
+  - ADJUDICATED

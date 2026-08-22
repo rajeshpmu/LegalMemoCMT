@@ -1,0 +1,12 @@
+{
+  "files_with_cues": 11,
+  "files_without_cues": 0,
+  "output_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_utterance_manifest.csv",
+  "raw_root": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/phase2/clancy/corpus/raw",
+  "rows_written": 77442,
+  "source_manifest": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_source_manifest.csv",
+  "utterances_kept": 77442,
+  "utterances_skipped_empty": 2697,
+  "utterances_total": 80139,
+  "vtt_files": 11
+}

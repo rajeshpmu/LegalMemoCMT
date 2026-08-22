@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -25,8 +26,8 @@ CASE_HINTS = {
     "karadzic": "IT-95-5/18",
     "mladic": "IT-09-92",
     "popovic": "IT-05-88",
-    "bagosora": "ICTR-98-41-T",
-    "akayesu": "ICTR-96-4-T",
+    "bagosora": "ICTR-98-41",
+    "akayesu": "ICTR-96-04",
 }
 
 
@@ -87,6 +88,9 @@ def _download(url: str, dest: Path, session: requests.Session | None) -> Path:
 
 def verify_media(path: Path) -> None:
     subprocess.run(["file", str(path)], check=True)
+    if shutil.which("ffprobe") is None:
+        print("ffprobe not found; skipped detailed stream verification.")
+        return
     subprocess.run(["ffprobe", "-v", "error", "-show_streams", "-show_format", str(path)], check=True)
 
 
@@ -113,8 +117,9 @@ def _pick_videos(docs: list[dict[str, object]], *, title_contains: str, date: st
     if title_contains.strip():
         needle = title_contains.strip().lower()
         candidates = [d for d in candidates if needle in str(d.get("DocumentTitle") or "").lower()]
-    candidates = sorted(candidates, key=lambda d: str(d.get("DocumentTitle") or ""))
-    return candidates
+    video_candidates = [d for d in candidates if _looks_like_video_url(_normalize_path(str(d.get("DocumentPath") or "")))]
+    video_candidates = sorted(video_candidates, key=lambda d: str(d.get("DocumentTitle") or ""))
+    return video_candidates
 
 
 def _resolve_case_number(case_name: str, case_id: str) -> str:

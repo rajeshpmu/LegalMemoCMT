@@ -16,10 +16,9 @@ echo
 "$PYTHON_BIN" - <<'PY' "$SCOTUS_INDEX" "$TRIBUNAL_INDEX" "$TRIBUNAL_SOURCES" "$WITNESS_MANIFEST"
 from __future__ import annotations
 
+import csv
 import sys
 from pathlib import Path
-
-import pandas as pd
 
 scotus_index = Path(sys.argv[1])
 tribunal_index = Path(sys.argv[2])
@@ -37,24 +36,32 @@ source_ok = report(tribunal_sources, "tribunal_sources")
 witness_ok = report(witness_manifest, "witness_manifest")
 
 if source_ok:
-    tri_df = pd.read_csv(tribunal_sources)
-    print(f"tribunal_sources rows: {len(tri_df)}")
-    print(f"tribunal_sources columns: {list(tri_df.columns)}")
+    with tribunal_sources.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        tri_rows = list(reader)
+        print(f"tribunal_sources rows: {len(tri_rows)}")
+        print(f"tribunal_sources columns: {list(reader.fieldnames or [])}")
 
 if witness_ok:
-    wit_df = pd.read_csv(witness_manifest)
-    print(f"witness_manifest rows: {len(wit_df)}")
-    print(f"witness_manifest columns: {list(wit_df.columns)}")
+    with witness_manifest.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        wit_rows = list(reader)
+        print(f"witness_manifest rows: {len(wit_rows)}")
+        print(f"witness_manifest columns: {list(reader.fieldnames or [])}")
 
 if scotus_ok:
-    scotus_df = pd.read_csv(scotus_index)
-    print(f"scotus_index rows: {len(scotus_df)}")
-    print(f"scotus_index columns: {list(scotus_df.columns)}")
+    with scotus_index.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        scotus_rows = list(reader)
+        print(f"scotus_index rows: {len(scotus_rows)}")
+        print(f"scotus_index columns: {list(reader.fieldnames or [])}")
 
 if tribunal_ok:
-    tribunal_df = pd.read_csv(tribunal_index)
-    print(f"tribunal_index rows: {len(tribunal_df)}")
-    print(f"tribunal_index columns: {list(tribunal_df.columns)}")
+    with tribunal_index.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        tribunal_rows = list(reader)
+        print(f"tribunal_index rows: {len(tribunal_rows)}")
+        print(f"tribunal_index columns: {list(reader.fieldnames or [])}")
 
 print()
 print("Eyewitness incongruence paper: reference only, not a required dataset.")

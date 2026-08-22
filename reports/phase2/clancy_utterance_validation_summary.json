@@ -1,0 +1,19 @@
+{
+  "bad_youtube_id_rows": 0,
+  "blank_audio_path_rows": 0,
+  "blank_source_url_rows": 0,
+  "blank_subtitle_path_rows": 0,
+  "blank_video_path_rows": 0,
+  "duplicate_composite_rows": 0,
+  "duplicate_utterance_ids": 0,
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_utterance_manifest.csv",
+  "issues_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/reports/phase2/clancy_utterance_validation_issues.csv",
+  "notes": [
+    "Duplicate utterance_text values are allowed because the same courtroom phrases can recur across a long trial.",
+    "The validation checks exact row identity and traceability, not transcript-text uniqueness."
+  ],
+  "status": "PASS",
+  "total_rows": 77442,
+  "unique_utterance_ids": 77442,
+  "utterance_id_prefix_mismatch_rows": 0
+}

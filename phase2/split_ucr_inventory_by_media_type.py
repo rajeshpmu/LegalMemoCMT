@@ -13,7 +13,7 @@ else:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Split UCR inventory into video and transcript-only manifests")
-    parser.add_argument("--inventory-csv", default="data/processed/phase2/ucr_case_inventory.csv", help="Inventory CSV produced by build_ucr_case_inventory.py")
+    parser.add_argument("--inventory-csv", default="data/processed/phase2/verified_case_inventory.csv", help="Verified inventory CSV produced by build_ucr_case_inventory.py")
     parser.add_argument("--video-output-csv", default="data/processed/phase2/ucr_video_candidate_manifest.csv", help="Output CSV for video-bearing cases")
     parser.add_argument("--transcript-output-csv", default="data/processed/phase2/ucr_transcript_only_manifest.csv", help="Output CSV for transcript-only cases")
     parser.add_argument("--min-video-docs", type=int, default=1, help="Minimum number of video docs required to keep a case in the video manifest")

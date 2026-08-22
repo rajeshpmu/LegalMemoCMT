@@ -1,0 +1,31 @@
+{
+  "confidence_counts": {
+    "HIGH": 3160,
+    "LOW": 74282
+  },
+  "input_csv": "data/processed/phase2/clancy/clancy_training_manifest_weak.csv",
+  "issues_count": 0,
+  "label_counts": {
+    "anger": 282,
+    "confidence": 1706,
+    "fear": 449,
+    "neutral": 74282,
+    "sadness": 172,
+    "stress": 551
+  },
+  "leakage_groups": [],
+  "missing_columns": [],
+  "ready_for_finetune": true,
+  "review_flag_counts": {
+    "NO": 74282,
+    "YES": 3160
+  },
+  "split_counts": {
+    "dev": 11076,
+    "test": 10956,
+    "train": 55410
+  },
+  "status": "PASS",
+  "total_rows": 77442,
+  "unique_utterance_ids": 77442
+}

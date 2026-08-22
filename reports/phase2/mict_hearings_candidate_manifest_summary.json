@@ -1,0 +1,20 @@
+{
+  "candidate_case_names": [
+    "Kabuga, F\u00e9licien",
+    "Stani\u0161i\u0107 and Simatovi\u0107",
+    "Ngirabatware, Augustin",
+    "Ntakirutimana, G\u00e9rard",
+    "Joji\u0107 and Radeta"
+  ],
+  "candidate_case_numbers": [
+    "MICT-13-38",
+    "MICT-15-96",
+    "MICT-12-29",
+    "MICT-12-17-R",
+    "MICT-17-111-R90"
+  ],
+  "not_usable_rows": 5,
+  "output_csv": "data/processed/phase2/mict_hearings_candidate_manifest.csv",
+  "rows_written": 5,
+  "usable_rows": 0
+}

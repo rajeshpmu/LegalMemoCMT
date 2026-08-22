@@ -1,0 +1,22 @@
+{
+  "confidence_counts": {
+    "HIGH": 3160,
+    "LOW": 74282
+  },
+  "input_csv": "data/processed/phase2/clancy/clancy_dataset_manifest.csv",
+  "label_counts": {
+    "anger": 282,
+    "confidence": 1706,
+    "fear": 449,
+    "neutral": 74282,
+    "sadness": 172,
+    "stress": 551
+  },
+  "labels_csv": "data/processed/phase2/clancy/clancy_weak_labels.csv",
+  "notes": "Weak labels are generated from transparent transcript keyword rules and must be treated as provisional, not gold truth.",
+  "review_csv": "reports/phase2/clancy_weak_label_review.csv",
+  "review_rows": 3160,
+  "status": "PASS",
+  "total_rows": 77442,
+  "training_csv": "data/processed/phase2/clancy/clancy_training_manifest_weak.csv"
+}

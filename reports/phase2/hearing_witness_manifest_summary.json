@@ -1,0 +1,13 @@
+{
+  "estimated_trimodal_hours": 184.0,
+  "estimated_utterances": 0,
+  "hearing_records": 2926,
+  "paired_hearings": 180,
+  "protected_witnesses": 0,
+  "resolved_witnesses": 0,
+  "transcript_only_hearings": 2686,
+  "trimodal_eligible_hearings": 180,
+  "unresolved_witness_hearings": 2926,
+  "verified_cases": 8,
+  "video_only_hearings": 60
+}

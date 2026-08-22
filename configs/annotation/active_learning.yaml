@@ -1,0 +1,28 @@
+seed_size: 500
+batch_size_per_iteration: 100
+require_witness_speaking: false
+diversity_columns:
+  - youtube_id
+  - witness_id
+  - examination_phase
+selection_strategy: uncertainty_disagreement
+entropy_threshold: 0.0
+margin_uncertainty_threshold: 0.0
+disagreement_threshold: 0.0
+rarity_threshold: 0.0
+priority_weights:
+  entropy: 0.35
+  margin: 0.25
+  modality_disagreement: 0.20
+  class_rarity: 0.10
+  quality_flag: 0.10
+sampling_strategies:
+  - uncertainty
+  - margin
+  - entropy
+  - disagreement
+  - diversity
+  - class_balance
+  - witness_diversity
+  - examination_phase_diversity
+  - random_control

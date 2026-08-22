@@ -1,0 +1,20 @@
+{
+  "extreme_iqr_fence_seconds": 32.203,
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_turn_manifest_post_rejection.csv",
+  "interpretation": "IQR outliers are review candidates. Do not automatically reject every statistical outlier; split valid testimony and reject only confirmed non-value or unresolvable records.",
+  "iqr_seconds": 7.644,
+  "outlier_band_counts": {
+    "HIGH_OVER_60_SECONDS": 110,
+    "IQR_OUTLIER_OVER_20_8155_SECONDS": 481,
+    "REVIEW_OVER_30_SECONDS": 333
+  },
+  "outlier_rows": 924,
+  "output_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_duration_outliers.csv",
+  "q1_seconds": 1.626,
+  "q3_seconds": 9.27,
+  "rows_over_300_seconds": 0,
+  "rows_over_30_seconds": 443,
+  "rows_over_60_seconds": 110,
+  "total_rows": 11892,
+  "upper_iqr_fence_seconds": 20.736
+}

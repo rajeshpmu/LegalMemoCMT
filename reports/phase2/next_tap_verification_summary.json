@@ -1,0 +1,20 @@
+{
+  "covered_map_csv": "data/phase2/ucr_case_video_strict/inspection/ucr_case_videos_strict_row_source_map.csv",
+  "covered_source_ids": 6,
+  "excluded_rows": 6,
+  "notes": "If selected_rows is zero, the current TAP shortlist has already been consumed and the next action is to expand planning manifests again.",
+  "output_csv": "data/processed/phase2/next_tap_verification_manifest.csv",
+  "remaining_rows": 3,
+  "selected_case_names": [
+    "Bagosora et al. Trial"
+  ],
+  "selected_case_numbers": [
+    "ICTR-98-41"
+  ],
+  "selected_rows": 1,
+  "selected_source_ids": [
+    "ictr_bagosora_et_al_trial_01"
+  ],
+  "source_csv": "data/processed/phase2/tap_candidate_manifest.csv",
+  "total_source_rows": 9
+}

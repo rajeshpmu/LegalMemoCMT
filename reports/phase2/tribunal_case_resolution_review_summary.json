@@ -1,0 +1,16 @@
+{
+  "output_csv": "data/processed/phase2/tribunal_case_resolution_review.csv",
+  "resolved_case_numbers": [
+    "ICTR-96-04",
+    "ICTR-96-17"
+  ],
+  "resolved_rows": 3,
+  "rows_inspected": 5,
+  "source_csv": "data/processed/phase2/tribunal_media_discovery.csv",
+  "target_families": [
+    "akayesu",
+    "irmct hearings",
+    "ntakirutimana / ntahobali related cases"
+  ],
+  "unresolved_rows": 2
+}

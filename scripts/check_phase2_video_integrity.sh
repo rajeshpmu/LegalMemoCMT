@@ -14,9 +14,12 @@ echo "Repository root: $ROOT_DIR"
 echo "Manifest: $MANIFEST"
 echo
 
-"$PYTHON_BIN" - <<'PY' "$MANIFEST"
+FALLBACK_SCRIPT="$ROOT_DIR/scripts/check_mp4_fallback.py"
+
+"$PYTHON_BIN" - "$MANIFEST" "$FALLBACK_SCRIPT" <<'PY'
 from __future__ import annotations
 
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -24,6 +27,7 @@ from pathlib import Path
 import pandas as pd
 
 manifest = Path(sys.argv[1])
+fallback_script = Path(sys.argv[2])
 if not manifest.exists():
     raise SystemExit(f"Manifest not found: {manifest}")
 
@@ -42,8 +46,19 @@ def check_video(path_str: object) -> tuple[bool, str]:
         file_out = subprocess.run(["file", str(p)], check=True, capture_output=True, text=True).stdout.strip()
         if "HTML document" in file_out or "ASCII text" in file_out:
             return False, file_out
+        ffprobe_bin = shutil.which("ffprobe")
+        if ffprobe_bin is None:
+            fb = subprocess.run(
+                [sys.executable, str(fallback_script), str(p)],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+            if fb.returncode == 0:
+                return True, "fallback mp4 validation passed"
+            return False, fb.stdout.strip() or fb.stderr.strip() or "fallback validator failed"
         probe = subprocess.run(
-            ["ffprobe", "-v", "error", "-show_streams", "-show_format", str(p)],
+            [ffprobe_bin, "-v", "error", "-show_streams", "-show_format", str(p)],
             check=True,
             capture_output=True,
             text=True,

@@ -1,0 +1,17 @@
+{
+  "audio_existing": 11,
+  "audio_extracted": 0,
+  "audio_failed": 0,
+  "manifest_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_corpus_manifest.csv",
+  "manifest_rows": 11,
+  "output_root": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/phase2/clancy/corpus",
+  "source_urls_file": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/clancy_urls.txt",
+  "subtitles_downloaded": 0,
+  "subtitles_existing": 11,
+  "subtitles_failed": 0,
+  "total_duration_minutes": 2003.9,
+  "urls_total": 11,
+  "videos_downloaded": 0,
+  "videos_existing": 11,
+  "videos_failed": 0
+}

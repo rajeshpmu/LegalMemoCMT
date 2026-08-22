@@ -1,0 +1,19 @@
+{
+  "cases_represented": 3,
+  "distinct_witnesses": 64,
+  "duplicate_media_count": 0,
+  "estimated_utterances": 125140,
+  "final_trimodal_eligible_hearings": 155,
+  "media_validated_hearings": 178,
+  "non_witness_hearings": 14,
+  "paired_hearings_input": 180,
+  "protected_witnesses": 10,
+  "public_witnesses": 147,
+  "target_distinct_witnesses": "~50",
+  "target_utterances": "10000-15000",
+  "target_video_hours": "20-30",
+  "transcript_validated_hearings": 179,
+  "unresolved_witness_hearings": 9,
+  "verified_video_hours": 824.72,
+  "witness_utterances": 40926
+}

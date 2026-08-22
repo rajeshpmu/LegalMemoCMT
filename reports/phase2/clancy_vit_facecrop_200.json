@@ -1,0 +1,23 @@
+{
+  "device": "cpu",
+  "embedding_dtype": "float32",
+  "embedding_shape": [
+    16,
+    768
+  ],
+  "embeddings_created": 200,
+  "embeddings_reused": 0,
+  "face_crop_method": "Haar largest-face crop with padded bounding box; center-crop fallback",
+  "failed_rows": 0,
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/duration_0_8_to_20/clancy_dataset_manifest.csv",
+  "issues": [],
+  "notes": [
+    "raw_video_path preserves the original MP4 provenance.",
+    "video_features_path is the path consumed by the Phase 1 video loader.",
+    "This stage does not alter audio or text paths and does not create new clips."
+  ],
+  "output_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/duration_0_8_to_20/clancy_dataset_manifest_vit_200.csv",
+  "output_root": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/vit_facecrop_embeddings",
+  "rows_selected": 200,
+  "vit_model": "google/vit-base-patch16-224-in21k"
+}

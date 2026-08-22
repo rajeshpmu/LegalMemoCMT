@@ -1,0 +1,209 @@
+{
+  "above_300_seconds": 0,
+  "above_30_seconds": 443,
+  "above_60_seconds": 110,
+  "below_1_second": 2139,
+  "duration_band_eda": {
+    "0.8-20_seconds": {
+      "emotion_label_counts": {
+        "anger": 87,
+        "confidence": 271,
+        "fear": 55,
+        "neutral": 8576,
+        "sadness": 8,
+        "stress": 76
+      },
+      "hours": 15.21,
+      "max_seconds": 19.976,
+      "mean_seconds": 6.035,
+      "median_seconds": 4.678,
+      "min_seconds": 0.8,
+      "minutes": 912.6,
+      "rows": 9073,
+      "source_videos": 11,
+      "split_counts": {
+        "dev": 1085,
+        "test": 1182,
+        "train": 6806
+      }
+    },
+    "20-30_seconds": {
+      "emotion_label_counts": {
+        "anger": 6,
+        "confidence": 28,
+        "fear": 1,
+        "neutral": 515,
+        "stress": 1
+      },
+      "hours": 3.6815,
+      "max_seconds": 29.982,
+      "mean_seconds": 24.053,
+      "median_seconds": 23.6,
+      "min_seconds": 20.007,
+      "minutes": 220.891,
+      "rows": 551,
+      "source_videos": 11,
+      "split_counts": {
+        "dev": 105,
+        "test": 72,
+        "train": 374
+      }
+    }
+  },
+  "duration_seconds": {
+    "max": 150.256,
+    "mean": 7.756,
+    "median": 4.225,
+    "min": 0.6,
+    "p25": 1.626,
+    "p75": 9.27,
+    "p95": 25.847
+  },
+  "emotion_label_counts": {
+    "anger": 114,
+    "confidence": 357,
+    "fear": 65,
+    "neutral": 11257,
+    "sadness": 13,
+    "stress": 86
+  },
+  "filtered_csv": "data/processed/phase2/clancy/clancy_turn_manifest_post_rejection.csv",
+  "input_csv": "data/processed/phase2/clancy/clancy_turn_manifest_clipped.csv",
+  "label_confidence_counts": {
+    "HIGH": 635,
+    "LOW": 11257
+  },
+  "offset_status_counts": {
+    "default_zero": 10610,
+    "explicit": 1282
+  },
+  "original_rows": 11926,
+  "rejection_csv": "data/processed/phase2/clancy/clancy_turn_rejection_manifest.csv",
+  "rejection_rows": 34,
+  "remaining_long_turn_examples": [
+    {
+      "duration_seconds": 150.256,
+      "source_url": "https://www.youtube.com/live/D6skXbDJJj8",
+      "turn_id": "D6skXbDJJj8_turn05854",
+      "youtube_id": "D6skXbDJJj8"
+    },
+    {
+      "duration_seconds": 143.155,
+      "source_url": "https://www.youtube.com/watch?v=D5L_c9Mla1U",
+      "turn_id": "D5L_c9Mla1U_turn03941",
+      "youtube_id": "D5L_c9Mla1U"
+    },
+    {
+      "duration_seconds": 138.137,
+      "source_url": "https://www.youtube.com/live/DCBWoWhsTpA",
+      "turn_id": "DCBWoWhsTpA_turn05905",
+      "youtube_id": "DCBWoWhsTpA"
+    },
+    {
+      "duration_seconds": 135.96,
+      "source_url": "https://www.youtube.com/live/DCBWoWhsTpA",
+      "turn_id": "DCBWoWhsTpA_turn06882",
+      "youtube_id": "DCBWoWhsTpA"
+    },
+    {
+      "duration_seconds": 133.833,
+      "source_url": "https://www.youtube.com/live/93sfJyLzhqM",
+      "turn_id": "93sfJyLzhqM_turn02525",
+      "youtube_id": "93sfJyLzhqM"
+    },
+    {
+      "duration_seconds": 132.958,
+      "source_url": "https://www.youtube.com/live/1tyKO8mTdOM",
+      "turn_id": "1tyKO8mTdOM_turn00964",
+      "youtube_id": "1tyKO8mTdOM"
+    },
+    {
+      "duration_seconds": 132.611,
+      "source_url": "https://www.youtube.com/live/93sfJyLzhqM",
+      "turn_id": "93sfJyLzhqM_turn02820",
+      "youtube_id": "93sfJyLzhqM"
+    },
+    {
+      "duration_seconds": 132.174,
+      "source_url": "https://www.youtube.com/live/1tyKO8mTdOM",
+      "turn_id": "1tyKO8mTdOM_turn00773",
+      "youtube_id": "1tyKO8mTdOM"
+    },
+    {
+      "duration_seconds": 130.314,
+      "source_url": "https://www.youtube.com/watch?v=D5L_c9Mla1U",
+      "turn_id": "D5L_c9Mla1U_turn04023",
+      "youtube_id": "D5L_c9Mla1U"
+    },
+    {
+      "duration_seconds": 129.086,
+      "source_url": "https://www.youtube.com/watch?v=VQQb9BbgwHg",
+      "turn_id": "VQQb9BbgwHg_turn07193",
+      "youtube_id": "VQQb9BbgwHg"
+    }
+  ],
+  "review_flag_counts": {
+    "NO": 11257,
+    "YES": 635
+  },
+  "rows_after_exclusion": 11892,
+  "rows_excluded": 34,
+  "source_breakdown": {
+    "1tyKO8mTdOM": {
+      "clip_hours": 3.5188,
+      "rows": 1282
+    },
+    "93sfJyLzhqM": {
+      "clip_hours": 3.8579,
+      "rows": 1909
+    },
+    "D5L_c9Mla1U": {
+      "clip_hours": 2.6782,
+      "rows": 1074
+    },
+    "D6skXbDJJj8": {
+      "clip_hours": 3.0428,
+      "rows": 1605
+    },
+    "DCBWoWhsTpA": {
+      "clip_hours": 2.871,
+      "rows": 1134
+    },
+    "LGYerNiA8kI": {
+      "clip_hours": 0.2584,
+      "rows": 147
+    },
+    "VQQb9BbgwHg": {
+      "clip_hours": 0.6427,
+      "rows": 206
+    },
+    "ZJd1Lk4w-qo": {
+      "clip_hours": 2.0472,
+      "rows": 992
+    },
+    "ma6ni-5zuW0": {
+      "clip_hours": 0.2826,
+      "rows": 209
+    },
+    "peYoD-JkAXE": {
+      "clip_hours": 5.821,
+      "rows": 3043
+    },
+    "sHUdRcABC-Q": {
+      "clip_hours": 0.601,
+      "rows": 291
+    }
+  },
+  "split_counts": {
+    "dev": 1487,
+    "test": 1574,
+    "train": 8831
+  },
+  "total_clip_hours": 25.6216,
+  "unique_turn_ids": 11892,
+  "unique_utterance_ids": 11892,
+  "unique_youtube_ids": 11,
+  "usable_counts": {
+    "YES": 11892
+  }
+}

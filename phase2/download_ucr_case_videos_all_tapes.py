@@ -23,7 +23,7 @@ CASE_HINTS = {
     "mladic": "IT-09-92",
     "popovic": "IT-05-88",
     "bagosora": "ICTR-98-41-T",
-    "akayesu": "ICTR-96-4-T",
+    "akayesu": "ICTR-96-04",
 }
 
 

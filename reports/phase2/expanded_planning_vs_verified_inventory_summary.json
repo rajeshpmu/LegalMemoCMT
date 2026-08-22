@@ -1,0 +1,30 @@
+{
+  "category_counts": {
+    "already_verified_by_case_name": 5,
+    "already_verified_by_case_number": 0,
+    "new_expansion_source": 13,
+    "unresolved_or_placeholder": 0
+  },
+  "covered_rows": 5,
+  "expanded_csv": "data/processed/phase2/phase2_expanded_planning_manifest.csv",
+  "expanded_rows": 18,
+  "inventory_case_names": [
+    "bagosora et al. trial",
+    "karadzic trial",
+    "mladic trial",
+    "perisic trial",
+    "popovic et al. trial"
+  ],
+  "inventory_case_numbers": [
+    "ictr-98-41",
+    "it-04-81",
+    "it-05-88",
+    "it-09-92",
+    "it-95-5/18"
+  ],
+  "inventory_csv": "data/processed/phase2/verified_case_inventory.csv",
+  "inventory_rows": 15683,
+  "missing_csv": "data/processed/phase2/expanded_planning_missing_sources.csv",
+  "missing_rows": 13,
+  "output_csv": "data/processed/phase2/expanded_planning_vs_verified_inventory.csv"
+}

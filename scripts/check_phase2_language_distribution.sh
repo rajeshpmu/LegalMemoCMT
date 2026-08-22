@@ -19,10 +19,9 @@ echo
 "$PYTHON_BIN" - <<'PY' "$MANIFEST" "$TEXT_COLUMN"
 from __future__ import annotations
 
+import csv
 import sys
 from pathlib import Path
-
-import pandas as pd
 
 manifest = Path(sys.argv[1])
 text_column = sys.argv[2]
@@ -30,14 +29,18 @@ text_column = sys.argv[2]
 if not manifest.exists():
     raise SystemExit(f"Manifest not found: {manifest}")
 
-df = pd.read_csv(manifest)
-if text_column not in df.columns and "transcript" not in df.columns and "utterance_text" not in df.columns and "text" not in df.columns:
+with manifest.open(newline="", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    columns = list(reader.fieldnames or [])
+    rows = [{k: "" if v is None else str(v) for k, v in row.items()} for row in reader]
+
+if text_column not in columns and "transcript" not in columns and "utterance_text" not in columns and "text" not in columns:
     raise SystemExit(f"Manifest does not contain any usable text column: {text_column}")
 
-if text_column not in df.columns:
-    if "utterance_text" in df.columns:
+if text_column not in columns:
+    if "utterance_text" in columns:
         text_column = "utterance_text"
-    elif "transcript" in df.columns:
+    elif "transcript" in columns:
         text_column = "transcript"
     else:
         text_column = "text"
@@ -59,9 +62,11 @@ def classify(text: object) -> str:
         return "other"
     return "other"
 
-classes = df[text_column].map(classify)
-total = len(df)
-counts = classes.value_counts(dropna=False).to_dict()
+classes = [classify(row.get(text_column, "")) for row in rows]
+total = len(rows)
+counts: dict[str, int] = {}
+for label in classes:
+    counts[label] = counts.get(label, 0) + 1
 
 english = int(counts.get("english", 0))
 devanagari = int(counts.get("devanagari", 0))
@@ -88,11 +93,13 @@ if mixed > 0 or (devanagari > 0 and english > 0) or other > 0:
 else:
     print("No unexpected mixed-language content detected.")
 
-sample_mixed = df.loc[classes.eq("mixed"), [c for c in ["utterance_id", "manifest_id", text_column] if c in df.columns]].head(5)
-if not sample_mixed.empty:
+sample_mixed = [row for row, label in zip(rows, classes) if label == "mixed"][:5]
+if sample_mixed:
     print()
     print("Sample mixed-language rows:")
-    print(sample_mixed.to_string(index=False))
+    for row in sample_mixed:
+        sample = {k: row.get(k, "") for k in ["utterance_id", "manifest_id", text_column] if k in row}
+        print(sample)
 PY
 
 echo

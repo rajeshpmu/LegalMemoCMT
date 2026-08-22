@@ -1,0 +1,15 @@
+{
+  "case_families_selected": 3,
+  "case_numbers_selected": 3,
+  "cases": {
+    "IT-04-81": 1,
+    "IT-05-88": 2,
+    "IT-09-92": 2
+  },
+  "counsel_utterances": 1414,
+  "estimated_utterances": 2883,
+  "judge_utterances": 608,
+  "selected_rows": 5,
+  "selection_mode": "text_only_diversity_supplement",
+  "witness_utterances": 861
+}

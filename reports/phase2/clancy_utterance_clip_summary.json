@@ -1,0 +1,16 @@
+{
+  "clip_root": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/utterance_clips",
+  "clips_created": 4,
+  "clips_failed": 0,
+  "clips_reused": 0,
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_training_manifest_weak.csv",
+  "issues_count": 0,
+  "output_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_training_manifest_clipped.csv",
+  "rows_written": 4,
+  "split_counts": {
+    "dev": 4
+  },
+  "status": "PASS",
+  "total_clip_hours": 0.0011,
+  "total_input_rows": 4
+}

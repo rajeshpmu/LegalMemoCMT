@@ -1,0 +1,22 @@
+{
+  "candidate_testimony_hours": 414.35,
+  "case_families_selected": 2,
+  "distinct_witnesses_discovered": 50,
+  "hearings_with_witness_testimony": 92,
+  "non_witness_hearings": 4,
+  "paired_hearings_scanned": 91,
+  "protected_witnesses_discovered": 10,
+  "public_witnesses_discovered": 40,
+  "raw_witness_utterances": 2715,
+  "readable_transcripts": 98,
+  "repeat_witness_hearings": 0,
+  "selected_distinct_witnesses": 40,
+  "selected_estimated_hours": 29.98,
+  "selected_estimated_utterances": 1677,
+  "selected_hearings": 36,
+  "target_hours_status": "within_target",
+  "target_utterances_status": "below_target",
+  "target_witnesses_status": "within_target",
+  "unresolved_witness_hearings": 5,
+  "usable_witness_utterances_estimated": 2439
+}

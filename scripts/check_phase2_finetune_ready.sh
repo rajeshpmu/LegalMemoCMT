@@ -14,10 +14,9 @@ echo
 "$PYTHON_BIN" - <<'PY' "$PHASE2_MANIFEST" "$INIT_CKPT"
 from __future__ import annotations
 
+import csv
 import sys
 from pathlib import Path
-
-import pandas as pd
 
 manifest = Path(sys.argv[1])
 ckpt = Path(sys.argv[2])
@@ -27,7 +26,11 @@ if not manifest.exists():
 if not ckpt.exists():
     raise SystemExit(f"Warm-start checkpoint not found: {ckpt}")
 
-df = pd.read_csv(manifest)
+with manifest.open(newline="", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    columns = list(reader.fieldnames or [])
+    rows = [{k: "" if v is None else str(v) for k, v in row.items()} for row in reader]
+
 required_cols = {
     "utterance_id",
     "manifest_id",
@@ -45,18 +48,22 @@ required_cols = {
     "question_type",
     "cross_examination_flag",
 }
-missing_cols = required_cols - set(df.columns)
+missing_cols = required_cols - set(columns)
 if missing_cols:
     raise SystemExit(f"Phase 2 manifest is missing columns: {sorted(missing_cols)}")
 
-split_counts = df["split"].value_counts(dropna=False).to_dict() if "split" in df.columns else {}
-audio_present = int(df["audio_path"].astype(str).str.strip().ne("").sum()) if "audio_path" in df.columns else 0
-video_present = int(df["video_path"].astype(str).str.strip().ne("").sum()) if "video_path" in df.columns else 0
-audio_coverage = 100.0 * audio_present / max(len(df), 1)
-video_coverage = 100.0 * video_present / max(len(df), 1)
+split_counts: dict[str, int] = {}
+for row in rows:
+    split = row.get("split", "")
+    split_counts[split] = split_counts.get(split, 0) + 1
+
+audio_present = sum(1 for row in rows if str(row.get("audio_path") or "").strip())
+video_present = sum(1 for row in rows if str(row.get("video_path") or "").strip())
+audio_coverage = 100.0 * audio_present / max(len(rows), 1)
+video_coverage = 100.0 * video_present / max(len(rows), 1)
 
 print(f"Phase 2 manifest: {manifest}")
-print(f"Rows: {len(df)}")
+print(f"Rows: {len(rows)}")
 print(f"Splits: {split_counts}")
 print(f"Video coverage: {video_coverage:.2f}%")
 print(f"Audio coverage: {audio_coverage:.2f}%")

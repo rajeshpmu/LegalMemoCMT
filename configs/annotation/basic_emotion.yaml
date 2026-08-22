@@ -1,0 +1,16 @@
+label_family: basic_emotion
+labels:
+  - neutral
+  - anger
+  - disgust
+  - fear
+  - joy
+  - sadness
+  - surprise
+status_field: basic_emotion_annotation_status
+source_field: basic_emotion_source
+canonical_compatibility_field: emotion_label
+human_statuses:
+  - HUMAN_SINGLE
+  - HUMAN_MULTI
+  - ADJUDICATED

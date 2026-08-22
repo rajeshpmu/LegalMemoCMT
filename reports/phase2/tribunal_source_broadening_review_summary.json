@@ -1,0 +1,21 @@
+{
+  "ledger_csv": "data/phase2/source_manifests/case_candidate_ledger.csv",
+  "ledger_rows": 10,
+  "new_case_families": [
+    "Akayesu Trial",
+    "Perisic Trial",
+    "Bagosora et al. Trial",
+    "Popovic et al. Trial",
+    "Stanisic and Simatovic Trial",
+    "Ntakirutimana / Ntahobali related cases",
+    "IRMCT Appeals / Residual Hearings",
+    "Manual New Candidate Placeholder"
+  ],
+  "output_csv": "data/processed/phase2/tribunal_source_broadening_review.csv",
+  "recommended_broaden_now": 0,
+  "recommended_hold": 6,
+  "recommended_manual_review": 2,
+  "review_rows": 8,
+  "source_manifest": "data/phase2/source_manifests/tribunal_sources_target_dataset.csv",
+  "source_manifest_rows": 11
+}

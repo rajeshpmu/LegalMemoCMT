@@ -1,0 +1,11 @@
+{
+  "case_names": [
+    "Bagosora et al.",
+    "Karadzic"
+  ],
+  "output_csv": "data/processed/phase2/tribunal_video_bearing_candidates.csv",
+  "rows_inspected": 13,
+  "source_csv": "data/processed/phase2/tribunal_media_discovery.csv",
+  "summary_json": "reports/phase2/tribunal_video_bearing_candidates_summary.json",
+  "video_bearing_rows": 4
+}

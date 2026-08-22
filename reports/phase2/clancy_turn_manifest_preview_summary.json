@@ -1,0 +1,12 @@
+{
+  "embedded_turn_segments": 1,
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_training_manifest_weak.csv",
+  "issues_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/reports/phase2/clancy_turn_manifest_issues.csv",
+  "output_csv": "data/processed/phase2/clancy/clancy_turn_manifest_preview.csv",
+  "rows_with_turn_markers": 4,
+  "source_rows_seen": 9,
+  "status": "PASS",
+  "total_input_rows": 8,
+  "turn_rows_written": 4,
+  "unique_youtube_ids": 1
+}

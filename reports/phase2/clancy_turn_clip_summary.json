@@ -1,0 +1,24 @@
+{
+  "clip_root": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/turn_clips",
+  "clips_created": 11926,
+  "clips_failed": 0,
+  "clips_reused": 0,
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_turn_manifest.csv",
+  "issues_count": 0,
+  "offset_default_rule": "Missing, blank, invalid, or unlisted source offsets use 0.000 seconds.",
+  "output_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_turn_manifest_clipped.csv",
+  "rows_written": 11926,
+  "source_offset_status_counts": {
+    "default_zero": 10642,
+    "explicit": 1284
+  },
+  "source_offsets_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_source_offsets.csv",
+  "split_counts": {
+    "dev": 1491,
+    "test": 1577,
+    "train": 8858
+  },
+  "status": "PASS",
+  "total_clip_hours": 31.4766,
+  "total_input_rows": 11926
+}

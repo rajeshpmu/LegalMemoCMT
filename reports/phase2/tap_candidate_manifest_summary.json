@@ -1,0 +1,15 @@
+{
+  "case_names_kept": [
+    "Bagosora et al.",
+    "Bagosora et al. Trial",
+    "Karadzic",
+    "Karadzic Trial",
+    "Karemera et al.",
+    "Nahimana et al. (Media case)"
+  ],
+  "input_csv": "data/processed/phase2/phase2_expanded_planning_manifest.csv",
+  "output_csv": "data/processed/phase2/tap_candidate_manifest.csv",
+  "rows_inspected": 25,
+  "rows_kept": 9,
+  "summary_json": "reports/phase2/tap_candidate_manifest_summary.json"
+}

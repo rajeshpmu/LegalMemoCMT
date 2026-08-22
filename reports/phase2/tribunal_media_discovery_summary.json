@@ -1,0 +1,18 @@
+{
+  "ledger_csv": "data/phase2/source_manifests/case_candidate_ledger.csv",
+  "no_documents_rows": 0,
+  "output_csv": "data/processed/phase2/tribunal_media_discovery.csv",
+  "rows_inspected": 13,
+  "source_csv": "data/processed/phase2/expanded_planning_missing_sources.csv",
+  "transcript_only_case_names": [
+    "Mladic",
+    "Popovic et al."
+  ],
+  "transcript_only_rows": 3,
+  "unresolved_rows": 6,
+  "video_bearing_case_names": [
+    "Bagosora et al.",
+    "Karadzic"
+  ],
+  "video_bearing_rows": 4
+}

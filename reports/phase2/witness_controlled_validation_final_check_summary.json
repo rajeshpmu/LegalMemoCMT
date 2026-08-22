@@ -1,0 +1,23 @@
+{
+  "anchor_rows": 4,
+  "clean_witness_labels": 10,
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/legalmeld_validated/witness_only_rows/witness_controlled_validation_manual_review.csv",
+  "issues": [],
+  "label_cleanup_rows": 2,
+  "manual_method": "Read the controlled validation manual-review artifact row by row and checked whether the subset still had the expected 4 anchor rows, 6 promoted rows, cleaned witness labels, and no remaining cleanup flags.",
+  "manual_review_status_counts": {
+    "reviewed_promoted": 6,
+    "verified_anchor": 4
+  },
+  "mixed_label_candidates": 3,
+  "promoted_rows": 6,
+  "reviewed_promoted_rows": 6,
+  "status": "PASS",
+  "total_rows": 10,
+  "unresolved_label_cleanup_rows": 0,
+  "validation_track_counts": {
+    "anchor": 4,
+    "promoted": 6
+  },
+  "verified_anchor_rows": 4
+}

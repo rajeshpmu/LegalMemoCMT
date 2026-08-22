@@ -1,0 +1,24 @@
+{
+  "category_counts": {
+    "family_testimony": 1,
+    "full_trial_stream": 6,
+    "pediatrician_testimony": 1,
+    "psychiatrist_full_testimony": 2,
+    "psychiatrist_testimony": 1
+  },
+  "included_rows": 11,
+  "output_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_source_manifest.csv",
+  "requested_label_counts": {
+    "Day 14 full trial": 1,
+    "Day 15 full trial": 1,
+    "Day 16 full trial": 1,
+    "Day 17 full trial": 1,
+    "Day 8 live trial": 2,
+    "Dr. Sejal Shah \u2013 Psychiatrist testimony": 1,
+    "Paula Musgrove \u2013 Lindsay's mother \u2013 Full Testimony": 1,
+    "Pediatrician testimony": 1,
+    "Psychiatrist \u2013 Full Testimony": 2
+  },
+  "rows": 11,
+  "source_urls_file": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/clancy_urls.txt"
+}

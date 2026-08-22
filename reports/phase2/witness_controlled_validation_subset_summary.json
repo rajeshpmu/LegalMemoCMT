@@ -1,0 +1,36 @@
+{
+  "anchor_hearings": 4,
+  "cases_represented": 1,
+  "distinct_witness_labels": 8,
+  "estimated_testimony_minutes": 7188.0,
+  "hearing_plan_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/legalmeld_validated/witness_only_rows/witness_hearing_plan.csv",
+  "manual_note": "The promoted rows were selected from the broader hearing discovery plan as a controlled validation pass; this is a planning subset, not final corpus expansion.",
+  "max_hearings": 10,
+  "output_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/legalmeld_validated/witness_only_rows/witness_controlled_validation_subset.csv",
+  "promoted_hearings": 6,
+  "selected_hearing_ids": [
+    "hear_23dd766aab93f457",
+    "hear_2ef83c852251d65c",
+    "hear_7b2686bf1e5608e9",
+    "hear_8280237faba9d96f",
+    "hear_8a80539e19e2df44",
+    "hear_b3fafce46640756e",
+    "hear_da77e01d6076db4b",
+    "hear_dea210cdb4c728e0",
+    "hear_ebd43a70140ec251",
+    "hear_f5d485391c1d04cc"
+  ],
+  "selected_hearings": 10,
+  "selected_rows": 10,
+  "witness_labels": [
+    "ALOYS NTABAKUZE",
+    "ANTIPAS NYANJWA",
+    "BRENT BEARDSLEY | Exanination-in-chief by Mr. White",
+    "DK120 | MATHIEU NGIRUMPATSE",
+    "DM190 | EMMANUEL NERETSE",
+    "FILIP REYNTJENS",
+    "OMAR SERUSHAGO",
+    "ROM\u00c9O DALLAIRE"
+  ],
+  "witness_rows_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/legalmeld_validated/witness_only_rows/witness_rows.csv"
+}

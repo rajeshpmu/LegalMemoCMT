@@ -1,0 +1,67 @@
+{
+  "existing_files_inspected": [
+    "phase2/run_clancy_diarization.sh",
+    "phase2/diarize_clancy_sources.py",
+    "phase2/create_clancy_speaker_role_review.py",
+    "phase2/apply_clancy_speaker_role_map.py",
+    "phase2/build_clancy_subtitle_evidence.py",
+    "phase2/pseudo_label_clancy_with_phase1.py",
+    "phase2/build_clancy_dataset_validation.py",
+    "phase2/build_clancy_training_readiness.py",
+    "data/processed/phase2/clancy/duration_0_8_to_20/clancy_dataset_manifest_vit_200_subtitle_evidence.csv"
+  ],
+  "existing_diarization_scripts_found": [
+    "phase2/check_clancy_diarization_prerequisites.py",
+    "phase2/diarize_clancy_sources.py",
+    "phase2/run_clancy_diarization.sh",
+    "phase2/create_clancy_speaker_role_review.py",
+    "phase2/apply_clancy_speaker_role_map.py"
+  ],
+  "immediate_changes_made": [
+    "Created phase2/annotation additive package",
+    "Added schema migration preserving emotion_label compatibility",
+    "Added seed-set selection",
+    "Added annotation queue export",
+    "Added configurable priority scoring",
+    "Added optional text/audio model suggestion adapter",
+    "Added human annotation merge and state validation",
+    "Added annotation YAML configurations"
+  ],
+  "new_schema_fields_added": [
+    "basic_emotion",
+    "basic_emotion_source",
+    "basic_emotion_confidence",
+    "basic_emotion_annotation_status",
+    "courtroom_affect",
+    "courtroom_affect_confidence",
+    "courtroom_affect_annotation_status",
+    "affect_intensity",
+    "valence",
+    "arousal",
+    "suggestion_fields",
+    "priority_fields",
+    "observable_cue_fields",
+    "iteration_and_provenance_fields"
+  ],
+  "modules_implemented": [
+    "phase2/annotation/extend_annotation_schema.py",
+    "phase2/annotation/build_seed_annotation_set.py",
+    "phase2/annotation/build_annotation_queue.py",
+    "phase2/annotation/compute_annotation_priority.py",
+    "phase2/annotation/generate_model_suggestions.py",
+    "phase2/annotation/merge_human_annotations.py",
+    "phase2/annotation/validate_annotation_state.py"
+  ],
+  "modules_intentionally_deferred": [
+    "iterative active-learning retraining",
+    "automatic pseudo-label acceptance",
+    "video affect model integration",
+    "contradiction_pairs.csv construction",
+    "Indian multilingual model adaptation"
+  ],
+  "clancy_readiness_status": "diarization currently running; no completed diarization output assumed",
+  "tupac_readiness_status": "source collection and preparation pending",
+  "indian_corpus_readiness_status": "planned acquisition/adaptation stage; not prepared",
+  "first_pilot_command": "PYTHON_BIN=$PWD/.venv-diarization/bin/python HF_TOKEN=\"$HF_TOKEN\" bash phase2/run_clancy_diarization.sh --input-csv data/processed/phase2/clancy/duration_0_8_to_20/clancy_dataset_manifest_vit_200_subtitle_evidence.csv --output-csv data/processed/phase2/clancy/duration_0_8_to_20/clancy_dataset_manifest_vit_200_diarized.csv --segments-csv data/processed/phase2/clancy/duration_0_8_to_20/clancy_diarization_segments_200.csv --device cpu --max-sources 1",
+  "recommended_next_milestone": "complete one-source pyannote output, map clusters to roles, align speaker intervals to turns, and validate witness-only tri-modal rows before machine-assisted annotation"
+}

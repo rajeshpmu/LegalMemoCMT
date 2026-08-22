@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -27,8 +28,8 @@ CASE_FAMILY_HINTS = {
     "karadzic trial": "IT-95-5/18",
     "mladic trial": "IT-09-92",
     "popovic et al.": "IT-05-88",
-    "bagosora et al.": "ICTR-98-41-T",
-    "akayesu": "ICTR-96-4-T",
+    "bagosora et al.": "ICTR-98-41",
+    "akayesu": "ICTR-96-04",
     "irmct hearings": "",
 }
 
@@ -91,6 +92,9 @@ def _download(url: str, dest: Path, session: requests.Session | None) -> Path:
 
 def verify_media(path: Path) -> None:
     subprocess.run(["file", str(path)], check=True)
+    if shutil.which("ffprobe") is None:
+        print("ffprobe not found; skipped detailed stream verification.")
+        return
     subprocess.run(["ffprobe", "-v", "error", "-show_streams", "-show_format", str(path)], check=True)
 
 

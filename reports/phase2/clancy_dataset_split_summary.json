@@ -1,0 +1,31 @@
+{
+  "dev_csv": "data/processed/phase2/clancy/dev.csv",
+  "group_column": "youtube_id",
+  "input_csv": "data/processed/phase2/clancy/clancy_utterance_manifest.csv",
+  "output_csv": "data/processed/phase2/clancy/clancy_dataset_manifest.csv",
+  "split_counts": {
+    "dev": 11076,
+    "test": 10956,
+    "train": 55410
+  },
+  "split_group_counts": {
+    "dev": 3,
+    "test": 3,
+    "train": 5
+  },
+  "split_hours": {
+    "dev": 3.7504,
+    "test": 3.5509,
+    "train": 22.6024
+  },
+  "split_ratios": {
+    "dev": 0.15,
+    "test": 0.15,
+    "train": 0.7
+  },
+  "test_csv": "data/processed/phase2/clancy/test.csv",
+  "total_groups": 11,
+  "total_rows": 77442,
+  "train_csv": "data/processed/phase2/clancy/train.csv",
+  "usable_rows": 77442
+}

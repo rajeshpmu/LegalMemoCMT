@@ -1,0 +1,18 @@
+{
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/duration_20_to_30/clancy_dataset_manifest.csv",
+  "issues_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/reports/phase2/clancy_duration_20_to_30_validation_issues.csv",
+  "leakage_groups": [],
+  "split_counts": {
+    "dev": 76,
+    "test": 75,
+    "train": 400
+  },
+  "split_group_counts": {
+    "dev": 3,
+    "test": 3,
+    "train": 5
+  },
+  "status": "PASS",
+  "total_rows": 551,
+  "unique_utterance_ids": 551
+}

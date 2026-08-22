@@ -21,8 +21,8 @@ CASE_HINTS = {
     "karadzic": ["IT-95-5/18"],
     "mladic": ["IT-09-92"],
     "popovic": ["IT-05-88"],
-    "bagosora": ["ICTR-98-41-T"],
-    "akayesu": ["ICTR-96-4-T"],
+    "bagosora": ["ICTR-98-41"],
+    "akayesu": ["ICTR-96-04", "ICTR-96-4-T"],
 }
 
 

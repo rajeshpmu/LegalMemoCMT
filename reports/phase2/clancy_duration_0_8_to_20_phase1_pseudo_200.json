@@ -1,0 +1,45 @@
+{
+  "checkpoint": "/Users/rajeshpmu/Desktop/LegalMemoCMT/results/paper_aligned_meld_cv/cmt_min/fold_2/best_model.pt",
+  "confidence_max": 0.97853,
+  "confidence_mean": 0.781328,
+  "confidence_min": 0.294786,
+  "device": "cpu",
+  "effective_modalities": [
+    "audio",
+    "text"
+  ],
+  "encoder_mode": "paper",
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/duration_0_8_to_20/clancy_dataset_manifest.csv",
+  "label_vocabulary": [
+    "neutral",
+    "anger",
+    "disgust",
+    "fear",
+    "joy",
+    "sadness",
+    "surprise"
+  ],
+  "notes": [
+    "Predictions are weak labels, not gold annotations.",
+    "Original emotion_label fields were preserved unchanged.",
+    "Courtroom-affect fields were not inferred.",
+    "The selected checkpoint has use_video=false, so video was not consumed by the model.",
+    "No deception, truthfulness, credibility, or reliability label was created."
+  ],
+  "output_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/duration_0_8_to_20/clancy_dataset_manifest_phase1_pseudo_200.csv",
+  "prediction_counts": {
+    "anger": 3,
+    "disgust": 4,
+    "fear": 1,
+    "joy": 0,
+    "neutral": 191,
+    "sadness": 1,
+    "surprise": 0
+  },
+  "requested_modalities": [
+    "audio",
+    "text",
+    "video"
+  ],
+  "rows_processed": 200
+}

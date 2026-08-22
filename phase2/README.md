@@ -2,19 +2,24 @@
 
 This directory contains the Phase 2 legal-domain adaptation workflow for LegalMemoCMT.
 
-The current implementation is now driven by two local source CSVs stored under:
-
-- `data/phase2/source_manifests/tribunal_sources_target_dataset.csv`
-- `data/phase2/source_manifests/witness_harvest_manifest.csv`
+The current implementation is driven by the tribunal bootstrap corpus and the witness-level manifests that are produced from the verified inventory.
 
 ## What Phase 2 is trying to do
 
 Phase 2 moves the Phase 1 multimodal emotion model into courtroom and judicial-record settings. The goal is still observable emotion analysis, not legal judgment. The planned outputs are emotion scores, stress-oriented timelines, and emotional transitions inside testimony.
 
+The scope now has two layers:
+
+- a tribunal bootstrap layer built from ICTY / ICTR / IRMCT testimony
+- an Indian courtroom adaptation layer built from Indian legal speech, livestreams, and mock-trial style material where synchronized transcript/audio/video evidence is available
+
+The tribunal data is the supervised proof-of-pipeline corpus. The Indian data is the actual research adaptation target.
+
 Important distinction:
 
 - `tribunal_sources_target_dataset.csv` and `witness_harvest_manifest.csv` are planning manifests only.
 - They do not represent the completed dataset.
+- The current `witness_harvest_manifest.csv` is a placeholder and must not drive downloads until it contains real witness/hearing rows and resolved links.
 - The final LegalMemoCMT dataset is produced only after:
   - case and witness resolution
   - transcript and video download
@@ -35,6 +40,7 @@ Corpus expansion path:
 - download every eligible TAP recording for tri-modal work
 - keep transcript-only rows in a separate text corpus
 - build the final dataset only after segmentation and audio extraction
+- after the tribunal bootstrap is stable, mirror the same manifest-and-alignment logic for Indian sources
 
 ## Progressive Adaptation
 
@@ -42,15 +48,22 @@ The intended transfer path for Phase 2 is progressive:
 
 1. Start from general conversational emotion learning on `MELD`.
 2. Adapt to international criminal tribunal proceedings from `IRMCT / ICTY / ICTR` to learn authentic courtroom interaction patterns.
-3. Add a smaller Indian appellate-court adaptation stage using Indian Supreme Court and High Court proceedings so the model learns Indian legal discourse and courtroom conventions.
+3. Add an Indian adaptation stage using Indian Supreme Court and High Court proceedings, plus mock-trial and academy material when synchronized media and transcripts exist, so the model learns Indian legal discourse and courtroom conventions.
 
 This keeps the strongest witness-testimony source as the main multimodal signal while still moving the project toward the Indian legal setting.
 
+Recommended interpretation:
+
+- tribunal corpus = bootstrap supervision
+- Indian corpus = target-domain adaptation and evaluation
+- mock-trial and academy material = practical supplement where real Indian witness video is not public
+
 ## Data sources
 
-1. IRMCT / ICTR / ICTY public judicial records as the primary courtroom testimony source
-2. Indian Supreme Court and High Court proceedings as a smaller final adaptation corpus for Indian legal language and courtroom conventions
-3. The eyewitness incongruence paper as a structuring reference, not as the main training dataset
+1. IRMCT / ICTR / ICTY public judicial records as the primary tribunal bootstrap source
+2. Indian Supreme Court and High Court proceedings as the adaptation source for Indian legal language and courtroom conventions
+3. Indian mock trials and judicial-academy material where synchronized video and transcript material is available
+4. The eyewitness incongruence paper as a structuring reference, not as the main training dataset
 
 ## Recommended run order
 
@@ -66,7 +79,9 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
 6. Build corpus manifests from the case ledger:
    - `bash phase2/run_build_tribunal_manifest_from_ledger.sh`
    - `bash phase2/run_build_witness_manifest_from_ledger.sh`
-7. Inspect and download UCR recordings with fallback resolution:
+7. Build the verified UCR case inventory from the enriched ledger:
+   - `bash phase2/run_build_ucr_case_inventory.sh`
+8. Inspect and download UCR recordings with fallback resolution:
    - `bash phase2/run_ucr_case_videos_with_fallback.sh`
    - this checks `ByCaseDocsByLang`, then `ByMainCase`, and can optionally allow non-`TAP` recordings
    - for Phase 2 tri-modal training, prefer the stricter video-only variant:
@@ -74,34 +89,53 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
      - this keeps only real video files and skips transcript-only fallbacks
    - for broad corpus expansion across all tapes in a case, use:
      - `bash phase2/run_ucr_case_videos_all_tapes.sh`
-8. Split the UCR inventory by media type:
+9. Split the UCR inventory by media type:
    - `bash phase2/run_split_ucr_inventory_by_media_type.sh`
-9. Run the phase 2 dataset pipeline wrapper:
+10. Run the phase 2 dataset pipeline wrapper:
    - `bash phase2/run_phase2_dataset_pipeline.sh`
-7. Check whether the Phase 2 dataset artifacts are ready:
+11. Check whether the Phase 2 dataset artifacts are ready:
    - `bash scripts/check_phase2_dataset_ready.sh`
    - or `bash scripts/check_phase2_ready.sh`
    - this now also prints the Phase 2 language profile for the manifest
-8. Build a split-bearing training manifest:
+12. Build a split-bearing training manifest:
    - `bash phase2/run_phase2_split_manifest.sh`
-9. Sanitize the split manifest for training:
+13. Sanitize the split manifest for training:
    - `bash phase2/run_phase2_sanitize_manifest.sh`
    - this removes HTML-only rows and keeps the transcript-only cleaning separate from audio extraction
-10. Verify that the downloaded video files are real media files:
+14. Verify that the downloaded video files are real media files:
    - `bash scripts/check_phase2_video_integrity.sh`
    - this catches HTML pages or broken downloads before extraction
-11. Extract audio from video into a tri-modal training manifest:
+15. Extract audio from video into a tri-modal training manifest:
    - `bash phase2/run_phase2_extract_audio.sh`
    - this fills `audio_path` from the available video files and writes the tri-modal manifest
    - on GPU-enabled RunPod systems, set `USE_CUDA=1` to try CUDA-assisted ffmpeg decoding with CPU fallback
-12. Check whether the Phase 2 fine-tuning inputs are ready:
+16. Build the LegalMELD utterance-level dataset:
+   - `bash phase2/run_build_legalmeld_dataset.sh`
+   - this parses transcript speaker turns, aligns them to word timestamps, and writes `legalmeld_metadata.csv` plus `train.csv`, `dev.csv`, and `test.csv`
+   - the output layout mirrors MELD with per-utterance `clips/`, `audio/`, `transcripts/`, and `labels/` folders
+17. If you want to focus only on testimony rows, build the witness-only planning subset:
+   - `bash phase2/run_filter_legalmeld_rows_by_witness_role.sh`
+   - this keeps only `speaker_role = Witness` rows from the validated utterance export and preserves the usable/review/reject buckets
+   - the outputs land in `data/processed/phase2/legalmeld_validated/witness_only_rows/`
+18. Promote a small controlled validation subset from the broader hearing plan:
+   - `bash phase2/run_build_witness_controlled_validation_subset.sh`
+   - this keeps the validated witness hearings as anchors and adds a small number of manually promoted hearings for tighter inspection
+   - the outputs land in `data/processed/phase2/legalmeld_validated/witness_only_rows/witness_controlled_validation_subset.csv`
+19. If you are extending the dissertation toward the Indian scope, prepare the Indian acquisition pack and adaptation manifests next:
+   - `indian_case_candidate_ledger.csv`
+   - `indian_video_sources.csv`
+   - `indian_mock_trial_manifest.csv`
+   - `indian_supreme_court_manifest.csv`
+   - `indian_high_court_manifest.csv`
+   - `indian_alignment_manifest.csv`
+20. Check whether the Phase 2 fine-tuning inputs are ready:
    - `bash scripts/check_phase2_finetune_ready.sh`
    - this confirms the tri-modal manifest and the warm-start checkpoint at `results/facial_cues/meld_vit_facecrop_gated_video_aux/fold_4/best_model.pt`
-13. Fine-tune from the best MELD checkpoint:
+21. Fine-tune from the best MELD checkpoint:
    - `bash phase2/run_phase2_finetune.sh`
-14. Evaluate the saved checkpoint:
+22. Evaluate the saved checkpoint:
    - `bash phase2/evaluate_phase2_checkpoint.sh <manifest.csv> <checkpoint.pt> <output.json>`
-15. If you want a single chained run, use:
+23. If you want a single chained run, use:
    - `bash phase2/run_phase2_full.sh`
 
 ## Device policy
@@ -132,9 +166,10 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
 - `phase2/run_build_tribunal_manifest_from_ledger.sh` builds the tribunal candidate manifest from the case ledger.
 - `phase2/run_build_witness_manifest_from_ledger.sh` builds the witness candidate manifest from the case ledger.
 - `phase2/run_enrich_case_ledger_from_ucr_site.sh` checks the official UCR case pages and annotates the ledger with page-level evidence.
-- `phase2/run_build_ucr_case_inventory.sh` enumerates all UCR documents for planning-manifest cases.
+- `phase2/enrich_case_ledger_from_ucr_site.py` now validates control cases and writes `reports/phase2/ucr_enrichment_validation.json`.
+- `phase2/run_build_ucr_case_inventory.sh` builds `verified_case_inventory.csv` from the corrected enriched ledger.
 - `phase2/run_expand_phase2_planning_manifests.sh` expands the planning manifests into a larger candidate inventory.
-- `phase2/run_split_ucr_inventory_by_media_type.sh` splits the inventory into video-bearing and transcript-only manifests.
+- `phase2/run_split_ucr_inventory_by_media_type.sh` splits `verified_case_inventory.csv` into video-bearing and transcript-only manifests.
 - `phase2/run_ucr_case_videos_with_fallback.sh` downloads UCR recordings using `ByCaseDocsByLang`, `ByMainCase`, and optional non-`TAP` fallback.
 - `phase2/run_ucr_case_videos_strict.sh` downloads only real video files for tri-modal Phase 2.
 - `phase2/run_ucr_case_videos_all_tapes.sh` downloads every eligible TAP recording for a case.
@@ -142,6 +177,9 @@ This keeps the strongest witness-testimony source as the main multimodal signal 
 - `phase2/run_phase2_split_manifest.sh` adds the train/dev/test split column needed by the trainer.
 - `phase2/run_phase2_sanitize_manifest.sh` cleans transcript rows and can extract audio from video when needed.
 - `phase2/run_phase2_extract_audio.sh` fills missing audio paths by extracting audio from the available video files.
+- `phase2/run_build_legalmeld_dataset.sh` builds the utterance-level LegalMELD dataset with aligned clips and MELD-style split CSVs.
+- `phase2/run_filter_legalmeld_rows_by_witness_role.sh` filters the validated utterance export down to witness-only planning rows and writes usable/review/reject witness buckets.
+- `phase2/run_build_witness_controlled_validation_subset.sh` promotes a small controlled validation subset from the broader hearing discovery plan.
 - `phase2/run_phase2_finetune.sh` starts Phase 2 fine-tuning from the warm-start checkpoint.
 - `phase2/evaluate_phase2_checkpoint.sh` evaluates the saved Phase 2 checkpoint.
 - `phase2/run_phase2_full.sh` chains dataset prep, fine-tuning, and evaluation in one command.
@@ -234,9 +272,14 @@ On RunPod, `phase2/run_phase2_extract_audio.sh` can try CUDA-assisted decoding w
 
 IRMCT / ICTY / ICTR records are the main multimodal courtroom source in the current Phase 2 setup because they provide the most direct witness-testimony style material.
 
-Indian Supreme Court and High Court proceedings are still useful, but in this plan they are a smaller adaptation stage for Indian legal language, phrasing, and courtroom conventions. They are typically text-heavy, so they support the Indian-domain adaptation layer more than the multimodal testimony layer.
+Indian Supreme Court and High Court proceedings are still useful, but in this plan they are the adaptation stage for Indian legal language, phrasing, and courtroom conventions. They are often argument-heavy rather than witness-heavy, so they support the Indian-domain adaptation layer more than the multimodal testimony layer.
 
-The multimodal courtroom fine-tuning set should continue to come from records that actually contain audio or video, while the Indian court text corpus can be used for language adaptation and weak supervision design.
+The multimodal courtroom fine-tuning set should continue to come from records that actually contain audio or video, while the Indian court corpus can be used for language adaptation, weak supervision design, and evaluation of transfer beyond the tribunal bootstrap set.
+
+If you need the dissertation narrative in one line:
+
+- Phase 2 proves the utterance-level pipeline on tribunal testimony.
+- Phase 2 then reuses that pipeline to adapt LegalMemoCMT toward Indian courtroom testimony.
 
 ## Default warm-start checkpoint
 

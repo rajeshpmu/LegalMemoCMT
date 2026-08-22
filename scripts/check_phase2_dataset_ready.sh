@@ -20,10 +20,9 @@ echo
 "$PYTHON_BIN" - <<'PY' "$TRIBUNAL_SOURCES" "$WITNESS_MANIFEST" "$RESOLVED_MANIFEST" "$MATERIALIZED_MANIFEST" "$DATASET_CSV" "$SPLIT_DATASET_CSV" "$WEAK_LABELS_DIR" "$REPORT_HTML"
 from __future__ import annotations
 
+import csv
 import sys
 from pathlib import Path
-
-import pandas as pd
 
 tribunal_sources = Path(sys.argv[1])
 witness_manifest = Path(sys.argv[2])
@@ -53,20 +52,26 @@ for name, path in required_files.items():
 if not tribunal_sources.exists() or not witness_manifest.exists():
     raise SystemExit("Phase 2 source manifests are missing.")
 
+def read_rows(path: Path) -> tuple[list[str], list[dict[str, str]]]:
+    with path.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        rows = [{k: "" if v is None else str(v) for k, v in row.items()} for row in reader]
+        return list(reader.fieldnames or []), rows
+
 for label, path in [("tribunal_sources", tribunal_sources), ("witness_manifest", witness_manifest)]:
-    df = pd.read_csv(path)
-    print(f"{label} rows: {len(df)}")
-    print(f"{label} columns: {list(df.columns)}")
+    columns, rows = read_rows(path)
+    print(f"{label} rows: {len(rows)}")
+    print(f"{label} columns: {columns}")
 
 if resolved_manifest.exists():
-    resolved_df = pd.read_csv(resolved_manifest)
-    print(f"resolved_manifest rows: {len(resolved_df)}")
-    print(f"resolved_manifest columns: {list(resolved_df.columns)}")
+    columns, rows = read_rows(resolved_manifest)
+    print(f"resolved_manifest rows: {len(rows)}")
+    print(f"resolved_manifest columns: {columns}")
 
 if materialized_manifest.exists():
-    materialized_df = pd.read_csv(materialized_manifest)
-    print(f"materialized_manifest rows: {len(materialized_df)}")
-    print(f"materialized_manifest columns: {list(materialized_df.columns)}")
+    columns, rows = read_rows(materialized_manifest)
+    print(f"materialized_manifest rows: {len(rows)}")
+    print(f"materialized_manifest columns: {columns}")
 
 dataset_ready = dataset_csv.exists()
 split_manifest_ready = split_dataset_csv.exists()
@@ -86,7 +91,7 @@ else:
     print("fine-tuning blocked until split manifest is created")
 
 if dataset_ready:
-    dataset_df = pd.read_csv(dataset_csv)
+    dataset_columns, dataset_rows = read_rows(dataset_csv)
     required_cols = {
         "utterance_id",
         "manifest_id",
@@ -104,23 +109,31 @@ if dataset_ready:
         "question_type",
         "cross_examination_flag",
     }
-    missing_cols = required_cols - set(dataset_df.columns)
+    missing_cols = required_cols - set(dataset_columns)
     if missing_cols:
         raise SystemExit(f"Phase 2 dataset CSV is missing columns: {sorted(missing_cols)}")
-    print(f"dataset_rows: {len(dataset_df)}")
-    print(f"dataset_splits: {dataset_df['split'].value_counts(dropna=False).to_dict() if 'split' in dataset_df.columns else 'split column not present'}")
-    print(f"dataset_columns: {list(dataset_df.columns)}")
+    split_counts: dict[str, int] = {}
+    for row in dataset_rows:
+        split = row.get("split", "")
+        split_counts[split] = split_counts.get(split, 0) + 1
+    print(f"dataset_rows: {len(dataset_rows)}")
+    print(f"dataset_splits: {split_counts if 'split' in dataset_columns else 'split column not present'}")
+    print(f"dataset_columns: {dataset_columns}")
 
 if split_manifest_ready:
-    split_df = pd.read_csv(split_dataset_csv)
-    if "split" not in split_df.columns:
+    split_columns, split_rows = read_rows(split_dataset_csv)
+    if "split" not in split_columns:
         raise SystemExit(f"Split manifest is missing the split column: {split_dataset_csv}")
-    print(f"split_manifest_rows: {len(split_df)}")
-    print(f"split_manifest_splits: {split_df['split'].value_counts(dropna=False).to_dict()}")
+    split_counts: dict[str, int] = {}
+    for row in split_rows:
+        split = row.get("split", "")
+        split_counts[split] = split_counts.get(split, 0) + 1
+    print(f"split_manifest_rows: {len(split_rows)}")
+    print(f"split_manifest_splits: {split_counts}")
 
     text_column = None
     for candidate in ("utterance_text", "transcript", "text"):
-        if candidate in split_df.columns:
+        if candidate in split_columns:
             text_column = candidate
             break
 

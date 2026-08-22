@@ -139,10 +139,12 @@ def write_csv(path: Path, rows: Sequence[dict[str, object]], fieldnames: Sequenc
 
 
 def read_csv_rows(path: Path) -> list[dict[str, str]]:
-    import pandas as pd
-
-    df = pd.read_csv(path)
-    return [{str(k): ("" if pd.isna(v) else str(v)) for k, v in row.items()} for _, row in df.iterrows()]
+    rows: list[dict[str, str]] = []
+    with path.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            rows.append({str(k): ("" if v is None else str(v)) for k, v in row.items()})
+    return rows
 
 
 def group_case_splits(case_ids: Sequence[str], *, train_ratio: float, dev_ratio: float, test_ratio: float, seed: int = 42) -> dict[str, str]:

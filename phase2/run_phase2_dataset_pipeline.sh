@@ -27,6 +27,49 @@ if [ ! -f "$WITNESS_MANIFEST" ]; then
   exit 1
 fi
 
+if [ "${ALLOW_PLACEHOLDER_WITNESS_MANIFEST:-0}" != "1" ]; then
+  if "$PYTHON_BIN" - <<'PY' "$WITNESS_MANIFEST"
+from __future__ import annotations
+
+import csv
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+with path.open(newline="", encoding="utf-8") as f:
+    rows = list(csv.DictReader(f))
+
+def _norm(value: object) -> str:
+    return str(value or "").strip().lower()
+
+placeholder_rows = 0
+for row in rows:
+    transcript_url = _norm(row.get("transcript_url"))
+    video_url = _norm(row.get("video_url"))
+    hearing_date = _norm(row.get("hearing_date"))
+    witness_name = _norm(row.get("witness_name"))
+    notes = _norm(row.get("notes"))
+    if (
+        not hearing_date
+        and (not witness_name or witness_name in {"", "unknown", "placeholder"})
+        and (transcript_url in {"", "https://ucr.irmct.org/", "http://ucr.irmct.org/"})
+        and (video_url in {"", "https://ucr.irmct.org/", "http://ucr.irmct.org/"})
+        and "populate from ucr search" in notes
+    ):
+        placeholder_rows += 1
+
+if rows and placeholder_rows == len(rows):
+    raise SystemExit(1)
+PY
+  then
+    :
+  else
+    echo "Phase 2 witness manifest is still a placeholder. Do not use it for downloads until real hearing rows and resolved record links exist." >&2
+    echo "Set ALLOW_PLACEHOLDER_WITNESS_MANIFEST=1 only if you explicitly want to override this guard." >&2
+    exit 1
+  fi
+fi
+
 echo "Phase 2 dataset pipeline"
 echo "Status note: the source CSVs are planning manifests only; the final dataset is produced later after record resolution, materialization, segmentation, and audio/video extraction."
 echo "Source manifests:"

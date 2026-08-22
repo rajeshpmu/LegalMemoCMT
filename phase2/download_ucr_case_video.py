@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -18,6 +19,7 @@ else:
 
 
 UCR_BASE = "https://ucr.irmct.org"
+VIDEO_SUFFIXES = {".mp4", ".webm", ".mov", ".mkv", ".m4v"}
 
 
 def _session_from_env(username_env: str, password_env: str) -> requests.Session | None:
@@ -51,6 +53,10 @@ def _normalize_path(path: str) -> str:
     return path
 
 
+def _looks_like_video_url(url: str) -> bool:
+    return bool(url) and Path(urlparse(url).path).suffix.lower() in VIDEO_SUFFIXES
+
+
 def _download(url: str, dest: Path, session: requests.Session | None) -> Path:
     ensure_dir(dest.parent)
     getter = session.get if session is not None else requests.get
@@ -75,7 +81,15 @@ def _download(url: str, dest: Path, session: requests.Session | None) -> Path:
 
 def verify_media(path: Path) -> None:
     subprocess.run(["file", str(path)], check=True)
-    subprocess.run(["ffprobe", "-v", "error", "-show_streams", "-show_format", str(path)], check=True)
+    ffprobe_bin = shutil.which("ffprobe")
+    if ffprobe_bin is None:
+        fallback = Path(__file__).resolve().parents[1] / "scripts" / "check_mp4_fallback.py"
+        result = subprocess.run([sys.executable, str(fallback), str(path)], check=False, capture_output=True, text=True)
+        if result.returncode == 0:
+            print("ffprobe not found; fallback mp4 validation passed.")
+            return
+        raise subprocess.CalledProcessError(result.returncode, result.args, output=result.stdout, stderr=result.stderr)
+    subprocess.run([ffprobe_bin, "-v", "error", "-show_streams", "-show_format", str(path)], check=True)
 
 
 def main() -> None:
@@ -94,12 +108,24 @@ def main() -> None:
     if session is not None:
         print("UCR login: OK")
 
-    detail = _decode_api_payload(_get_json(session, "/api/Summary/ByCaseDetail", {"CaseNumber": args.case_number}))
+    candidate_case_numbers = [args.case_number.strip()]
+    if args.case_number.strip().upper() in {"ICTR-96-4-T", "ICTR-96-4"}:
+        candidate_case_numbers = ["ICTR-96-04", "ICTR-96-4-T", "ICTR-96-4"]
+
+    detail = []
+    resolved_case_number = args.case_number.strip()
+    for candidate in candidate_case_numbers:
+        detail = _decode_api_payload(_get_json(session, "/api/Summary/ByCaseDetail", {"CaseNumber": candidate}))
+        if detail:
+            resolved_case_number = candidate
+            break
+
     if not detail:
         raise SystemExit(f"No case detail returned for {args.case_number}")
-    case_desc = str(detail[0].get("CaseDescription") or args.case_number)
 
-    docs_payload = _get_json(session, "/api/Summary/ByCaseDocsByLang", {"CaseNumber": args.case_number, "Lang": "EN"})
+    case_desc = str(detail[0].get("CaseDescription") or resolved_case_number)
+
+    docs_payload = _get_json(session, "/api/Summary/ByCaseDocsByLang", {"CaseNumber": resolved_case_number, "Lang": "EN"})
     docs = _decode_api_payload(docs_payload)
     tapes = [d for d in docs if str(d.get("DocumentType") or "").strip().upper() == "TAP"]
     if args.date.strip():
@@ -107,13 +133,14 @@ def main() -> None:
     if args.title_contains.strip():
         needle = args.title_contains.strip().lower()
         tapes = [d for d in tapes if needle in str(d.get("DocumentTitle") or "").lower()]
+    tapes = [d for d in tapes if _looks_like_video_url(_normalize_path(str(d.get("DocumentPath") or "")))]
     tapes = sorted(tapes, key=lambda d: str(d.get("DocumentTitle") or ""))
 
     if not tapes:
         print(f"No court recordings found for {args.case_number} after filtering.")
         return
 
-    print(f"Case: {case_desc} ({args.case_number})")
+    print(f"Case: {case_desc} ({resolved_case_number})")
     print("Available recordings:")
     for idx, tape in enumerate(tapes, start=1):
         print(

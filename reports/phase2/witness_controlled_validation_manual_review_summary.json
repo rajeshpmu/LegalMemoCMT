@@ -1,0 +1,11 @@
+{
+  "anchor_rows": 4,
+  "flagged_for_label_cleanup": 0,
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/legalmeld_validated/witness_only_rows/witness_controlled_validation_subset.csv",
+  "manual_method": "Read the controlled validation CSV row by row, compared the validation track, witness label, score, and notes, and flagged rows whose labels mixed witness identity with exam-heading text.",
+  "output_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/legalmeld_validated/witness_only_rows/witness_controlled_validation_manual_review.csv",
+  "promoted_rows": 6,
+  "reviewed_promoted": 6,
+  "total_rows": 10,
+  "verified_anchor": 4
+}

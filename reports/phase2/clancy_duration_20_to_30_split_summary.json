@@ -1,0 +1,33 @@
+{
+  "dev_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/duration_20_to_30/dev.csv",
+  "excluded_rows": 0,
+  "exclusion_csv": "data/processed/phase2/clancy/clancy_turn_rejection_manifest.csv",
+  "group_column": "youtube_id",
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_turn_manifest_20_to_30.csv",
+  "output_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/duration_20_to_30/clancy_dataset_manifest.csv",
+  "split_counts": {
+    "dev": 76,
+    "test": 75,
+    "train": 400
+  },
+  "split_group_counts": {
+    "dev": 3,
+    "test": 3,
+    "train": 5
+  },
+  "split_hours": {
+    "dev": 0.5064,
+    "test": 0.4951,
+    "train": 2.6801
+  },
+  "split_ratios": {
+    "dev": 0.15,
+    "test": 0.15,
+    "train": 0.7
+  },
+  "test_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/duration_20_to_30/test.csv",
+  "total_groups": 11,
+  "total_rows": 551,
+  "train_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/duration_20_to_30/train.csv",
+  "usable_rows": 551
+}
