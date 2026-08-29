@@ -1,0 +1,29 @@
+{
+  "cases_represented": 0,
+  "category_counts": {
+    "review": 350,
+    "split_dev": 276,
+    "split_test": 364,
+    "split_train": 1939,
+    "usable": 2229
+  },
+  "distinct_witnesses": 0,
+  "hearing_plan_cases": 0,
+  "hearing_plan_hearings": 0,
+  "hearing_plan_rows": 0,
+  "hearings_represented": 8,
+  "input_csv": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/clancy_turn_manifest_clipped_role_mapped_v10.csv",
+  "output_dir": "/Users/rajeshpmu/Desktop/LegalMemoCMT/data/processed/phase2/clancy/witness_only_v10",
+  "quality_tier_counts": {
+    "unknown": 2579
+  },
+  "speaker_role_counts": {
+    "Witness": 2579
+  },
+  "split_counts": {
+    "dev": 276,
+    "test": 364,
+    "train": 1939
+  },
+  "witness_rows": 2579
+}
