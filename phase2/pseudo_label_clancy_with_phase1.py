@@ -143,7 +143,10 @@ def main() -> None:
                 f"found={getattr(first_feature, 'shape', None)} expected=(*, {model_cfg.video_dim}). "
                 "Use 768-dimensional ViT features for this checkpoint."
             )
-    device = get_device(args.device)
+    # Accept both the documented GPU shorthand ("0") and the explicit
+    # PyTorch form ("cuda:0"). Bare integers are invalid torch devices.
+    device_arg = f"cuda:{args.device}" if str(args.device).isdigit() else args.device
+    device = get_device(device_arg)
     model.to(device)
     dataset = build_dataset(samples, model_cfg, effective_modalities)
     loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False, collate_fn=collate_samples)
