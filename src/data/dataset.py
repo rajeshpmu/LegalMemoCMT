@@ -33,12 +33,30 @@ def _clean_text(value: object) -> str:
     return text
 
 
+def _resolve_repo_path(value: object) -> str:
+    """Resolve an absolute path copied from another LegalMemoCMT checkout."""
+    text = _clean_text(value)
+    if not text:
+        return ""
+    path = Path(text)
+    if path.exists():
+        return str(path)
+    root = Path(__file__).resolve().parents[2]
+    if "data" in path.parts:
+        candidate = root / Path(*path.parts[path.parts.index("data") :])
+        if candidate.exists():
+            return str(candidate)
+    candidate = root / path
+    return str(candidate) if candidate.exists() else text
+
+
 @dataclass
 class MultimodalSample:
     sample_id: str
     split: str
     label: int
     video_path: str = ""
+    video_features_path: str = ""
     audio_path: str = ""
     transcript: str = ""
     text_tokens: Optional[np.ndarray] = None
@@ -84,8 +102,9 @@ def load_manifest(path: str | Path) -> list[MultimodalSample]:
                 sample_id=sample_id,
                 split=str(row["split"]),
                 label=label,
-                video_path=_clean_text(row.get("video_path", "")),
-                audio_path=_clean_text(row.get("audio_path", "")),
+                video_path=_resolve_repo_path(row.get("video_path", "")),
+                video_features_path=_resolve_repo_path(row.get("video_features_path", "")),
+                audio_path=_resolve_repo_path(row.get("audio_path", "")),
                 transcript=transcript,
             )
         )
@@ -175,14 +194,16 @@ class ManifestDataset:
             waveform_len = int(self.preprocess_cfg.max_audio_seconds * self.preprocess_cfg.sample_rate)
             audio_waveform = load_audio_waveform(sample.audio_path, self.preprocess_cfg) if sample.audio_path else np.zeros(waveform_len, dtype=np.float32)
             if self.load_video:
-                video_features = sample.video_features if sample.video_features is not None else self._load_array(sample.video_path, (self.max_video_len, 128))
+                video_source = sample.video_features_path or sample.video_path
+                video_features = sample.video_features if sample.video_features is not None else self._load_array(video_source, (self.max_video_len, 128))
             else:
                 video_features = np.zeros((self.max_video_len, 128), dtype=np.float32)
         else:
             text_tokens = sample.text_tokens if sample.text_tokens is not None else self._encode_text_legacy(sample.transcript)
             audio_features = sample.audio_features if sample.audio_features is not None else self._load_array(sample.audio_path, (self.max_audio_len, 128))
             if self.load_video:
-                video_features = sample.video_features if sample.video_features is not None else self._load_array(sample.video_path, (self.max_video_len, 128))
+                video_source = sample.video_features_path or sample.video_path
+                video_features = sample.video_features if sample.video_features is not None else self._load_array(video_source, (self.max_video_len, 128))
             else:
                 video_features = np.zeros((self.max_video_len, 128), dtype=np.float32)
 

@@ -29,6 +29,22 @@ from scripts.build_meld_vit_facecrop_manifest import crop_face_frame, get_face_c
 from src.data.preprocessing import PreprocessConfig, sample_video_frames  # noqa: E402
 
 
+def resolve_repo_path(raw_path: str) -> Path:
+    """Resolve paths copied between the Mac checkout and a RunPod checkout."""
+    path = Path(raw_path.strip())
+    if path.exists():
+        return path
+    # Manifests may contain an absolute path from another checkout. Preserve
+    # the manifest value for provenance, but use this checkout for processing.
+    parts = path.parts
+    if "data" in parts:
+        candidate = ROOT / Path(*parts[parts.index("data") :])
+        if candidate.exists():
+            return candidate
+    candidate = ROOT / path
+    return candidate if candidate.exists() else path
+
+
 def extract_embeddings(video_path: Path, cfg: PreprocessConfig, processor, model, device, batch_size: int) -> np.ndarray:
     frames = sample_video_frames(str(video_path), cfg)
     if frames.size == 0:
@@ -92,7 +108,8 @@ def main() -> None:
     feature_paths: list[str] = []
     statuses: list[str] = []
     for index, row in df.iterrows():
-        video_path = Path(str(row.get("video_path", "")).strip())
+        raw_video_path = str(row.get("video_path", "")).strip()
+        video_path = resolve_repo_path(raw_video_path)
         youtube_id = str(row.get("youtube_id", "unknown_source")).strip() or "unknown_source"
         sample_id = str(row.get("utterance_id") or row.get("turn_id") or f"row_{index}").strip()
         feature_path = output_root / youtube_id / f"{sample_id}.npy"
@@ -122,9 +139,10 @@ def main() -> None:
             failed += 1
             feature_paths.append("")
             statuses.append("failed")
-            issues.append({"sample_id": sample_id, "video_path": str(video_path), "error": str(exc)})
+            issues.append({"sample_id": sample_id, "video_path": raw_video_path, "resolved_video_path": str(video_path), "error": str(exc)})
 
     df["raw_video_path"] = df["video_path"]
+    df["video_path_resolved"] = [str(resolve_repo_path(str(value))) for value in df["video_path"]]
     df["video_features_path"] = feature_paths
     df["video_features_status"] = statuses
     output_path.parent.mkdir(parents=True, exist_ok=True)
