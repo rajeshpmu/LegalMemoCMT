@@ -9,7 +9,8 @@ import pandas as pd
 
 PAST = re.compile(r"\b(that weekend|last weekend|earlier|previously|at the time|was|were|had|did|would|could|used to)\b", re.I)
 ARTIFACT = re.compile(r"\b(text|message|email|letter|note|written|writing|words|statement|representation|observed|observation|purpose|meant to|intended to|encourage|discourage)\b", re.I)
-QUOTE = re.compile(r"(\"[^\"]+\"|'[^']+'|\b(she|he|they|the witness)\s+(said|told|stated|reported)\b)", re.I)
+# Do not treat apostrophes in contractions or possessives as quotation marks.
+QUOTE = re.compile(r"(\"[^\"]+\"|“[^”]+”|\b(she|he|they|the witness)\s+(said|told|stated|reported)\b)", re.I)
 OTHER = re.compile(r"\b(she|her|he|him|his|they|them|another person|someone|the children|the kids)\b", re.I)
 SELF = re.compile(r"\b(i|me|my|myself|we|our)\b", re.I)
 
