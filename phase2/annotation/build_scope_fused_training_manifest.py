@@ -54,9 +54,15 @@ def build_row(row: pd.Series, basic_threshold: float) -> dict[str, str]:
     audio_valid = yes(row, "audio_present") and value(row, "audio_validation_status").lower() in {"valid", "ok", "pass"}
     visual_valid = yes(row, "visual_speaker_match") and yes(row, "speaker_visible_during_speech")
     diarization_present = bool(value(row, "speaker_cluster_id"))
-    critical_reasons = []
+    review_reasons = []
     if target_disagreement:
-        critical_reasons.append("target_scope_disagreement")
+        # Disagreement is a review signal, not automatically a hard failure.
+        review_reasons.append("target_scope_disagreement")
+    if confidence(row) < basic_threshold:
+        review_reasons.append("low_semantic_confidence")
+    if low_margin:
+        review_reasons.append("low_scope_margin")
+    critical_reasons = []
     if confidence(row) < basic_threshold:
         critical_reasons.append("low_semantic_confidence")
     if low_margin:
@@ -108,6 +114,8 @@ def build_row(row: pd.Series, basic_threshold: float) -> dict[str, str]:
         "scope_fusion_tier": tier,
         "scope_training_eligible": training_eligible,
         "scope_fusion_critical_conflict": "YES" if critical_reasons else "NO",
+        "scope_fusion_review_required": "YES" if review_reasons else "NO",
+        "scope_fusion_review_reason": "; ".join(review_reasons),
         "scope_fusion_reason": "; ".join(critical_reasons) or "semantic suggestion supported by configured evidence checks",
         "scope_fusion_rule_version": "semantic_first_audio_video_validation_v1",
     })
@@ -145,6 +153,8 @@ def main() -> None:
         "scope_fusion_tier_counts": output["scope_fusion_tier"].value_counts().to_dict(),
         "final_target_counts": output.loc[output["final_emotion_target_scope"].ne(""), "final_emotion_target_scope"].value_counts().to_dict(),
         "critical_conflict_count": int((output["scope_fusion_critical_conflict"] == "YES").sum()),
+        "review_required_count": int((output["scope_fusion_review_required"] == "YES").sum()),
+        "target_disagreement_count": int((output["target_scope_disagreement"] == "YES").sum()) if "target_scope_disagreement" in output else 0,
         "speaker_emotion_evidence_counts": output["speaker_emotion_evidence_present_fused"].value_counts().to_dict(),
         "notes": [
             "Semantic target scope is derived from the suggestion/DeBERTa layer.",
