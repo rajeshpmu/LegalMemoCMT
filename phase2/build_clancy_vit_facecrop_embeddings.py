@@ -75,7 +75,11 @@ def main() -> None:
     if args.max_rows > 0:
         df = df.head(args.max_rows).copy()
 
-    device = torch.device(args.device)
+    # Accept both the transformers-style GPU shorthand ("0") and the
+    # explicit PyTorch form ("cuda:0"). Bare integers are not valid for
+    # torch.device().
+    device_name = f"cuda:{args.device}" if str(args.device).isdigit() else args.device
+    device = torch.device(device_name)
     processor = AutoImageProcessor.from_pretrained(args.vit_model)
     model = AutoModel.from_pretrained(args.vit_model).to(device)
     hidden_size = int(model.config.hidden_size)
