@@ -27,7 +27,10 @@ def normalize(value: object) -> str:
 
 
 def is_witness_row(row: dict[str, str]) -> bool:
-    return normalize(row.get("speaker_role")).lower() == "witness"
+    return (
+        normalize(row.get("speaker_role")).lower() == "witness"
+        and normalize(row.get("corpus_exclusion_status")).upper() != "EXCLUDE"
+    )
 
 
 def enrich_row(row: dict[str, str]) -> dict[str, str]:
@@ -107,7 +110,7 @@ def build_hearing_plan(discovery_rows: list[dict[str, str]]) -> list[dict[str, s
 
 def build_summary(rows: list[dict[str, str]], output_dir: Path, input_path: Path) -> dict[str, object]:
     witness_names = {normalize(row.get("witness_id") or row.get("witness_name") or row.get("witness_name_or_code")) for row in rows if normalize(row.get("witness_id") or row.get("witness_name") or row.get("witness_name_or_code"))}
-    hearings = {normalize(row.get("hearing_id")) for row in rows if normalize(row.get("hearing_id"))}
+    hearings = {normalize(row.get("hearing_id") or row.get("youtube_id")) for row in rows if normalize(row.get("hearing_id") or row.get("youtube_id"))}
     cases = {normalize(row.get("case_number")) for row in rows if normalize(row.get("case_number"))}
     split_counts = Counter(normalize(row.get("split")) or "unsplit" for row in rows)
     quality_counts = Counter(normalize(row.get("quality_tier")) or "unknown" for row in rows)

@@ -1,0 +1,34 @@
+{
+  "confidence_counts": {
+    "below_0_50": 1,
+    "below_0_60": 1,
+    "below_0_80": 1
+  },
+  "criteria": {
+    "emotions": [
+      "anger"
+    ],
+    "limit": 0,
+    "max_confidence": null,
+    "min_confidence": null,
+    "print_rows": 5,
+    "sources": [],
+    "splits": []
+  },
+  "input_csv": "data/processed/phase2/clancy/phase1_video_only_pseudo_labels_200.csv",
+  "input_rows": 200,
+  "output_csv": "reports/phase2/clancy_pseudo_review_anger_videoonly.csv",
+  "selected_emotion_counts": {
+    "anger": 1
+  },
+  "selected_rows": 1,
+  "selected_source_counts": {
+    "DCBWoWhsTpA": 1
+  },
+  "selected_split_counts": {
+    "dev": 1
+  },
+  "selection_reason_counts": {
+    "emotion=anger": 1
+  }
+}

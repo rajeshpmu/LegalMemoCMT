@@ -1,0 +1,94 @@
+{
+  "input_csv": "data/processed/phase2/clancy/witness_only_v10/clancy_witness_speaking_usable_visual_provisional.csv",
+  "rows": 2229,
+  "unique_turn_ids": 2229,
+  "unique_utterance_ids": 2229,
+  "unique_source_videos": 8,
+  "unique_speaker_clusters": 20,
+  "duration": {
+    "total_seconds": 17066.136,
+    "total_minutes": 284.436,
+    "total_hours": 4.7406,
+    "min_seconds": 0.805,
+    "p25_seconds": 2.505,
+    "median_seconds": 4.833,
+    "mean_seconds": 7.656,
+    "p75_seconds": 10.504,
+    "p95_seconds": 23.73,
+    "max_seconds": 29.867,
+    "band_0_8_to_under_20_rows": 2032,
+    "band_0_8_to_under_20_minutes": 203.814,
+    "band_20_to_30_rows": 197,
+    "band_20_to_30_minutes": 80.621,
+    "below_0_8_rows": 0,
+    "above_30_rows": 0
+  },
+  "categorical_counts": {
+    "youtube_id": {
+      "DCBWoWhsTpA": 235,
+      "D5L_c9Mla1U": 218,
+      "ma6ni-5zuW0": 50,
+      "sHUdRcABC-Q": 45,
+      "1tyKO8mTdOM": 435,
+      "93sfJyLzhqM": 269,
+      "ZJd1Lk4w-qo": 178,
+      "peYoD-JkAXE": 799
+    },
+    "speaker_role": {
+      "Witness": 2229
+    },
+    "witness_speaking_status": {
+      "SPEAKING": 2229
+    },
+    "visual_target_role": {
+      "Witness": 2229
+    },
+    "visual_speaker_match": {
+      "YES": 2229
+    },
+    "speaker_visible_during_speech": {
+      "YES": 2229
+    },
+    "visual_verification_confidence": {
+      "HIGH": 2229
+    },
+    "visual_verification_status": {
+      "PROVISIONAL_NOT_HUMAN_VERIFIED": 2229
+    },
+    "split": {
+      "dev": 235,
+      "test": 313,
+      "train": 1681
+    },
+    "clip_status": {
+      "created": 2229
+    },
+    "source_offset_status": {
+      "default_zero": 1794,
+      "explicit": 435
+    },
+    "speaker_role_confidence": {
+      "HIGH": 2229
+    }
+  },
+  "text_completeness": {
+    "blank_turn_text": 0,
+    "blank_utterance_text": 0
+  },
+  "media_integrity": {
+    "video_files_existing": 2229,
+    "audio_files_existing": 2229,
+    "video_paths_missing": 0,
+    "audio_paths_missing": 0,
+    "duplicate_turn_ids": 0,
+    "duplicate_utterance_ids": 0,
+    "duplicate_video_clip_paths": 0,
+    "duplicate_audio_clip_paths": 0
+  },
+  "interpretation": [
+    "This is an accepted structural witness-speaking pool, not a human-validated emotion or visual-presence set.",
+    "visual_speaker_match must be manually or model-assisted validated before claiming visible-witness samples.",
+    "The duration total is summed clip duration and should not be treated as independent raw-video hours."
+  ],
+  "source_csv": "reports/phase2/clancy_witness_speaking_usable_visual_provisional_by_source.csv"
+}

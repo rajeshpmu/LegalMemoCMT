@@ -1,0 +1,20 @@
+{
+  "input_csv": "data/processed/phase2/clancy/courtroom_affect_candidates_200.csv",
+  "output_csv": "data/processed/phase2/clancy/review_assertive.csv",
+  "requested_affects": [
+    "ASSERTIVE"
+  ],
+  "input_rows": 200,
+  "selected_rows": 11,
+  "affect_counts": {
+    "ASSERTIVE": 11
+  },
+  "confidence_values": {
+    "min": 0.6,
+    "max": 0.95
+  },
+  "notes": [
+    "Candidates are weak labels for human review, not final affect annotations.",
+    "Do not interpret affect as credibility, truthfulness, deception, or reliability."
+  ]
+}

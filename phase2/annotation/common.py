@@ -23,7 +23,7 @@ CANONICAL_DEFAULTS = {
 SUGGESTION_DEFAULTS = {
     "suggested_basic_emotion": "", "suggested_basic_emotion_confidence": "", "suggested_courtroom_affect": "", "suggested_courtroom_affect_confidence": "", "suggested_response_stance": "", "suggested_response_stance_confidence": "",
     "text_emotion_label": "", "text_emotion_confidence": "", "text_emotion_model": "", "text_affect_candidate": "", "text_affect_confidence": "",
-    "audio_valence": "", "audio_arousal": "", "audio_dominance": "", "audio_affect_model": "", "audio_emotion_candidate": "", "audio_emotion_confidence": "",
+    "audio_valence": "", "audio_arousal": "", "audio_excitement": "", "audio_dominance": "", "audio_affect_model": "", "audio_emotion_candidate": "", "audio_emotion_confidence": "",
     "video_emotion_candidate": "", "video_emotion_confidence": "", "video_affect_candidate": "", "video_affect_confidence": "", "video_model": "",
     "prediction_entropy": "", "prediction_margin": "", "modality_disagreement_score": "", "class_rarity_score": "", "annotation_priority_score": "", "annotation_priority_reason": "",
     "pseudo_label": "", "pseudo_label_confidence": "", "pseudo_label_model": "", "pseudo_label_model_checkpoint": "", "pseudo_label_iteration": "", "pseudo_label_acceptance_reason": "",

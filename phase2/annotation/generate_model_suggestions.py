@@ -8,12 +8,14 @@ import pandas as pd
 
 from common import ensure_annotation_schema
 
+DEFAULT_TEXT_MODEL = "MoritzLaurer/deberta-v3-large-zeroshot-v2.0"
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate optional non-canonical model suggestions")
     parser.add_argument("--input-csv", required=True)
     parser.add_argument("--output-csv", required=True)
-    parser.add_argument("--text-model", default="", help="Optional zero-shot NLI model")
+    parser.add_argument("--text-model", default=DEFAULT_TEXT_MODEL, help="Zero-shot NLI model")
     parser.add_argument("--audio-model", default="", help="Optional audio affect model")
     parser.add_argument("--max-rows", type=int, default=0)
     args = parser.parse_args()

@@ -1,0 +1,37 @@
+{
+  "confidence_counts": {
+    "below_0_50": 18,
+    "below_0_60": 41,
+    "below_0_80": 41
+  },
+  "criteria": {
+    "emotions": [],
+    "limit": 0,
+    "max_confidence": 0.6,
+    "min_confidence": null,
+    "print_rows": 5,
+    "sources": [],
+    "splits": []
+  },
+  "input_csv": "data/processed/phase2/clancy/phase1_trimodal_pseudo_labels_200.csv",
+  "input_rows": 200,
+  "output_csv": "reports/phase2/clancy_pseudo_review_low_confidence.csv",
+  "selected_emotion_counts": {
+    "anger": 3,
+    "disgust": 3,
+    "joy": 1,
+    "neutral": 21,
+    "sadness": 10,
+    "surprise": 3
+  },
+  "selected_rows": 41,
+  "selected_source_counts": {
+    "DCBWoWhsTpA": 41
+  },
+  "selected_split_counts": {
+    "dev": 41
+  },
+  "selection_reason_counts": {
+    "confidence<=0.6": 41
+  }
+}

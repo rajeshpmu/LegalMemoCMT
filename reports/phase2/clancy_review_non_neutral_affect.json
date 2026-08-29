@@ -1,0 +1,27 @@
+{
+  "input_csv": "data/processed/phase2/clancy/courtroom_affect_candidates_200_v3.csv",
+  "output_csv": "data/processed/phase2/clancy/review_non_neutral_affect.csv",
+  "requested_affects": [
+    "AGITATED",
+    "ASSERTIVE",
+    "DEFENSIVE",
+    "DISTRESSED",
+    "GUARDED",
+    "TENSE"
+  ],
+  "input_rows": 200,
+  "selected_rows": 14,
+  "affect_counts": {
+    "ASSERTIVE": 11,
+    "GUARDED": 2,
+    "DISTRESSED": 1
+  },
+  "confidence_values": {
+    "min": 0.6,
+    "max": 0.95
+  },
+  "notes": [
+    "Candidates are weak labels for human review, not final affect annotations.",
+    "Do not interpret affect as credibility, truthfulness, deception, or reliability."
+  ]
+}

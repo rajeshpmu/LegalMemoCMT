@@ -135,6 +135,7 @@ def _probe_title(
     cookies_from_browser: str | None,
     cookies_file: str | None,
     js_runtimes: str | None,
+    remote_components: str | None,
 ) -> tuple[str, str]:
     cmd = [ytdlp_bin, "--no-playlist", "--get-id", "--get-title"]
     if cookies_file:
@@ -143,6 +144,8 @@ def _probe_title(
         cmd += ["--cookies-from-browser", cookies_from_browser]
     if js_runtimes:
         cmd += ["--js-runtimes", js_runtimes]
+    if remote_components:
+        cmd += ["--remote-components", remote_components]
     cmd.append(url)
     proc = subprocess.run(cmd, check=True, text=True, capture_output=True)
     lines = [line.strip() for line in proc.stdout.splitlines() if line.strip()]
@@ -160,6 +163,7 @@ def main() -> None:
     parser.add_argument("--cookies-from-browser", default="chrome")
     parser.add_argument("--cookies-file", default="")
     parser.add_argument("--js-runtimes", default="")
+    parser.add_argument("--remote-components", default="")
     parser.add_argument("--skip-probe", action="store_true", help="Use the built-in title mapping only")
     args = parser.parse_args()
 
@@ -178,6 +182,7 @@ def main() -> None:
     if cookies_file and not Path(cookies_file).is_file():
         raise SystemExit(f"Cookies file not found: {cookies_file}")
     js_runtimes = args.js_runtimes.strip() or None
+    remote_components = args.remote_components.strip() or None
     rows: list[dict[str, Any]] = []
     category_counts: dict[str, int] = {}
     requested_counts: dict[str, int] = {}
@@ -194,6 +199,7 @@ def main() -> None:
                     cookies_from_browser=cookies_from_browser,
                     cookies_file=cookies_file,
                     js_runtimes=js_runtimes,
+                    remote_components=remote_components,
                 )
                 youtube_id = probed_id or youtube_id
                 title = probed_title or title

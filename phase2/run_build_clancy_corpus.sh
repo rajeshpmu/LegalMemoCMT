@@ -27,6 +27,7 @@ fi
 FFMPEG_BIN="${FFMPEG_BIN:-ffmpeg}"
 COOKIES_FILE="${COOKIES_FILE:-}"
 JS_RUNTIMES="${JS_RUNTIMES:-}"
+REMOTE_COMPONENTS="${REMOTE_COMPONENTS:-}"
 if [[ -n "${COOKIES_FROM_BROWSER+x}" ]]; then
   COOKIES_FROM_BROWSER="$COOKIES_FROM_BROWSER"
 elif [[ -d "$HOME/.config/google-chrome" || -d "$HOME/.config/chromium" ]]; then
@@ -47,6 +48,7 @@ SUBTITLE_LANGS="${SUBTITLE_LANGS:-en}"
   --cookies-from-browser "$COOKIES_FROM_BROWSER" \
   --cookies-file "$COOKIES_FILE" \
   --js-runtimes "$JS_RUNTIMES" \
+  --remote-components "$REMOTE_COMPONENTS" \
   --format-string "$FORMAT_STRING" \
   --subtitle-langs "$SUBTITLE_LANGS" \
   "$@"

@@ -37,7 +37,7 @@
     "courtroom_affect_annotation_status",
     "affect_intensity",
     "valence",
-    "arousal",
+    "excitement",
     "suggestion_fields",
     "priority_fields",
     "observable_cue_fields",

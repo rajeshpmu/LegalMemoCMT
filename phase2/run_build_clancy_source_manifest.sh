@@ -16,6 +16,7 @@ YTDLP_BIN="${YTDLP_BIN:-yt-dlp}"
 COOKIES_FROM_BROWSER="${COOKIES_FROM_BROWSER-}"
 COOKIES_FILE="${COOKIES_FILE:-}"
 JS_RUNTIMES="${JS_RUNTIMES:-}"
+REMOTE_COMPONENTS="${REMOTE_COMPONENTS:-}"
 
 "$PYTHON_BIN" phase2/build_clancy_source_manifest.py \
   --urls-file "$URLS_FILE" \
@@ -25,4 +26,5 @@ JS_RUNTIMES="${JS_RUNTIMES:-}"
   --cookies-from-browser "$COOKIES_FROM_BROWSER" \
   --cookies-file "$COOKIES_FILE" \
   --js-runtimes "$JS_RUNTIMES" \
+  --remote-components "$REMOTE_COMPONENTS" \
   "$@"

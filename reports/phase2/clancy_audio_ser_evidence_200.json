@@ -1,0 +1,21 @@
+{
+  "audio_paths_missing": 0,
+  "canonical_labels_overwritten": false,
+  "input_csv": "data/processed/phase2/clancy/witness_only_v10/clancy_witness_speaking_visual_verified_vit_200.csv",
+  "model_load_errors": [],
+  "notes": [
+    "Odyssey values are continuous audio V/A/D evidence, approximately in the model's 0-1 range; they are not basic-emotion labels.",
+    "SpeechBrain categorical output is a cross-check trained on IEMOCAP and is not the LegalMemoCMT gold label.",
+    "Existing emotion, basic-emotion, and courtroom-affect fields are preserved.",
+    "Long audio clips are truncated to the Odyssey model's configured maximum input length when required."
+  ],
+  "odyssey_model": "3loi/SER-Odyssey-Baseline-WavLM-Multi-Attributes",
+  "odyssey_success_rows": 200,
+  "output_csv": "data/processed/phase2/clancy/audio_ser_evidence_200.csv",
+  "rows_processed": 200,
+  "speechbrain_model": "speechbrain/emotion-recognition-wav2vec2-IEMOCAP",
+  "speechbrain_success_rows": 200,
+  "status_counts": {
+    "OK": 200
+  }
+}

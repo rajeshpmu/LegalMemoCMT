@@ -1,0 +1,21 @@
+{
+  "manifest_csv": "data/processed/phase2/clancy/clancy_turn_manifest_clipped_diarized.csv",
+  "segments_csv": "data/processed/phase2/clancy/clancy_diarization_segments_all.csv",
+  "output_csv": "data/processed/phase2/clancy/clancy_speaker_cluster_inventory.csv",
+  "cluster_rows": 145,
+  "source_groups": 11,
+  "manifest_rows": 11926,
+  "clusters_by_source": {
+    "1tyKO8mTdOM": 16,
+    "93sfJyLzhqM": 40,
+    "D5L_c9Mla1U": 10,
+    "D6skXbDJJj8": 27,
+    "DCBWoWhsTpA": 18,
+    "LGYerNiA8kI": 4,
+    "VQQb9BbgwHg": 1,
+    "ZJd1Lk4w-qo": 8,
+    "ma6ni-5zuW0": 4,
+    "peYoD-JkAXE": 12,
+    "sHUdRcABC-Q": 5
+  }
+}

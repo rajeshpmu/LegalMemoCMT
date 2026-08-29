@@ -1,0 +1,20 @@
+{
+  "input_csv": "data/processed/phase2/clancy/courtroom_affect_candidates_200.csv",
+  "output_csv": "data/processed/phase2/clancy/courtroom_affect_neutral_calm.csv",
+  "requested_affects": [
+    "NEUTRAL_CALM"
+  ],
+  "input_rows": 200,
+  "selected_rows": 148,
+  "affect_counts": {
+    "NEUTRAL_CALM": 148
+  },
+  "confidence_values": {
+    "min": 0.6,
+    "max": 0.9
+  },
+  "notes": [
+    "Candidates are weak labels for human review, not final affect annotations.",
+    "Do not interpret affect as credibility, truthfulness, deception, or reliability."
+  ]
+}

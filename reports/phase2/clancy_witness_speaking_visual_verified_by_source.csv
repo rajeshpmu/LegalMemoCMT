@@ -1,0 +1,9 @@
+youtube_id,rows,clip_minutes,clip_hours,unique_speaker_clusters,split_counts
+peYoD-JkAXE,799,102.313,1.7052,6,"{""train"": 799}"
+1tyKO8mTdOM,435,52.784,0.8797,2,"{""train"": 435}"
+93sfJyLzhqM,269,27.431,0.4572,9,"{""train"": 269}"
+DCBWoWhsTpA,235,38.113,0.6352,5,"{""dev"": 235}"
+D5L_c9Mla1U,218,27.227,0.4538,2,"{""test"": 218}"
+ZJd1Lk4w-qo,178,25.075,0.4179,1,"{""train"": 178}"
+ma6ni-5zuW0,50,4.877,0.0813,1,"{""test"": 50}"
+sHUdRcABC-Q,45,6.615,0.1103,1,"{""test"": 45}"

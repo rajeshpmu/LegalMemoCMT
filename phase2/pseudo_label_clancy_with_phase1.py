@@ -15,6 +15,7 @@ os.environ.setdefault("USE_TF", "0")
 os.environ.setdefault("TRANSFORMERS_NO_TF", "1")
 
 import torch
+import numpy as np
 from torch.utils.data import DataLoader
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -106,6 +107,9 @@ def main() -> None:
         rows = rows[: args.max_rows]
     if not rows:
         raise SystemExit("No rows selected")
+    samples = load_manifest(input_path)
+    if args.max_rows > 0:
+        samples = samples[: args.max_rows]
 
     model, checkpoint_meta = load_checkpoint(checkpoint_path)
     model_cfg = model.config
@@ -120,11 +124,27 @@ def main() -> None:
         effective_modalities.remove("video")
     if not effective_modalities:
         raise ValueError("No modalities remain after applying checkpoint capabilities")
+    if "video" in effective_modalities and model_cfg.encoder_mode in {"pretrained", "paper"}:
+        missing_features = [
+            str(sample.sample_id)
+            for sample in samples
+            if not sample.video_features_path or not Path(sample.video_features_path).exists()
+        ]
+        if missing_features:
+            raise ValueError(
+                "Trimodal paper-checkpoint inference requires an existing video_features_path "
+                f"(.npy ViT features) for every selected row; missing={len(missing_features)}. "
+                "Run build_clancy_vit_facecrop_embeddings.py first and use its output manifest."
+            )
+        first_feature = np.load(samples[0].video_features_path, allow_pickle=False, mmap_mode="r")
+        if first_feature.ndim != 2 or first_feature.shape[1] != model_cfg.video_dim:
+            raise ValueError(
+                "Video feature dimension mismatch: "
+                f"found={getattr(first_feature, 'shape', None)} expected=(*, {model_cfg.video_dim}). "
+                "Use 768-dimensional ViT features for this checkpoint."
+            )
     device = get_device(args.device)
     model.to(device)
-    samples = load_manifest(input_path)
-    if args.max_rows > 0:
-        samples = samples[: args.max_rows]
     dataset = build_dataset(samples, model_cfg, effective_modalities)
     loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=False, collate_fn=collate_samples)
 
@@ -181,7 +201,11 @@ def main() -> None:
             "Predictions are weak labels, not gold annotations.",
             "Original emotion_label fields were preserved unchanged.",
             "Courtroom-affect fields were not inferred.",
-            "The selected checkpoint has use_video=false, so video was not consumed by the model.",
+            (
+                "Video was consumed by the selected checkpoint."
+                if "video" in effective_modalities and model_cfg.use_video
+                else "Video was not consumed by the selected checkpoint."
+            ),
             "No deception, truthfulness, credibility, or reliability label was created.",
         ],
     }

@@ -1,0 +1,38 @@
+{
+  "disagreement_counts": {
+    "HIGH": 40,
+    "LOW": 132,
+    "MEDIUM": 28
+  },
+  "input_audio_ser_csv": "data/processed/phase2/clancy/audio_ser_evidence_200.csv",
+  "input_phase1_csv": "data/processed/phase2/clancy/phase1_trimodal_pseudo_labels_200.csv",
+  "missing_audio_ser_rows": 0,
+  "notes": [
+    "Proposed fields are conservative machine-review recommendations, not gold labels.",
+    "Original Phase 1 and audio-SER fields are preserved.",
+    "Human review is required for HIGH and MEDIUM priority rows before training.",
+    "No deception, credibility, truthfulness, or reliability label is inferred."
+  ],
+  "output_csv": "data/processed/phase2/clancy/emotion_scope_review_200_legacy.csv",
+  "policy": "legacy",
+  "priority_counts": {
+    "HIGH": 40,
+    "LOW": 132,
+    "MEDIUM": 28
+  },
+  "proposed_emotion_counts": {
+    "anger": 5,
+    "disgust": 5,
+    "fear": 1,
+    "joy": 1,
+    "neutral": 180,
+    "sadness": 8
+  },
+  "rows_processed": 200,
+  "scope_counts": {
+    "OTHER_PERSON_DESCRIBED": 9,
+    "QUOTED_SPEECH": 38,
+    "SELF_EXPRESSED": 2,
+    "UNCLEAR": 151
+  }
+}

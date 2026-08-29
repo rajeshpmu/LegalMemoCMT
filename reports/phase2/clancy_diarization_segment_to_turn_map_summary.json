@@ -1,0 +1,13 @@
+{
+  "segments_csv": "data/processed/phase2/clancy/clancy_diarization_segments_all.csv",
+  "turns_csv": "data/processed/phase2/clancy/clancy_turn_manifest_clipped.csv",
+  "output_csv": "data/processed/phase2/clancy/clancy_diarization_segment_to_turn_map.csv",
+  "segment_rows": 23709,
+  "turn_rows": 11926,
+  "sources_with_segments": 11,
+  "turn_sources": 11,
+  "segments_mapped_to_at_least_one_turn": 22729,
+  "segments_without_overlapping_turn": 980,
+  "segments_overlapping_multiple_turns": 7529,
+  "sources_without_diarization_segments": []
+}

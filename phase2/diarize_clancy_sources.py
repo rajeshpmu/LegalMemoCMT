@@ -35,36 +35,68 @@ def main() -> None:
     parser.add_argument("--device", default="cpu", choices=["cpu", "cuda", "mps"])
     parser.add_argument("--min-speakers", type=int, default=0)
     parser.add_argument("--max-speakers", type=int, default=0)
+    parser.add_argument(
+        "--skip-completed",
+        action="store_true",
+        help="Reuse sources already represented in --segments-csv and diarize only new sources",
+    )
     args = parser.parse_args()
-    token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGINGFACE_TOKEN")
-    if not token:
-        raise SystemExit("Set HF_TOKEN after accepting the pyannote model terms on Hugging Face")
-    try:
-        from pyannote.audio import Pipeline
-    except ImportError as exc:
-        raise SystemExit("Install pyannote.audio in the inference environment before running diarization") from exc
 
     df = pd.read_csv(args.input_csv, dtype=str).fillna("")
     source_col = "source_audio_path" if "source_audio_path" in df.columns else "audio_path"
     sources = [x for x in df[source_col].drop_duplicates().tolist() if x]
-    if args.max_sources > 0:
-        sources = sources[: args.max_sources]
-    try:
-        pipeline = Pipeline.from_pretrained(args.model, token=token)
-    except TypeError as exc:
-        if "unexpected keyword argument 'token'" not in str(exc):
-            raise
-        pipeline = Pipeline.from_pretrained(args.model, use_auth_token=token)
-    if args.device != "cpu":
-        import torch
 
-        if args.device == "cuda" and not torch.cuda.is_available():
-            raise SystemExit("CUDA requested but torch.cuda.is_available() is false")
-        if args.device == "mps" and not torch.backends.mps.is_available():
-            raise SystemExit("MPS requested but torch.backends.mps.is_available() is false")
-        pipeline.to(torch.device(args.device))
-    all_segments: list[dict[str, str]] = []
-    for source in sources:
+    segments_path = Path(args.segments_csv)
+    existing_segments: list[dict[str, str]] = []
+    completed_sources: set[str] = set()
+    if args.skip_completed and segments_path.exists():
+        existing_df = pd.read_csv(segments_path, dtype=str).fillna("")
+        required_segment_columns = {
+            "source_audio_path",
+            "speaker_cluster_id",
+            "segment_start_seconds",
+            "segment_end_seconds",
+            "diarization_model",
+        }
+        if required_segment_columns.issubset(existing_df.columns):
+            existing_segments = existing_df.to_dict("records")
+            completed_sources = {
+                row["source_audio_path"]
+                for row in existing_segments
+                if row.get("source_audio_path")
+            }
+        else:
+            print(f"Existing segments file has incompatible columns; recomputing sources: {segments_path}")
+
+    pending_sources = [source for source in sources if source not in completed_sources]
+    if args.max_sources > 0:
+        pending_sources = pending_sources[: args.max_sources]
+
+    all_segments: list[dict[str, str]] = list(existing_segments)
+    if pending_sources:
+        token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGINGFACE_TOKEN")
+        if not token:
+            raise SystemExit("Set HF_TOKEN after accepting the pyannote model terms on Hugging Face")
+        try:
+            from pyannote.audio import Pipeline
+        except ImportError as exc:
+            raise SystemExit("Install pyannote.audio in the inference environment before running diarization") from exc
+        try:
+            pipeline = Pipeline.from_pretrained(args.model, token=token)
+        except TypeError as exc:
+            if "unexpected keyword argument 'token'" not in str(exc):
+                raise
+            pipeline = Pipeline.from_pretrained(args.model, use_auth_token=token)
+        if args.device != "cpu":
+            import torch
+
+            if args.device == "cuda" and not torch.cuda.is_available():
+                raise SystemExit("CUDA requested but torch.cuda.is_available() is false")
+            if args.device == "mps" and not torch.backends.mps.is_available():
+                raise SystemExit("MPS requested but torch.backends.mps.is_available() is false")
+            pipeline.to(torch.device(args.device))
+
+    for source in pending_sources:
         path = Path(source)
         if not path.exists():
             print(f"Skipping missing source audio: {path}")
@@ -84,7 +116,6 @@ def main() -> None:
                 "diarization_model": args.model,
             })
 
-    segments_path = Path(args.segments_csv)
     segments_path.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(all_segments).to_csv(segments_path, index=False)
     segment_df = pd.DataFrame(all_segments)
@@ -117,7 +148,10 @@ def main() -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(enriched).to_csv(output_path, index=False)
     print(f"Wrote {len(enriched)} diarization-enriched rows to {output_path}")
-    print(f"Wrote {len(all_segments)} diarization segments to {segments_path}")
+    print(
+        f"Wrote {len(all_segments)} diarization segments to {segments_path} "
+        f"(reused_sources={len(completed_sources)}, new_sources={len(pending_sources)})"
+    )
 
 
 if __name__ == "__main__":

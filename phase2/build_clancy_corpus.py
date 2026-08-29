@@ -42,7 +42,12 @@ def _run(cmd: list[str], *, capture: bool = False) -> subprocess.CompletedProces
     return subprocess.run(cmd, **kwargs)
 
 
-def _yt_dlp_auth_args(cookies_from_browser: str | None, cookies_file: str | None, js_runtimes: str | None) -> list[str]:
+def _yt_dlp_auth_args(
+    cookies_from_browser: str | None,
+    cookies_file: str | None,
+    js_runtimes: str | None,
+    remote_components: str | None,
+) -> list[str]:
     args: list[str] = []
     if cookies_file:
         args += ["--cookies", cookies_file]
@@ -50,6 +55,8 @@ def _yt_dlp_auth_args(cookies_from_browser: str | None, cookies_file: str | None
         args += ["--cookies-from-browser", cookies_from_browser]
     if js_runtimes:
         args += ["--js-runtimes", js_runtimes]
+    if remote_components:
+        args += ["--remote-components", remote_components]
     return args
 
 
@@ -60,9 +67,10 @@ def _probe_metadata(
     cookies_from_browser: str | None,
     cookies_file: str | None,
     js_runtimes: str | None,
+    remote_components: str | None,
 ) -> dict[str, Any]:
     cmd = [ytdlp_bin, "--dump-single-json", "--no-playlist"]
-    cmd += _yt_dlp_auth_args(cookies_from_browser, cookies_file, js_runtimes)
+    cmd += _yt_dlp_auth_args(cookies_from_browser, cookies_file, js_runtimes, remote_components)
     cmd.append(url)
     proc = _run(cmd, capture=True)
     try:
@@ -80,12 +88,13 @@ def _download_video(
     cookies_from_browser: str | None,
     cookies_file: str | None,
     js_runtimes: str | None,
+    remote_components: str | None,
     skip_existing: bool,
 ) -> None:
     cmd = [ytdlp_bin, "--no-playlist", "-f", format_string, "--merge-output-format", "mp4", "-o", output_template]
     if skip_existing:
         cmd.append("--no-overwrites")
-    cmd += _yt_dlp_auth_args(cookies_from_browser, cookies_file, js_runtimes)
+    cmd += _yt_dlp_auth_args(cookies_from_browser, cookies_file, js_runtimes, remote_components)
     cmd.append(url)
     _run(cmd)
 
@@ -98,6 +107,7 @@ def _download_subtitles(
     cookies_from_browser: str | None,
     cookies_file: str | None,
     js_runtimes: str | None,
+    remote_components: str | None,
     skip_existing: bool,
     subtitle_langs: str,
 ) -> None:
@@ -115,7 +125,7 @@ def _download_subtitles(
     ]
     if skip_existing:
         cmd.append("--no-overwrites")
-    cmd += _yt_dlp_auth_args(cookies_from_browser, cookies_file, js_runtimes)
+    cmd += _yt_dlp_auth_args(cookies_from_browser, cookies_file, js_runtimes, remote_components)
     cmd.append(url)
     _run(cmd)
 
@@ -171,6 +181,7 @@ def main() -> None:
     parser.add_argument("--cookies-from-browser", default="chrome", help="Browser profile for yt-dlp cookies; use empty string to disable")
     parser.add_argument("--cookies-file", default="", help="Netscape-format cookies file; keep outside the repository")
     parser.add_argument("--js-runtimes", default="", help="yt-dlp JavaScript runtimes, for example deno:/usr/local/bin/deno")
+    parser.add_argument("--remote-components", default="", help="yt-dlp remote components, for example ejs:github")
     parser.add_argument("--format-string", default=DEFAULT_FORMAT, help="yt-dlp format selector")
     parser.add_argument("--subtitle-langs", default="en", help="Subtitle language list for yt-dlp")
     parser.add_argument("--skip-existing", action="store_true", help="Reuse already downloaded files")
@@ -222,6 +233,7 @@ def main() -> None:
     if cookies_file and not Path(cookies_file).is_file():
         raise SystemExit(f"Cookies file not found: {cookies_file}")
     js_runtimes = args.js_runtimes.strip() or None
+    remote_components = args.remote_components.strip() or None
     for row_num, url in enumerate(urls, start=1):
         meta: dict[str, Any] = {}
         title = ""
@@ -245,6 +257,7 @@ def main() -> None:
                 cookies_from_browser=cookies_from_browser,
                 cookies_file=cookies_file,
                 js_runtimes=js_runtimes,
+                remote_components=remote_components,
             )
             video_id = str(meta.get("id") or meta.get("display_id") or sha1_short(url))
             title = str(meta.get("title") or "")
@@ -275,6 +288,7 @@ def main() -> None:
                     cookies_from_browser=cookies_from_browser,
                     cookies_file=cookies_file,
                     js_runtimes=js_runtimes,
+                    remote_components=remote_components,
                     skip_existing=args.skip_existing,
                 )
                 video_status = "downloaded"
@@ -318,6 +332,7 @@ def main() -> None:
                         cookies_from_browser=cookies_from_browser,
                         cookies_file=cookies_file,
                         js_runtimes=js_runtimes,
+                        remote_components=remote_components,
                         skip_existing=args.skip_existing,
                         subtitle_langs=args.subtitle_langs,
                     )
@@ -333,6 +348,7 @@ def main() -> None:
                     cookies_from_browser=cookies_from_browser,
                     cookies_file=cookies_file,
                     js_runtimes=js_runtimes,
+                    remote_components=remote_components,
                     skip_existing=args.skip_existing,
                     subtitle_langs=args.subtitle_langs,
                 )

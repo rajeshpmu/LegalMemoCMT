@@ -1,0 +1,25 @@
+{
+  "input_csv": "data/processed/phase2/clancy/courtroom_affect_candidates_200_v4.csv",
+  "output_csv": "data/processed/phase2/clancy/courtroom_affect_candidates_200_v5_gated.csv",
+  "rows_processed": 200,
+  "basic_threshold": 0.7,
+  "affect_threshold": 0.6,
+  "annotation_status_counts": {
+    "AUTO_ADJUDICATED": 125,
+    "UNRESOLVED": 75
+  },
+  "annotation_tier_counts": {
+    "SILVER": 125,
+    "WEAK": 75
+  },
+  "critical_conflict_counts": {
+    "NO": 193,
+    "YES": 7
+  },
+  "notes": [
+    "AUTO_ADJUDICATED/SILVER is a machine-assisted acceptance tier, not a human gold label.",
+    "Phase 1 predictions and heuristic candidates are preserved unchanged.",
+    "UNRESOLVED/WEAK rows require human review before supervised training.",
+    "No deception, credibility, truthfulness, or reliability inference is made."
+  ]
+}

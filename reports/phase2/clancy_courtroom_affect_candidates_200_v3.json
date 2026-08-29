@@ -1,0 +1,21 @@
+{
+  "input_csv": "data/processed/phase2/clancy/emotion_scope_review_200_scope_aware.csv",
+  "output_csv": "data/processed/phase2/clancy/courtroom_affect_candidates_200_v3.csv",
+  "rows_processed": 200,
+  "affect_counts": {
+    "ASSERTIVE": 11,
+    "NEUTRAL_CALM": 135,
+    "HESITANT_UNCERTAIN": 18,
+    "UNKNOWN": 33,
+    "GUARDED": 2,
+    "DISTRESSED": 1
+  },
+  "review_required_counts": {
+    "YES": 200
+  },
+  "notes": [
+    "All values are weak candidates requiring human review.",
+    "No credibility, truthfulness, deception, or reliability inference is made.",
+    "Missing interaction and speech-rate features are recorded rather than invented."
+  ]
+}

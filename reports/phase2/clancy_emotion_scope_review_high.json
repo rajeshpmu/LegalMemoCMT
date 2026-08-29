@@ -1,0 +1,30 @@
+{
+  "input_csv": "data/processed/phase2/clancy/emotion_scope_review_200_scope_aware.csv",
+  "input_rows": 200,
+  "notes": [
+    "Rows are review candidates, not automatically accepted labels.",
+    "Inspect transcript, audio, video, and emotion target scope together."
+  ],
+  "output_csv": "data/processed/phase2/clancy/emotion_scope_review_high.csv",
+  "phase1_emotion_counts": {
+    "anger": 2,
+    "disgust": 5,
+    "fear": 4,
+    "neutral": 24,
+    "sadness": 5
+  },
+  "proposed_emotion_counts": {
+    "anger": 2,
+    "disgust": 2,
+    "fear": 1,
+    "neutral": 31,
+    "sadness": 4
+  },
+  "requested_priority": "HIGH",
+  "scope_counts": {
+    "OTHER_PERSON_DESCRIBED": 5,
+    "QUOTED_SPEECH": 6,
+    "UNCLEAR": 29
+  },
+  "selected_rows": 40
+}

@@ -4,7 +4,15 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
-PYTHON_BIN="${PYTHON_BIN:-$ROOT_DIR/.venv/bin/python}"
+if [ -n "${PYTHON_BIN:-}" ]; then
+  PYTHON_BIN="$PYTHON_BIN"
+elif [ -x "$ROOT_DIR/.venv/bin/python" ] && "$ROOT_DIR/.venv/bin/python" -c 'import torch' >/dev/null 2>&1; then
+  PYTHON_BIN="$ROOT_DIR/.venv/bin/python"
+elif [ -x "/opt/anaconda3/bin/python" ] && "/opt/anaconda3/bin/python" -c 'import torch' >/dev/null 2>&1; then
+  PYTHON_BIN="/opt/anaconda3/bin/python"
+else
+  PYTHON_BIN="$(command -v python3)"
+fi
 INPUT_CSV="${INPUT_CSV:?Set INPUT_CSV to a Clancy duration manifest}"
 OUTPUT_CSV="${OUTPUT_CSV:?Set OUTPUT_CSV for the new provenance-preserving CSV}"
 CHECKPOINT="${CHECKPOINT:?Set CHECKPOINT to a seven-class Phase 1 MELD checkpoint}"

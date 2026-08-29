@@ -26,6 +26,39 @@ def norm_upper(value: object) -> str:
 
 
 def classify_row(row: dict[str, str]) -> list[str]:
+    # Turn manifests use clip/role fields rather than LegalMELD alignment tiers.
+    if "clip_video_path" in row or "turn_duration_seconds" in row:
+        split = normalize(row.get("split"))
+        excluded = norm_upper(row.get("corpus_exclusion_status")) == "EXCLUDE"
+        role = normalize(row.get("speaker_role")).lower()
+        speaking = norm_upper(row.get("witness_speaking_status")) == "SPEAKING"
+        clip_status = norm_upper(row.get("clip_status"))
+        video_path = normalize(row.get("clip_video_path") or row.get("video_path"))
+        audio_path = normalize(row.get("clip_audio_path") or row.get("audio_path"))
+        text = normalize(row.get("utterance_text") or row.get("turn_text"))
+        try:
+            duration = float(row.get("clip_duration_seconds") or row.get("turn_duration_seconds") or 0)
+        except (TypeError, ValueError):
+            duration = 0.0
+        categories: list[str] = []
+        valid_media = bool(video_path and audio_path and clip_status not in {"FAILED", "INVALID"})
+        valid_candidate = (
+            role == "witness"
+            and speaking
+            and not excluded
+            and valid_media
+            and bool(text)
+            and 0.8 <= duration <= 30.0
+            and split in {"train", "dev", "test"}
+        )
+        if valid_candidate:
+            categories.append("usable")
+        else:
+            categories.append("reject" if excluded or not valid_media or not text else "review")
+        if split in {"train", "dev", "test"}:
+            categories.append(f"split_{split}")
+        return sorted(set(categories))
+
     split = normalize(row.get("split"))
     quality_tier = norm_upper(row.get("quality_tier"))
     alignment_confidence = norm_upper(row.get("alignment_confidence"))
@@ -63,6 +96,37 @@ def classify_row(row: dict[str, str]) -> list[str]:
 
 
 def reason_for_row(row: dict[str, str], categories: list[str]) -> str:
+    if "clip_video_path" in row or "turn_duration_seconds" in row:
+        excluded = norm_upper(row.get("corpus_exclusion_status")) == "EXCLUDE"
+        role = normalize(row.get("speaker_role")) or "UNKNOWN"
+        speaking = normalize(row.get("witness_speaking_status")) or "UNKNOWN"
+        clip_status = normalize(row.get("clip_status")) or "UNKNOWN"
+        duration = normalize(row.get("clip_duration_seconds") or row.get("turn_duration_seconds")) or "0"
+        try:
+            duration_value = float(duration)
+        except ValueError:
+            duration_value = 0.0
+        if "usable" in categories:
+            return f"usable because speaker_role={role}, witness_speaking_status={speaking}, clip_status={clip_status}, duration={duration}s, and source is not excluded"
+        reasons = []
+        if excluded:
+            reasons.append("corpus_exclusion_status=EXCLUDE")
+        if role.lower() != "witness":
+            reasons.append(f"speaker_role={role}")
+        if speaking.upper() != "SPEAKING":
+            reasons.append(f"witness_speaking_status={speaking}")
+        if clip_status.upper() in {"FAILED", "INVALID"}:
+            reasons.append(f"clip_status={clip_status}")
+        if not normalize(row.get("utterance_text") or row.get("turn_text")):
+            reasons.append("blank transcript text")
+        if duration_value < 0.8:
+            reasons.append(f"duration={duration}s below 0.8s minimum")
+        elif duration_value > 30.0:
+            reasons.append(f"duration={duration}s above 30s preferred maximum")
+        if "review" in categories:
+            return "review because " + ", ".join(reasons or ["candidate needs manual validation"])
+        return "reject because " + ", ".join(reasons or ["failed the turn-level witness gate"])
+
     split = normalize(row.get("split"))
     quality_tier = norm_upper(row.get("quality_tier"))
     alignment_confidence = norm_upper(row.get("alignment_confidence"))
