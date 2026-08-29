@@ -1,0 +1,4 @@
+source_group_id,exclusion_status,exclusion_reason,retained_comparison_source
+D6skXbDJJj8,EXCLUDE,Source appears to duplicate 93sfJyLzhqM; do not use D6 clips in the corpus,93sfJyLzhqM
+LGYerNiA8kI,EXCLUDE,Raw video and resulting clips are not sufficiently long or relevant for corpus use,
+VQQb9BbgwHg,EXCLUDE,No relevant speakers identified; source contains only unknown speaker assignments,

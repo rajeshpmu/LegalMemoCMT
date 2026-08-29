@@ -1,0 +1,105 @@
+source_group_id,speaker_cluster_id,role_label,role_confidence,witness_in_segment,witness_speaking_status,visual_target_role,visual_speaker_match,review_notes,corpus_exclusion_status,corpus_exclusion_reason
+peYoD-JkAXE,SPEAKER_07,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Kevin Reddington identified as defence counsel by manual audio/video review
+peYoD-JkAXE,SPEAKER_06,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Kevin Reddington identified as defence counsel by manual audio/video review
+peYoD-JkAXE,SPEAKER_09,Prosecutor,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Shanan Buckingham identified as prosecutor by manual audio/video review
+peYoD-JkAXE,SPEAKER_02,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Dr. Jennifer Tufts identified as witness by manual audio/video review
+peYoD-JkAXE,SPEAKER_11,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Dr. Jennifer Tufts identified as witness by manual audio/video review
+peYoD-JkAXE,SPEAKER_12,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Dr. Jennifer Tufts identified as witness by manual audio/video review
+peYoD-JkAXE,SPEAKER_08,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Dr. Jennifer Tufts identified as witness by manual audio/video review
+peYoD-JkAXE,SPEAKER_10,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Dr. Jennifer Tufts identified as witness by manual audio/video review
+peYoD-JkAXE,SPEAKER_04,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Dr. Jennifer Tufts identified as witness by manual audio/video review
+peYoD-JkAXE,SPEAKER_05,Judge,HIGH,NO,UNKNOWN,Judge,UNKNOWN,Judge William F. Sullivan identified by manual audio/video review
+peYoD-JkAXE,SPEAKER_00,Other,MEDIUM,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Other courtroom speaker; identity not resolved,,
+93sfJyLzhqM,SPEAKER_21,Prosecutor,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Jennifer Sprague identified as prosecutor by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_58,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence cluster identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_56,Other,MEDIUM,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Other courtroom speaker,INCLUDE,
+93sfJyLzhqM,SPEAKER_43,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 2 identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_17,UNKNOWN,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Mixed witness and prosecutor cluster; requires row-level separation,EXCLUDE,Mixed legal roles cannot be safely assigned at cluster level
+93sfJyLzhqM,SPEAKER_25,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 4 identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_26,UNKNOWN,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Mixed witness and prosecutor cluster; requires row-level separation,EXCLUDE,Mixed legal roles cannot be safely assigned at cluster level
+93sfJyLzhqM,SPEAKER_08,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 6 identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_24,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 7 identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_27,Other,MEDIUM,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Other courtroom speaker,INCLUDE,
+93sfJyLzhqM,SPEAKER_05,Judge,HIGH,NO,UNKNOWN,Judge,UNKNOWN,Judge identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_06,Judge,HIGH,NO,UNKNOWN,Judge,UNKNOWN,Judge identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_10,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 8 identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_09,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 9 identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_49,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 10 identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_12,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,New reader; excluded from corpus,EXCLUDE,New reader not required
+93sfJyLzhqM,SPEAKER_47,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 11 identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_02,UNKNOWN,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Possible defence cluster with news-related material; requires review,EXCLUDE,Possible mixed defence and news content
+93sfJyLzhqM,SPEAKER_03,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Possible defence or other speaker; unresolved,EXCLUDE,Role is not sufficiently resolved
+93sfJyLzhqM,SPEAKER_13,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 12 identified by manual audio/video review,INCLUDE,
+93sfJyLzhqM,SPEAKER_07,Other,MEDIUM,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Other courtroom speaker,INCLUDE,
+93sfJyLzhqM,SPEAKER_50,Other,MEDIUM,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Other courtroom speaker,INCLUDE,
+93sfJyLzhqM,SPEAKER_11,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,New reader; excluded from corpus,EXCLUDE,New reader not required
+93sfJyLzhqM,SPEAKER_23,Other,MEDIUM,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Other courtroom speaker,INCLUDE,
+93sfJyLzhqM,SPEAKER_22,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_28,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_57,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_01,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_20,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_51,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_04,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_31,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_37,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_39,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_19,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_29,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_30,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_41,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+93sfJyLzhqM,SPEAKER_46,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,One or two clips; likely news or break material,EXCLUDE,Insufficient evidence and likely non-testimony
+D5L_c9Mla1U,SPEAKER_00,Prosecutor,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Prosecutor identified by manual audio/video review,INCLUDE,
+D5L_c9Mla1U,SPEAKER_04,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence counsel identified by manual audio/video review,INCLUDE,
+D5L_c9Mla1U,SPEAKER_08,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 13 identified by manual audio/video review,INCLUDE,
+D5L_c9Mla1U,SPEAKER_01,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 14 identified by manual audio/video review,INCLUDE,
+D5L_c9Mla1U,SPEAKER_03,Judge,HIGH,NO,UNKNOWN,Judge,UNKNOWN,Judge identified by manual audio/video review,INCLUDE,
+D5L_c9Mla1U,SPEAKER_09,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+D5L_c9Mla1U,SPEAKER_02,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+D5L_c9Mla1U,SPEAKER_07,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+D5L_c9Mla1U,SPEAKER_06,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+DCBWoWhsTpA,SPEAKER_14,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence counsel identified by manual audio/video review,INCLUDE,
+DCBWoWhsTpA,SPEAKER_05,Prosecutor,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Prosecutor identified by manual audio/video review,INCLUDE,
+DCBWoWhsTpA,SPEAKER_18,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 15 identified by manual audio/video review,INCLUDE,
+DCBWoWhsTpA,SPEAKER_16,Judge,HIGH,NO,UNKNOWN,Judge,UNKNOWN,Judge identified by manual audio/video review,INCLUDE,
+DCBWoWhsTpA,SPEAKER_02,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 16 identified by manual audio/video review,INCLUDE,
+DCBWoWhsTpA,SPEAKER_17,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 17 identified by manual audio/video review,INCLUDE,
+DCBWoWhsTpA,SPEAKER_07,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 18 identified by manual audio/video review,INCLUDE,
+DCBWoWhsTpA,SPEAKER_00,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence counsel identified by manual audio/video review,INCLUDE,
+DCBWoWhsTpA,SPEAKER_01,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 19 identified by manual audio/video review,INCLUDE,
+DCBWoWhsTpA,SPEAKER_04,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence counsel identified by manual audio/video review,INCLUDE,
+DCBWoWhsTpA,SPEAKER_13,UNKNOWN,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Mixed defence and witness cluster; requires row-level separation,EXCLUDE,Mixed legal roles cannot be safely assigned at cluster level
+DCBWoWhsTpA,SPEAKER_12,UNKNOWN,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Mixed prosecutor and witness cluster; requires row-level separation,EXCLUDE,Mixed legal roles cannot be safely assigned at cluster level
+DCBWoWhsTpA,SPEAKER_15,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+DCBWoWhsTpA,SPEAKER_08,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+DCBWoWhsTpA,SPEAKER_11,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+DCBWoWhsTpA,SPEAKER_10,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+DCBWoWhsTpA,SPEAKER_19,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+ZJd1Lk4w-qo,SPEAKER_00,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence counsel identified by manual audio/video review,INCLUDE,
+ZJd1Lk4w-qo,SPEAKER_03,Prosecutor,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Prosecutor identified by manual audio/video review,INCLUDE,
+ZJd1Lk4w-qo,SPEAKER_06,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 20 identified by manual audio/video review,INCLUDE,
+ZJd1Lk4w-qo,SPEAKER_02,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+ZJd1Lk4w-qo,SPEAKER_05,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+ZJd1Lk4w-qo,SPEAKER_04,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+ma6ni-5zuW0,SPEAKER_02,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence counsel identified by manual audio/video review,INCLUDE,
+ma6ni-5zuW0,SPEAKER_00,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 21 identified by manual audio/video review,INCLUDE,
+ma6ni-5zuW0,SPEAKER_01,Judge,HIGH,NO,UNKNOWN,Judge,UNKNOWN,Judge identified by manual audio/video review,INCLUDE,
+1tyKO8mTdOM,SPEAKER_11,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 22 identified by manual audio/video review,INCLUDE,
+1tyKO8mTdOM,SPEAKER_02,Prosecutor,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Prosecutor identified by manual audio/video review,INCLUDE,
+1tyKO8mTdOM,SPEAKER_10,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence counsel identified by manual audio/video review,INCLUDE,
+1tyKO8mTdOM,SPEAKER_01,Other,MEDIUM,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Other courtroom speaker,INCLUDE,
+1tyKO8mTdOM,SPEAKER_07,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence counsel identified by manual audio/video review,INCLUDE,
+1tyKO8mTdOM,SPEAKER_12,Judge,HIGH,NO,UNKNOWN,Judge,UNKNOWN,Judge identified by manual audio/video review,INCLUDE,
+1tyKO8mTdOM,SPEAKER_14,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 23 identified by manual audio/video review,INCLUDE,
+1tyKO8mTdOM,SPEAKER_04,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence counsel identified by manual audio/video review,INCLUDE,
+1tyKO8mTdOM,SPEAKER_13,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+1tyKO8mTdOM,SPEAKER_00,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+1tyKO8mTdOM,SPEAKER_03,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+1tyKO8mTdOM,SPEAKER_06,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+1tyKO8mTdOM,SPEAKER_08,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+1tyKO8mTdOM,SPEAKER_05,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+1tyKO8mTdOM,SPEAKER_09,Other,LOW,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Low-count cluster; likely news or pre-session material,EXCLUDE,Fewer clips and likely news or just before sessions
+sHUdRcABC-Q,SPEAKER_03,Prosecutor,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Prosecutor identified by manual audio/video review,INCLUDE,
+sHUdRcABC-Q,SPEAKER_01,Defence,HIGH,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Defence counsel identified by manual audio/video review,INCLUDE,
+sHUdRcABC-Q,SPEAKER_02,Witness,HIGH,YES,SPEAKING,Witness,UNKNOWN,Witness 24 identified by manual audio/video review,INCLUDE,
+sHUdRcABC-Q,SPEAKER_00,Judge,HIGH,NO,UNKNOWN,Judge,UNKNOWN,Judge identified by manual audio/video review,INCLUDE,

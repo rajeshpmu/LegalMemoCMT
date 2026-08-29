@@ -1,0 +1,12 @@
+row_id,source_url,youtube_id,title,category,priority,requested_label,included_in_clancy_urls,notes
+1,https://www.youtube.com/watch?v=sHUdRcABC-Q,sHUdRcABC-Q,Psychiatrist Details Lindsay Clancy’s Hallucinations,psychiatrist_testimony,5,Dr. Sejal Shah – Psychiatrist testimony,YES,Exact URL is present in data/clancy_urls.txt
+2,https://www.youtube.com/watch?v=ZJd1Lk4w-qo,ZJd1Lk4w-qo,Dr. Alia Goodheart — Psychiatrist | Full Testimony | MA v. Lindsay Clancy,psychiatrist_full_testimony,5,Psychiatrist – Full Testimony,YES,Exact URL is present in data/clancy_urls.txt
+3,https://www.youtube.com/watch?v=peYoD-JkAXE,peYoD-JkAXE,Dr. Jennifer Tufts — Psychiatrist | Full Testimony | MA v. Lindsay Clancy,psychiatrist_full_testimony,5,Psychiatrist – Full Testimony,YES,Exact URL is present in data/clancy_urls.txt
+4,https://www.youtube.com/watch?v=ma6ni-5zuW0,ma6ni-5zuW0,"Lindsay Clancy Trial: Lindsay's Mother Describes Her Daughter’s Anxiety, Insomnia & Depression |AB1E",family_testimony,5,Paula Musgrove – Lindsay's mother – Full Testimony,YES,Exact URL is present in data/clancy_urls.txt
+5,https://www.youtube.com/watch?v=LGYerNiA8kI,LGYerNiA8kI,Clancy Children's Pediatrician Testifies About Seeing Lindsay Hours Before Killings,pediatrician_testimony,4,Pediatrician testimony,YES,Exact URL is present in data/clancy_urls.txt
+6,https://www.youtube.com/live/93sfJyLzhqM,93sfJyLzhqM,LIVE: MA v. Lindsay Clancy - Day 8 | Accused Killer Mom Trial,full_trial_stream,5,Day 8 live trial,YES,Exact URL is present in data/clancy_urls.txt
+7,https://www.youtube.com/live/D6skXbDJJj8,D6skXbDJJj8,LIVE: Lindsay Clancy Murder Trial — MA v. Lindsay Clancy — Day 8,full_trial_stream,5,Day 8 live trial,YES,Exact URL is present in data/clancy_urls.txt
+8,https://www.youtube.com/live/DCBWoWhsTpA,DCBWoWhsTpA,LIVE: Lindsay Clancy trial Day 14,full_trial_stream,5,Day 14 full trial,YES,Exact URL is present in data/clancy_urls.txt
+9,https://www.youtube.com/live/1tyKO8mTdOM,1tyKO8mTdOM,LIVE: Lindsay Clancy trial Day 15,full_trial_stream,5,Day 15 full trial,YES,Exact URL is present in data/clancy_urls.txt
+10,https://www.youtube.com/watch?v=D5L_c9Mla1U,D5L_c9Mla1U,LIVE: Lindsay Clancy trial Day 16,full_trial_stream,5,Day 16 full trial,YES,Exact URL is present in data/clancy_urls.txt
+11,https://www.youtube.com/watch?v=VQQb9BbgwHg,VQQb9BbgwHg,LIVE: Lindsay Clancy trial Day 17,full_trial_stream,5,Day 17 full trial,YES,Exact URL is present in data/clancy_urls.txt
