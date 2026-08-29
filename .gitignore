@@ -8,6 +8,7 @@
 data/*
 !data/manifests/
 !data/manifests/**
+!data/processed/phase2/clancy/*.csv
 
 # Generated docs and reports.
 implementation_docments/
