@@ -28,7 +28,7 @@ def suggest(text: str, deberta_target: str = '', deberta_confidence: str = '', n
         target='OTHER_PERSON_DESCRIBED'; reason='other-person reference with no stronger artifact interpretation'; confidence='MEDIUM'
     else:
         target='UNCLEAR'; reason='no decisive target-scope pattern'; confidence='LOW'
-    if target == 'NO_EMOTION_CONTENT': temporal='UNCLEAR'
+    if target == 'NO_EMOTION_CONTENT': temporal='NOT_APPLICABLE'
     elif has_past and has_other: temporal='PAST_OTHER'
     elif has_past and has_self: temporal='PAST_SELF'
     elif has_past: temporal='UNCLEAR'

@@ -81,10 +81,17 @@ def main() -> None:
             df.at[index, "deberta_temporal_scope_confidence"] = "0.0"
             continue
         target, target_score, target_scores = classify(classifier, text, TARGET_LABELS)
-        # Sequential design: temporal inference receives the target result so
-        # that past/current interpretation is conditioned on the first step.
-        temporal_text = f"Target interpretation: {TARGET_LABELS[target]}\n{text}"
-        temporal, temporal_score, temporal_scores = classify(classifier, temporal_text, TEMPORAL_LABELS)
+        if target == "NO_EMOTION_CONTENT":
+            # Temporal reasoning is undefined when no emotional content exists.
+            # Do not manufacture low-confidence temporal warnings in this case.
+            temporal = "NOT_APPLICABLE"
+            temporal_score = ""
+            temporal_scores = {}
+        else:
+            # Sequential design: temporal inference receives the target result so
+            # that past/current interpretation is conditioned on the first step.
+            temporal_text = f"Target interpretation: {TARGET_LABELS[target]}\n{text}"
+            temporal, temporal_score, temporal_scores = classify(classifier, temporal_text, TEMPORAL_LABELS)
         df.at[index, "deberta_model"] = args.model
         df.at[index, "deberta_context"] = text
         df.at[index, "deberta_target_scope"] = target

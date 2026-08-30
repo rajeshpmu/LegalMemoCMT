@@ -37,9 +37,9 @@ def main():
     out['deberta_review_reason']=out.apply(lambda r:'; '.join(x for x in [
         'target_scope_disagreement' if r['target_scope_disagreement']=='YES' else '',
         'target_low_confidence' if r['deberta_target_low_confidence']=='YES' else '',
-        'temporal_low_confidence' if r['deberta_temporal_low_confidence']=='YES' else '',
+        'temporal_low_confidence' if r['deberta_temporal_scope'] != 'NOT_APPLICABLE' and r['deberta_temporal_low_confidence']=='YES' else '',
         'target_low_margin' if float(r['deberta_target_margin'])<a.low_margin else '',
-        'temporal_low_margin' if float(r['deberta_temporal_margin'])<a.low_margin else ''] if x) or 'NO_PRIORITY_TRIGGER',axis=1)
+        'temporal_low_margin' if r['deberta_temporal_scope'] != 'NOT_APPLICABLE' and float(r['deberta_temporal_margin'])<a.low_margin else ''] if x) or 'NO_PRIORITY_TRIGGER',axis=1)
     out['deberta_review_required']=out['deberta_review_reason'].ne('NO_PRIORITY_TRIGGER').map({True:'YES',False:'NO'})
     disagreements=out[out['deberta_review_required']=='YES'].copy()
     Path(a.output_csv).parent.mkdir(parents=True,exist_ok=True); out.to_csv(a.output_csv,index=False)
