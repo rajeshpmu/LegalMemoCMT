@@ -14,6 +14,7 @@ import pandas as pd
 
 
 AUDIO_MAP = {"neu": "neutral", "neutral": "neutral", "ang": "anger", "hap": "joy", "sad": "sadness"}
+AUDIO_POLARITY = {"neu": "NEUTRAL", "neutral": "NEUTRAL", "ang": "NON_NEUTRAL", "hap": "NON_NEUTRAL", "sad": "NON_NEUTRAL"}
 
 
 def value(row: pd.Series, *columns: str) -> str:
@@ -51,6 +52,15 @@ def main() -> None:
         "non_neutral_confidence_band": "",
         "independent_corroboration": "NO",
         "non_neutral_promotion_route": "",
+        "audio_polarity": "",
+        "audio_polarity_confidence": "",
+        "machine_affect_presence": "UNRESOLVED",
+        "machine_affect_presence_status": "UNRESOLVED",
+        "machine_affect_presence_tier": "WEAK",
+        "machine_final_basic_emotion": "",
+        "machine_final_basic_emotion_confidence": "",
+        "machine_final_basic_emotion_status": "UNRESOLVED",
+        "machine_final_basic_emotion_tier": "WEAK",
         "non_neutral_final_basic_emotion": "",
         "non_neutral_final_basic_emotion_confidence": "",
         "non_neutral_annotation_status": "UNRESOLVED",
@@ -68,8 +78,8 @@ def main() -> None:
         "not_non_neutral": 0,
         "unresolved_weak_confidence": 0,
         "unresolved_conflict": 0,
-        "auto_adjudicated_strong_phase1": 0,
-        "auto_adjudicated_audio_corroborated": 0,
+        "level1_affect_presence": 0,
+        "level2_exact_class": 0,
     }
     for index, row in output.iterrows():
         emotion = value(row, "phase1_basic_emotion", "phase1_candidate_emotion").lower()
@@ -91,10 +101,15 @@ def main() -> None:
             band = "AT_OR_ABOVE_0.85_STRONG_CHECKS"
         output.at[index, "non_neutral_confidence_band"] = band
 
-        audio_label = AUDIO_MAP.get(value(row, "audio_emotion_candidate").lower(), "")
+        audio_code = value(row, "audio_emotion_candidate").lower()
+        audio_label = AUDIO_MAP.get(audio_code, "")
+        audio_polarity = AUDIO_POLARITY.get(audio_code, "")
         audio_conf = number(row, "audio_emotion_confidence")
         corroborated = bool(audio_label and audio_label == emotion and audio_conf >= args.audio_corroboration_threshold)
+        polarity_supported = bool(audio_polarity == "NON_NEUTRAL" and audio_conf >= args.audio_corroboration_threshold)
         output.at[index, "independent_corroboration"] = "YES" if corroborated else "NO"
+        output.at[index, "audio_polarity"] = audio_polarity
+        output.at[index, "audio_polarity_confidence"] = f"{audio_conf:.6f}" if audio_polarity else ""
 
         conflict_reasons = []
         if value(row, "semantic_leakage_risk").upper() == "HIGH":
@@ -127,25 +142,43 @@ def main() -> None:
             counts["unresolved_conflict"] += 1
             output.at[index, "non_neutral_promotion_route"] = "UNRESOLVED_CONFLICT"
             reason = "; ".join(conflict_reasons)
-        elif band == "0.65_TO_0.85_CORROBORATION_REQUIRED" and not corroborated:
+        elif phase1_conf < args.strong_threshold:
             counts["unresolved_conflict"] += 1
             output.at[index, "non_neutral_promotion_route"] = "UNRESOLVED_CONFLICT"
-            reason = "Route B requires comparable independent audio corroboration"
+            reason = "Level 1 requires Phase 1 confidence >= 0.85"
+        elif not polarity_supported:
+            counts["unresolved_conflict"] += 1
+            output.at[index, "non_neutral_promotion_route"] = "UNRESOLVED_CONFLICT"
+            reason = "Level 1 requires independent non-neutral audio polarity evidence"
         else:
+            # Level 1 separates affect presence from exact emotion identity.
+            output.at[index, "machine_affect_presence"] = "NON_NEUTRAL"
+            output.at[index, "machine_affect_presence_status"] = "AUTO_ADJUDICATED"
+            output.at[index, "machine_affect_presence_tier"] = "SILVER"
             output.at[index, "non_neutral_final_basic_emotion"] = emotion
             output.at[index, "non_neutral_final_basic_emotion_confidence"] = f"{phase1_conf:.6f}"
             output.at[index, "non_neutral_annotation_status"] = "AUTO_ADJUDICATED"
             output.at[index, "non_neutral_annotation_tier"] = "SILVER"
             output.at[index, "non_neutral_critical_conflict"] = "NO"
             output.at[index, "non_neutral_human_review_required"] = "NO"
-            if phase1_conf >= args.strong_threshold:
-                counts["auto_adjudicated_strong_phase1"] += 1
-                output.at[index, "non_neutral_promotion_route"] = "ROUTE_A_STRONG_PHASE1"
-                reason = "Route A: Phase 1 confidence >= 0.85 with no blocking conflict; audio disagreement is retained as evidence"
+            if corroborated:
+                counts["level2_exact_class"] += 1
+                output.at[index, "non_neutral_promotion_route"] = "LEVEL_2_EXACT_CLASS"
+                output.at[index, "machine_final_basic_emotion"] = emotion
+                output.at[index, "machine_final_basic_emotion_confidence"] = f"{phase1_conf:.6f}"
+                output.at[index, "machine_final_basic_emotion_status"] = "AUTO_ADJUDICATED"
+                output.at[index, "machine_final_basic_emotion_tier"] = "SILVER"
+                reason = "Level 2: strong Phase 1 class with comparable exact audio agreement and no blocking conflict"
             else:
-                counts["auto_adjudicated_audio_corroborated"] += 1
-                output.at[index, "non_neutral_promotion_route"] = "ROUTE_B_AUDIO_CORROBORATED"
-                reason = "Route B: Phase 1 confidence >= 0.65 with comparable independent audio corroboration and no blocking conflict"
+                counts["level1_affect_presence"] += 1
+                output.at[index, "non_neutral_promotion_route"] = "LEVEL_1_AFFECT_PRESENCE"
+                # A polarity match is enough to support non-neutral presence,
+                # but not enough to overwrite the exact Phase 1 class.
+                output.at[index, "non_neutral_final_basic_emotion"] = ""
+                output.at[index, "non_neutral_final_basic_emotion_confidence"] = ""
+                output.at[index, "non_neutral_annotation_status"] = "AUTO_ADJUDICATED"
+                output.at[index, "non_neutral_annotation_tier"] = "SILVER"
+                reason = "Level 1: strong Phase 1 non-neutral prediction with independent non-neutral audio polarity; exact class remains unresolved"
         output.at[index, "non_neutral_gate_reason"] = reason
 
     destination = Path(args.output_csv)
@@ -162,11 +195,12 @@ def main() -> None:
         "silver_rows": int((output["non_neutral_annotation_status"] == "AUTO_ADJUDICATED").sum()),
         "notes": [
             "Non-neutral confidence below 0.65 remains WEAK/UNRESOLVED.",
-            "The 0.65 to 0.85 band requires independent comparable audio corroboration.",
-            "The >=0.85 band can pass without SpeechBrain agreement when scope, leakage, conflict, role, speaking status, and audio-validity checks pass.",
-            "Only comparable SpeechBrain labels are used as categorical audio corroboration.",
+            "Level 1 requires Phase 1 confidence >= 0.85 plus independent non-neutral audio polarity; it does not claim an exact class.",
+            "Level 2 requires comparable SpeechBrain class agreement at the configured confidence in addition to Level 1 checks.",
+            "SpeechBrain polarity groups ang, hap, and sad as NON_NEUTRAL and neu as NEUTRAL; this is not exact-class agreement.",
+            "Fear, disgust, and surprise can receive Level 1 polarity support without pretending SpeechBrain has those exact classes.",
             "audio_arousal is canonical; audio_excitement is retained only as its project alias.",
-            "Route A is strong Phase 1; Route B is moderate Phase 1 plus comparable audio corroboration; Route C remains weak.",
+            "Level 1 and Level 2 are machine-assisted SILVER outcomes, not human-validated gold labels.",
             "AUTO_ADJUDICATED is machine-assisted SILVER, not human-validated gold.",
         ],
     }
