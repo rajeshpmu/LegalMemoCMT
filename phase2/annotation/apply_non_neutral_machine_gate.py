@@ -101,10 +101,17 @@ def main() -> None:
             conflict_reasons.append("high_semantic_leakage_risk")
         if value(row, "critical_conflict").upper() == "YES":
             conflict_reasons.append("existing_critical_conflict")
-        if value(row, "target_scope_disagreement").upper() == "YES":
-            conflict_reasons.append("target_scope_disagreement")
-        if value(row, "deberta_target_scope").upper() in {"OTHER_PERSON_DESCRIBED", "QUOTED_SPEECH", "EVENT_DESCRIBED"}:
-            conflict_reasons.append("non_self_emotion_scope")
+        target_scope = value(row, "deberta_target_scope", "emotion_target_scope").upper()
+        target_scope_conf = number(row, "deberta_target_scope_confidence", "target_scope_confidence")
+        speaker_emotion_evidence = value(row, "speaker_emotion_evidence_present").upper()
+        # Scope describes whose emotion the text discusses; it does not decide
+        # whether the current witness is visibly or vocally emotional.
+        if (
+            target_scope in {"OTHER_PERSON_DESCRIBED", "QUOTED_SPEECH"}
+            and target_scope_conf >= 0.70
+            and speaker_emotion_evidence != "YES"
+        ):
+            conflict_reasons.append("high_confidence_non_self_emotion_scope")
         if value(row, "speaker_role").lower() and value(row, "speaker_role").lower() != "witness":
             conflict_reasons.append("non_witness_speaker")
         if value(row, "witness_speaking_status").upper() and value(row, "witness_speaking_status").upper() != "SPEAKING":
