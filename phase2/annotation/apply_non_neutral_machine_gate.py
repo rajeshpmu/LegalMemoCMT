@@ -1,7 +1,8 @@
-"""Gate non-neutral Phase 1 candidates using independent evidence.
+"""Gate non-neutral Phase 1 candidates using tiered independent evidence.
 
 This creates machine-assisted silver candidates only. It does not claim human
-review and does not overwrite the original Phase 1 prediction.
+review and does not overwrite the original Phase 1 prediction. Strong Phase 1
+rows do not require SpeechBrain agreement; moderate rows do.
 """
 from __future__ import annotations
 
@@ -49,6 +50,7 @@ def main() -> None:
     defaults = {
         "non_neutral_confidence_band": "",
         "independent_corroboration": "NO",
+        "non_neutral_promotion_route": "",
         "non_neutral_final_basic_emotion": "",
         "non_neutral_final_basic_emotion_confidence": "",
         "non_neutral_annotation_status": "UNRESOLVED",
@@ -62,7 +64,13 @@ def main() -> None:
         if column not in output:
             output[column] = default
 
-    counts = {"not_non_neutral": 0, "weak": 0, "corroboration_required": 0, "silver": 0}
+    counts = {
+        "not_non_neutral": 0,
+        "unresolved_weak_confidence": 0,
+        "unresolved_conflict": 0,
+        "auto_adjudicated_strong_phase1": 0,
+        "auto_adjudicated_audio_corroborated": 0,
+    }
     for index, row in output.iterrows():
         emotion = value(row, "phase1_basic_emotion", "phase1_candidate_emotion").lower()
         phase1_conf = number(row, "phase1_basic_emotion_confidence", "emotion_label_confidence")
@@ -105,22 +113,32 @@ def main() -> None:
             conflict_reasons.append("audio_not_valid")
 
         if band == "BELOW_0.65_WEAK":
-            counts["weak"] += 1
+            counts["unresolved_weak_confidence"] += 1
+            output.at[index, "non_neutral_promotion_route"] = "ROUTE_C_WEAK"
             reason = "Phase 1 non-neutral confidence below 0.65"
-        elif not corroborated:
-            counts["corroboration_required"] += 1
-            reason = "independent comparable audio corroboration is required"
         elif conflict_reasons:
+            counts["unresolved_conflict"] += 1
+            output.at[index, "non_neutral_promotion_route"] = "UNRESOLVED_CONFLICT"
             reason = "; ".join(conflict_reasons)
+        elif band == "0.65_TO_0.85_CORROBORATION_REQUIRED" and not corroborated:
+            counts["unresolved_conflict"] += 1
+            output.at[index, "non_neutral_promotion_route"] = "UNRESOLVED_CONFLICT"
+            reason = "Route B requires comparable independent audio corroboration"
         else:
-            counts["silver"] += 1
             output.at[index, "non_neutral_final_basic_emotion"] = emotion
             output.at[index, "non_neutral_final_basic_emotion_confidence"] = f"{phase1_conf:.6f}"
             output.at[index, "non_neutral_annotation_status"] = "AUTO_ADJUDICATED"
             output.at[index, "non_neutral_annotation_tier"] = "SILVER"
             output.at[index, "non_neutral_critical_conflict"] = "NO"
             output.at[index, "non_neutral_human_review_required"] = "NO"
-            reason = "Phase 1 confidence >= 0.85 with comparable independent audio corroboration and no blocking conflict"
+            if phase1_conf >= args.strong_threshold:
+                counts["auto_adjudicated_strong_phase1"] += 1
+                output.at[index, "non_neutral_promotion_route"] = "ROUTE_A_STRONG_PHASE1"
+                reason = "Route A: Phase 1 confidence >= 0.85 with no blocking conflict; audio disagreement is retained as evidence"
+            else:
+                counts["auto_adjudicated_audio_corroborated"] += 1
+                output.at[index, "non_neutral_promotion_route"] = "ROUTE_B_AUDIO_CORROBORATED"
+                reason = "Route B: Phase 1 confidence >= 0.65 with comparable independent audio corroboration and no blocking conflict"
         output.at[index, "non_neutral_gate_reason"] = reason
 
     destination = Path(args.output_csv)
@@ -137,10 +155,11 @@ def main() -> None:
         "silver_rows": int((output["non_neutral_annotation_status"] == "AUTO_ADJUDICATED").sum()),
         "notes": [
             "Non-neutral confidence below 0.65 remains WEAK/UNRESOLVED.",
-            "The 0.65 to 0.85 band requires independent comparable audio corroboration and remains reviewable.",
-            "The >=0.85 band is checked for scope, leakage, conflict, role, speaking status, and audio validity.",
+            "The 0.65 to 0.85 band requires independent comparable audio corroboration.",
+            "The >=0.85 band can pass without SpeechBrain agreement when scope, leakage, conflict, role, speaking status, and audio-validity checks pass.",
             "Only comparable SpeechBrain labels are used as categorical audio corroboration.",
             "audio_arousal is canonical; audio_excitement is retained only as its project alias.",
+            "Route A is strong Phase 1; Route B is moderate Phase 1 plus comparable audio corroboration; Route C remains weak.",
             "AUTO_ADJUDICATED is machine-assisted SILVER, not human-validated gold.",
         ],
     }
