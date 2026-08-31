@@ -128,13 +128,15 @@ def main() -> None:
 
         score = phase1_points + audio_polarity_points + exact_audio_points + odyssey_points + affect_points + visual_points - penalty
         output.at[index, "recovery_evidence_score"] = f"{score:.2f}"
-        output.at[index, "recovery_phase1_points"] = phase1_points
-        output.at[index, "recovery_audio_polarity_points"] = audio_polarity_points
-        output.at[index, "recovery_exact_audio_points"] = exact_audio_points
-        output.at[index, "recovery_odyssey_points"] = odyssey_points
-        output.at[index, "recovery_courtroom_affect_points"] = affect_points
-        output.at[index, "recovery_visual_points"] = visual_points
-        output.at[index, "recovery_penalty"] = penalty
+        # The manifest is loaded as string dtype to preserve CSV provenance;
+        # write numeric audit components as strings for pandas 2.x compatibility.
+        output.at[index, "recovery_phase1_points"] = str(phase1_points)
+        output.at[index, "recovery_audio_polarity_points"] = str(audio_polarity_points)
+        output.at[index, "recovery_exact_audio_points"] = str(exact_audio_points)
+        output.at[index, "recovery_odyssey_points"] = str(odyssey_points)
+        output.at[index, "recovery_courtroom_affect_points"] = str(affect_points)
+        output.at[index, "recovery_visual_points"] = str(visual_points)
+        output.at[index, "recovery_penalty"] = str(penalty)
         source_bucket = "LEVEL_1_ORIGINAL" if text(row, "non_neutral_promotion_route").startswith("LEVEL_1") else ("WEAK_OR_CONFLICT" if text(row, "non_neutral_annotation_status") == "UNRESOLVED" else "OTHER")
         output.at[index, "recovery_source_bucket"] = source_bucket
         source_counts[source_bucket] += 1
