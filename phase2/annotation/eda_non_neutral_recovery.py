@@ -86,7 +86,13 @@ def main() -> None:
     )
     top_weak = weak.head(args.top_n)
     near_non_neutral = weak[(weak["recovery_score_num"] >= 3.0) & (weak["recovery_score_num"] < 4.0)].head(args.top_n)
-    near_exact = weak[(weak["recovery_score_num"] >= 5.0) & (weak["recovery_score_num"] < 6.0)].head(args.top_n)
+    # Exact-class near misses can already be NON_NEUTRAL_SILVER; restricting
+    # this view to WEAK_UNRESOLVED would hide the rows closest to exact class.
+    near_exact = nonneutral[
+        (nonneutral["recovery_decision"] != "EXACT_CLASS_SILVER")
+        & (nonneutral["recovery_score_num"] >= 5.0)
+        & (nonneutral["recovery_score_num"] < 6.0)
+    ].sort_values(["recovery_score_num", "phase1_conf_num"], ascending=False).head(args.top_n)
 
     # Write focused CSVs in addition to the human-readable report.
     extracts = {
