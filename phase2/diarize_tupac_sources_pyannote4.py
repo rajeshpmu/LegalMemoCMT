@@ -108,3 +108,7 @@ def main() -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(enriched).to_csv(output, index=False)
     print(f"Wrote {len(enriched)} rows and {len(segment_df)} segments using Pyannote 4 output handling")
+
+
+if __name__ == "__main__":
+    main()
