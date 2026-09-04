@@ -6,6 +6,7 @@ import json
 import math
 import os
 import sys
+import tempfile
 from dataclasses import fields
 from pathlib import Path
 
@@ -27,6 +28,38 @@ from src.train.train import build_dataset, get_device, parse_modalities  # noqa:
 
 
 LABELS = ["neutral", "anger", "disgust", "fear", "joy", "sadness", "surprise"]
+
+
+def prepare_inference_manifest(path: Path, allow_missing_labels: bool) -> tuple[Path, int]:
+    """Give the inference-only loader temporary labels without changing the input CSV."""
+    rows = list(csv.DictReader(path.open(newline="", encoding="utf-8-sig")))
+    missing = []
+    for row in rows:
+        label = str(row.get("label") or row.get("emotion_label") or "").strip().lower()
+        missing.append(label in {"", "nan", "none", "null"})
+    count = sum(missing)
+    if not count:
+        return path, 0
+    if not allow_missing_labels:
+        raise ValueError(
+            f"Manifest contains {count} rows without label/emotion_label values. "
+            "Add labels or rerun with --allow-missing-labels for inference-only pseudo-labeling."
+        )
+    handle = tempfile.NamedTemporaryFile(mode="w", suffix=".csv", delete=False, newline="", encoding="utf-8")
+    with handle:
+        fieldnames = list(rows[0].keys()) if rows else []
+        if "label" not in fieldnames:
+            fieldnames.append("label")
+        if "emotion_label" not in fieldnames:
+            fieldnames.append("emotion_label")
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        for row, is_missing in zip(rows, missing):
+            if is_missing:
+                row["label"] = "0"
+                row["emotion_label"] = "neutral"
+            writer.writerow(row)
+    return Path(handle.name), count
 
 
 def load_checkpoint(path: Path) -> tuple[LegalMemoCMTPhase1, dict[str, object]]:
@@ -97,6 +130,7 @@ def main() -> None:
     parser.add_argument("--modalities", default="text,audio,video")
     parser.add_argument("--device", default="auto")
     parser.add_argument("--summary-json", required=True)
+    parser.add_argument("--allow-missing-labels", action="store_true", help="Use temporary neutral labels for unlabeled inference rows")
     args = parser.parse_args()
 
     input_path = Path(args.input_csv)
@@ -107,7 +141,12 @@ def main() -> None:
         rows = rows[: args.max_rows]
     if not rows:
         raise SystemExit("No rows selected")
-    samples = load_manifest(input_path)
+    inference_manifest, placeholder_label_rows = prepare_inference_manifest(input_path, args.allow_missing_labels)
+    try:
+        samples = load_manifest(inference_manifest)
+    finally:
+        if inference_manifest != input_path:
+            inference_manifest.unlink(missing_ok=True)
     if args.max_rows > 0:
         samples = samples[: args.max_rows]
 
@@ -200,6 +239,7 @@ def main() -> None:
         "confidence_mean": round(sum(confidence_values) / len(confidence_values), 6),
         "confidence_min": round(min(confidence_values), 6),
         "confidence_max": round(max(confidence_values), 6),
+        "placeholder_label_rows": placeholder_label_rows,
         "notes": [
             "Predictions are weak labels, not gold annotations.",
             "Original emotion_label fields were preserved unchanged.",
@@ -210,6 +250,12 @@ def main() -> None:
                 else "Video was not consumed by the selected checkpoint."
             ),
             "No deception, truthfulness, credibility, or reliability label was created.",
+            (
+                "Temporary neutral labels were used only to satisfy the inference loader; "
+                "the input labels were not modified."
+                if placeholder_label_rows
+                else "No temporary labels were required."
+            ),
         ],
     }
     summary_path = Path(args.summary_json)

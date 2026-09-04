@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import inspect
 import os
 from pathlib import Path
 
@@ -53,7 +54,13 @@ def main() -> None:
     token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGINGFACE_TOKEN")
     if pending and not token:
         raise SystemExit("Set HF_TOKEN")
-    pipeline = Pipeline.from_pretrained(args.model, token=token) if pending else None
+    if pending:
+        # Pyannote 3.x calls this parameter use_auth_token; Pyannote 4.x uses token.
+        load_signature = inspect.signature(Pipeline.from_pretrained)
+        auth_argument = "token" if "token" in load_signature.parameters else "use_auth_token"
+        pipeline = Pipeline.from_pretrained(args.model, **{auth_argument: token})
+    else:
+        pipeline = None
     if pipeline is not None and args.device != "cpu":
         pipeline.to(torch.device(args.device))
 

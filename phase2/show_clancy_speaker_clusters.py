@@ -19,6 +19,51 @@ def number(value: str) -> float:
         return 0.0
 
 
+def timestamp_seconds(value: str) -> float:
+    text = str(value or "").strip().replace(",", ".")
+    if not text:
+        return 0.0
+    parts = text.split(":")
+    try:
+        if len(parts) == 3:
+            hours, minutes, seconds = parts
+            return float(hours) * 3600 + float(minutes) * 60 + float(seconds)
+        if len(parts) == 2:
+            minutes, seconds = parts
+            return float(minutes) * 60 + float(seconds)
+        return float(text)
+    except ValueError:
+        return 0.0
+
+
+def turn_duration_seconds(row: dict[str, str]) -> float:
+    start = timestamp_seconds(row.get("turn_start_time") or row.get("start_time", ""))
+    end = timestamp_seconds(row.get("turn_end_time") or row.get("end_time", ""))
+    return max(0.0, end - start)
+
+
+def interval_union_seconds(rows: list[dict[str, str]]) -> float:
+    intervals = []
+    for row in rows:
+        start = timestamp_seconds(row.get("turn_start_time") or row.get("start_time", ""))
+        end = timestamp_seconds(row.get("turn_end_time") or row.get("end_time", ""))
+        if end > start:
+            intervals.append((start, end))
+    total = 0.0
+    current_start = current_end = None
+    for start, end in sorted(intervals):
+        if current_start is None:
+            current_start, current_end = start, end
+        elif start <= current_end:
+            current_end = max(current_end, end)
+        else:
+            total += current_end - current_start
+            current_start, current_end = start, end
+    if current_start is not None:
+        total += current_end - current_start
+    return total
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Show all Clancy source-local speaker clusters and row counts")
     parser.add_argument("--manifest-csv", required=True, help="Diarization-enriched turn manifest")
@@ -26,6 +71,8 @@ def main() -> None:
     parser.add_argument("--output-csv", required=True)
     parser.add_argument("--output-json", required=True)
     parser.add_argument("--samples", type=int, default=3)
+    parser.add_argument("--source-group-id", default="", help="Optional video/source filter")
+    parser.add_argument("--group-by-source", action="store_true", help="Print clusters grouped by source video")
     args = parser.parse_args()
 
     manifest = read_csv(Path(args.manifest_csv))
@@ -48,18 +95,31 @@ def main() -> None:
 
     groups: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
     for row in manifest:
+        if args.source_group_id and row.get("youtube_id", "") != args.source_group_id:
+            continue
         key = (row.get("youtube_id", ""), row.get("speaker_cluster_id", "UNKNOWN"))
         groups[key].append(row)
 
+    if not groups:
+        raise SystemExit(f"No rows found for source_group_id={args.source_group_id!r}")
+
     output_rows: list[dict[str, str]] = []
-    for (source, cluster), rows in sorted(groups.items(), key=lambda item: (-len(item[1]), item[0])):
+    if args.group_by_source or args.source_group_id:
+        group_items = sorted(groups.items(), key=lambda item: (item[0][0], -len(item[1]), item[0][1]))
+    else:
+        group_items = sorted(groups.items(), key=lambda item: (-len(item[1]), item[0]))
+    for (source, cluster), rows in group_items:
         source_audio = rows[0].get("source_audio_path", "")
         key = (source_audio, cluster)
+        turn_seconds = sum(turn_duration_seconds(row) for row in rows)
         output_rows.append({
             "source_group_id": source,
             "source_audio_path": source_audio,
             "speaker_cluster_id": cluster,
             "manifest_turn_row_count": str(len(rows)),
+            "turn_row_duration_seconds": f"{turn_seconds:.3f}",
+            "turn_row_duration_minutes": f"{turn_seconds / 60.0:.3f}",
+            "turn_interval_union_seconds": f"{interval_union_seconds(rows):.3f}",
             "diarization_segment_count": str(segment_counts.get(key, 0)),
             "diarization_segment_seconds": f"{segment_seconds.get(key, 0.0):.3f}",
             "sample_utterance_ids": " | ".join(row.get("utterance_id", "") for row in rows[: args.samples]),
@@ -107,12 +167,13 @@ def main() -> None:
     json_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
 
     print(f"source_groups={summary['source_groups']} clusters={summary['cluster_rows']} manifest_rows={summary['manifest_rows']}")
-    print("source_group_id\tspeaker_cluster_id\tturn_rows\tsegment_rows\tsegment_seconds\trole\tstatus")
+    print("source_group_id\tspeaker_cluster_id\tturn_rows\tturn_seconds\tturn_minutes\tsegment_rows\tsegment_seconds\trole\tstatus")
     for row in output_rows:
         print(
             f"{row['source_group_id']}\t{row['speaker_cluster_id']}\t"
-            f"{row['manifest_turn_row_count']}\t{row['diarization_segment_count']}\t"
-            f"{row['diarization_segment_seconds']}\t{row['role_label']}\t"
+            f"{row['manifest_turn_row_count']}\t{row['turn_row_duration_seconds']}\t"
+            f"{row['turn_row_duration_minutes']}\t"
+            f"{row['diarization_segment_count']}\t{row['diarization_segment_seconds']}\t{row['role_label']}\t"
             f"{row['witness_speaking_status']}"
         )
     print(f"Wrote cluster inventory to {output_path}")
