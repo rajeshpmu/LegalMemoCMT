@@ -51,8 +51,28 @@ MODEL_PATH="${TALKNET_MODEL:-$TALKNET_ROOT/pretrain_TalkSet.model}"
 if [[ ! -f "$MODEL_PATH" ]]; then
   echo "Downloading the official pretrained TalkSet checkpoint to: $MODEL_PATH"
   # Current gdown accepts the Drive file ID as a positional argument.
-  "$TALKNET_VENV/bin/gdown" "1AbN9fCf9IexMxEKXLQY2KYBlb-IhSEea" -O "$MODEL_PATH"
+  tmp_model="${MODEL_PATH}.download"
+  rm -f "$tmp_model"
+  "$TALKNET_VENV/bin/gdown" "1AbN9fCf9IexMxEKXLQY2KYBlb-IhSEea" -O "$tmp_model"
+  [[ -s "$tmp_model" ]] || { echo "TalkNet checkpoint download failed: $tmp_model" >&2; exit 1; }
+  mv "$tmp_model" "$MODEL_PATH"
 fi
+
+# S3FD is TalkNet's face detector. Download its checkpoint explicitly so the
+# upstream detector does not invoke its obsolete `gdown --id` command.
+S3FD_MODEL="$TALKNET_ROOT/model/faceDetector/s3fd/sfd_face.pth"
+if [[ ! -f "$S3FD_MODEL" ]]; then
+  echo "Downloading the S3FD face-detector checkpoint to: $S3FD_MODEL"
+  mkdir -p "$(dirname "$S3FD_MODEL")"
+  tmp_s3fd="${S3FD_MODEL}.download"
+  rm -f "$tmp_s3fd"
+  "$TALKNET_VENV/bin/gdown" "1KafnHz7ccT-3IyddBsL5yi2xGtxAKypt" -O "$tmp_s3fd"
+  [[ -s "$tmp_s3fd" ]] || { echo "S3FD checkpoint download failed: $tmp_s3fd" >&2; exit 1; }
+  mv "$tmp_s3fd" "$S3FD_MODEL"
+fi
+
+echo "TalkNet checkpoint bytes: $(wc -c < "$MODEL_PATH")"
+echo "S3FD checkpoint bytes: $(wc -c < "$S3FD_MODEL")"
 
 cat <<EOF
 TalkNet setup complete.
