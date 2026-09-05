@@ -57,11 +57,15 @@ def main() -> None:
 
     turn_counts = defaultdict(int)
     turn_seconds = defaultdict(float)
+    roles = defaultdict(set)
     samples = defaultdict(list)
     for row in manifest:
         cluster = clean(row.get("speaker_cluster_id") or row.get("speaker_cluster_id", "")) or "UNKNOWN"
         turn_counts[cluster] += 1
         turn_seconds[cluster] += duration(row)
+        role = clean(row.get("speaker_role") or row.get("role_label"))
+        if role:
+            roles[cluster].add(role)
         if len(samples[cluster]) < 10:
             samples[cluster].append(clean(row.get("utterance_id") or row.get("turn_id")))
 
@@ -81,6 +85,8 @@ def main() -> None:
         output_rows.append({
             "source_group_id": args.source_group_id or clean(manifest[0].get("youtube_id")) if manifest else "",
             "speaker_cluster_id": cluster,
+            "speaker_role": " | ".join(sorted(roles[cluster])) or "UNKNOWN",
+            "total_clips": str(turn_counts[cluster]),
             "turn_rows": str(turn_counts[cluster]),
             "turn_seconds": f"{turn_seconds[cluster]:.3f}",
             "turn_minutes": f"{turn_seconds[cluster] / 60.0:.3f}",
@@ -95,6 +101,7 @@ def main() -> None:
     with output.open("w", newline="", encoding="utf-8") as handle:
         fields = list(output_rows[0]) if output_rows else [
             "source_group_id", "speaker_cluster_id", "turn_rows", "turn_seconds", "turn_minutes",
+            "speaker_role", "total_clips",
             "diarization_segment_rows", "diarization_segment_seconds", "diarization_segment_minutes",
             "sample_utterance_ids",
         ]
@@ -117,11 +124,11 @@ def main() -> None:
     report.parent.mkdir(parents=True, exist_ok=True)
     report.write_text(json.dumps(summary, indent=2), encoding="utf-8")
 
-    print("source_group_id\tspeaker_cluster_id\tturn_rows\tturn_seconds\tturn_minutes\tsegment_rows\tsegment_seconds\tsegment_minutes")
+    print("source_group_id\tspeaker_cluster_id\tspeaker_role\ttotal_clips\tturn_seconds\tturn_minutes\tsegment_rows\tsegment_seconds\tsegment_minutes")
     for row in output_rows:
         print(
-            f"{row['source_group_id']}\t{row['speaker_cluster_id']}\t{row['turn_rows']}\t"
-            f"{row['turn_seconds']}\t{row['turn_minutes']}\t{row['diarization_segment_rows']}\t"
+            f"{row['source_group_id']}\t{row['speaker_cluster_id']}\t{row['speaker_role']}\t"
+            f"{row['total_clips']}\t{row['turn_seconds']}\t{row['turn_minutes']}\t{row['diarization_segment_rows']}\t"
             f"{row['diarization_segment_seconds']}\t{row['diarization_segment_minutes']}"
         )
     print(f"Wrote duration report to {output}")
@@ -130,4 +137,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
